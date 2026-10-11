@@ -899,14 +899,17 @@ header{position:sticky;top:0;z-index:9;background:rgba(255,255,255,.94);backdrop
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:12px 0;box-shadow:0 1px 2px rgba(16,24,40,.04)}
 h2.pt{font-size:15px;font-weight:700;margin:22px 0 4px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
-.mcard{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff}
+.mcard{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;display:flex;flex-direction:column;align-items:flex-start}
 .mcard b{display:block;font-size:14px;margin-bottom:6px}
+.mcard .tgs{margin-top:auto;padding-top:6px}
 .mcard span{display:inline-block;background:var(--k);border-radius:8px;padding:1px 8px;margin:2px 3px 2px 0;font-size:12px;color:#3730a3}
 table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
 th{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--sub);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);white-space:nowrap}
 td{padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 tr:hover td{background:#fafbff}
 .tblwrap{overflow-x:auto}
+.tblscroll{max-height:72vh;overflow:auto}
+.tblscroll tr:first-child th{position:sticky;top:0;background:#fff;z-index:2;box-shadow:0 1px 0 var(--line)}
 .crlayout{display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:start}
 .crnav{position:sticky;top:12px;max-height:calc(100vh - 30px);overflow-y:auto;font-size:12.5px;padding-right:4px}
 .crnav .catlnk{display:block;margin:10px 0 3px;font-weight:700;color:var(--ink);font-size:12px;text-decoration:none;padding:2.5px 8px;border-radius:6px;cursor:pointer}
@@ -921,7 +924,8 @@ tr:hover td{background:#fafbff}
 @media(max-width:860px){.crlayout{grid-template-columns:1fr}.crnav{position:static;max-height:220px;border:1px solid var(--line);border-radius:10px;padding:8px}}
 .crmain{min-width:0}
 .best td{background:var(--okbg);font-weight:700}
-.num{font-weight:700}
+.num{font-weight:700;text-align:right}
+th.num{text-align:right}
 .win{background:var(--okbg);color:var(--ok);font-weight:700;border-radius:6px;padding:2px 8px;display:inline-block}
 .neg{color:var(--bad);font-weight:600}.pos{color:var(--ok);font-weight:600}
 .search{width:100%;max-width:420px;border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:13px;margin:12px 0;outline:none}
@@ -986,21 +990,21 @@ const HOWTO=`<div class="card"><details><summary style="cursor:pointer;font-weig
 <b>判分</b>：每个模型既是选手又是评委（N×N 互评）：产物匿名哈希代号 → 四维打分（正确性/完整性/技能遵循/表达，0-5）→ 同家族评委只计 1 票 → 取中位数。方阵中<b>行均≈真实水平，列均=评委严格度，蓝框对角线=自评</b>（仅测自偏，不计入总分）。
 </div></details></div>`;
 document.getElementById('pg-ov').innerHTML=HOWTO
-+(D['画像_模型强项']?`<h2 class="pt">模型强项速览</h2><div class="grid">${Object.entries(D['画像_模型强项']).map(([m,ts])=>`<div class="mcard"><b>${m}</b>${ts.map(t=>`<span>${t}</span>`).join('')}</div>`).join('')}</div>`:'')
-+(D['画像']?`<h2 class="pt">模型 × 分类画像 <span style="font-weight:400;color:var(--sub);font-size:12px">（平均 SkillScore，绿色=该项最高）</span></h2><div class="card tblwrap"><table><tr><th>分类</th><th>样本</th>${Object.keys(D['画像_模型强项']).map(m=>`<th>${m}</th>`).join('')}</tr>${D['画像'].map(r=>{const ms=Object.keys(D['画像_模型强项']);const mx=Math.max(...ms.map(m=>r[m]??-1));return `<tr><td style="font-weight:600">${r['分类']}</td><td>${r['样本']}</td>${ms.map(m=>`<td>${r[m]===mx?`<span class="win">${r[m]}</span>`:r[m]??'-'}</td>`).join('')}</tr>`}).join('')}</table></div>`:'');
++(D['画像_模型强项']?`<h2 class="pt">模型强项速览</h2><div class="grid">${Object.entries(D['画像_模型强项']).map(([m,ts])=>`<div class="mcard"><b>${m}</b><div class="tgs">${ts.map(t=>`<span>${t}</span>`).join('')}</div></div>`).join('')}</div>`:'')
++(D['画像']?`<h2 class="pt">模型 × 分类画像 <span style="font-weight:400;color:var(--sub);font-size:12px">（平均 SkillScore，绿色=该项最高）</span></h2><div class="card tblwrap tblscroll"><table><tr><th>分类</th><th class="num">样本</th>${Object.keys(D['画像_模型强项']).map(m=>`<th class="num">${m}</th>`).join('')}</tr>${D['画像'].map(r=>{const ms=Object.keys(D['画像_模型强项']);const mx=Math.max(...ms.map(m=>r[m]??-1));return `<tr><td style="font-weight:600">${r['分类']}</td><td class="num">${r['样本']}</td>${ms.map(m=>`<td class="num">${r[m]===mx?`<span class="win">${r[m]}</span>`:r[m]??'-'}</td>`).join('')}</tr>`}).join('')}</table></div>`:'');
 /* ── Tab 2 技能榜（折叠卡+搜索）── */
 document.getElementById('pg-sk').innerHTML=`<input class="search" id="q" placeholder="搜索技能名 / 功能 / 最佳模型…">
 <div style="font-size:12px;color:var(--sub);margin:-4px 0 10px;line-height:1.9">绿色行 = 该技能的最佳配对模型 ｜ 增益表：M2−M1 总增益 / hake = 吃掉多少剩余提升空间 / M2−M4 = 剔除长度安慰剂的纯内容增益（红=负增益，skill 拖后腿）｜ 方阵：行=生产者水平，列=判官严格度，蓝框=自评</div>`+
 scored.map(([s,A])=>`
 <details class="sk" data-k="${(s+' '+(A['功能']||'')+' '+(A.best||'')).toLowerCase()}">
-<summary><span class="skname"><a href="#${s}" onclick="event.stopPropagation()">${s}</a></span>${A['功能']?`<span class="gloss">${A['功能']}</span>`:''}${A.best?`<span class="badge">${A.best.split('@')[0]}</span>`:''}<span class="ss">SkillScore ${sc([s,A])} · 点开看方阵 ↕</span></summary>
+<summary><span class="skname"><a href="#${s}" onclick="event.stopPropagation()">${s}</a></span>${A['功能']?`<span class="gloss">${A['功能']}</span>`:''}${A.best?`<span class="badge">${A.best.split('@')[0]}</span>`:''}<span class="ss">SkillScore ${sc([s,A])}</span></summary>
 <div style="padding:2px 16px 14px">
 <div class="cap">SkillScore 榜</div><div class="tblwrap"><table>
-<tr><th>模型</th><th>家族</th><th>SkillScore</th><th>M2 均分</th><th>M1 均分</th><th>触发准确率</th></tr>
-${A.leaderboard.map(r=>`<tr class="${r['模型']===A.best?'best':''}"><td>${r['模型']}</td><td>${r['家族']}</td><td class="num">${r.SkillScore}</td><td>${A.m2_mean[r['模型']]??'-'}</td><td>${A.m1_mean[r['模型']]??'-'}</td><td>${A.trigger_accuracy[r['模型']]||'-'}</td></tr>`).join('')}
+<tr><th>模型</th><th>家族</th><th class="num">SkillScore</th><th class="num">M2 均分</th><th class="num">M1 均分</th><th class="num">触发准确率</th></tr>
+${A.leaderboard.map(r=>`<tr class="${r['模型']===A.best?'best':''}"><td>${r['模型']}</td><td>${r['家族']}</td><td class="num">${r.SkillScore}</td><td class="num">${A.m2_mean[r['模型']]??'-'}</td><td class="num">${A.m1_mean[r['模型']]??'-'}</td><td class="num">${A.trigger_accuracy[r['模型']]||'-'}</td></tr>`).join('')}
 </table></div>
-${Object.keys(A.gains).length?`<div class="cap">增益（M2−M1 总 ｜ hake 剩余空间 ｜ M2−M4 纯内容）</div><div class="tblwrap"><table><tr><th>模型</th><th>任务</th><th>M2−M1</th><th>hake</th><th>M2−M4</th></tr>${Object.entries(A.gains).map(([k,g])=>`<tr><td>${k.split('|')[0]}</td><td>${k.split('|')[1]}</td><td class="${(g['M2-M1']??0)<0?'neg':'pos'}">${g['M2-M1']??'-'}</td><td>${g['hake']??'-'}</td><td class="${(g['M2-M4']??0)<0?'neg':'pos'}">${g['M2-M4']??'-'}</td></tr>`).join('')}</table></div>`:''}
-${Object.keys(A.judge_matrix_M2).length?`<div class="cap">N×N 交叉方阵（行=生产者 · 列=判官 · 蓝框=对角线自评）</div><div class="tblwrap"><table><tr><th>生产者＼判官</th>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<th>${j}</th>`).join('')}</tr>${Object.entries(A.judge_matrix_M2).map(([p,row])=>`<tr><td style="font-weight:600">${p}</td>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<td style="${bg(row[j])};${j===p?'outline:1px solid var(--acc);outline-offset:-1px':''}">${row[j]!==undefined?row[j]:'—'}</td>`).join('')}</tr>`).join('')}</table></div>`:''}
+${Object.keys(A.gains).length?`<div class="cap">增益（M2−M1 总 ｜ hake 剩余空间 ｜ M2−M4 纯内容）</div><div class="tblwrap"><table><tr><th>模型</th><th>任务</th><th class="num">M2−M1</th><th class="num">hake</th><th class="num">M2−M4</th></tr>${Object.entries(A.gains).map(([k,g])=>`<tr><td>${k.split('|')[0]}</td><td>${k.split('|')[1]}</td><td class="num ${(g['M2-M1']??0)<0?'neg':'pos'}">${g['M2-M1']??'-'}</td><td class="num">${g['hake']??'-'}</td><td class="num ${(g['M2-M4']??0)<0?'neg':'pos'}">${g['M2-M4']??'-'}</td></tr>`).join('')}</table></div>`:''}
+${Object.keys(A.judge_matrix_M2).length?`<div class="cap">N×N 交叉方阵（行=生产者 · 列=判官 · 蓝框=对角线自评）</div><div class="tblwrap"><table><tr><th>生产者＼判官</th>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<th class="num">${j}</th>`).join('')}</tr>${Object.entries(A.judge_matrix_M2).map(([p,row])=>`<tr><td style="font-weight:600">${p}</td>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<td class="num" style="${bg(row[j])};${j===p?'outline:1px solid var(--acc);outline-offset:-1px':''}">${row[j]!==undefined?row[j]:'—'}</td>`).join('')}</tr>`).join('')}</table></div>`:''}
 </div></details>`).join('')
 +(pending.length?`<div class="card"><details class="pendd"><summary>${pending.length} 个技能评分中，出分后自动上移</summary><p class="pend">${pending.map(([s])=>s).join(' · ')}</p></details></div>`:'');
 /* ── Tab 3 同类对比（侧边栏大类导航 + 纵向转置表）── */
@@ -1012,10 +1016,10 @@ const tasks=[...new Set(G.任务对比.map(r=>r['任务']))];
 const avg=m=>{const vs=G.任务对比.map(r=>r[m]).filter(v=>v!=null);return vs.length?(vs.reduce((a,b)=>a+b,0)/vs.length).toFixed(2):'-'};
 return `<div class="card" id="crg${i}"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px"><b style="font-size:15px">${G['组']}</b><span class="gloss">${G['大类']?G['大类']+' · ':''}基准：${G.基准}（分数最高）· ${G.skills.length} 个成员</span></div>
 <div class="tblwrap"><table>
-<tr><th style="min-width:220px">技能</th><th>平均</th><th>Δ vs 基准</th><th>最佳配对</th>${tasks.map(t=>`<th>${t}</th>`).join('')}</tr>
+<tr><th style="min-width:220px">技能</th><th class="num">平均</th><th class="num">Δ vs 基准</th><th>最佳配对</th>${tasks.map(t=>`<th class="num">${t}</th>`).join('')}</tr>
 ${G.skills.map(m=>{const base=(m===G.基准);const dv=base?[]:(G.任务对比.map(r=>r['Δ('+m+'-基准)']).filter(v=>v!=null));
 const davg=dv.length?(dv.reduce((a,b)=>a+b,0)/dv.length).toFixed(2):'—';
-return `<tr class="${base?'best':''}"><td style="font-weight:600;white-space:normal;word-break:break-all">${m}</td><td class="num">${avg(m)}</td><td class="${base?'':(parseFloat(davg)<0?'neg':(parseFloat(davg)>0?'pos':''))}" style="${(!base&&parseFloat(davg)===0)?'color:var(--sub)':''}">${base?'基准':(davg>0?'+':'')+davg}</td><td style="font-size:12px;color:var(--sub)">${G.最佳搭配[m]?(G.最佳搭配[m].split('@')[0]):'-'}</td>${tasks.map(t=>{const r=G.任务对比.find(x=>x['任务']===t);return `<td>${r&&r[m]!=null?r[m]:'-'}</td>`}).join('')}</tr>`}).join('')}
+return `<tr class="${base?'best':''}"><td style="font-weight:600;white-space:normal;word-break:break-all">${m}</td><td class="num">${avg(m)}</td><td class="num ${base?'':(parseFloat(davg)<0?'neg':(parseFloat(davg)>0?'pos':''))}" style="${(!base&&parseFloat(davg)===0)?'color:var(--sub)':''}">${base?'基准':(davg>0?'+':'')+davg}</td><td style="font-size:12px;color:var(--sub)">${G.最佳搭配[m]?(G.最佳搭配[m].split('@')[0]):'-'}</td>${tasks.map(t=>{const r=G.任务对比.find(x=>x['任务']===t);return `<td class="num">${r&&r[m]!=null?r[m]:'-'}</td>`}).join('')}</tr>`}).join('')}
 </table></div></div>`}).join('');
 document.getElementById('pg-cr').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">同类技能对比（N×N×A）：左侧按<b>大类</b>分组导航，点击跳转；每个功能分组内分数最高者为基准，Δ = 各任务 M2 总分与基准之差。共 ${crossArr.length} 组。</div>
 <div class="crlayout">${crossNav}<div class="crmain">${crossBody}</div></div>`;
