@@ -82,7 +82,7 @@ details.pendd summary{cursor:pointer;color:var(--sub);font-size:13px}
 <div class="page on" id="pg-ov"></div>
 <div class="page" id="pg-sk"></div>
 <div class="page" id="pg-cr"></div>
-<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub);display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span style="max-width:640px">3D 评分矩阵（N×N×A）：N×N = 生产者×判官的交叉判分面，A = 分层轴。<b>越绿越强、越红越弱</b>，拖拽旋转 · 滚轮缩放 · 悬停看格。</span>
+<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub);display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span style="max-width:640px">3D 评分矩阵（N×N×A）：N×N = 生产者×判官的交叉判分面，A = 分层轴。<b>越绿越强、越红越弱</b>，拖拽旋转 · 滚轮缩放 · W/S 前进后退 · A/D 平移（近处方块自动淡化）· 悬停看格。</span>
 <select id="c3cat" style="border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:13px;background:#fff;outline:none"><option value="">全部总览（A=大类）</option></select></div>
 <div class="card" style="padding:10px 14px">
 <div id="c3box" style="height:600px;border-radius:10px;overflow:hidden;position:relative;background:#fafbfc"></div>
@@ -211,8 +211,8 @@ b.style.cssText='width:30px;height:30px;border:1px solid var(--line);background:
 b.onclick=fn;box.appendChild(b);return b};
 const zb=document.createElement('div');
 zb.style.cssText='position:absolute;right:12px;bottom:12px;display:flex;gap:6px;z-index:6';
-const bIn=zoomBtn('+',()=>{camera.position.lerp(controls.target,0.16);needsRender=true});
-const bOut=zoomBtn('−',()=>{camera.position.lerp(controls.target,-0.22);needsRender=true});
+const bIn=zoomBtn('+',()=>{camera.position.lerp(controls.target,0.16);updateFade();needsRender=true});
+const bOut=zoomBtn('−',()=>{camera.position.lerp(controls.target,-0.22);updateFade();needsRender=true});
 const bRst=zoomBtn('⟲',()=>{if(homePos){camera.position.copy(homePos);controls.target.set(0,0,0);needsRender=true}});
 bRst.style.width='auto';bRst.style.padding='0 10px';bRst.textContent='重置';
 zb.append(bOut,bIn,bRst);box.appendChild(zb);
@@ -227,7 +227,17 @@ c.lineWidth=9;c.strokeStyle='rgba(38,48,74,.9)';c.strokeRect(0,0,128,128);
 const t=new THREE.CanvasTexture(cv);t.anisotropy=4;return t})();
 const mat=new THREE.MeshLambertMaterial({map:edgeTex});
 const dummy=new THREE.Object3D();
-let mesh=null,labelSprites=[],plates=[],cur=null,needsRender=true;
+let mesh=null,labelSprites=[],plates=[],cur=null,needsRender=true,centers=[],baseCols=[];
+const FADE_BG=new THREE.Color('#eef1f6'),_fc=new THREE.Color(),_dv=new THREE.Vector3();
+function updateFade(){
+  if(!mesh||!centers.length)return;
+  let changed=false;
+  for(let idx=0;idx<centers.length;idx++){
+    const d=_dv.copy(centers[idx]).sub(camera.position).length();
+    const t=Math.max(0,Math.min(1,(d-1.6)/3.4));   // <1.6 全淡，>5 恢复
+    _fc.copy(FADE_BG).lerp(baseCols[idx],t);
+    mesh.setColorAt(idx,_fc);changed=true}
+  if(changed)mesh.instanceColor.needsUpdate=true}
 const label=(txt,px=44)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
 ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=ctx.measureText(txt).width;
 cv.width=Math.ceil(w+24);cv.height=px+20;const c2=cv.getContext('2d');
@@ -253,6 +263,12 @@ function build(zLabels,cells,layerGap){
     else{dummy.scale.set(0.16,0.16,0.16);mesh.setColorAt(ptr,new THREE.Color('#d7dce3'))}
     dummy.updateMatrix();mesh.setMatrixAt(ptr,dummy.matrix);ptr++}
   mesh.instanceMatrix.needsUpdate=true;scene.add(mesh);
+  /* 记录格子中心与基色，供近距淡化 */
+  centers=[];baseCols=[];
+  const bgColor=new THREE.Color('#eef1f6');const tmpC=new THREE.Color();
+  for(let k=0;k<NC;k++)for(let i=0;i<NM;i++)for(let j=0;j<NM;j++){
+    centers.push(new THREE.Vector3((i-(NM-1)/2)*GAP,(j-(NM-1)/2)*GAP,(k-(NC-1)/2)*layerGap));
+    mesh.getColorAt(k*NM*NM+i*NM+j,tmpC);baseCols.push(tmpC.clone())}
   const plateG=new THREE.BoxGeometry(NM*GAP+0.55,0.07,NM*GAP+0.55);
   const plateM=new THREE.MeshLambertMaterial({color:'#f8fafd'});
   zLabels.forEach((_,k)=>{const pl=new THREE.Mesh(plateG,plateM);
@@ -293,7 +309,28 @@ renderer.domElement.addEventListener('pointermove',e=>{
   needsRender=true});
 renderer.domElement.addEventListener('pointerleave',()=>{tip.style.opacity=0});
 addEventListener('resize',()=>{const w2=box.clientWidth,h2=box.clientHeight;camera.aspect=w2/h2;camera.updateProjectionMatrix();renderer.setSize(w2,h2);needsRender=true});
-controls.addEventListener('change',()=>needsRender=true);
-(function loop(){requestAnimationFrame(loop);controls.update();if(needsRender){renderer.render(scene,camera);needsRender=false}})();
+controls.addEventListener('change',()=>{updateFade();needsRender=true});
+/* 键盘平移：W/S 沿视线前后、A/D 左右，可"走进"立方体；近处格子自动淡化 */
+const keys=new Set();
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();
+  if(!['w','a','s','d'].includes(k))return;
+  const pg=document.getElementById('pg-c3');if(!pg||!pg.classList.contains('on'))return;
+  keys.add(k);needsRender=true});
+addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
+const FWD=new THREE.Vector3(),RIGHT=new THREE.Vector3();
+function moveCam(dt){
+  if(!keys.size)return;
+  const step=dt*6.5;
+  camera.getWorldDirection(FWD);
+  RIGHT.crossVectors(FWD,camera.up).normalize();
+  if(keys.has('w')){camera.position.addScaledVector(FWD,step);controls.target.addScaledVector(FWD,step)}
+  if(keys.has('s')){camera.position.addScaledVector(FWD,-step);controls.target.addScaledVector(FWD,-step)}
+  if(keys.has('a')){camera.position.addScaledVector(RIGHT,-step);controls.target.addScaledVector(RIGHT,-step)}
+  if(keys.has('d')){camera.position.addScaledVector(RIGHT,step);controls.target.addScaledVector(RIGHT,step)}
+  updateFade();needsRender=true}
+let lastT=performance.now();
+(function loop(now){requestAnimationFrame(loop);const dt=Math.min(0.05,(now-lastT)/1000);lastT=now;
+  controls.update();moveCam(dt);
+  if(needsRender){renderer.render(scene,camera);needsRender=false}})(lastT);
 }
 </script>
