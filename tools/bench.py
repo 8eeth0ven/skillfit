@@ -1105,17 +1105,19 @@ c.lineWidth=9;c.strokeStyle='rgba(38,48,74,.9)';c.strokeRect(0,0,128,128);
 const t=new THREE.CanvasTexture(cv);t.anisotropy=4;return t})();
 const mat=new THREE.MeshLambertMaterial({map:edgeTex});
 const dummy=new THREE.Object3D();
-let mesh=null,labelSprites=[],plates=[],cur=null,needsRender=true,centers=[],baseCols=[];
-const FADE_BG=new THREE.Color('#eef1f6'),_fc=new THREE.Color(),_dv=new THREE.Vector3();
+let mesh=null,labelSprites=[],plates=[],cur=null,needsRender=true,centers=[],baseCols=[],baseScales=[];
+const FADE_BG=new THREE.Color('#eef1f6'),_fc=new THREE.Color(),_dv=new THREE.Vector3(),_dm=new THREE.Object3D();
 function updateFade(){
   if(!mesh||!centers.length)return;
-  let changed=false;
   for(let idx=0;idx<centers.length;idx++){
     const d=_dv.copy(centers[idx]).sub(camera.position).length();
-    const t=Math.max(0,Math.min(1,(d-3.0)/5.0));   // 稍近即开始淡，>8 恢复
-    _fc.copy(FADE_BG).lerp(baseCols[idx],0.2+0.8*t); // 最深约 80% 透明，保留轮廓
-    mesh.setColorAt(idx,_fc);changed=true}
-  if(changed)mesh.instanceColor.needsUpdate=true}
+    const t=Math.max(0,Math.min(1,(d-5.0)/4.0));   // 5.0 即开始让路，>9 恢复
+    const sc=baseScales[idx]*(0.12+0.88*t);          // 近处缩到 12%，边框随 scale 消失
+    _dm.position.copy(centers[idx]);_dm.scale.set(sc,sc,sc);_dm.updateMatrix();
+    mesh.setMatrixAt(idx,_dm.matrix);
+    _fc.copy(FADE_BG).lerp(baseCols[idx],0.1+0.9*t); // 颜色最深保留 10%
+    mesh.setColorAt(idx,_fc)}
+  mesh.instanceMatrix.needsUpdate=true;mesh.instanceColor.needsUpdate=true}
 const label=(txt,px=44)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
 ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=ctx.measureText(txt).width;
 cv.width=Math.ceil(w+24);cv.height=px+20;const c2=cv.getContext('2d');
@@ -1142,11 +1144,12 @@ function build(zLabels,cells,layerGap){
     dummy.updateMatrix();mesh.setMatrixAt(ptr,dummy.matrix);ptr++}
   mesh.instanceMatrix.needsUpdate=true;scene.add(mesh);
   /* 记录格子中心与基色，供近距淡化 */
-  centers=[];baseCols=[];
+  centers=[];baseCols=[];baseScales=[];
   const bgColor=new THREE.Color('#eef1f6');const tmpC=new THREE.Color();
   for(let k=0;k<NC;k++)for(let i=0;i<NM;i++)for(let j=0;j<NM;j++){
     centers.push(new THREE.Vector3((i-(NM-1)/2)*GAP,(j-(NM-1)/2)*GAP,(k-(NC-1)/2)*layerGap));
-    mesh.getColorAt(k*NM*NM+i*NM+j,tmpC);baseCols.push(tmpC.clone())}
+    mesh.getColorAt(k*NM*NM+i*NM+j,tmpC);baseCols.push(tmpC.clone());
+    baseScales.push(cells[k][i][j]?1:0.16)}
   const plateG=new THREE.BoxGeometry(NM*GAP+0.55,0.07,NM*GAP+0.55);
   const plateM=new THREE.MeshLambertMaterial({color:'#f8fafd'});
   zLabels.forEach((_,k)=>{const pl=new THREE.Mesh(plateG,plateM);
