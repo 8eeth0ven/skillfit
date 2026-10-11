@@ -82,7 +82,8 @@ details.pendd summary{cursor:pointer;color:var(--sub);font-size:13px}
 <div class="page on" id="pg-ov"></div>
 <div class="page" id="pg-sk"></div>
 <div class="page" id="pg-cr"></div>
-<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub)">3D 评分矩阵（N×N×A）：每个方块 = （大类 × 生产者模型 × 判官模型）的交叉判分均值——<b>越绿越强、越红越弱</b>。拖拽旋转 · 滚轮缩放 · 悬停看数值。</div>
+<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub);display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span style="max-width:640px">3D 评分矩阵（N×N×A）：N×N = 生产者×判官的交叉判分面，A = 分层轴。<b>越绿越强、越红越弱</b>，拖拽旋转 · 滚轮缩放 · 悬停看格。</span>
+<select id="c3cat" style="border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:13px;background:#fff;outline:none"><option value="">全部总览（A=大类）</option></select></div>
 <div class="card" style="padding:10px 14px">
 <div id="c3box" style="height:600px;border-radius:10px;overflow:hidden;position:relative;background:#fafbfc"></div>
 <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--sub);margin-top:8px;flex-wrap:wrap">
@@ -182,7 +183,7 @@ q.oninput();}}
 );</script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="module">
-/* 3D 矩阵：首次切到 c3 标签时惰性加载 three.js（CDN 失败给出降级提示） */
+/* 3D 矩阵 v2：A 轴可切（全部=大类总览 / 某大类=Top20 技能层）；按需渲染省 GPU */
 let c3booted=false;
 document.addEventListener('click',e=>{const t=e.target.closest('.tab');if(t&&t.dataset.t==='c3'&&!c3booted){c3booted=true;bootC3()}},true);
 async function bootC3(){
@@ -194,43 +195,22 @@ THREE=await import('three');
 ({OrbitControls}=await import('three/addons/controls/OrbitControls.js'));
 }catch(err){box.innerHTML='<div style="padding:40px;text-align:center;color:var(--sub);font-size:13px">3D 组件加载失败（需要联网访问 jsdelivr CDN）：<br><code>'+err.message+'</code></div>';return}
 if(!D.cube||!D.cube.cats.length){box.innerHTML='<div style="padding:40px;text-align:center;color:var(--sub)">暂无立方体数据</div>';return}
-const {models,cats,cells}=D.cube;
-const NM=models.length,NC=cats.length;
-const GAP=1.28,LAYER=2.6;
+const {models}=D.cube;const NM=models.length;
+const GAP=1.28;
 const W=box.clientWidth||900,H=box.clientHeight||600;
 const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(38,W/H,0.1,200);
-camera.position.set(NM*3.4,NM*2.9,NC*3.1);
-const renderer=new THREE.WebGLRenderer({antialias:true});
-renderer.setSize(W,H);renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const camera=new THREE.PerspectiveCamera(38,W/H,0.1,300);
+const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
+renderer.setSize(W,H);renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
 box.appendChild(renderer.domElement);
 const controls=new OrbitControls(camera,renderer.domElement);
-controls.enableDamping=true;controls.dampingFactor=0.08;controls.target.set(0,0,0);
-scene.add(new THREE.AmbientLight(0xffffff,0.82));
-const dl=new THREE.DirectionalLight(0xffffff,0.62);dl.position.set(8,14,10);scene.add(dl);
-const vals=cells.flat(2).filter(c=>c).map(c=>c.v);
-const lo=Math.min(...vals),hi=Math.max(...vals);
-document.getElementById('c3rng').textContent=lo.toFixed(2)+' — '+hi.toFixed(2);
-const colOf=v=>{const t=Math.max(0,Math.min(1,(v-lo)/(hi-lo||1)));const c=new THREE.Color();c.setHSL(0.33*t,0.62,0.55);return c};
+controls.enableDamping=true;controls.dampingFactor=0.09;controls.target.set(0,0,0);
+scene.add(new THREE.AmbientLight(0xffffff,0.84));
+const dl=new THREE.DirectionalLight(0xffffff,0.6);dl.position.set(8,14,10);scene.add(dl);
 const geo=new THREE.BoxGeometry(1,1,1);
 const mat=new THREE.MeshLambertMaterial();
-const total=NC*NM*NM;
-const mesh=new THREE.InstancedMesh(geo,mat,total);
 const dummy=new THREE.Object3D();
-const idxOf=(k,i,j)=>k*NM*NM+i*NM+j;
-let ptr=0;
-for(let k=0;k<NC;k++)for(let i=0;i<NM;i++)for(let j=0;j<NM;j++){
-const c=cells[k][i][j];
-const x=(i-(NM-1)/2)*GAP,y=(j-(NM-1)/2)*GAP,z=(k-(NC-1)/2)*LAYER;
-dummy.position.set(x,y,z);
-if(c){dummy.scale.set(1,1,1);mesh.setColorAt(ptr,colOf(c.v))}
-else{dummy.scale.set(0.18,0.18,0.18);mesh.setColorAt(ptr,new THREE.Color('#d7dce3'))}
-dummy.updateMatrix();mesh.setMatrixAt(ptr,dummy.matrix);
-mesh.getMatrixAt(ptr,dummy.matrix);dummy.matrix.decompose(dummy.position,dummy.quaternion,dummy.scale);dummy.userData={};
-ptr++}
-mesh.instanceMatrix.needsUpdate=true;
-scene.add(mesh);
-/* 轴标签（CanvasTexture 中文 sprite） */
+let mesh=null,labelSprites=[],cur=null,needsRender=true;
 const label=(txt,px=44)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
 ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=ctx.measureText(txt).width;
 cv.width=Math.ceil(w+24);cv.height=px+20;const c2=cv.getContext('2d');
@@ -238,28 +218,59 @@ c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42
 c2.fillText(txt,12,cv.height/2);
 const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv),transparent:true}));
 sp.scale.set(cv.width/160,cv.height/160,1);return sp};
-cats.forEach((c,k)=>{const s=label(c,40);s.position.set((NM-1)/2*GAP+3.4,(NM-1)/2*GAP+2.4,(k-(NC-1)/2)*LAYER);scene.add(s)});
-models.forEach((m,i)=>{const s=label(m,36);s.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-1.4,-(NC-1)/2*LAYER-1.6);scene.add(s);
-const s2=label(m,36);s2.position.set(-(NM-1)/2*GAP-1.8,(i-(NM-1)/2)*GAP,-(NC-1)/2*LAYER-1.6);scene.add(s2)});
-/* 悬停 tooltip */
+function build(zLabels,cells,layerGap){
+  if(mesh){scene.remove(mesh);mesh.dispose()}
+  labelSprites.forEach(sp=>{scene.remove(sp);sp.material.map.dispose();sp.material.dispose()});labelSprites=[];
+  const NC=zLabels.length;
+  const vals=cells.flat(2).filter(c=>c).map(c=>c.v);
+  const lo=Math.min(...vals),hi=Math.max(...vals);
+  document.getElementById('c3rng').textContent=lo.toFixed(2)+' — '+hi.toFixed(2);
+  const colOf=v=>{const t=Math.max(0,Math.min(1,(v-lo)/(hi-lo||1)));const c=new THREE.Color();c.setHSL(0.33*t,0.62,0.55);return c};
+  mesh=new THREE.InstancedMesh(geo,mat,NC*NM*NM);
+  let ptr=0;
+  for(let k=0;k<NC;k++)for(let i=0;i<NM;i++)for(let j=0;j<NM;j++){
+    const c=cells[k][i][j];
+    dummy.position.set((i-(NM-1)/2)*GAP,(j-(NM-1)/2)*GAP,(k-(NC-1)/2)*layerGap);
+    if(c){dummy.scale.set(1,1,1);mesh.setColorAt(ptr,colOf(c.v))}
+    else{dummy.scale.set(0.16,0.16,0.16);mesh.setColorAt(ptr,new THREE.Color('#d7dce3'))}
+    dummy.updateMatrix();mesh.setMatrixAt(ptr,dummy.matrix);ptr++}
+  mesh.instanceMatrix.needsUpdate=true;scene.add(mesh);
+  const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
+  zLabels.forEach((c,k)=>{const sp=label(short(c),40);sp.userData={full:c};
+    sp.position.set((NM-1)/2*GAP+2.1,0,(k-(NC-1)/2)*layerGap);scene.add(sp);labelSprites.push(sp)});
+  models.forEach((m,i)=>{const sp=label(m,36);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-1.4,-(NC-1)/2*layerGap-1.6);scene.add(sp);labelSprites.push(sp);
+  const sp2=label(m,36);sp2.position.set(-(NM-1)/2*GAP-1.9,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-1.6);scene.add(sp2);labelSprites.push(sp2)});
+  camera.position.set(NM*3.4,NM*2.9,NC*layerGap*1.15);controls.target.set(0,0,0);controls.update();
+  needsRender=true;
+}
+const sel=document.getElementById('c3cat');
+Object.keys(D.cube.byCat||{}).sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c+'（Top '+D.cube.byCat[c].skills.length+' 技能）';sel.appendChild(o)});
+sel.onchange=()=>{const v=sel.value;
+  if(!v){cur={z:D.cube.cats,cells:D.cube.cells};build(D.cube.cats,D.cube.cells,2.6)}
+  else{const B=D.cube.byCat[v];cur={z:B.skills,cells:B.cells};build(B.skills,B.cells,2.2)}};
+cur={z:D.cube.cats,cells:D.cube.cells};
+build(D.cube.cats,D.cube.cells,2.6);
 const tip=document.createElement('div');
 tip.style.cssText='position:absolute;pointer-events:none;background:#1f2740;color:#fff;font-size:12px;line-height:1.7;padding:6px 10px;border-radius:8px;opacity:0;transition:opacity .12s;z-index:5;white-space:nowrap';
 box.appendChild(tip);
 const ray=new THREE.Raycaster();const mouse=new THREE.Vector2();
 renderer.domElement.addEventListener('pointermove',e=>{
-const r=renderer.domElement.getBoundingClientRect();
-mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
-ray.setFromCamera(mouse,camera);
-const hit=ray.intersectObject(mesh)[0];
-if(hit&&hit.instanceId!=null){
-const k=Math.floor(hit.instanceId/(NM*NM)),i=Math.floor(hit.instanceId% (NM*NM)/NM),j=hit.instanceId%NM;
-const c=cells[k][i][j];
-tip.innerHTML='<b>'+cats[k]+'</b><br>生产者 '+models[i]+'<br>判官 '+models[j]+(c?'<br>均值 <b>'+c.v+'</b>（'+c.n+' 格）':'<br>（无判分）');
-tip.style.opacity=1;tip.style.left=(e.clientX-r.left+14)+'px';tip.style.top=(e.clientY-r.top+10)+'px';
-renderer.domElement.style.cursor='pointer';
-}else{tip.style.opacity=0;renderer.domElement.style.cursor='grab'}});
-renderer.domElement.addEventListener('pointerleave',()=>tip.style.opacity=0);
-addEventListener('resize',()=>{const w2=box.clientWidth,h2=box.clientHeight;camera.aspect=w2/h2;camera.updateProjectionMatrix();renderer.setSize(w2,h2)});
-(function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera)})();
+  const r=renderer.domElement.getBoundingClientRect();
+  mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
+  ray.setFromCamera(mouse,camera);
+  const hit=mesh?ray.intersectObject(mesh)[0]:null;
+  if(hit&&hit.instanceId!=null&&cur){
+    const NC=cur.z.length;
+    const k=Math.floor(hit.instanceId/(NM*NM)),i=Math.floor(hit.instanceId%(NM*NM)/NM),j=hit.instanceId%NM;
+    const c=cur.cells[k][i][j];
+    tip.innerHTML='<b>'+cur.z[k]+'</b><br>生产者 '+models[i]+'<br>判官 '+models[j]+(c?'<br>判分 <b>'+c.v+'</b>'+(c.n?'（'+c.n+' 格均值）':''):'<br>（无判分）');
+    tip.style.opacity=1;tip.style.left=Math.min(e.clientX-r.left+14,r.width-200)+'px';tip.style.top=(e.clientY-r.top+10)+'px';
+    renderer.domElement.style.cursor='pointer';
+  }else{tip.style.opacity=0;renderer.domElement.style.cursor='grab'}
+  needsRender=true});
+renderer.domElement.addEventListener('pointerleave',()=>{tip.style.opacity=0});
+addEventListener('resize',()=>{const w2=box.clientWidth,h2=box.clientHeight;camera.aspect=w2/h2;camera.updateProjectionMatrix();renderer.setSize(w2,h2);needsRender=true});
+controls.addEventListener('change',()=>needsRender=true);
+(function loop(){requestAnimationFrame(loop);controls.update();if(needsRender){renderer.render(scene,camera);needsRender=false}})();
 }
 </script>
