@@ -166,7 +166,7 @@ def fetch_skills(repo, max_per):
         dst = PROJ / "本地库" / repo.replace("/", "__") / name
         dst.mkdir(parents=True, exist_ok=True)
         (dst / "SKILL.md").write_bytes(base64.b64decode(c["content"]))
-        out.append({"skill": name, "路径": str(dst / "SKILL.md"), "repo内路径": p})
+        out.append({"skill": name, "路径": str((dst / "SKILL.md").relative_to(PROJ)), "repo内路径": p})
         time.sleep(1)
     return out
 
@@ -195,7 +195,7 @@ def seed_tasks(db, threshold):
             continue
         d.mkdir(parents=True, exist_ok=True)
         (d / "T01-快扫.md").write_text(SWEEP_TASK.format(skill=sname))
-        (d / "技能文件.txt").write_text(e["路径"] + "\n")
+        (d / "技能文件.txt").write_text(str(PROJ / e["路径"]) + "\n")
         (d / "任务清单.md").write_text(
             f"# 任务清单：{sname}（快扫层，采集自 ★{e['stars']} {e['repo']}）\n\n"
             f"| ID | 难度 | 考点 | 状态 |\n|---|---|---|---|\n| T01 | L2 | 快扫/文档理解与执行 | ready |\n\n"

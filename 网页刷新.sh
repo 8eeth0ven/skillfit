@@ -1,6 +1,6 @@
 #!/bin/zsh
 # 网页实时刷新（面板可见）：启动立即刷一轮，之后每5分钟；页面每2分钟自重载
-cd "/Users/Zhuanz/Desktop/Skills&Model-Benchmark" || exit 1
+cd "$(dirname "$0")" || exit 1
 exec > >(tee -a 结果/run-网页刷新.log) 2>&1
 LOCK=结果/.webrefresh.lock
 if [ -f "$LOCK" ] && kill -0 $(cat "$LOCK" 2>/dev/null) 2>/dev/null; then

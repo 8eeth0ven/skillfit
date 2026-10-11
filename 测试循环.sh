@@ -1,6 +1,6 @@
 #!/bin/zsh
 # 测试循环（面板可见）：只占 bench 锁；与抓取完全并行；4 件套全员互评含自评
-cd "/Users/Zhuanz/Desktop/Skills&Model-Benchmark" || exit 1
+cd "$(dirname "$0")" || exit 1
 exec > >(tee -a 结果/run-测试.log) 2>&1
 source 密钥.env
 export BENCH_SKIP_MODELS="glm-5.3@api"

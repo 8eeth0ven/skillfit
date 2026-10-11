@@ -164,7 +164,7 @@ def _pool():
 
 
 def call_api(alias, prompt, schema=None, timeout=TIMEOUT):
-    """anthropic 兼容端点（JevAudit 实证免费无限用，#15）：POST {base}/v1/messages，x-api-key 头。"""
+    """anthropic 兼容端点（实证免费通道，经验#15）：POST {base}/v1/messages，x-api-key 头。"""
     cfg = api_cfg()
     base = cfg.get("base") or os.environ.get("BENCH_API_BASE", "")
     keys = api_keys(cfg)
@@ -210,7 +210,7 @@ def call_api(alias, prompt, schema=None, timeout=TIMEOUT):
                 _cool_key(key, err, 0)
                 continue
             _cool_key(key, err, 10)
-        if i < RETRY: time.sleep(min(8, 2 ** (i + 1)))  # JevAudit 实测 2/4/8s 指数退避
+        if i < RETRY: time.sleep(min(8, 2 ** (i + 1)))  # 实测 2/4/8s 指数退避
     return "", err
 
 
@@ -931,15 +931,15 @@ details.pendd summary{cursor:pointer;color:var(--sub);font-size:13px}
 .foot{text-align:center;color:var(--sub);font-size:12px;margin-top:40px}
 </style></head><body>
 <header><div class="hbar">
-<span class="brand"><i>🧩</i> SkillFit</span>
-<span class="chip g" id="c1"></span><span class="chip" id="c2"></span><span class="chip" id="c3"></span>
+<span class="brand">SkillFit</span>
+<span class="chip g" id="c1"></span><span class="chip" id="c2"></span><span class="chip" id="c4"></span><span class="chip" id="c3"></span>
 <span class="sp"></span><span style="font-size:12px;color:var(--sub)">measured, not guessed</span>
 </div>
 <div class="tabs">
-<div class="tab on" data-t="ov">📊 总览</div>
-<div class="tab" data-t="sk">🧩 技能榜</div>
-<div class="tab" data-t="cr">⚖️ 同类对比</div>
-<div class="tab" data-t="lv">⚡ 实时动态</div>
+<div class="tab on" data-t="ov">总览</div>
+<div class="tab" data-t="sk">技能榜</div>
+<div class="tab" data-t="cr">同类对比</div>
+<div class="tab" data-t="lv">实时动态</div>
 </div></header>
 <div class="wrap">
 <div class="page on" id="pg-ov"></div>
@@ -956,16 +956,31 @@ const scored=ent.filter(e=>e[1].leaderboard&&e[1].leaderboard.length).sort((a,b)
 const pending=ent.filter(e=>!(e[1].leaderboard&&e[1].leaderboard.length));
 document.getElementById('c1').textContent='已出分 '+scored.length;
 document.getElementById('c2').textContent='待评分 '+pending.length;
-if(D.live)document.getElementById('c3').textContent='快照 '+D.live.generated.slice(11,16);
+const judged=scored.reduce((a,e)=>a+Object.values(e[1].judge_matrix_M2||{}).reduce((b,row)=>b+Object.keys(row||{}).length,0),0);
+document.getElementById('c4').textContent='交叉判分 '+(judged>=10000?(judged/10000).toFixed(1)+' 万':judged);
+if(D.live)document.getElementById('c3').textContent='快照 '+D.live.generated.slice(0,16);
+/* 数据体检卡：五模型完成格 + 最佳搭配分布 */
+const bestCnt={};scored.forEach(([s,A])=>{if(A.best){const m=A.best.split('@')[0];bestCnt[m]=(bestCnt[m]||0)+1}});
+const progArr=(D.live&&D.live.progress)?D.live.progress:[];
+const maxOk=Math.max(1,...progArr.map(p=>p['ok']||0));
+const HEALTH=`<h2 class="pt">数据体检</h2><div class="card"><div class="cap">五模型完成格（每格 = 技能×模型 的一个产物单元）</div><div style="display:flex;flex-direction:column;gap:6px;padding:6px 16px 12px">${progArr.map(p=>`<div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${p['模型']}">${p['模型']}</span><div style="flex:1;height:10px;background:#edf0f4;border-radius:5px;overflow:hidden"><div style="width:${Math.round((p['ok']||0)/maxOk*100)}%;height:100%;background:var(--acc)"></div></div><b style="font-size:12px;min-width:46px;text-align:right">${p['ok']}</b></div>`).join('')}</div><div class="cap">最佳搭配分布（各模型在全库夺魁次数）</div><div style="display:flex;flex-wrap:wrap;gap:8px;padding:6px 16px 14px">${Object.entries(bestCnt).sort((a,b)=>b[1]-a[1]).map(([m,c])=>`<span class="badge">${m} × ${c}</span>`).join('')}</div></div>`;
 /* ── Tab 1 总览 ── */
-document.getElementById('pg-ov').innerHTML=
-(D['画像_模型强项']?`<h2 class="pt">模型强项速览</h2><div class="grid">${Object.entries(D['画像_模型强项']).map(([m,ts])=>`<div class="mcard"><b>${m}</b>${ts.map(t=>`<span>${t}</span>`).join('')}</div>`).join('')}</div>`:'')
+const HOWTO=`<div class="card"><details><summary style="cursor:pointer;font-weight:700">分数怎么算（点开看口径）</summary>
+<div style="font-size:13px;color:var(--ink);line-height:1.9">
+<b>SkillScore（0-100）</b> = M2 均分/5 × 60 ＋ max(0, 20−8σ) ＋ 触发准确率 × 20<br>
+即：实力 60 分（带技能做题的判官均分）＋ 稳定性 20 分（跨任务波动 σ 越小越高）＋ 触发质量 20 分（该被触发时触发、不该时克制）。<br>
+<b>四模式</b>：M1 裸跑基线 ｜ M2 加载技能文档 ｜ M3 触发模拟 ｜ M4 等长无关材料对照——增益 = M2−M1，纯内容增益 = M2−M4（剔除"上下文变长"的假增益）。<br>
+<b>判分</b>：每个模型既是选手又是评委（N×N 互评）：产物匿名哈希代号 → 四维打分（正确性/完整性/技能遵循/表达，0-5）→ 同家族评委只计 1 票 → 取中位数。方阵中<b>行均≈真实水平，列均=评委严格度，蓝框对角线=自评</b>（仅测自偏，不计入总分）。
+</div></details></div>`;
+document.getElementById('pg-ov').innerHTML=HOWTO+HEALTH
++(D['画像_模型强项']?`<h2 class="pt">模型强项速览</h2><div class="grid">${Object.entries(D['画像_模型强项']).map(([m,ts])=>`<div class="mcard"><b>${m}</b>${ts.map(t=>`<span>${t}</span>`).join('')}</div>`).join('')}</div>`:'')
 +(D['画像']?`<h2 class="pt">模型 × 分类画像 <span style="font-weight:400;color:var(--sub);font-size:12px">（平均 SkillScore，绿色=该项最高）</span></h2><div class="card tblwrap"><table><tr><th>分类</th><th>样本</th>${Object.keys(D['画像_模型强项']).map(m=>`<th>${m}</th>`).join('')}</tr>${D['画像'].map(r=>{const ms=Object.keys(D['画像_模型强项']);const mx=Math.max(...ms.map(m=>r[m]??-1));return `<tr><td style="font-weight:600">${r['分类']}</td><td>${r['样本']}</td>${ms.map(m=>`<td>${r[m]===mx?`<span class="win">${r[m]}</span>`:r[m]??'-'}</td>`).join('')}</tr>`}).join('')}</table></div>`:'');
 /* ── Tab 2 技能榜（折叠卡+搜索）── */
-document.getElementById('pg-sk').innerHTML=`<input class="search" id="q" placeholder="🔍 搜索技能名 / 功能 / 最佳模型…">`+
+document.getElementById('pg-sk').innerHTML=`<input class="search" id="q" placeholder="搜索技能名 / 功能 / 最佳模型…">
+<div style="font-size:12px;color:var(--sub);margin:-4px 0 10px;line-height:1.9">绿色行 = 该技能的最佳配对模型 ｜ 增益表：M2−M1 总增益 / hake = 吃掉多少剩余提升空间 / M2−M4 = 剔除长度安慰剂的纯内容增益（红=负增益，skill 拖后腿）｜ 方阵：行=生产者水平，列=判官严格度，蓝框=自评</div>`+
 scored.map(([s,A])=>`
 <details class="sk" data-k="${(s+' '+(A['功能']||'')+' '+(A.best||'')).toLowerCase()}">
-<summary><span class="skname"><a href="#${s}" onclick="event.stopPropagation()">${s}</a></span>${A['功能']?`<span class="gloss">${A['功能']}</span>`:''}${A.best?`<span class="badge">🏆 ${A.best.split('@')[0]}</span>`:''}<span class="ss">SkillScore ${sc([s,A])} · 点开看方阵 ↕</span></summary>
+<summary><span class="skname"><a href="#${s}" onclick="event.stopPropagation()">${s}</a></span>${A['功能']?`<span class="gloss">${A['功能']}</span>`:''}${A.best?`<span class="badge">${A.best.split('@')[0]}</span>`:''}<span class="ss">SkillScore ${sc([s,A])} · 点开看方阵 ↕</span></summary>
 <div style="padding:2px 16px 14px">
 <div class="cap">SkillScore 榜</div><div class="tblwrap"><table>
 <tr><th>模型</th><th>家族</th><th>SkillScore</th><th>M2 均分</th><th>M1 均分</th><th>触发准确率</th></tr>
@@ -974,11 +989,25 @@ ${A.leaderboard.map(r=>`<tr class="${r['模型']===A.best?'best':''}"><td>${r['�
 ${Object.keys(A.gains).length?`<div class="cap">增益（M2−M1 总 ｜ hake 剩余空间 ｜ M2−M4 纯内容）</div><div class="tblwrap"><table><tr><th>模型</th><th>任务</th><th>M2−M1</th><th>hake</th><th>M2−M4</th></tr>${Object.entries(A.gains).map(([k,g])=>`<tr><td>${k.split('|')[0]}</td><td>${k.split('|')[1]}</td><td class="${(g['M2-M1']??0)<0?'neg':'pos'}">${g['M2-M1']??'-'}</td><td>${g['hake']??'-'}</td><td class="${(g['M2-M4']??0)<0?'neg':'pos'}">${g['M2-M4']??'-'}</td></tr>`).join('')}</table></div>`:''}
 ${Object.keys(A.judge_matrix_M2).length?`<div class="cap">N×N 交叉方阵（行=生产者 · 列=判官 · 蓝框=对角线自评）</div><div class="tblwrap"><table><tr><th>生产者＼判官</th>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<th>${j}</th>`).join('')}</tr>${Object.entries(A.judge_matrix_M2).map(([p,row])=>`<tr><td style="font-weight:600">${p}</td>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<td style="${bg(row[j])};${j===p?'outline:1px solid var(--acc);outline-offset:-1px':''}">${row[j]!==undefined?row[j]:'—'}</td>`).join('')}</tr>`).join('')}</table></div>`:''}
 </div></details>`).join('')
-+(pending.length?`<div class="card"><details class="pendd"><summary>⏳ ${pending.length} 个技能评分中，出分后自动上移</summary><p class="pend">${pending.map(([s])=>s).join(' · ')}</p></details></div>`:'');
-/* ── Tab 3 同类对比 ── */
-document.getElementById('pg-cr').innerHTML=(D.cross||[]).map(G=>`<div class="card"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><b style="font-size:15px">${G.组}</b><span class="gloss">基准：${G.基准}（组内 ★ 最高）</span></div><div class="tblwrap" style="margin-top:8px"><table><tr><th>任务</th>${G.skills.map(s=>`<th>${s}</th>`).join('')}${G.skills.slice(1).map(s=>`<th>Δ ${s}</th>`).join('')}</tr>${G.任务对比.map(r=>`<tr><td style="font-weight:600">${r['任务']}</td>${G.skills.map(s=>`<td>${r[s]??'-'}</td>`).join('')}${G.skills.slice(1).map(s=>`<td class="${((r['Δ('+s+'-基准)'])??0)<0?'neg':'pos'}">${r['Δ('+s+'-基准)']??'-'}</td>`).join('')}</tr>`).join('')}</table></div></div>`).join('');
++(pending.length?`<div class="card"><details class="pendd"><summary>${pending.length} 个技能评分中，出分后自动上移</summary><p class="pend">${pending.map(([s])=>s).join(' · ')}</p></details></div>`:'');
+/* ── Tab 3 同类对比（纵向转置：每行一个成员，基准高亮）── */
+document.getElementById('pg-cr').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">同类技能对比（N×N×A）：每个功能分组内，<b>分数最高者为基准</b>；Δ = 各任务 M2 总分与基准之差（正 = 超过基准）；最后一列 = 该技能在全库榜单的最佳配对模型。共 ${ (D.cross||[]).length } 组，按组规模降序。</div>`
++(D.cross||[]).slice().sort((a,b)=>b.skills.length-a.skills.length||String(a['组']).localeCompare(String(b['组']))).map(G=>{
+const tasks=[...new Set(G.任务对比.map(r=>r['任务']))];
+const avg=m=>{const vs=G.任务对比.map(r=>r[m]).filter(v=>v!=null);return vs.length?(vs.reduce((a,b)=>a+b,0)/vs.length).toFixed(2):'-'};
+return `<div class="card"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px"><b style="font-size:15px">${G.组}</b><span class="gloss">基准：${G.基准}（分数最高）· ${G.skills.length} 个成员 · 快照 ${G.generated.slice(0,10)}</span></div>
+<div class="tblwrap"><table>
+<tr><th style="min-width:220px">技能</th><th>平均</th><th>Δ vs 基准</th><th>最佳配对</th>${tasks.map(t=>`<th>${t}</th>`).join('')}</tr>
+${G.skills.map(m=>{const base=(m===G.基准);const dv=base?[]:(G.任务对比.map(r=>r['Δ('+m+'-基准)']).filter(v=>v!=null));
+const davg=dv.length?(dv.reduce((a,b)=>a+b,0)/dv.length).toFixed(2):'—';
+return `<tr class="${base?'best':''}"><td style="font-weight:600;white-space:normal;word-break:break-all">${m}</td><td class="num">${avg(m)}</td><td class="${base?'':(parseFloat(davg)<0?'neg':(parseFloat(davg)>0?'pos':''))}" style="${(!base&&parseFloat(davg)===0)?'color:var(--sub)':''}">${base?'基准':(davg>0?'+':'')+davg}</td><td style="font-size:12px;color:var(--sub)">${G.最佳搭配[m]?(G.最佳搭配[m].split('@')[0]):'-'}</td>${tasks.map(t=>{const r=G.任务对比.find(x=>x['任务']===t);return `<td>${r&&r[m]!=null?r[m]:'-'}</td>`}).join('')}</tr>`}).join('')}
+</table></div></div>`}).join('');
 /* ── Tab 4 实时 ── */
-document.getElementById('pg-lv').innerHTML=(D.live?`<div class="card"><div class="ticker">${D.live.progress.map(p=>`<span class="tk"><b>${p['模型']}</b> ${p['ok']} 格</span>`).join('')}</div><div class="tblwrap"><table><tr><th>时间</th><th>最近完成</th><th>模型</th><th>状态</th></tr>${D.live.recent.map(r=>`<tr><td>${r['时间']}</td><td>${r['技能']}</td><td>${r['模型']}</td><td>${r['状态']}</td></tr>`).join('')}</table></div></div>`:'');
+const rv=(D.live&&D.live.recent)?D.live.recent:[];
+let rateNote='';
+if(rv.length>=2){const tt=s=>{const[x,y,z]=String(s).split(':').map(Number);return x*3600+y*60+z};let d=tt(rv[0]['时间'])-tt(rv[rv.length-1]['时间']);if(d<0)d+=86400;if(d>0){const r=rv.length/(d/3600);rateNote=` · 最近 ${Math.round(d/60)} 分钟完成 ${rv.length} 格 ≈ ${r>=1?r.toFixed(0):r.toFixed(1)} 格/小时`}}
+document.getElementById('pg-lv').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">此页是流水线心跳：<b>格</b> = 一个（技能 × 模型）的产物单元，先由 5 个模型家族各自生产，再匿名互评计分；下表为最近落盘的判分记录。数据快照：${D.live?D.live.generated:''}${rateNote}</div>`
++(D.live?`<div class="card"><div class="ticker">${D.live.progress.map(p=>`<span class="tk"><b>${p['模型']}</b> ${p['ok']} 格</span>`).join('')}</div><div class="tblwrap"><table><tr><th>时间</th><th>最近完成</th><th>模型</th><th>状态</th></tr>${D.live.recent.map(r=>`<tr><td>${r['时间']}</td><td>${r['技能']}</td><td>${r['模型']}</td><td>${r['状态']}</td></tr>`).join('')}</table></div></div>`:'');
 /* Tab 切换 + 状态记忆 */
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById('pg-'+t.dataset.t).classList.add('on');try{sessionStorage.setItem('sftab',t.dataset.t)}catch(e){}});
 const saved=(()=>{try{return sessionStorage.getItem('sftab')}catch(e){return null}})();
