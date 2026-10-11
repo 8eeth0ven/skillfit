@@ -909,9 +909,12 @@ tr:hover td{background:#fafbff}
 .tblwrap{overflow-x:auto}
 .crlayout{display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:start}
 .crnav{position:sticky;top:12px;max-height:calc(100vh - 30px);overflow-y:auto;font-size:12.5px;padding-right:4px}
-.crnav .catlnk{display:block;margin:10px 0 3px;font-weight:700;color:var(--ink);font-size:12px;text-decoration:none;padding:2.5px 8px;border-radius:6px}
+.crnav .catlnk{display:block;margin:10px 0 3px;font-weight:700;color:var(--ink);font-size:12px;text-decoration:none;padding:2.5px 8px;border-radius:6px;cursor:pointer}
 .crnav .catlnk:first-child{margin-top:0}
 .crnav .catlnk:hover{background:#eef2f7}
+.crnav .crgrp{display:none;margin:2px 0 6px}
+.crnav .catlnk.open{background:#e8eefb}
+.crnav .catlnk.open+.crgrp{display:block}
 .crnav a{display:block;color:var(--sub);text-decoration:none;padding:2.5px 8px;border-radius:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .crnav a:hover{background:#eef2f7;color:var(--ink)}
 .crnav a.on{background:var(--acc);color:#fff}
@@ -1003,7 +1006,7 @@ ${Object.keys(A.judge_matrix_M2).length?`<div class="cap">N×N 交叉方阵（�
 /* ── Tab 3 同类对比（侧边栏大类导航 + 纵向转置表）── */
 const crossArr=(D.cross||[]).slice().sort((a,b)=>(b['大类']||'~').localeCompare(a['大类']||'~')||b.skills.length-a.skills.length);
 const crossNav=`<nav class="crnav" id="crnav">${(()=>{const by={};crossArr.forEach((G,i)=>{const c=G['大类']||'其他';(by[c]=by[c]||[]).push(i)});
-return Object.keys(by).sort((a,b)=>by[b].length-by[a].length).map(c=>`<a class="catlnk" href="#crg${by[c][0]}">${c} · ${by[c].length}</a>`+by[c].map(i=>`<a href="#crg${i}" data-i="${i}" title="${crossArr[i]['组']}">${crossArr[i]['组']}</a>`).join('')).join('')})()}</nav>`;
+return Object.keys(by).sort((a,b)=>by[b].length-by[a].length).map(c=>`<a class="catlnk" href="#crg${by[c][0]}" data-cat="1">${c} · ${by[c].length}</a><div class="crgrp">`+by[c].map(i=>`<a href="#crg${i}" data-i="${i}" title="${crossArr[i]['组']}">${crossArr[i]['组']}</a>`).join('')+`</div>`).join('')})()}</nav>`;
 const crossBody=crossArr.map((G,i)=>{
 const tasks=[...new Set(G.任务对比.map(r=>r['任务']))];
 const avg=m=>{const vs=G.任务对比.map(r=>r[m]).filter(v=>v!=null);return vs.length?(vs.reduce((a,b)=>a+b,0)/vs.length).toFixed(2):'-'};
@@ -1016,12 +1019,20 @@ return `<tr class="${base?'best':''}"><td style="font-weight:600;white-space:nor
 </table></div></div>`}).join('');
 document.getElementById('pg-cr').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">同类技能对比（N×N×A）：左侧按<b>大类</b>分组导航，点击跳转；每个功能分组内分数最高者为基准，Δ = 各任务 M2 总分与基准之差。共 ${crossArr.length} 组。</div>
 <div class="crlayout">${crossNav}<div class="crmain">${crossBody}</div></div>`;
-/* 侧边栏滚动高亮：滚动监听兜底 + IntersectionObserver */
-const crHi=id=>{document.querySelectorAll('#crnav a').forEach(a=>a.classList.toggle('on','crg'+a.dataset.i===id))};
+/* 侧边栏：大类默认折叠；点击=展开并跳首组（再次点=收起不跳）；滚动高亮自动展开所在大类 */
+document.querySelectorAll('#crnav a.catlnk').forEach(a=>a.addEventListener('click',e=>{
+  const opening=!a.classList.contains('open');
+  if(!opening)e.preventDefault();   // 收起时不再跳转
+  a.classList.toggle('open',opening);
+}));
+const crHi=(id,expand=true)=>{document.querySelectorAll('#crnav a').forEach(a=>a.classList.toggle('on','crg'+a.dataset.i===id));
+  if(!expand||window.scrollY<60)return;   // 页面顶部保持全折叠，滚动后才联动展开所在大类
+  const lnk=document.querySelector('#crnav a[data-i="'+(id||'').slice(3)+'"]');
+  if(lnk){const cat=lnk.closest('.crgrp')?.previousElementSibling;if(cat&&!cat.classList.contains('open'))cat.classList.add('open')}};
 const crObs=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)crHi(en.target.id)})},{rootMargin:'0px 0px -60% 0px',threshold:0});
 crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el)crObs.observe(el)});
 window.addEventListener('scroll',()=>{let cur=null;crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el&&el.getBoundingClientRect().top<140)cur=el.id});if(cur)crHi(cur)},{passive:true});
-crHi('crg0');
+crHi('crg0',false);
 /* ── Tab 4 实时 ── */
 const rv=(D.live&&D.live.recent)?D.live.recent:[];
 let rateNote='';
