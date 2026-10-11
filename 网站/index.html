@@ -26,6 +26,15 @@ th{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--sub);
 td{padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 tr:hover td{background:#fafbff}
 .tblwrap{overflow-x:auto}
+.crlayout{display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:start}
+.crnav{position:sticky;top:12px;max-height:calc(100vh - 30px);overflow-y:auto;font-size:12.5px;padding-right:4px}
+.crnav .cat{margin:10px 0 3px;font-weight:700;color:var(--ink);font-size:12px}
+.crnav .cat:first-child{margin-top:0}
+.crnav a{display:block;color:var(--sub);text-decoration:none;padding:2.5px 8px;border-radius:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.crnav a:hover{background:#eef2f7;color:var(--ink)}
+.crnav a.on{background:var(--acc);color:#fff}
+@media(max-width:860px){.crlayout{grid-template-columns:1fr}.crnav{position:static;max-height:220px;border:1px solid var(--line);border-radius:10px;padding:8px}}
+.crmain{min-width:0}
 .best td{background:var(--okbg);font-weight:700}
 .num{font-weight:700}
 .win{background:var(--okbg);color:var(--ok);font-weight:700;border-radius:6px;padding:2px 8px;display:inline-block}
@@ -109,18 +118,28 @@ ${Object.keys(A.gains).length?`<div class="cap">增益（M2−M1 总 ｜ hake �
 ${Object.keys(A.judge_matrix_M2).length?`<div class="cap">N×N 交叉方阵（行=生产者 · 列=判官 · 蓝框=对角线自评）</div><div class="tblwrap"><table><tr><th>生产者＼判官</th>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<th>${j}</th>`).join('')}</tr>${Object.entries(A.judge_matrix_M2).map(([p,row])=>`<tr><td style="font-weight:600">${p}</td>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<td style="${bg(row[j])};${j===p?'outline:1px solid var(--acc);outline-offset:-1px':''}">${row[j]!==undefined?row[j]:'—'}</td>`).join('')}</tr>`).join('')}</table></div>`:''}
 </div></details>`).join('')
 +(pending.length?`<div class="card"><details class="pendd"><summary>${pending.length} 个技能评分中，出分后自动上移</summary><p class="pend">${pending.map(([s])=>s).join(' · ')}</p></details></div>`:'');
-/* ── Tab 3 同类对比（纵向转置：每行一个成员，基准高亮）── */
-document.getElementById('pg-cr').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">同类技能对比（N×N×A）：每个功能分组内，<b>分数最高者为基准</b>；Δ = 各任务 M2 总分与基准之差（正 = 超过基准）；最后一列 = 该技能在全库榜单的最佳配对模型。共 ${ (D.cross||[]).length } 组，按组规模降序。</div>`
-+(D.cross||[]).slice().sort((a,b)=>b.skills.length-a.skills.length||String(a['组']).localeCompare(String(b['组']))).map(G=>{
+/* ── Tab 3 同类对比（侧边栏大类导航 + 纵向转置表）── */
+const crossArr=(D.cross||[]).slice().sort((a,b)=>(b['大类']||'~').localeCompare(a['大类']||'~')||b.skills.length-a.skills.length);
+const crossNav=`<nav class="crnav" id="crnav">${(()=>{const by={};crossArr.forEach((G,i)=>{const c=G['大类']||'其他';(by[c]=by[c]||[]).push(i)});
+return Object.keys(by).sort((a,b)=>by[b].length-by[a].length).map(c=>`<div class="cat">${c} · ${by[c].length}</div>`+by[c].map(i=>`<a href="#crg${i}" data-i="${i}" title="${crossArr[i]['组']}">${crossArr[i]['组']}</a>`).join('')).join('')})()}</nav>`;
+const crossBody=crossArr.map((G,i)=>{
 const tasks=[...new Set(G.任务对比.map(r=>r['任务']))];
 const avg=m=>{const vs=G.任务对比.map(r=>r[m]).filter(v=>v!=null);return vs.length?(vs.reduce((a,b)=>a+b,0)/vs.length).toFixed(2):'-'};
-return `<div class="card"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px"><b style="font-size:15px">${G.组}</b><span class="gloss">基准：${G.基准}（分数最高）· ${G.skills.length} 个成员 · 快照 ${G.generated.slice(0,10)}</span></div>
+return `<div class="card" id="crg${i}"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px"><b style="font-size:15px">${G['组']}</b><span class="gloss">${G['大类']?G['大类']+' · ':''}基准：${G.基准}（分数最高）· ${G.skills.length} 个成员</span></div>
 <div class="tblwrap"><table>
 <tr><th style="min-width:220px">技能</th><th>平均</th><th>Δ vs 基准</th><th>最佳配对</th>${tasks.map(t=>`<th>${t}</th>`).join('')}</tr>
 ${G.skills.map(m=>{const base=(m===G.基准);const dv=base?[]:(G.任务对比.map(r=>r['Δ('+m+'-基准)']).filter(v=>v!=null));
 const davg=dv.length?(dv.reduce((a,b)=>a+b,0)/dv.length).toFixed(2):'—';
 return `<tr class="${base?'best':''}"><td style="font-weight:600;white-space:normal;word-break:break-all">${m}</td><td class="num">${avg(m)}</td><td class="${base?'':(parseFloat(davg)<0?'neg':(parseFloat(davg)>0?'pos':''))}" style="${(!base&&parseFloat(davg)===0)?'color:var(--sub)':''}">${base?'基准':(davg>0?'+':'')+davg}</td><td style="font-size:12px;color:var(--sub)">${G.最佳搭配[m]?(G.最佳搭配[m].split('@')[0]):'-'}</td>${tasks.map(t=>{const r=G.任务对比.find(x=>x['任务']===t);return `<td>${r&&r[m]!=null?r[m]:'-'}</td>`}).join('')}</tr>`}).join('')}
 </table></div></div>`}).join('');
+document.getElementById('pg-cr').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">同类技能对比（N×N×A）：左侧按<b>大类</b>分组导航，点击跳转；每个功能分组内分数最高者为基准，Δ = 各任务 M2 总分与基准之差。共 ${crossArr.length} 组。</div>
+<div class="crlayout">${crossNav}<div class="crmain">${crossBody}</div></div>`;
+/* 侧边栏滚动高亮：滚动监听兜底 + IntersectionObserver */
+const crHi=id=>{document.querySelectorAll('#crnav a').forEach(a=>a.classList.toggle('on','crg'+a.dataset.i===id))};
+const crObs=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)crHi(en.target.id)})},{rootMargin:'0px 0px -60% 0px',threshold:0});
+crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el)crObs.observe(el)});
+window.addEventListener('scroll',()=>{let cur=null;crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el&&el.getBoundingClientRect().top<140)cur=el.id});if(cur)crHi(cur)},{passive:true});
+crHi('crg0');
 /* ── Tab 4 实时 ── */
 const rv=(D.live&&D.live.recent)?D.live.recent:[];
 let rateNote='';
