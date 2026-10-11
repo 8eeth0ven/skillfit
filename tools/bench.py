@@ -1037,7 +1037,12 @@ document.querySelectorAll('#crnav a.catlnk').forEach(a=>a.addEventListener('clic
   if(!opening)e.preventDefault();   // 收起时不再跳转
   a.classList.toggle('open',opening);
 }));
-const crHi=id=>{document.querySelectorAll('#crnav a').forEach(a=>a.classList.toggle('on','crg'+a.dataset.i===id))};  // 仅高亮，不自动展开（展开只由用户点击控制）
+const crHi=id=>{document.querySelectorAll('#crnav a').forEach(a=>a.classList.toggle('on','crg'+a.dataset.i===id));  // 仅高亮，不自动展开（展开只由用户点击控制）
+  const nav=document.getElementById('crnav');const lnk=nav&&nav.querySelector('a.on');
+  if(nav&&lnk&&lnk.offsetParent){  // 高亮项滚入侧边栏可视区（只滚侧边栏，不动页面），顶部大类始终可达
+    const top=lnk.offsetTop;
+    if(top<nav.scrollTop+34)nav.scrollTop=top-34;
+    else if(top>nav.scrollTop+nav.clientHeight-44)nav.scrollTop=top-nav.clientHeight+44}};
 const crObs=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)crHi(en.target.id)})},{rootMargin:'0px 0px -60% 0px',threshold:0});
 crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el)crObs.observe(el)});
 window.addEventListener('scroll',()=>{let cur=null;crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el&&el.getBoundingClientRect().top<140)cur=el.id});if(cur)crHi(cur)},{passive:true});
