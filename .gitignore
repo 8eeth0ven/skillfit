@@ -1,0 +1,34 @@
+# 🔐 密钥与身份映射（绝不入库）
+密钥.env
+评分/
+
+# 📦 运行时大数据（本地保留；网站/data.json 已含蒸馏结果）
+结果/
+隔离-*/
+已用-勿重跑/
+任务集/
+报告/
+本地库/*/
+本地库/.collect.lock
+网站/skills/
+
+# 一次性战时脚本（历史处置用，非项目组成）
+并行跑.sh
+评分守护.sh
+hy4硬停.sh
+hy4复工.sh
+hy4收尾.sh
+最后一格.sh
+glm车道.sh
+补产86.sh
+补格82.sh
+补格终版.sh
+分组.py.bak
+cron新prompt.txt
+
+# 系统与缓存
+.DS_Store
+*.log
+nohup.out
+__pycache__/
+*.pyc
