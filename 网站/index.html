@@ -204,7 +204,18 @@ const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-per
 renderer.setSize(W,H);renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
 box.appendChild(renderer.domElement);
 const controls=new OrbitControls(camera,renderer.domElement);
-controls.enableDamping=true;controls.dampingFactor=0.09;controls.target.set(0,0,0);
+controls.enableDamping=true;controls.dampingFactor=0.09;controls.enableZoom=true;controls.target.set(0,0,0);
+let homePos=null;
+const zoomBtn=(txt,fn)=>{const b=document.createElement('button');b.textContent=txt;
+b.style.cssText='width:30px;height:30px;border:1px solid var(--line);background:#fff;border-radius:8px;font-size:15px;font-weight:700;color:var(--ink);cursor:pointer;box-shadow:0 1px 2px rgba(16,24,40,.08)';
+b.onclick=fn;box.appendChild(b);return b};
+const zb=document.createElement('div');
+zb.style.cssText='position:absolute;right:12px;bottom:12px;display:flex;gap:6px;z-index:6';
+const bIn=zoomBtn('+',()=>{camera.position.lerp(controls.target,0.16);needsRender=true});
+const bOut=zoomBtn('−',()=>{camera.position.lerp(controls.target,-0.22);needsRender=true});
+const bRst=zoomBtn('⟲',()=>{if(homePos){camera.position.copy(homePos);controls.target.set(0,0,0);needsRender=true}});
+bRst.style.width='auto';bRst.style.padding='0 10px';bRst.textContent='重置';
+zb.append(bOut,bIn,bRst);box.appendChild(zb);
 scene.add(new THREE.AmbientLight(0xffffff,0.84));
 const dl=new THREE.DirectionalLight(0xffffff,0.6);dl.position.set(8,14,10);scene.add(dl);
 const geo=new THREE.BoxGeometry(1,1,1);
@@ -217,7 +228,7 @@ cv.width=Math.ceil(w+24);cv.height=px+20;const c2=cv.getContext('2d');
 c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42,60,.92)';c2.textBaseline='middle';
 c2.fillText(txt,12,cv.height/2);
 const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv),transparent:true}));
-sp.scale.set(cv.width/160,cv.height/160,1);return sp};
+sp.scale.set(cv.width/128,cv.height/128,1);return sp};
 function build(zLabels,cells,layerGap){
   if(mesh){scene.remove(mesh);mesh.dispose()}
   labelSprites.forEach(sp=>{scene.remove(sp);sp.material.map.dispose();sp.material.dispose()});labelSprites=[];
@@ -236,11 +247,11 @@ function build(zLabels,cells,layerGap){
     dummy.updateMatrix();mesh.setMatrixAt(ptr,dummy.matrix);ptr++}
   mesh.instanceMatrix.needsUpdate=true;scene.add(mesh);
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
-  zLabels.forEach((c,k)=>{const sp=label(short(c),40);sp.userData={full:c};
+  zLabels.forEach((c,k)=>{const sp=label(short(c),58);sp.userData={full:c};
     sp.position.set((NM-1)/2*GAP+2.1,0,(k-(NC-1)/2)*layerGap);scene.add(sp);labelSprites.push(sp)});
-  models.forEach((m,i)=>{const sp=label(m,36);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-1.4,-(NC-1)/2*layerGap-1.6);scene.add(sp);labelSprites.push(sp);
-  const sp2=label(m,36);sp2.position.set(-(NM-1)/2*GAP-1.9,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-1.6);scene.add(sp2);labelSprites.push(sp2)});
-  camera.position.set(NM*3.4,NM*2.9,NC*layerGap*1.15);controls.target.set(0,0,0);controls.update();
+  models.forEach((m,i)=>{const sp=label(m,48);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-1.9,-(NC-1)/2*layerGap-2.3);scene.add(sp);labelSprites.push(sp);
+  const sp2=label(m,48);sp2.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-2.3);scene.add(sp2);labelSprites.push(sp2)});
+  camera.position.set(NM*3.4,NM*2.9,NC*layerGap*1.15);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
   needsRender=true;
 }
 const sel=document.getElementById('c3cat');
