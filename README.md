@@ -1,33 +1,41 @@
-# 🧩 SkillFit — 技能与模型的契合度基准
+<div align="center">
 
-> **三问三答：**  
-> 1️⃣ 哪个 **skill 配哪个模型**最搭？→ 1169 技能 × 5 模型家族的实测配对矩阵  
-> 2️⃣ 同类 **skill 里谁最强**？→ 80 组功能分类基准（N×N×A，star 最高者为 baseline）  
-> 3️⃣ 哪个**模型在哪类任务**称王？→ 82 分类 × 5 模型强项画像
+# SkillFit
 
-![skills](https://img.shields.io/badge/skills_tested-1252-blue)
+**技能 × 模型契合度基准 —— measured, not guessed**
 
-![models](https://img.shields.io/badge/model_families-5_\(GLM%20%7C%20DeepSeek%20%7C%20Kimi%20%7C%20Hy%20%7C%20SpaceBunny\)-orange)
+[![skills](https://img.shields.io/badge/skills_tested-1252-blue)](https://github.com/8eeth0ven/skillfit)
+[![models](https://img.shields.io/badge/model_families-5-orange)](https://github.com/8eeth0ven/skillfit)
+[![judgments](https://img.shields.io/badge/blind_judgments-19.4k-green)](https://github.com/8eeth0ven/skillfit)
+[![pipeline](https://img.shields.io/badge/pipeline-fully_automated_24x7-9cf)](https://github.com/8eeth0ven/skillfit)
+[![cost](https://img.shields.io/badge/run_cost-%E2%89%88_0-free_channels-brightgreen)](https://github.com/8eeth0ven/skillfit)
+[![license](https://img.shields.io/badge/license-MIT-black)](LICENSE)
 
-![judgments](https://img.shields.io/badge/blind_judgments-19%2B%20k-green)
+现有技能榜只数 star，学术基准只评模型。**SkillFit 用真实跑任务 + 跨厂商交叉盲评，给每一个 技能 × 模型 配对出实测分。**
 
-![pipeline](https://img.shields.io/badge/pipeline-fully_automated_7x24-9cf)
+</div>
 
-![cost](https://img.shields.io/badge/run_cost-%E2%89%88%20%EF%BFGC0-free__channels-brightgreen)
+## 它回答三个问题
 
-现有"技能榜"只数 GitHub star，学术基准只评模型。SkillFit 用**真实跑任务 + 跨厂商交叉盲评**给出每一个 技能×模型 配对的实测契合度——全网第一个按"配对"出分的中文榜单。
+| 你想知道 | SkillFit 的回答 |
+|:---|:---|
+| 哪个 **skill 配哪个模型**最搭？ | 1169 技能 × 5 模型家族的实测配对矩阵 + 3D 立方体 |
+| 同类 **skill 里谁最强**？ | 80 组功能分类基准（N×N×A，star 最高者为 baseline） |
+| 哪个**模型在哪类任务**称王？ | 82 分类 × 5 模型强项画像 + 13 大类图谱 |
 
 ---
 
-## 📊 我们实测了什么
+## 我们实测了什么
 
-| 维度   | 数据                                                                                                     |
-| ---- | ------------------------------------------------------------------------------------------------------ |
+| 维度 | 数据 |
+|:---|:---|
 | 采集技能 | **1252 个**（高星 ≥5k + 趋势线 + awesome 反向展开，覆盖 anthropics / openai / github / cloudflare / vercel 等 40+ 组织） |
 | 生产矩阵 | 每技能 × **5 个模型家族**真实做任务（~6200 格产物）                                                                      |
 | 交叉盲评 | 产物匿名哈希代号 → 互为生产者与判官的 **N×N 方阵**（19,000+ 份判分，含对角线自评）                                                    |
 | 功能分组 | 94 组自动聚类 + **N×N×A 三维对比**（80 组，组内 star 最高者为基准）                                                         |
 | 模型画像 | **82 个功能分类 × 5 模型**的强项矩阵                                                                               |
+| 大类图谱 | 1169 技能 → **13 个语义大类**（数据驱动归并） |
+| 自研技能 | **11 个** llm-wiki 形式技能（5000+ 行，覆盖 10 大类） |
 | 中文释义 | 1134 条一句话功能说明（LLM 批量生成）                                                                               |
 | **数据快照** | **2026 年 10 月 11 日**（管线每日自动更新，榜单持续滚动）                                                                     |
 
@@ -37,7 +45,7 @@
 
 ---
 
-## 🔬 方法论（抄不走的四件事）
+## 方法论（抄不走的四件事）
 
 <details>
 
@@ -86,7 +94,7 @@ SkillScore = M2均分/5 × 60  +  max(0, 20 − 8σ)  +  触发准确率 × 20
 
 ---
 
-## ⚙️ 全自动流水线
+## 全自动流水线
 
 ```mermaid
 flowchart LR
@@ -103,7 +111,7 @@ flowchart LR
 
 ---
 
-## 🚀 快速开始
+## 快速开始
 
 ```bash
 git clone https://github.com/yourname/skillbench.git
@@ -128,7 +136,7 @@ cd 网站 && python3 -m http.server 8000   # http://localhost:8000
 
 ---
 
-## 📁 项目结构
+## 项目结构
 
 ```
 skillfit/
@@ -152,7 +160,7 @@ skillfit/
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [x] 快扫层：通用任务全量初筛（1252 技能）
 - [x] N×N 交叉盲评 + SkillScore + 模型×分类画像
@@ -164,10 +172,10 @@ skillfit/
 - [ ] 投稿通道：技能作者提交 → 自动进管线 → 上榜
 - [ ] 新模型 48h 横评（模型发布自动入列）
 
-## 🙏 致谢与差异
+## 致谢与差异
 
 方法论吸收并超越了：[SkillsBench](https://skillsbench.ai)（补上了它论文自认缺失的等长对照）、[anthropics/skills](https://github.com/anthropics/skills)（expectations 断言）、[OpenAI eval-skills](https://developers.openai.com/blog/eval-skills)（触发正负例）、PoLL / Apple 判官相关性研究（家族去重票）。与 [skillleaderboard.com](https://www.skillleaderboard.com) 的区别：他们数 star，我们**实测出分**。
 
-## 📄 License
+## License
 
 MIT
