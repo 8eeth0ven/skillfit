@@ -136,7 +136,8 @@ ${Object.keys(A.judge_matrix_M2).length?`<div class="cap">N×N 交叉方阵（�
 +(pending.length?`<div class="card"><details class="pendd"><summary>${pending.length} 个技能评分中，出分后自动上移</summary><p class="pend">${pending.map(([s])=>s).join(' · ')}</p></details></div>`:'');
 /* ── Tab 3 同类对比（侧边栏大类导航 + 纵向转置表）── */
 const crossArr=(D.cross||[]).slice().sort((a,b)=>(b['大类']||'~').localeCompare(a['大类']||'~')||b.skills.length-a.skills.length);
-const crossNav=`<nav class="crnav" id="crnav">${(()=>{const by={};crossArr.forEach((G,i)=>{const c=G['大类']||'其他';(by[c]=by[c]||[]).push(i)});
+const crTopBtn=`<button id="crtop" title="回到最上面的大类" style="display:none;position:sticky;top:0;z-index:7;width:100%;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 0;font-size:12px;font-weight:600;color:var(--ink);cursor:pointer;margin-bottom:4px">回到顶部 ↑</button>`;
+const crossNav=`<nav class="crnav" id="crnav">${crTopBtn}${(()=>{const by={};crossArr.forEach((G,i)=>{const c=G['大类']||'其他';(by[c]=by[c]||[]).push(i)});
 return Object.keys(by).sort((a,b)=>by[b].length-by[a].length).map(c=>`<a class="catlnk" href="#crg${by[c][0]}" data-cat="1">${c} · ${by[c].length}</a><div class="crgrp">`+by[c].map(i=>`<a href="#crg${i}" data-i="${i}" title="${crossArr[i]['组']}">${crossArr[i]['组']}</a>`).join('')+`</div>`).join('')})()}</nav>`;
 const crossBody=crossArr.map((G,i)=>{
 const tasks=[...new Set(G.任务对比.map(r=>r['任务']))];
@@ -156,12 +157,14 @@ document.querySelectorAll('#crnav a.catlnk').forEach(a=>a.addEventListener('clic
   if(!opening)e.preventDefault();   // 收起时不再跳转
   a.classList.toggle('open',opening);
 }));
+document.addEventListener('click',e=>{if(e.target.id==='crtop'){const nav=document.getElementById('crnav');if(nav)nav.scrollTop=0;window.scrollTo({top:0,behavior:'smooth'});nav.querySelector('#crtop').style.display='none'}});
 const crHi=id=>{document.querySelectorAll('#crnav a').forEach(a=>a.classList.toggle('on','crg'+a.dataset.i===id));  // 仅高亮，不自动展开（展开只由用户点击控制）
   const nav=document.getElementById('crnav');const lnk=nav&&nav.querySelector('a.on');
-  if(nav&&lnk&&lnk.offsetParent){  // 高亮项滚入侧边栏可视区（只滚侧边栏，不动页面），顶部大类始终可达
-    const top=lnk.offsetTop;
-    if(top<nav.scrollTop+34)nav.scrollTop=top-34;
-    else if(top>nav.scrollTop+nav.clientHeight-44)nav.scrollTop=top-nav.clientHeight+44}};
+  if(nav&&lnk&&lnk.offsetParent){  // 最小侵入滚入：高亮已在可视区不动；越界才补最小滚动量（贴底/贴顶），顶部大类尽量保留
+    const top=lnk.offsetTop,vh=nav.clientHeight;
+    if(top<nav.scrollTop+10)nav.scrollTop=Math.max(0,top-10);
+    else if(top>nav.scrollTop+vh-30)nav.scrollTop=top-vh+30}
+  const tb=document.getElementById('crtop');if(tb)tb.style.display=(nav&&nav.scrollTop>60)?'flex':'none';};
 const crObs=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)crHi(en.target.id)})},{rootMargin:'0px 0px -60% 0px',threshold:0});
 crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el)crObs.observe(el)});
 window.addEventListener('scroll',()=>{let cur=null;crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el&&el.getBoundingClientRect().top<140)cur=el.id});if(cur)crHi(cur)},{passive:true});
