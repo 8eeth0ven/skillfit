@@ -1157,9 +1157,9 @@ function build(zLabels,cells,layerGap){
   plates.push({geo:plateG,mat:plateM});
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
   zLabels.forEach((c,k)=>{const sp=label(short(c),58);sp.userData={full:c};
-    sp.position.set((NM-1)/2*GAP+2.1,0,(k-(NC-1)/2)*layerGap);scene.add(sp);labelSprites.push(sp)});
-  models.forEach((m,i)=>{const sp=label(m,48);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-1.9,-(NC-1)/2*layerGap-2.3);scene.add(sp);labelSprites.push(sp);
-  const sp2=label(m,48);sp2.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-2.3);scene.add(sp2);labelSprites.push(sp2)});
+    sp.position.set(0,-(NM-1)/2*GAP-1.15,(k-(NC-1)/2)*layerGap);scene.add(sp);labelSprites.push(sp)});
+  models.forEach((m,i)=>{const sp=label(m,48);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,-(NC-1)/2*layerGap-3.4);scene.add(sp);labelSprites.push(sp);
+  const sp2=label(m,48);sp2.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-3.4);scene.add(sp2);labelSprites.push(sp2)});
   camera.position.set(NM*3.4,NM*2.9,NC*layerGap*1.15);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
   needsRender=true;
 }
