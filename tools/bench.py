@@ -972,7 +972,7 @@ const HOWTO=`<div class="card"><details><summary style="cursor:pointer;font-weig
 <b>四模式</b>：M1 裸跑基线 ｜ M2 加载技能文档 ｜ M3 触发模拟 ｜ M4 等长无关材料对照——增益 = M2−M1，纯内容增益 = M2−M4（剔除"上下文变长"的假增益）。<br>
 <b>判分</b>：每个模型既是选手又是评委（N×N 互评）：产物匿名哈希代号 → 四维打分（正确性/完整性/技能遵循/表达，0-5）→ 同家族评委只计 1 票 → 取中位数。方阵中<b>行均≈真实水平，列均=评委严格度，蓝框对角线=自评</b>（仅测自偏，不计入总分）。
 </div></details></div>`;
-document.getElementById('pg-ov').innerHTML=HOWTO+HEALTH
+document.getElementById('pg-ov').innerHTML=HOWTO
 +(D['画像_模型强项']?`<h2 class="pt">模型强项速览</h2><div class="grid">${Object.entries(D['画像_模型强项']).map(([m,ts])=>`<div class="mcard"><b>${m}</b>${ts.map(t=>`<span>${t}</span>`).join('')}</div>`).join('')}</div>`:'')
 +(D['画像']?`<h2 class="pt">模型 × 分类画像 <span style="font-weight:400;color:var(--sub);font-size:12px">（平均 SkillScore，绿色=该项最高）</span></h2><div class="card tblwrap"><table><tr><th>分类</th><th>样本</th>${Object.keys(D['画像_模型强项']).map(m=>`<th>${m}</th>`).join('')}</tr>${D['画像'].map(r=>{const ms=Object.keys(D['画像_模型强项']);const mx=Math.max(...ms.map(m=>r[m]??-1));return `<tr><td style="font-weight:600">${r['分类']}</td><td>${r['样本']}</td>${ms.map(m=>`<td>${r[m]===mx?`<span class="win">${r[m]}</span>`:r[m]??'-'}</td>`).join('')}</tr>`}).join('')}</table></div>`:'');
 /* ── Tab 2 技能榜（折叠卡+搜索）── */
@@ -1006,7 +1006,7 @@ return `<tr class="${base?'best':''}"><td style="font-weight:600;white-space:nor
 const rv=(D.live&&D.live.recent)?D.live.recent:[];
 let rateNote='';
 if(rv.length>=2){const tt=s=>{const[x,y,z]=String(s).split(':').map(Number);return x*3600+y*60+z};let d=tt(rv[0]['时间'])-tt(rv[rv.length-1]['时间']);if(d<0)d+=86400;if(d>0){const r=rv.length/(d/3600);rateNote=` · 最近 ${Math.round(d/60)} 分钟完成 ${rv.length} 格 ≈ ${r>=1?r.toFixed(0):r.toFixed(1)} 格/小时`}}
-document.getElementById('pg-lv').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">此页是流水线心跳：<b>格</b> = 一个（技能 × 模型）的产物单元，先由 5 个模型家族各自生产，再匿名互评计分；下表为最近落盘的判分记录。数据快照：${D.live?D.live.generated:''}${rateNote}</div>`
+document.getElementById('pg-lv').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">此页是流水线心跳：<b>格</b> = 一个（技能 × 模型）的产物单元，先由 5 个模型家族各自生产，再匿名互评计分；下表为最近落盘的判分记录。数据快照：${D.live?D.live.generated:''}${rateNote}</div>`+HEALTH
 +(D.live?`<div class="card"><div class="ticker">${D.live.progress.map(p=>`<span class="tk"><b>${p['模型']}</b> ${p['ok']} 格</span>`).join('')}</div><div class="tblwrap"><table><tr><th>时间</th><th>最近完成</th><th>模型</th><th>状态</th></tr>${D.live.recent.map(r=>`<tr><td>${r['时间']}</td><td>${r['技能']}</td><td>${r['模型']}</td><td>${r['状态']}</td></tr>`).join('')}</table></div></div>`:'');
 /* Tab 切换 + 状态记忆 */
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById('pg-'+t.dataset.t).classList.add('on');try{sessionStorage.setItem('sftab',t.dataset.t)}catch(e){}});
