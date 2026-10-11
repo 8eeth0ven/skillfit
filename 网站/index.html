@@ -239,16 +239,16 @@ function updateFade(){
   for(let idx=0;idx<centers.length;idx++){
     const d=_dv.copy(centers[idx]).sub(camera.position).length();
     const t=Math.max(0,Math.min(1,(d-7.0)/4.0));   // 7.0 即开始让路，>11 恢复
-    const sc=baseScales[idx]*(0.12+0.88*t);          // 近处缩到 12%，边框随 scale 消失
+    const sc=baseScales[idx]*(0.01+0.99*t);          // 近处缩至 1%，100% 不可见
     _dm.position.copy(centers[idx]);_dm.scale.set(sc,sc,sc);_dm.updateMatrix();
     mesh.setMatrixAt(idx,_dm.matrix);
-    _fc.copy(FADE_BG).lerp(baseCols[idx],0.05+0.95*t); // 颜色最深保留 5%（95% 透明）
+    _fc.copy(FADE_BG).lerp(baseCols[idx],t);         // 颜色完全归背景（100% 透明）
     mesh.setColorAt(idx,_fc)}
   mesh.instanceMatrix.needsUpdate=true;mesh.instanceColor.needsUpdate=true;
   for(const sp of labelSprites){  // 分类/技能/模型名文字近距同步淡化（最高 90% 透明）
     const d2=sp.position.distanceTo(camera.position);
     const t2=Math.max(0,Math.min(1,(d2-7.0)/4.0));
-    sp.material.opacity=0.05+0.95*t2}}
+    sp.material.opacity=t2}}
 const label=(txt,px=44,boxed=false)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
 ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=ctx.measureText(txt).width;
 cv.width=Math.ceil(w+24);cv.height=px+20;const c2=cv.getContext('2d');
