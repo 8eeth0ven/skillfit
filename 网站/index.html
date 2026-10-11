@@ -216,12 +216,18 @@ const bOut=zoomBtn('−',()=>{camera.position.lerp(controls.target,-0.22);needsR
 const bRst=zoomBtn('⟲',()=>{if(homePos){camera.position.copy(homePos);controls.target.set(0,0,0);needsRender=true}});
 bRst.style.width='auto';bRst.style.padding='0 10px';bRst.textContent='重置';
 zb.append(bOut,bIn,bRst);box.appendChild(zb);
-scene.add(new THREE.AmbientLight(0xffffff,0.84));
-const dl=new THREE.DirectionalLight(0xffffff,0.6);dl.position.set(8,14,10);scene.add(dl);
+scene.background=new THREE.Color('#eef1f6');
+scene.add(new THREE.AmbientLight(0xffffff,0.6));
+const dl=new THREE.DirectionalLight(0xffffff,0.95);dl.position.set(8,14,10);scene.add(dl);
+const dl2=new THREE.DirectionalLight(0xffffff,0.38);dl2.position.set(-10,8,-12);scene.add(dl2);
 const geo=new THREE.BoxGeometry(1,1,1);
-const mat=new THREE.MeshLambertMaterial();
+const edgeTex=(()=>{const cv=document.createElement('canvas');cv.width=cv.height=128;const c=cv.getContext('2d');
+c.fillStyle='#ffffff';c.fillRect(0,0,128,128);
+c.lineWidth=9;c.strokeStyle='rgba(38,48,74,.9)';c.strokeRect(0,0,128,128);
+const t=new THREE.CanvasTexture(cv);t.anisotropy=4;return t})();
+const mat=new THREE.MeshLambertMaterial({map:edgeTex});
 const dummy=new THREE.Object3D();
-let mesh=null,labelSprites=[],cur=null,needsRender=true;
+let mesh=null,labelSprites=[],plates=[],cur=null,needsRender=true;
 const label=(txt,px=44)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
 ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=ctx.measureText(txt).width;
 cv.width=Math.ceil(w+24);cv.height=px+20;const c2=cv.getContext('2d');
@@ -231,7 +237,8 @@ const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(
 sp.scale.set(cv.width/128,cv.height/128,1);return sp};
 function build(zLabels,cells,layerGap){
   if(mesh){scene.remove(mesh);mesh.dispose()}
-  labelSprites.forEach(sp=>{scene.remove(sp);sp.material.map.dispose();sp.material.dispose()});labelSprites=[];
+  labelSprites.forEach(sp=>{scene.remove(sp);if(sp.material.map)sp.material.map.dispose();sp.material.dispose()});labelSprites=[];
+  plates.forEach(pl=>{if(pl.geo){pl.geo.dispose();pl.mat.dispose()}else{scene.remove(pl)}});plates=[];
   const NC=zLabels.length;
   const vals=cells.flat(2).filter(c=>c).map(c=>c.v);
   const lo=Math.min(...vals),hi=Math.max(...vals);
@@ -246,6 +253,11 @@ function build(zLabels,cells,layerGap){
     else{dummy.scale.set(0.16,0.16,0.16);mesh.setColorAt(ptr,new THREE.Color('#d7dce3'))}
     dummy.updateMatrix();mesh.setMatrixAt(ptr,dummy.matrix);ptr++}
   mesh.instanceMatrix.needsUpdate=true;scene.add(mesh);
+  const plateG=new THREE.BoxGeometry(NM*GAP+0.55,0.07,NM*GAP+0.55);
+  const plateM=new THREE.MeshLambertMaterial({color:'#f8fafd'});
+  zLabels.forEach((_,k)=>{const pl=new THREE.Mesh(plateG,plateM);
+    pl.position.set(0,-(NM-1)/2*GAP-0.75,(k-(NC-1)/2)*layerGap);scene.add(pl);plates.push(pl)});
+  plates.push({geo:plateG,mat:plateM});
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
   zLabels.forEach((c,k)=>{const sp=label(short(c),58);sp.userData={full:c};
     sp.position.set((NM-1)/2*GAP+2.1,0,(k-(NC-1)/2)*layerGap);scene.add(sp);labelSprites.push(sp)});
