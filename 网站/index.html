@@ -102,8 +102,18 @@ ${Object.keys(A.gains).length?`<div class="cap">增益（M2−M1 总 ｜ hake �
 ${Object.keys(A.judge_matrix_M2).length?`<div class="cap">N×N 交叉方阵（行=生产者 · 列=判官 · 蓝框=对角线自评）</div><div class="tblwrap"><table><tr><th>生产者＼判官</th>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<th>${j}</th>`).join('')}</tr>${Object.entries(A.judge_matrix_M2).map(([p,row])=>`<tr><td style="font-weight:600">${p}</td>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<td style="${bg(row[j])};${j===p?'outline:1px solid var(--acc);outline-offset:-1px':''}">${row[j]!==undefined?row[j]:'—'}</td>`).join('')}</tr>`).join('')}</table></div>`:''}
 </div></details>`).join('')
 +(pending.length?`<div class="card"><details class="pendd"><summary>⏳ ${pending.length} 个技能评分中，出分后自动上移</summary><p class="pend">${pending.map(([s])=>s).join(' · ')}</p></details></div>`:'');
-/* ── Tab 3 同类对比 ── */
-document.getElementById('pg-cr').innerHTML=(D.cross||[]).map(G=>`<div class="card"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap"><b style="font-size:15px">${G.组}</b><span class="gloss">基准：${G.基准}（组内 ★ 最高）· Δ = 同任务上成员与基准的 M2 总分之差，正数=超过基准</span></div><div class="tblwrap" style="margin-top:8px"><table><tr><th>任务</th>${G.skills.map(s=>`<th>${s}</th>`).join('')}${G.skills.slice(1).map(s=>`<th>Δ ${s}</th>`).join('')}</tr>${G.任务对比.map(r=>`<tr><td style="font-weight:600">${r['任务']}</td>${G.skills.map(s=>`<td>${r[s]??'-'}</td>`).join('')}${G.skills.slice(1).map(s=>`<td class="${((r['Δ('+s+'-基准)'])??0)<0?'neg':'pos'}">${r['Δ('+s+'-基准)']??'-'}</td>`).join('')}</tr>`).join('')}</table></div></div>`).join('');
+/* ── Tab 3 同类对比（纵向转置：每行一个成员，基准高亮）── */
+document.getElementById('pg-cr').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">⚖️ 同类技能对比（N×N×A）：每个功能分组内，<b>★ 最高者为基准</b>；Δ = 各任务 M2 总分与基准之差（正 = 超过基准）；🏆 = 该技能在全库榜单的最佳配对模型。共 ${ (D.cross||[]).length } 组。</div>`
++(D.cross||[]).map(G=>{
+const tasks=[...new Set(G.任务对比.map(r=>r['任务']))];
+const avg=m=>{const vs=G.任务对比.map(r=>r[m]).filter(v=>v!=null);return vs.length?(vs.reduce((a,b)=>a+b,0)/vs.length).toFixed(2):'-'};
+return `<div class="card"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px"><b style="font-size:15px">${G.组}</b><span class="gloss">基准：${G.基准}（★ 最高）· ${G.skills.length} 个成员 · 快照 ${G.generated.slice(0,10)}</span></div>
+<div class="tblwrap"><table>
+<tr><th style="min-width:220px">技能</th><th>平均</th><th>Δ vs 基准</th><th>最佳配对</th>${tasks.map(t=>`<th>${t}</th>`).join('')}</tr>
+${G.skills.map(m=>{const base=(m===G.基准);const dv=base?[]:(G.任务对比.map(r=>r['Δ('+m+'-基准)']).filter(v=>v!=null));
+const davg=dv.length?(dv.reduce((a,b)=>a+b,0)/dv.length).toFixed(2):'—';
+return `<tr class="${base?'best':''}"><td style="font-weight:600;white-space:normal;word-break:break-all">${base?'🏁 ':''}${m}</td><td class="num">${avg(m)}</td><td class="${base?'':(parseFloat(davg)<0?'neg':(parseFloat(davg)>0?'pos':''))}" style="${(!base&&parseFloat(davg)===0)?'color:var(--sub)':''}">${base?'基准':(davg>0?'+':'')+davg}</td><td style="font-size:12px;color:var(--sub)">${G.最佳搭配[m]?(G.最佳搭配[m].split('@')[0]):'-'}</td>${tasks.map(t=>{const r=G.任务对比.find(x=>x['任务']===t);return `<td>${r&&r[m]!=null?r[m]:'-'}</td>`}).join('')}</tr>`}).join('')}
+</table></div></div>`}).join('');
 /* ── Tab 4 实时 ── */
 document.getElementById('pg-lv').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">⚡ 此页是流水线心跳：<b>格</b> = 一个（技能 × 模型）的产物单元，先由 5 个模型家族各自生产，再匿名互评计分；下表为最近落盘的判分记录。数据快照：${D.live?D.live.generated:''}</div>`
 +(D.live?`<div class="card"><div class="ticker">${D.live.progress.map(p=>`<span class="tk"><b>${p['模型']}</b> ${p['ok']} 格</span>`).join('')}</div><div class="tblwrap"><table><tr><th>时间</th><th>最近完成</th><th>模型</th><th>状态</th></tr>${D.live.recent.map(r=>`<tr><td>${r['时间']}</td><td>${r['技能']}</td><td>${r['模型']}</td><td>${r['状态']}</td></tr>`).join('')}</table></div></div>`:'');
