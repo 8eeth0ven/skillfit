@@ -338,7 +338,7 @@ addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
 const FWD=new THREE.Vector3(),RIGHT=new THREE.Vector3();
 function moveCam(dt){
   if(!keys.size)return;
-  const step=dt*6.5;
+  const step=dt*13;
   camera.getWorldDirection(FWD);
   RIGHT.crossVectors(FWD,camera.up).normalize();
   if(keys.has('w')){camera.position.addScaledVector(FWD,step);controls.target.addScaledVector(FWD,step)}
