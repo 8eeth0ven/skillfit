@@ -87,7 +87,7 @@ details.pendd summary{cursor:pointer;color:var(--sub);font-size:13px}
 <div class="card" style="padding:10px 14px">
 <div id="c3box" style="height:600px;border-radius:10px;overflow:hidden;position:relative;background:#fafbfc"></div>
 <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--sub);margin-top:8px;flex-wrap:wrap">
-<span>判分均值</span><span style="width:150px;height:10px;border-radius:5px;background:linear-gradient(90deg,hsl(0,62%,55%),hsl(20,62%,55%),hsl(40,62%,55%),hsl(60,62%,55%),hsl(118,62%,55%))"></span><span id="c3rng"></span><span class="sp"></span><span>拖拽旋转 · 滚轮缩放 · 悬停看格</span>
+<span>判分均值</span><span style="width:150px;height:10px;border-radius:5px;background:linear-gradient(90deg,hsl(0,85%,42%),hsl(14,85%,46%),hsl(28,85%,50%),hsl(45,85%,54%),hsl(75,85%,58%),hsl(118,85%,62%))"></span><span id="c3rng"></span><span class="sp"></span><span>拖拽旋转 · 滚轮缩放 · 悬停看格</span>
 </div></div></div>
 <div class="page" id="pg-lv"></div>
 <div class="foot">SkillFit · 技能×模型契合度基准 · 数据 5 分钟更新 / 页面 2 分钟重载（标签与搜索状态自动保留）</div>
@@ -260,10 +260,13 @@ function build(zLabels,cells,layerGap){
   labelSprites.forEach(sp=>{scene.remove(sp);if(sp.material.map)sp.material.map.dispose();sp.material.dispose()});labelSprites=[];
   plates.forEach(pl=>{if(pl.geo){pl.geo.dispose();pl.mat.dispose()}else{scene.remove(pl)}});plates=[];
   const NC=zLabels.length;
-  const vals=cells.flat(2).filter(c=>c).map(c=>c.v);
-  const lo=Math.min(...vals),hi=Math.max(...vals);
-  document.getElementById('c3rng').textContent=lo.toFixed(2)+' — '+hi.toFixed(2);
-  const colOf=v=>{const t=Math.max(0,Math.min(1,(v-lo)/(hi-lo||1)));const c=new THREE.Color();c.setHSL(0.33*t,0.62,0.55);return c};
+  const vals=cells.flat(2).filter(c=>c).map(c=>c.v).sort((a,b)=>a-b);
+  const q=f=>vals[Math.min(vals.length-1,Math.max(0,Math.round(f*(vals.length-1))))];
+  const lo=q(0.05),hi=q(0.95);   // P5-P95 分位截断：主体区间撑满红→绿，极端值夹边
+  document.getElementById('c3rng').textContent=(vals[0]===lo?'':'≤')+hi.toFixed(2)+' 强 ←→ 弱 ≤'+ (vals[vals.length-1]===hi?'':lo.toFixed(2));
+  document.getElementById('c3rng').textContent='弱 '+vals[0].toFixed(2)+' — 强 '+vals[vals.length-1].toFixed(2)+'（色标 P5–P95）';
+  const colOf=v=>{const t=Math.max(0,Math.min(1,(v-lo)/(hi-lo||1)));const c=new THREE.Color();
+    c.setHSL(0.33*t,0.85,0.42+0.2*t);return c};  // 饱和 0.85 + 亮度随分数走高：暗红→亮绿双通道
   mesh=new THREE.InstancedMesh(geo,mat,NC*NM*NM);
   let ptr=0;
   for(let k=0;k<NC;k++)for(let i=0;i<NM;i++)for(let j=0;j<NM;j++){
