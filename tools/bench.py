@@ -1037,14 +1037,11 @@ document.querySelectorAll('#crnav a.catlnk').forEach(a=>a.addEventListener('clic
   if(!opening)e.preventDefault();   // 收起时不再跳转
   a.classList.toggle('open',opening);
 }));
-const crHi=(id,expand=true)=>{document.querySelectorAll('#crnav a').forEach(a=>a.classList.toggle('on','crg'+a.dataset.i===id));
-  if(!expand||window.scrollY<60)return;   // 页面顶部保持全折叠，滚动后才联动展开所在大类
-  const lnk=document.querySelector('#crnav a[data-i="'+(id||'').slice(3)+'"]');
-  if(lnk){const cat=lnk.closest('.crgrp')?.previousElementSibling;if(cat&&!cat.classList.contains('open'))cat.classList.add('open')}};
+const crHi=id=>{document.querySelectorAll('#crnav a').forEach(a=>a.classList.toggle('on','crg'+a.dataset.i===id))};  // 仅高亮，不自动展开（展开只由用户点击控制）
 const crObs=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)crHi(en.target.id)})},{rootMargin:'0px 0px -60% 0px',threshold:0});
 crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el)crObs.observe(el)});
 window.addEventListener('scroll',()=>{let cur=null;crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el&&el.getBoundingClientRect().top<140)cur=el.id});if(cur)crHi(cur)},{passive:true});
-crHi('crg0',false);
+crHi('crg0');
 /* ── Tab 4 实时 ── */
 const rv=(D.live&&D.live.recent)?D.live.recent:[];
 let rateNote='';
@@ -1115,8 +1112,8 @@ function updateFade(){
   let changed=false;
   for(let idx=0;idx<centers.length;idx++){
     const d=_dv.copy(centers[idx]).sub(camera.position).length();
-    const t=Math.max(0,Math.min(1,(d-1.6)/3.4));   // <1.6 全淡，>5 恢复
-    _fc.copy(FADE_BG).lerp(baseCols[idx],t);
+    const t=Math.max(0,Math.min(1,(d-3.0)/5.0));   // 稍近即开始淡，>8 恢复
+    _fc.copy(FADE_BG).lerp(baseCols[idx],0.2+0.8*t); // 最深约 80% 透明，保留轮廓
     mesh.setColorAt(idx,_fc);changed=true}
   if(changed)mesh.instanceColor.needsUpdate=true}
 const label=(txt,px=44)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
