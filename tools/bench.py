@@ -956,12 +956,19 @@ details.pendd summary{cursor:pointer;color:var(--sub);font-size:13px}
 <div class="tab on" data-t="ov">总览</div>
 <div class="tab" data-t="sk">技能榜</div>
 <div class="tab" data-t="cr">同类对比</div>
+<div class="tab" data-t="c3">3D 矩阵</div>
 <div class="tab" data-t="lv">实时动态</div>
 </div></header>
 <div class="wrap">
 <div class="page on" id="pg-ov"></div>
 <div class="page" id="pg-sk"></div>
 <div class="page" id="pg-cr"></div>
+<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub)">3D 评分矩阵（N×N×A）：每个方块 = （大类 × 生产者模型 × 判官模型）的交叉判分均值——<b>越绿越强、越红越弱</b>。拖拽旋转 · 滚轮缩放 · 悬停看数值。</div>
+<div class="card" style="padding:10px 14px">
+<div id="c3box" style="height:600px;border-radius:10px;overflow:hidden;position:relative;background:#fafbfc"></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--sub);margin-top:8px;flex-wrap:wrap">
+<span>判分均值</span><span style="width:150px;height:10px;border-radius:5px;background:linear-gradient(90deg,hsl(0,62%,55%),hsl(20,62%,55%),hsl(40,62%,55%),hsl(60,62%,55%),hsl(118,62%,55%))"></span><span id="c3rng"></span><span class="sp"></span><span>拖拽旋转 · 滚轮缩放 · 悬停看格</span>
+</div></div></div>
 <div class="page" id="pg-lv"></div>
 <div class="foot">SkillFit · 技能×模型契合度基准 · 数据 5 分钟更新 / 页面 2 分钟重载（标签与搜索状态自动保留）</div>
 </div>
@@ -1053,31 +1060,114 @@ if(q){const val=(()=>{try{return sessionStorage.getItem('sfq')||''}catch(e){retu
 q.oninput=()=>{const v=q.value.trim().toLowerCase();try{sessionStorage.setItem('sfq',q.value)}catch(e){}
 document.querySelectorAll('details.sk').forEach(d=>{d.style.display=(!v||d.dataset.k.includes(v))?'':'none'})};
 q.oninput();}}
-);</script>"""
+);</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+/* 3D 矩阵：首次切到 c3 标签时惰性加载 three.js（CDN 失败给出降级提示） */
+let c3booted=false;
+document.addEventListener('click',e=>{const t=e.target.closest('.tab');if(t&&t.dataset.t==='c3'&&!c3booted){c3booted=true;bootC3()}},true);
+async function bootC3(){
+const box=document.getElementById('c3box');
+let D,THREE,OrbitControls;
+try{
+D=await (await fetch('data.json')).json();
+THREE=await import('three');
+({OrbitControls}=await import('three/addons/controls/OrbitControls.js'));
+}catch(err){box.innerHTML='<div style="padding:40px;text-align:center;color:var(--sub);font-size:13px">3D 组件加载失败（需要联网访问 jsdelivr CDN）：<br><code>'+err.message+'</code></div>';return}
+if(!D.cube||!D.cube.cats.length){box.innerHTML='<div style="padding:40px;text-align:center;color:var(--sub)">暂无立方体数据</div>';return}
+const {models,cats,cells}=D.cube;
+const NM=models.length,NC=cats.length;
+const GAP=1.28,LAYER=2.6;
+const W=box.clientWidth||900,H=box.clientHeight||600;
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(38,W/H,0.1,200);
+camera.position.set(NM*3.4,NM*2.9,NC*3.1);
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(W,H);renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+box.appendChild(renderer.domElement);
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;controls.dampingFactor=0.08;controls.target.set(0,0,0);
+scene.add(new THREE.AmbientLight(0xffffff,0.82));
+const dl=new THREE.DirectionalLight(0xffffff,0.62);dl.position.set(8,14,10);scene.add(dl);
+const vals=cells.flat(2).filter(c=>c).map(c=>c.v);
+const lo=Math.min(...vals),hi=Math.max(...vals);
+document.getElementById('c3rng').textContent=lo.toFixed(2)+' — '+hi.toFixed(2);
+const colOf=v=>{const t=Math.max(0,Math.min(1,(v-lo)/(hi-lo||1)));const c=new THREE.Color();c.setHSL(0.33*t,0.62,0.55);return c};
+const geo=new THREE.BoxGeometry(1,1,1);
+const mat=new THREE.MeshLambertMaterial();
+const total=NC*NM*NM;
+const mesh=new THREE.InstancedMesh(geo,mat,total);
+const dummy=new THREE.Object3D();
+const idxOf=(k,i,j)=>k*NM*NM+i*NM+j;
+let ptr=0;
+for(let k=0;k<NC;k++)for(let i=0;i<NM;i++)for(let j=0;j<NM;j++){
+const c=cells[k][i][j];
+const x=(i-(NM-1)/2)*GAP,y=(j-(NM-1)/2)*GAP,z=(k-(NC-1)/2)*LAYER;
+dummy.position.set(x,y,z);
+if(c){dummy.scale.set(1,1,1);mesh.setColorAt(ptr,colOf(c.v))}
+else{dummy.scale.set(0.18,0.18,0.18);mesh.setColorAt(ptr,new THREE.Color('#d7dce3'))}
+dummy.updateMatrix();mesh.setMatrixAt(ptr,dummy.matrix);
+mesh.getMatrixAt(ptr,dummy.matrix);dummy.matrix.decompose(dummy.position,dummy.quaternion,dummy.scale);dummy.userData={};
+ptr++}
+mesh.instanceMatrix.needsUpdate=true;
+scene.add(mesh);
+/* 轴标签（CanvasTexture 中文 sprite） */
+const label=(txt,px=44)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
+ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=ctx.measureText(txt).width;
+cv.width=Math.ceil(w+24);cv.height=px+20;const c2=cv.getContext('2d');
+c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42,60,.92)';c2.textBaseline='middle';
+c2.fillText(txt,12,cv.height/2);
+const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv),transparent:true}));
+sp.scale.set(cv.width/160,cv.height/160,1);return sp};
+cats.forEach((c,k)=>{const s=label(c,40);s.position.set((NM-1)/2*GAP+3.4,(NM-1)/2*GAP+2.4,(k-(NC-1)/2)*LAYER);scene.add(s)});
+models.forEach((m,i)=>{const s=label(m,36);s.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-1.4,-(NC-1)/2*LAYER-1.6);scene.add(s);
+const s2=label(m,36);s2.position.set(-(NM-1)/2*GAP-1.8,(i-(NM-1)/2)*GAP,-(NC-1)/2*LAYER-1.6);scene.add(s2)});
+/* 悬停 tooltip */
+const tip=document.createElement('div');
+tip.style.cssText='position:absolute;pointer-events:none;background:#1f2740;color:#fff;font-size:12px;line-height:1.7;padding:6px 10px;border-radius:8px;opacity:0;transition:opacity .12s;z-index:5;white-space:nowrap';
+box.appendChild(tip);
+const ray=new THREE.Raycaster();const mouse=new THREE.Vector2();
+renderer.domElement.addEventListener('pointermove',e=>{
+const r=renderer.domElement.getBoundingClientRect();
+mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
+ray.setFromCamera(mouse,camera);
+const hit=ray.intersectObject(mesh)[0];
+if(hit&&hit.instanceId!=null){
+const k=Math.floor(hit.instanceId/(NM*NM)),i=Math.floor(hit.instanceId% (NM*NM)/NM),j=hit.instanceId%NM;
+const c=cells[k][i][j];
+tip.innerHTML='<b>'+cats[k]+'</b><br>生产者 '+models[i]+'<br>判官 '+models[j]+(c?'<br>均值 <b>'+c.v+'</b>（'+c.n+' 格）':'<br>（无判分）');
+tip.style.opacity=1;tip.style.left=(e.clientX-r.left+14)+'px';tip.style.top=(e.clientY-r.top+10)+'px';
+renderer.domElement.style.cursor='pointer';
+}else{tip.style.opacity=0;renderer.domElement.style.cursor='grab'}});
+renderer.domElement.addEventListener('pointerleave',()=>tip.style.opacity=0);
+addEventListener('resize',()=>{const w2=box.clientWidth,h2=box.clientHeight;camera.aspect=w2/h2;camera.updateProjectionMatrix();renderer.setSize(w2,h2)});
+(function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera)})();
+}
+</script>"""
 
 def cmd_site(a):
     web = PROJ / "网站"
     (web / "skills").mkdir(parents=True, exist_ok=True)
     data = {"generated": ts(), "skills": {}}
     data["cross"] = [json.loads(p.read_text()) for p in sorted(REPDIR.glob("三维-*.json"))]
-    # 去重：历史三维文件存在组内重复技能/重复任务行（同一技能多任务传入多次），保序去重
+    # 去重：历史三维文件存在组内重复技能/重复任务行，保序去重
     for G in data["cross"]:
         G["skills"] = list(dict.fromkeys(G["skills"]))
         rows = {}
         for r in G.get("任务对比", []):
             rows[r["任务"]] = r
         G["任务对比"] = list(rows.values())
-    # 组→大类（组内技能按 大类映射.json 投票），供同类对比侧边栏导航
+    # 3D 立方体：大类(Z层) × 生产者(X) × 判官(Y)，格值 = 大类内技能判分均值
     cm = PROJ / "本地库" / "大类映射.json"
-    if cm.exists():
-        cat = json.loads(cm.read_text())
-        for G in data["cross"]:
-            votes = {}
-            for s in G.get("skills", []):
-                c = cat.get(s)
-                if c: votes[c] = votes.get(c, 0) + 1
-            if votes:
-                G["大类"] = max(votes, key=votes.get)
+    cat_map = json.loads(cm.read_text()) if cm.exists() else {}
+    # 组→大类（组内技能投票）
+    for G in data["cross"]:
+        votes = {}
+        for s in G.get("skills", []):
+            c = cat_map.get(s)
+            if c: votes[c] = votes.get(c, 0) + 1
+        if votes:
+            G["大类"] = max(votes, key=votes.get)
     led = RDIR / "台账.csv"
     prog = {}
     if led.exists():
@@ -1110,6 +1200,35 @@ def cmd_site(a):
                 line = line.strip()
                 if line and not line.startswith("#") and Path(line).expanduser().exists():
                     shutil.copy(line, dst / Path(line).name)
+    # 3D 立方体数据：大类(Z) × 生产者(X) × 判官(Y)，格值 = 大类内各技能 M2 方阵对应格均值
+    try:
+        cube_sum, cube_cnt, mset = {}, {}, set()
+        for s, a in data["skills"].items():
+            c = cat_map.get(s)
+            if not c:
+                continue
+            for p, row in (a.get("judge_matrix_M2") or {}).items():
+                mset.add(p)
+                for j, v in (row or {}).items():
+                    mset.add(j)
+                    k = (c, p, j)
+                    cube_sum[k] = cube_sum.get(k, 0) + v
+                    cube_cnt[k] = cube_cnt.get(k, 0) + 1
+        models = sorted(m for m in mset if prog.get(m, 0) >= 200)  # 滤历史碎片通道（<200 格），只留主五车道
+        cats = sorted({k[0] for k in cube_sum})
+        cells = []
+        for c in cats:
+            layer = []
+            for p in models:
+                lane = []
+                for j in models:
+                    k = (c, p, j)
+                    lane.append({"v": round(cube_sum[k] / cube_cnt[k], 2), "n": cube_cnt[k]} if k in cube_sum else None)
+                layer.append(lane)
+            cells.append(layer)
+        data["cube"] = {"models": models, "cats": cats, "cells": cells}
+    except Exception as e:
+        print(f"[{ts()}] cube 构建跳过：{e}")
     (web / "data.json").write_text(json.dumps(data, ensure_ascii=False))
     # 模型×分类画像（用户 2026-10-11 需求：什么模型在什么分类突出）
     try:
