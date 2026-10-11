@@ -909,8 +909,9 @@ tr:hover td{background:#fafbff}
 .tblwrap{overflow-x:auto}
 .crlayout{display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:start}
 .crnav{position:sticky;top:12px;max-height:calc(100vh - 30px);overflow-y:auto;font-size:12.5px;padding-right:4px}
-.crnav .cat{margin:10px 0 3px;font-weight:700;color:var(--ink);font-size:12px}
-.crnav .cat:first-child{margin-top:0}
+.crnav .catlnk{display:block;margin:10px 0 3px;font-weight:700;color:var(--ink);font-size:12px;text-decoration:none;padding:2.5px 8px;border-radius:6px}
+.crnav .catlnk:first-child{margin-top:0}
+.crnav .catlnk:hover{background:#eef2f7}
 .crnav a{display:block;color:var(--sub);text-decoration:none;padding:2.5px 8px;border-radius:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .crnav a:hover{background:#eef2f7;color:var(--ink)}
 .crnav a.on{background:var(--acc);color:#fff}
@@ -1002,7 +1003,7 @@ ${Object.keys(A.judge_matrix_M2).length?`<div class="cap">N×N 交叉方阵（�
 /* ── Tab 3 同类对比（侧边栏大类导航 + 纵向转置表）── */
 const crossArr=(D.cross||[]).slice().sort((a,b)=>(b['大类']||'~').localeCompare(a['大类']||'~')||b.skills.length-a.skills.length);
 const crossNav=`<nav class="crnav" id="crnav">${(()=>{const by={};crossArr.forEach((G,i)=>{const c=G['大类']||'其他';(by[c]=by[c]||[]).push(i)});
-return Object.keys(by).sort((a,b)=>by[b].length-by[a].length).map(c=>`<div class="cat">${c} · ${by[c].length}</div>`+by[c].map(i=>`<a href="#crg${i}" data-i="${i}" title="${crossArr[i]['组']}">${crossArr[i]['组']}</a>`).join('')).join('')})()}</nav>`;
+return Object.keys(by).sort((a,b)=>by[b].length-by[a].length).map(c=>`<a class="catlnk" href="#crg${by[c][0]}">${c} · ${by[c].length}</a>`+by[c].map(i=>`<a href="#crg${i}" data-i="${i}" title="${crossArr[i]['组']}">${crossArr[i]['组']}</a>`).join('')).join('')})()}</nav>`;
 const crossBody=crossArr.map((G,i)=>{
 const tasks=[...new Set(G.任务对比.map(r=>r['任务']))];
 const avg=m=>{const vs=G.任务对比.map(r=>r[m]).filter(v=>v!=null);return vs.length?(vs.reduce((a,b)=>a+b,0)/vs.length).toFixed(2):'-'};
@@ -1044,6 +1045,13 @@ def cmd_site(a):
     (web / "skills").mkdir(parents=True, exist_ok=True)
     data = {"generated": ts(), "skills": {}}
     data["cross"] = [json.loads(p.read_text()) for p in sorted(REPDIR.glob("三维-*.json"))]
+    # 去重：历史三维文件存在组内重复技能/重复任务行（同一技能多任务传入多次），保序去重
+    for G in data["cross"]:
+        G["skills"] = list(dict.fromkeys(G["skills"]))
+        rows = {}
+        for r in G.get("任务对比", []):
+            rows[r["任务"]] = r
+        G["任务对比"] = list(rows.values())
     # 组→大类（组内技能按 大类映射.json 投票），供同类对比侧边栏导航
     cm = PROJ / "本地库" / "大类映射.json"
     if cm.exists():
