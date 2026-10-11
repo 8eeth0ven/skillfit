@@ -1126,9 +1126,12 @@ function updateFade(){
     _fc.copy(FADE_BG).lerp(baseCols[idx],0.1+0.9*t); // 颜色最深保留 10%
     mesh.setColorAt(idx,_fc)}
   mesh.instanceMatrix.needsUpdate=true;mesh.instanceColor.needsUpdate=true}
-const label=(txt,px=44)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
+const label=(txt,px=44,boxed=false)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
 ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=ctx.measureText(txt).width;
 cv.width=Math.ceil(w+24);cv.height=px+20;const c2=cv.getContext('2d');
+if(boxed){c2.fillStyle='rgba(255,255,255,.88)';const r=10;c2.beginPath();
+c2.roundRect(1,1,cv.width-2,cv.height-2,r);c2.fill();
+c2.strokeStyle='rgba(90,105,140,.5)';c2.lineWidth=2;c2.stroke()}
 c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42,60,.92)';c2.textBaseline='middle';
 c2.fillText(txt,12,cv.height/2);
 const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv),transparent:true}));
@@ -1164,8 +1167,8 @@ function build(zLabels,cells,layerGap){
     pl.position.set(0,-(NM-1)/2*GAP-0.75,(k-(NC-1)/2)*layerGap);scene.add(pl);plates.push(pl)});
   plates.push({geo:plateG,mat:plateM});
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
-  zLabels.forEach((c,k)=>{const sp=label(short(c),58);sp.userData={full:c};
-    sp.position.set(0,-(NM-1)/2*GAP-1.15,(k-(NC-1)/2)*layerGap);scene.add(sp);labelSprites.push(sp)});
+  zLabels.forEach((c,k)=>{const sp=label(short(c),58,true);sp.userData={full:c};
+    sp.position.set(0,0,(k-(NC-1)/2)*layerGap-0.72);scene.add(sp);labelSprites.push(sp)});  // 嵌在层面正中（3×3格前方），穿越渐近时直读
   models.forEach((m,i)=>{const sp=label(m,48);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,-(NC-1)/2*layerGap-3.4);scene.add(sp);labelSprites.push(sp);
   const sp2=label(m,48);sp2.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-3.4);scene.add(sp2);labelSprites.push(sp2)});
   camera.position.set(NM*3.4,NM*2.9,NC*layerGap*1.15);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
