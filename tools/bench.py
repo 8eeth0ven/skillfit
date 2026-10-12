@@ -1006,7 +1006,7 @@ document.getElementById('pg-sk').innerHTML=`<input class="search" id="q" placeho
 <div style="font-size:12px;color:var(--sub);margin:-4px 0 10px;line-height:1.9">绿色行 = 该技能的最佳配对模型 ｜ 增益表：M2−M1 总增益 / hake = 吃掉多少剩余提升空间 / M2−M4 = 剔除长度安慰剂的纯内容增益（红=负增益，skill 拖后腿）｜ 方阵：行=生产者水平，列=判官严格度，蓝框=自评</div>`+
 scored.map(([s,A])=>`
 <details class="sk" data-k="${(s+' '+(A['功能']||'')+' '+(A.best||'')).toLowerCase()}">
-<summary><span class="skname"><a href="#${s}" onclick="event.stopPropagation()">${s}</a></span>${A['功能']?`<span class="gloss">${A['功能']}</span>`:''}${A.best?`<span class="badge">${A.best.split('@')[0]}</span>`:''}<span class="ss">第 ${A.rank_v2??'-'} 名 · 百分位 ${sc([s,A])}</span></summary>
+<summary>${A.best?`<span class="badge">${A.best.split('@')[0]}</span>`:''}<span class="skname"><a href="#${s}" onclick="event.stopPropagation()">${s}</a></span>${A['功能']?`<span class="gloss">${A['功能']}</span>`:''}<span class="ss">第 ${A.rank_v2??'-'} 名 · 百分位 ${sc([s,A])}</span></summary>
 <div style="padding:2px 16px 14px">
 <div class="cap">SkillScore 榜</div><div class="tblwrap"><table>
 <tr><th>模型</th><th>家族</th><th class="num">SkillScore</th><th class="num">M2 均分</th><th class="num">M1 均分</th><th class="num">触发准确率</th></tr>
