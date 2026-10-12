@@ -1119,7 +1119,7 @@ c.lineWidth=9;c.strokeStyle='rgba(38,48,74,.9)';c.strokeRect(0,0,128,128);
 const t=new THREE.CanvasTexture(cv);t.anisotropy=4;return t})();
 const mat=new THREE.MeshLambertMaterial({map:edgeTex});
 const dummy=new THREE.Object3D();
-let mesh=null,labelSprites=[],plates=[],cur=null,needsRender=true,centers=[],baseCols=[],baseScales=[];
+let gridsMat=null,mesh=null,labelSprites=[],plates=[],grids=[],cur=null,needsRender=true,centers=[],baseCols=[],baseScales=[];
 const FADE_BG=new THREE.Color('#eef1f6'),_fc=new THREE.Color(),_dv=new THREE.Vector3(),_dm=new THREE.Object3D();
 function updateFade(){
   if(!mesh||!centers.length)return;
@@ -1150,6 +1150,8 @@ function build(zLabels,cells,layerGap){
   if(mesh){scene.remove(mesh);mesh.dispose()}
   labelSprites.forEach(sp=>{scene.remove(sp);if(sp.material.map)sp.material.map.dispose();sp.material.dispose()});labelSprites=[];
   plates.forEach(pl=>{if(pl.geo){pl.geo.dispose();pl.mat.dispose()}else{scene.remove(pl)}});plates=[];
+  grids.forEach(g=>{scene.remove(g);g.geometry.dispose()});grids=[];
+  if(gridsMat){gridsMat.dispose();gridsMat=null}
   const NC=zLabels.length;
   const vals=cells.flat(2).filter(c=>c).map(c=>c.v).sort((a,b)=>a-b);
   const q=f=>vals[Math.min(vals.length-1,Math.max(0,Math.round(f*(vals.length-1))))];
@@ -1178,6 +1180,17 @@ function build(zLabels,cells,layerGap){
   const plateM=new THREE.MeshLambertMaterial({color:'#f8fafd'});
   zLabels.forEach((_,k)=>{const pl=new THREE.Mesh(plateG,plateM);
     pl.position.set(0,-(NM-1)/2*GAP-0.75,(k-(NC-1)/2)*layerGap);scene.add(pl);plates.push(pl)});
+  /* 每层透明 N×N 网格线：格子归位对照（哪格=哪两个模型） */
+  gridsMat=new THREE.LineBasicMaterial({color:0x9aa7c2,transparent:true,opacity:0.55});
+  zLabels.forEach((_,k)=>{
+    const pts=[];const half=(NM*GAP+0.55)/2;
+    for(let i=0;i<=NM;i++){const t=-half+i*(2*half/NM);
+      pts.push(t,-half,0,t,half,0, -half,t,0,half,t,0)}  // XY 平面网格线段
+    const gg=new THREE.BufferGeometry();
+    gg.setAttribute('position',new THREE.Float32BufferAttribute(pts,3));
+    const grid=new THREE.LineSegments(gg,gridsMat);
+    grid.position.set(0,-(NM-1)/2*GAP-0.71,(k-(NC-1)/2)*layerGap);
+    scene.add(grid);grids.push(grid)});
   plates.push({geo:plateG,mat:plateM});
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
   zLabels.forEach((c,k)=>{const sp=label(short(c),58,true);sp.userData={full:c};
