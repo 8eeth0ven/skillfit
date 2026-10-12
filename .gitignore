@@ -32,3 +32,10 @@ cron新prompt.txt
 nohup.out
 __pycache__/
 *.pyc
+
+# 公众号推文素材（本地预览用，不入库）
+网站/推文预览.html
+网站/推文图/
+推文图/
+公众号推文-*.md
+公众号推文-*.html
