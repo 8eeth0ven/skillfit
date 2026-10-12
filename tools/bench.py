@@ -1149,7 +1149,7 @@ c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42
   lines.forEach((t,li)=>c2.fillText(t,12,(li+0.5)*(px+6)+8));
 const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv),transparent:true}));
 sp.scale.set(cv.width/128,cv.height/128,1);return sp};
-const rowPlate=(txt,px=26)=>{
+const rowPlate=(txt,px=32)=>{
   const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
   ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';
   const w=Math.ceil(ctx.measureText(txt).width)+22;cv.width=w;cv.height=px+14;
@@ -1209,12 +1209,14 @@ function build(zLabels,cells,layerGap){
     /* 本层自带行/列表头：底缘=生产者列名，左缘=判官行名（小号，逐层对照不用看外围） */
     const zc=(k-(NC-1)/2)*layerGap;
     models.forEach((m,i)=>{
-      const h1=label(m,24,true);
-      h1.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-0.62,zc);
+      const h1=rowPlate(m);
+      h1.rotation.set(-Math.PI/2,0,0);
+      h1.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-0.85,zc);
       scene.add(h1);labelSprites.push(h1);
-      /* 行名用固定朝向面片（正对主视角），sprite 侧对镜头会叠成一条 */
+      /* 行名平铺在底板左端（面朝上，俯角永远可读，不依赖水平朝向） */
       const h2=rowPlate(m);
-      h2.position.set(-(NM-1)/2*GAP-1.5,(i-(NM-1)/2)*GAP,zc);
+      h2.rotation.set(-Math.PI/2,0,Math.PI/2);
+      h2.position.set(-(NM-1)/2*GAP-0.85,(i-(NM-1)/2)*GAP,zc);
       scene.add(h2);labelSprites.push(h2)})});
   plates.push({geo:plateG,mat:plateM});
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
