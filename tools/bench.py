@@ -963,7 +963,7 @@ details.pendd summary{cursor:pointer;color:var(--sub);font-size:13px}
 <div class="page on" id="pg-ov"></div>
 <div class="page" id="pg-sk"></div>
 <div class="page" id="pg-cr"></div>
-<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub);display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span style="max-width:640px">3D 评分矩阵（N×N×A）：N×N = 生产者×判官的交叉判分面，A = 分层轴。<b>越绿越强、越红越弱</b>，拖拽旋转 · 滚轮缩放 · W/S 前进后退 · A/D 平移（近处方块自动淡化）· 悬停看格 · 层距可展开对照。</span>
+<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub);display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span style="max-width:640px">3D 评分矩阵（N×N×A）：N×N = 生产者×判官的交叉判分面，A = 分层轴。<b>越绿越强、越红越弱</b>，拖拽旋转 · 滚轮缩放 · W/S 前进后退 · A/D 平移（近处方块自动淡化）· 悬停看格 · 层距可展开对照。数据缺口过大的模型行列自动隐藏。</span>
 <select id="c3cat" style="border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:13px;background:#fff;outline:none"><option value="">全部总览（A=大类）</option></select></div>
 <div class="card" style="padding:10px 14px">
 <div id="c3box" style="height:600px;border-radius:10px;overflow:hidden;position:relative;background:#fafbfc"></div>
@@ -1426,6 +1426,29 @@ def cmd_site(a):
                           for j in models] for p in models]
                 sk_cells.append(layer)
             byCat[c] = {"skills": [s for s, _, _ in lst], "cells": sk_cells}
+        # 空行/列过多的模型（如 kimi 历史缺口）从 3D 轴隐藏，避免大片空格噪音
+        def _keep_axes(all_models, bycat):
+            # 按技能粒度统计覆盖率（总览均值层会掩盖缺口，kimi 场景即如此）
+            filled = {m: 0 for m in all_models}
+            nlayers = 0
+            for B in bycat.values():
+                for layer in B["cells"]:
+                    nlayers += 1
+                    for pi, prod in enumerate(all_models):
+                        for ji, jud in enumerate(all_models):
+                            if layer[pi][ji] is not None:
+                                filled[prod] += 1
+                                filled[jud] += 1
+            need = 0.35 * 2 * len(all_models) * max(1, nlayers)
+            keep = [m for m in all_models if filled[m] >= need]
+            return keep if len(keep) >= 2 else list(all_models)
+        keep = _keep_axes(models, byCat)
+        if len(keep) < len(models):
+            idx = [models.index(m) for m in keep]
+            cells = [[[layer[i][j] for j in idx] for i in idx] for layer in cells]
+            for c, B in byCat.items():
+                B["cells"] = [[[layer[i][j] for j in idx] for i in idx] for layer in B["cells"]]
+            models = keep
         data["cube"] = {"models": models, "cats": cats, "cells": cells, "byCat": byCat}
     except Exception as e:
         print(f"[{ts()}] cube 构建跳过：{e}")
