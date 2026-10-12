@@ -976,7 +976,7 @@ details.pendd summary{cursor:pointer;color:var(--sub);font-size:13px}
 <script>fetch('data.json').then(r=>r.json()).then(D=>{
 const bg=v=>v==null?'':'background:hsl('+Math.round(v/5*120)+',64%,88%)';
 const ent=Object.entries(D.skills||{});
-const sc=e=>(e[1].skill_score&&e[1].best?e[1].skill_score[e[1].best]:0)||0;
+const sc=e=>e[1].ss_v2||0;  // v2 百分位
 const scored=ent.filter(e=>e[1].leaderboard&&e[1].leaderboard.length).sort((a,b)=>sc(b)-sc(a));
 const pending=ent.filter(e=>!(e[1].leaderboard&&e[1].leaderboard.length));
 document.getElementById('c1').textContent='已出分 '+scored.length;
@@ -995,6 +995,7 @@ const HOWTO=`<div class="card"><details><summary style="cursor:pointer;font-weig
 <b>SkillScore（0-100）</b> = M2 均分/5 × 60 ＋ max(0, 20−8σ) ＋ 触发准确率 × 20<br>
 即：实力 60 分（带技能做题的判官均分）＋ 稳定性 20 分（跨任务波动 σ 越小越高）＋ 触发质量 20 分（该被触发时触发、不该时克制）。<br>
 <b>四模式</b>：M1 裸跑基线 ｜ M2 加载技能文档 ｜ M3 触发模拟 ｜ M4 等长无关材料对照——增益 = M2−M1，纯内容增益 = M2−M4（剔除"上下文变长"的假增益）。<br>
+<b>名次怎么排（v2）</b>：默认按<b>百分位</b>排。判官下手轻重不一样（deepseek 手最松，space-bunny 最严），原始分先按各判官的均值和波动做 z 校正，拉到同一把尺子上，再算全库名次。旧 SkillScore（90 分并排 884 个）保留在榜内表作绝对分参考。<br>
 <b>判分</b>：每个模型既是选手又是评委（N×N 互评）：产物匿名哈希代号 → 四维打分（正确性/完整性/技能遵循/表达，0-5）→ 同家族评委只计 1 票 → 取中位数。方阵中<b>行均≈真实水平，列均=评委严格度，蓝框对角线=自评</b>（仅测自偏，不计入总分）。
 </div></details></div>`;
 document.getElementById('pg-ov').innerHTML=HOWTO
@@ -1005,14 +1006,14 @@ document.getElementById('pg-sk').innerHTML=`<input class="search" id="q" placeho
 <div style="font-size:12px;color:var(--sub);margin:-4px 0 10px;line-height:1.9">绿色行 = 该技能的最佳配对模型 ｜ 增益表：M2−M1 总增益 / hake = 吃掉多少剩余提升空间 / M2−M4 = 剔除长度安慰剂的纯内容增益（红=负增益，skill 拖后腿）｜ 方阵：行=生产者水平，列=判官严格度，蓝框=自评</div>`+
 scored.map(([s,A])=>`
 <details class="sk" data-k="${(s+' '+(A['功能']||'')+' '+(A.best||'')).toLowerCase()}">
-<summary><span class="skname"><a href="#${s}" onclick="event.stopPropagation()">${s}</a></span>${A['功能']?`<span class="gloss">${A['功能']}</span>`:''}${A.best?`<span class="badge">${A.best.split('@')[0]}</span>`:''}<span class="ss">SkillScore ${sc([s,A])}</span></summary>
+<summary><span class="skname"><a href="#${s}" onclick="event.stopPropagation()">${s}</a></span>${A['功能']?`<span class="gloss">${A['功能']}</span>`:''}${A.best?`<span class="badge">${A.best.split('@')[0]}</span>`:''}<span class="ss">第 ${A.rank_v2??'-'} 名 · 百分位 ${sc([s,A])}</span></summary>
 <div style="padding:2px 16px 14px">
 <div class="cap">SkillScore 榜</div><div class="tblwrap"><table>
 <tr><th>模型</th><th>家族</th><th class="num">SkillScore</th><th class="num">M2 均分</th><th class="num">M1 均分</th><th class="num">触发准确率</th></tr>
 ${A.leaderboard.map(r=>`<tr class="${r['模型']===A.best?'best':''}"><td>${r['模型']}</td><td>${r['家族']}</td><td class="num">${r.SkillScore}</td><td class="num">${A.m2_mean[r['模型']]??'-'}</td><td class="num">${A.m1_mean[r['模型']]??'-'}</td><td class="num">${A.trigger_accuracy[r['模型']]||'-'}</td></tr>`).join('')}
 </table></div>
 ${Object.keys(A.gains).length?`<div class="cap">增益（M2−M1 总 ｜ hake 剩余空间 ｜ M2−M4 纯内容）</div><div class="tblwrap"><table><tr><th>模型</th><th>任务</th><th class="num">M2−M1</th><th class="num">hake</th><th class="num">M2−M4</th></tr>${Object.entries(A.gains).map(([k,g])=>`<tr><td>${k.split('|')[0]}</td><td>${k.split('|')[1]}</td><td class="num ${(g['M2-M1']??0)<0?'neg':'pos'}">${g['M2-M1']??'-'}</td><td class="num">${g['hake']??'-'}</td><td class="num ${(g['M2-M4']??0)<0?'neg':'pos'}">${g['M2-M4']??'-'}</td></tr>`).join('')}</table></div>`:''}
-${Object.keys(A.judge_matrix_M2).length?`<div class="cap">N×N 交叉方阵（行=生产者 · 列=判官 · 蓝框=对角线自评）</div><div class="tblwrap"><table><tr><th>生产者＼判官</th>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<th class="num">${j}</th>`).join('')}</tr>${Object.entries(A.judge_matrix_M2).map(([p,row])=>`<tr><td style="font-weight:600">${p}</td>${[...new Set(Object.values(A.judge_matrix_M2).flatMap(Object.keys))].map(j=>`<td class="num" style="${bg(row[j])};${j===p?'outline:1px solid var(--acc);outline-offset:-1px':''}">${row[j]!==undefined?row[j]:'—'}</td>`).join('')}</tr>`).join('')}</table></div>`:''}
+${(()=>{const JM=A.judge_matrix_M2_adj||A.judge_matrix_M2;return Object.keys(JM).length?`<div class="cap">N×N 交叉方阵 · 判官严格度已校正（行=生产者 · 列=判官 · 蓝框=自评）</div><div class="tblwrap"><table><tr><th>生产者＼判官</th>${[...new Set(Object.values(JM).flatMap(Object.keys))].map(j=>`<th class="num">${j}</th>`).join('')}</tr>${Object.entries(JM).map(([p,row])=>`<tr><td style="font-weight:600">${p}</td>${[...new Set(Object.values(JM).flatMap(Object.keys))].map(j=>`<td class="num" style="${bg(row[j])};${j===p?'outline:1px solid var(--acc);outline-offset:-1px':''}">${row[j]!==undefined?row[j]:'—'}</td>`).join('')}</tr>`).join('')}</table></div>`:''})()}
 </div></details>`).join('')
 +(pending.length?`<div class="card"><details class="pendd"><summary>${pending.length} 个技能评分中，出分后自动上移</summary><p class="pend">${pending.map(([s])=>s).join(' · ')}</p></details></div>`:'');
 /* ── Tab 3 同类对比（侧边栏大类导航 + 纵向转置表）── */
@@ -1289,6 +1290,59 @@ def cmd_site(a):
                 line = line.strip()
                 if line and not line.startswith("#") and Path(line).expanduser().exists():
                     shutil.copy(line, dst / Path(line).name)
+    # SkillFit v2：判官严格度 z 校正 + 校正方阵 + tie-break 百分位（不重跑历史判分）
+    try:
+        from collections import defaultdict
+        import statistics as _st
+        jstat = defaultdict(list)
+        for s, a in data["skills"].items():
+            for p, row in (a.get("judge_matrix_M2") or {}).items():
+                for j, v in (row or {}).items():
+                    if v is not None:
+                        jstat[j].append(v)
+        jmu = {j: _st.mean(vs) for j, vs in jstat.items() if len(vs) >= 30}   # 样本≥30 才可信
+        jsd = {j: (_st.pstdev([v for v in jstat[j]]) or 1.0) for j in jmu}
+        def _adj(v, j):
+            z = (v - jmu[j]) / jsd[j]
+            return round(max(0.0, min(5.0, 3.0 + 0.75 * z)), 2)
+        m2adj = {}
+        for s, a in data["skills"].items():
+            jm = a.get("judge_matrix_M2") or {}
+            adjm = {}
+            flat = []
+            for pro, row in jm.items():
+                adjm[pro] = {}
+                for j, v in (row or {}).items():
+                    if v is None or j not in jmu:
+                        adjm[pro][j] = v
+                    else:
+                        av = _adj(v, j)
+                        adjm[pro][j] = av
+                        flat.append(av)
+            a["judge_matrix_M2_adj"] = adjm
+            a["m2_adj_mean"] = round(sum(flat) / len(flat), 3) if flat else 0.0
+            m2adj[s] = a["m2_adj_mean"]
+        def _num(x):
+            try: return float(x)
+            except (TypeError, ValueError): return 0.0
+        def _key(s):
+            a = data["skills"][s]
+            sc = a.get("skill_score") or {}
+            ss1 = _num(sc.get(a.get("best") or ""))
+            ta = a.get("trigger_accuracy") or {}
+            tab = _num(ta.get(a.get("best") or ""))
+            return (-ss1, -m2adj.get(s, 0.0), -tab, s)
+        order = sorted(data["skills"].keys(), key=_key)
+        N = len(order)
+        for r, s in enumerate(order):
+            a = data["skills"][s]
+            a["ss_v2"] = round(100.0 * (N - 1 - r) / max(1, N - 1), 1)
+            a["rank_v2"] = r + 1
+        data["v2"] = {"判官校正": {j: [round(jmu[j], 3), round(jsd[j], 3)] for j in jmu},
+                      "并列残留": sum(1 for r in range(1, N) if _key(order[r])[:3] == _key(order[r-1])[:3])}
+    except Exception as e:
+        print(f"[{ts()}] v2 校正跳过：{e}")
+
     # 3D 立方体数据：总览层=大类(14层均值面)；byCat=大类下 Top20 技能层（N×N 判分面，A=技能）
     try:
         cube_sum, cube_cnt, mset = {}, {}, set()
@@ -1297,7 +1351,7 @@ def cmd_site(a):
             c = cat_map.get(s)
             if not c:
                 continue
-            jm = a.get("judge_matrix_M2") or {}
+            jm = a.get("judge_matrix_M2_adj") or a.get("judge_matrix_M2") or {}
             if not jm:
                 continue
             sc = a.get("skill_score") or {}
