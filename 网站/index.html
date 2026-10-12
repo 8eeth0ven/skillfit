@@ -221,12 +221,12 @@ const bIn=zoomBtn('+',()=>{camera.position.lerp(controls.target,0.16);updateFade
 const bOut=zoomBtn('−',()=>{camera.position.lerp(controls.target,-0.22);updateFade();needsRender=true});
 const bRst=zoomBtn('⟲',()=>{if(homePos){camera.position.copy(homePos);controls.target.set(0,0,0);needsRender=true}});
 bRst.style.width='auto';bRst.style.padding='0 10px';bRst.textContent='重置';
-const bGap=zoomBtn('展开层距',()=>{gapOpen=!gapOpen;bGap.textContent=gapOpen?'收起层距':'展开层距';
-  const gap=gapOpen?baseGap*2.2:baseGap;
+const bGap=zoomBtn('收起层距',()=>{gapOpen=!gapOpen;bGap.textContent=gapOpen?'收起层距':'展开层距';
+  const gap=gapOpen?baseGap*3.0:baseGap;
   build(cur.z,cur.cells,gap);needsRender=true});
 bGap.style.width='auto';bGap.style.padding='0 10px';
 zb.append(bOut,bIn,bGap,bRst);box.appendChild(zb);
-let gapOpen=false,baseGap=2.6;
+let gapOpen=true,baseGap=2.6;
 scene.background=new THREE.Color('#eef1f6');
 scene.add(new THREE.AmbientLight(0xffffff,0.6));
 const dl=new THREE.DirectionalLight(0xffffff,0.95);dl.position.set(8,14,10);scene.add(dl);
@@ -311,9 +311,9 @@ Object.keys(D.cube.byCat||{}).sort().forEach(c=>{const o=document.createElement(
 sel.onchange=()=>{const v=sel.value;
   if(!v){cur={z:D.cube.cats,cells:D.cube.cells};baseGap=2.6}
   else{const B=D.cube.byCat[v];cur={z:B.skills,cells:B.cells};baseGap=2.2}
-  build(cur.z,cur.cells,gapOpen?baseGap*2.2:baseGap)};
+  build(cur.z,cur.cells,gapOpen?baseGap*3.0:baseGap)};
 cur={z:D.cube.cats,cells:D.cube.cells};
-build(D.cube.cats,D.cube.cells,2.6);
+build(D.cube.cats,D.cube.cells,2.6*3.0);
 const tip=document.createElement('div');
 tip.style.cssText='position:absolute;pointer-events:none;background:#1f2740;color:#fff;font-size:12px;line-height:1.7;padding:6px 10px;border-radius:8px;opacity:0;transition:opacity .12s;z-index:5;white-space:nowrap';
 box.appendChild(tip);
