@@ -1192,7 +1192,7 @@ function build(zLabels,cells,layerGap){
     mesh.getColorAt(k*NM*NM+i*NM+j,tmpC);baseCols.push(tmpC.clone());
     baseScales.push(cells[k][i][j]?1:0.16)}
   const plateG=new THREE.BoxGeometry(NM*GAP+0.55,0.07,NM*GAP+0.55);
-  const plateM=new THREE.MeshLambertMaterial({color:'#f8fafd'});
+  const plateM=new THREE.MeshLambertMaterial({color:'#f8fafd',transparent:true,opacity:0.42,side:THREE.DoubleSide});  // 半透明底板：仰视可穿透看到下层
   zLabels.forEach((_,k)=>{const pl=new THREE.Mesh(plateG,plateM);
     pl.position.set(0,-(NM-1)/2*GAP-0.75,(k-(NC-1)/2)*layerGap);scene.add(pl);plates.push(pl)});
   /* 每层透明 N×N 网格线：格子归位对照（哪格=哪两个模型） */
