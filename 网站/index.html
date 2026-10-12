@@ -330,12 +330,12 @@ function build(zLabels,cells,layerGap){
     models.forEach((m,i)=>{
       const h1=rowPlate(m);
       h1.rotation.set(-Math.PI/4,0,0);   // 桌牌式后仰45°：俯视平视都可读
-      h1.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-0.72,zc);
+      h1.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-1.3,zc);
       scene.add(h1);labelSprites.push(h1);
       /* 行名平铺在底板左端（面朝上，俯角永远可读，不依赖水平朝向） */
       const h2=rowPlate(m);
-      h2.rotation.set(-Math.PI/4,0,Math.PI/2);  // 斜立+文字沿行向
-      h2.position.set(-(NM-1)/2*GAP-0.78,(i-(NM-1)/2)*GAP,zc);
+      h2.rotation.set(-Math.PI/4,0,0);   // 与层名同款：水平横排文字，斜立45°
+      h2.position.set(-(NM-1)/2*GAP-1.7,(i-(NM-1)/2)*GAP,zc);
       scene.add(h2);labelSprites.push(h2)})});
   plates.push({geo:plateG,mat:plateM});
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
