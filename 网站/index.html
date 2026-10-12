@@ -336,7 +336,7 @@ function build(zLabels,cells,layerGap){
   const sp6=label(m,38);sp6.position.set((NM-1)/2*GAP+2.5,(i-(NM-1)/2)*GAP,(NC-1)/2*layerGap+2.6);scene.add(sp6);labelSprites.push(sp6);
   const sp7=label(m,38);sp7.position.set((i-(NM-1)/2)*GAP,(NM-1)/2*GAP+1.7,-(NC-1)/2*layerGap-2.6);scene.add(sp7);labelSprites.push(sp7);
   const sp8=label(m,38);sp8.position.set((i-(NM-1)/2)*GAP,(NM-1)/2*GAP+1.7,(NC-1)/2*layerGap+2.6);scene.add(sp8);labelSprites.push(sp8)});
-  camera.position.set(NM*1.55,NM*1.05,NC*layerGap*0.72);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
+  camera.position.set(NM*2.4,NM*1.7,NC*layerGap*1.0);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
   needsRender=true;
 }
 const sel=document.getElementById('c3cat');
