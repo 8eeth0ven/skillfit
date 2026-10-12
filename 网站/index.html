@@ -256,13 +256,16 @@ function updateFade(){
     const t2=Math.max(0,Math.min(1,(d2-7.0)/4.0));
     sp.material.opacity=t2}}
 const label=(txt,px=44,boxed=false)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
-ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=ctx.measureText(txt).width;
-cv.width=Math.ceil(w+24);cv.height=px+20;const c2=cv.getContext('2d');
+  /* 长名拆两行（>11字符在最近的'-'处断），防横排堆叠 */
+  let lines=[txt];
+  if(txt.length>11){const mid=Math.ceil(txt.length/2);const cut=(txt.lastIndexOf('-',mid)>3)?txt.lastIndexOf('-',mid):mid;lines=[txt.slice(0,cut),txt.slice(cut+(txt[cut]==='-'?1:0))]}
+  ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=Math.max(...lines.map(t=>ctx.measureText(t).width));
+  cv.width=Math.ceil(w+24);cv.height=lines.length*(px+6)+16;const c2=cv.getContext('2d');
 if(boxed){c2.fillStyle='rgba(255,255,255,.88)';const r=10;c2.beginPath();
 c2.roundRect(1,1,cv.width-2,cv.height-2,r);c2.fill();
 c2.strokeStyle='rgba(90,105,140,.5)';c2.lineWidth=2;c2.stroke()}
 c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42,60,.92)';c2.textBaseline='middle';
-c2.fillText(txt,12,cv.height/2);
+  lines.forEach((t,li)=>c2.fillText(t,12,(li+0.5)*(px+6)+8));
 const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv),transparent:true}));
 sp.scale.set(cv.width/128,cv.height/128,1);return sp};
 function build(zLabels,cells,layerGap){
@@ -314,11 +317,16 @@ function build(zLabels,cells,layerGap){
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
   zLabels.forEach((c,k)=>{const sp=label(short(c),58,true);sp.userData={full:c};
     sp.position.set(0,0,(k-(NC-1)/2)*layerGap-0.72);scene.add(sp);labelSprites.push(sp)});  // 嵌在层面正中（3×3格前方），穿越渐近时直读
-  models.forEach((m,i)=>{const sp=label(m,48);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,-(NC-1)/2*layerGap-3.4);scene.add(sp);labelSprites.push(sp);
-  const sp2=label(m,48);sp2.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-3.4);scene.add(sp2);labelSprites.push(sp2);
+  models.forEach((m,i)=>{const sp=label(m,38);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,-(NC-1)/2*layerGap-3.4);scene.add(sp);labelSprites.push(sp);
+  const sp2=label(m,38);sp2.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-3.4);scene.add(sp2);labelSprites.push(sp2);
   /* 远端面同样两排（转到背面也有坐标） */
-  const sp3=label(m,48);sp3.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,(NC-1)/2*layerGap+2.6);scene.add(sp3);labelSprites.push(sp3);
-  const sp4=label(m,48);sp4.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,(NC-1)/2*layerGap+2.6);scene.add(sp4);labelSprites.push(sp4)});
+  const sp3=label(m,38);sp3.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,(NC-1)/2*layerGap+2.6);scene.add(sp3);labelSprites.push(sp3);
+  const sp4=label(m,38);sp4.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,(NC-1)/2*layerGap+2.6);scene.add(sp4);labelSprites.push(sp4);
+  /* 右棱两排（判官轴）+ 顶棱两排（生产者轴）：四个侧面都有坐标 */
+  const sp5=label(m,38);sp5.position.set((NM-1)/2*GAP+2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-3.4);scene.add(sp5);labelSprites.push(sp5);
+  const sp6=label(m,38);sp6.position.set((NM-1)/2*GAP+2.5,(i-(NM-1)/2)*GAP,(NC-1)/2*layerGap+2.6);scene.add(sp6);labelSprites.push(sp6);
+  const sp7=label(m,38);sp7.position.set((i-(NM-1)/2)*GAP,(NM-1)/2*GAP+1.7,-(NC-1)/2*layerGap-2.6);scene.add(sp7);labelSprites.push(sp7);
+  const sp8=label(m,38);sp8.position.set((i-(NM-1)/2)*GAP,(NM-1)/2*GAP+1.7,(NC-1)/2*layerGap+2.6);scene.add(sp8);labelSprites.push(sp8)});
   camera.position.set(NM*1.55,NM*1.05,NC*layerGap*0.72);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
   needsRender=true;
 }
