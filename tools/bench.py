@@ -1149,6 +1149,18 @@ c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42
   lines.forEach((t,li)=>c2.fillText(t,12,(li+0.5)*(px+6)+8));
 const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv),transparent:true}));
 sp.scale.set(cv.width/128,cv.height/128,1);return sp};
+const rowPlate=(txt,px=26)=>{
+  const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
+  ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';
+  const w=Math.ceil(ctx.measureText(txt).width)+22;cv.width=w;cv.height=px+14;
+  const c2=cv.getContext('2d');
+  c2.fillStyle='rgba(255,255,255,.9)';c2.beginPath();c2.roundRect(1,1,w-2,cv.height-2,7);c2.fill();
+  c2.strokeStyle='rgba(90,105,140,.45)';c2.lineWidth=2;c2.stroke();
+  c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42,60,.95)';c2.textBaseline='middle';
+  c2.fillText(txt,11,cv.height/2);
+  const me=new THREE.Mesh(new THREE.PlaneGeometry(w/150,cv.height/150),
+    new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(cv),transparent:true,side:THREE.DoubleSide}));
+  me.rotation.y=Math.PI/2;return me};
 function build(zLabels,cells,layerGap){
   if(mesh){scene.remove(mesh);mesh.dispose()}
   labelSprites.forEach(sp=>{scene.remove(sp);if(sp.material.map)sp.material.map.dispose();sp.material.dispose()});labelSprites=[];
@@ -1200,8 +1212,9 @@ function build(zLabels,cells,layerGap){
       const h1=label(m,24,true);
       h1.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-0.62,zc);
       scene.add(h1);labelSprites.push(h1);
-      const h2=label(m,24,true);
-      h2.position.set(-(NM-1)/2*GAP-0.72,(i-(NM-1)/2)*GAP,zc);
+      /* 行名用固定朝向面片（正对主视角），sprite 侧对镜头会叠成一条 */
+      const h2=rowPlate(m);
+      h2.position.set(-(NM-1)/2*GAP-1.5,(i-(NM-1)/2)*GAP,zc);
       scene.add(h2);labelSprites.push(h2)})});
   plates.push({geo:plateG,mat:plateM});
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
