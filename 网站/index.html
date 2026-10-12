@@ -310,10 +310,6 @@ function build(zLabels,cells,layerGap){
     centers.push(new THREE.Vector3((i-(NM-1)/2)*GAP,(j-(NM-1)/2)*GAP,(k-(NC-1)/2)*layerGap));
     mesh.getColorAt(k*NM*NM+i*NM+j,tmpC);baseCols.push(tmpC.clone());
     baseScales.push(cells[k][i][j]?1:0.16)}
-  const plateG=new THREE.BoxGeometry(NM*GAP+0.55,0.07,NM*GAP+0.55);
-  const plateM=new THREE.MeshLambertMaterial({color:'#f8fafd',transparent:true,opacity:0.42,side:THREE.DoubleSide});  // 半透明底板：仰视可穿透看到下层
-  zLabels.forEach((_,k)=>{const pl=new THREE.Mesh(plateG,plateM);
-    pl.position.set(0,-(NM-1)/2*GAP-0.75,(k-(NC-1)/2)*layerGap);scene.add(pl);plates.push(pl)});
   /* 每层透明 N×N 网格线：格子归位对照（哪格=哪两个模型） */
   gridsMat=new THREE.LineBasicMaterial({color:0x9aa7c2,transparent:true,opacity:0.55});
   zLabels.forEach((_,k)=>{
@@ -337,7 +333,6 @@ function build(zLabels,cells,layerGap){
       h2.rotation.set(-Math.PI/4,0,0);   // 与层名同款：水平横排文字，斜立45°
       h2.position.set(-(NM-1)/2*GAP-1.7,(i-(NM-1)/2)*GAP,zc);
       scene.add(h2);labelSprites.push(h2)})});
-  plates.push({geo:plateG,mat:plateM});
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
   zLabels.forEach((c,k)=>{const sp=label(short(c),58,true);sp.userData={full:c};
     sp.position.set(0,0,(k-(NC-1)/2)*layerGap+0.85);scene.add(sp);labelSprites.push(sp)});  // 层名在 N×N 面的正面（朝初始相机侧），不藏格子后
