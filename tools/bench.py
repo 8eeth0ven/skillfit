@@ -1196,8 +1196,11 @@ function build(zLabels,cells,layerGap){
   zLabels.forEach((c,k)=>{const sp=label(short(c),58,true);sp.userData={full:c};
     sp.position.set(0,0,(k-(NC-1)/2)*layerGap-0.72);scene.add(sp);labelSprites.push(sp)});  // 嵌在层面正中（3×3格前方），穿越渐近时直读
   models.forEach((m,i)=>{const sp=label(m,48);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,-(NC-1)/2*layerGap-3.4);scene.add(sp);labelSprites.push(sp);
-  const sp2=label(m,48);sp2.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-3.4);scene.add(sp2);labelSprites.push(sp2)});
-  camera.position.set(NM*3.4,NM*2.9,NC*layerGap*1.15);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
+  const sp2=label(m,48);sp2.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-3.4);scene.add(sp2);labelSprites.push(sp2);
+  /* 远端面同样两排（转到背面也有坐标） */
+  const sp3=label(m,48);sp3.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,(NC-1)/2*layerGap+2.6);scene.add(sp3);labelSprites.push(sp3);
+  const sp4=label(m,48);sp4.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,(NC-1)/2*layerGap+2.6);scene.add(sp4);labelSprites.push(sp4)});
+  camera.position.set(NM*1.55,NM*1.05,NC*layerGap*0.72);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
   needsRender=true;
 }
 const sel=document.getElementById('c3cat');
@@ -1239,7 +1242,7 @@ addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
 const FWD=new THREE.Vector3(),RIGHT=new THREE.Vector3();
 function moveCam(dt){
   if(!keys.size)return;
-  const step=dt*13;
+  const step=dt*26;
   camera.getWorldDirection(FWD);
   RIGHT.crossVectors(FWD,camera.up).normalize();
   if(keys.has('w')){camera.position.addScaledVector(FWD,step);controls.target.addScaledVector(FWD,step)}
