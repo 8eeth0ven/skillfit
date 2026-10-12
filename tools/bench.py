@@ -1207,16 +1207,7 @@ function build(zLabels,cells,layerGap){
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
   zLabels.forEach((c,k)=>{const sp=label(short(c),58,true);sp.userData={full:c};
     sp.position.set(0,0,(k-(NC-1)/2)*layerGap-0.72);scene.add(sp);labelSprites.push(sp)});  // 嵌在层面正中（3×3格前方），穿越渐近时直读
-  models.forEach((m,i)=>{const sp=label(m,38);sp.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,-(NC-1)/2*layerGap-3.4);scene.add(sp);labelSprites.push(sp);
-  const sp2=label(m,38);sp2.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-3.4);scene.add(sp2);labelSprites.push(sp2);
-  /* 远端面同样两排（转到背面也有坐标） */
-  const sp3=label(m,38);sp3.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-2.6,(NC-1)/2*layerGap+2.6);scene.add(sp3);labelSprites.push(sp3);
-  const sp4=label(m,38);sp4.position.set(-(NM-1)/2*GAP-2.5,(i-(NM-1)/2)*GAP,(NC-1)/2*layerGap+2.6);scene.add(sp4);labelSprites.push(sp4);
-  /* 右棱两排（判官轴）+ 顶棱两排（生产者轴）：四个侧面都有坐标 */
-  const sp5=label(m,38);sp5.position.set((NM-1)/2*GAP+2.5,(i-(NM-1)/2)*GAP,-(NC-1)/2*layerGap-3.4);scene.add(sp5);labelSprites.push(sp5);
-  const sp6=label(m,38);sp6.position.set((NM-1)/2*GAP+2.5,(i-(NM-1)/2)*GAP,(NC-1)/2*layerGap+2.6);scene.add(sp6);labelSprites.push(sp6);
-  const sp7=label(m,38);sp7.position.set((i-(NM-1)/2)*GAP,(NM-1)/2*GAP+1.7,-(NC-1)/2*layerGap-2.6);scene.add(sp7);labelSprites.push(sp7);
-  const sp8=label(m,38);sp8.position.set((i-(NM-1)/2)*GAP,(NM-1)/2*GAP+1.7,(NC-1)/2*layerGap+2.6);scene.add(sp8);labelSprites.push(sp8)});
+  /* 外围大坐标已删：每层自带行/列表头（h1/h2），不再重复 */
   camera.position.set(NM*2.4,NM*1.7,NC*layerGap*1.0);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
   needsRender=true;
 }
