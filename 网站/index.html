@@ -340,7 +340,7 @@ function build(zLabels,cells,layerGap){
   plates.push({geo:plateG,mat:plateM});
   const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
   zLabels.forEach((c,k)=>{const sp=label(short(c),58,true);sp.userData={full:c};
-    sp.position.set(0,0,(k-(NC-1)/2)*layerGap-0.72);scene.add(sp);labelSprites.push(sp)});  // 嵌在层面正中（3×3格前方），穿越渐近时直读
+    sp.position.set(0,0,(k-(NC-1)/2)*layerGap+0.85);scene.add(sp);labelSprites.push(sp)});  // 层名在 N×N 面的正面（朝初始相机侧），不藏格子后
   /* 外围大坐标已删：每层自带行/列表头（h1/h2），不再重复 */
   camera.position.set(NM*2.4,NM*1.7,NC*layerGap*1.0);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
   needsRender=true;
