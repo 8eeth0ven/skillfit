@@ -963,7 +963,7 @@ details.pendd summary{cursor:pointer;color:var(--sub);font-size:13px}
 <div class="page on" id="pg-ov"></div>
 <div class="page" id="pg-sk"></div>
 <div class="page" id="pg-cr"></div>
-<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub);display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span style="max-width:640px">3D 评分矩阵（N×N×A）：N×N = 生产者×判官的交叉判分面，A = 分层轴。<b>越绿越强、越红越弱</b>，拖拽旋转 · 滚轮缩放 · W/S 前进后退 · A/D 平移（近处方块自动淡化）· 悬停看格。</span>
+<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub);display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span style="max-width:640px">3D 评分矩阵（N×N×A）：N×N = 生产者×判官的交叉判分面，A = 分层轴。<b>越绿越强、越红越弱</b>，拖拽旋转 · 滚轮缩放 · W/S 前进后退 · A/D 平移（近处方块自动淡化）· 悬停看格 · 层距可展开对照。</span>
 <select id="c3cat" style="border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:13px;background:#fff;outline:none"><option value="">全部总览（A=大类）</option></select></div>
 <div class="card" style="padding:10px 14px">
 <div id="c3box" style="height:600px;border-radius:10px;overflow:hidden;position:relative;background:#fafbfc"></div>
@@ -1102,7 +1102,12 @@ const bIn=zoomBtn('+',()=>{camera.position.lerp(controls.target,0.16);updateFade
 const bOut=zoomBtn('−',()=>{camera.position.lerp(controls.target,-0.22);updateFade();needsRender=true});
 const bRst=zoomBtn('⟲',()=>{if(homePos){camera.position.copy(homePos);controls.target.set(0,0,0);needsRender=true}});
 bRst.style.width='auto';bRst.style.padding='0 10px';bRst.textContent='重置';
-zb.append(bOut,bIn,bRst);box.appendChild(zb);
+const bGap=zoomBtn('展开层距',()=>{gapOpen=!gapOpen;bGap.textContent=gapOpen?'收起层距':'展开层距';
+  const gap=gapOpen?baseGap*2.2:baseGap;
+  build(cur.z,cur.cells,gap);needsRender=true});
+bGap.style.width='auto';bGap.style.padding='0 10px';
+zb.append(bOut,bIn,bGap,bRst);box.appendChild(zb);
+let gapOpen=false,baseGap=2.6;
 scene.background=new THREE.Color('#eef1f6');
 scene.add(new THREE.AmbientLight(0xffffff,0.6));
 const dl=new THREE.DirectionalLight(0xffffff,0.95);dl.position.set(8,14,10);scene.add(dl);
@@ -1185,8 +1190,9 @@ function build(zLabels,cells,layerGap){
 const sel=document.getElementById('c3cat');
 Object.keys(D.cube.byCat||{}).sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c+'（Top '+D.cube.byCat[c].skills.length+' 技能）';sel.appendChild(o)});
 sel.onchange=()=>{const v=sel.value;
-  if(!v){cur={z:D.cube.cats,cells:D.cube.cells};build(D.cube.cats,D.cube.cells,2.6)}
-  else{const B=D.cube.byCat[v];cur={z:B.skills,cells:B.cells};build(B.skills,B.cells,2.2)}};
+  if(!v){cur={z:D.cube.cats,cells:D.cube.cells};baseGap=2.6}
+  else{const B=D.cube.byCat[v];cur={z:B.skills,cells:B.cells};baseGap=2.2}
+  build(cur.z,cur.cells,gapOpen?baseGap*2.2:baseGap)};
 cur={z:D.cube.cats,cells:D.cube.cells};
 build(D.cube.cats,D.cube.cells,2.6);
 const tip=document.createElement('div');
