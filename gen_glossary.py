@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""技能中文释义批量生成（glm-5.3-flash@api，thinking关，每批40个）→ library/技能释义.json + reports/技能总览.md
+"""技能中文释义批量生成（glm-5.3-flash@api，thinking关，每批40个）→ library/skill_glossary.json + reports/技能总览.md
 幂等：已有释义跳过。"""
 import json, os, re, sys
 from pathlib import Path
@@ -10,8 +10,8 @@ sys.path.insert(0, os.path.expanduser("~/.zcode/skills/skill-bench/tools"))
 os.environ.setdefault("BENCH_API_DIRECT", "1")
 from bench import call
 
-db = json.loads((PROJ / "library/库.json").read_text())
-OUT = PROJ / "library/技能释义.json"
+db = json.loads((PROJ / "library/db.json").read_text())
+OUT = PROJ / "library/skill_glossary.json"
 gloss = json.loads(OUT.read_text()) if OUT.exists() else {}
 
 def sname(e): return re.sub(r"[^\w\-]", "-", e["skill"] + "__" + e["repo"].split("/0" if False else "/")[0])[:60]

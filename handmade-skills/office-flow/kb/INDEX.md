@@ -4,14 +4,14 @@
 
 | 文件 | 管什么 | 何时开 |
 |---|---|---|
-| 三件套自动化.md | 工具选型矩阵、docx/xlsx/pptx 各自速查与陷阱、跨格式转换矩阵 | 读写/批量处理 Office 文件 |
-| PDF与求职文档.md | PDF 文本层判定、表格提取、合并拆分水印、生成三路、OCR、简历模板与 ATS | 一切 PDF 操作 / 做简历 |
+| office-automation.md | 工具选型矩阵、docx/xlsx/pptx 各自速查与陷阱、跨格式转换矩阵 | 读写/批量处理 Office 文件 |
+| pdf-and-career-docs.md | PDF 文本层判定、表格提取、合并拆分水印、生成三路、OCR、简历模板与 ATS | 一切 PDF 操作 / 做简历 |
 
 ## 开节速查
 
 ```bash
-grep -n "^## \|^### " 知识库/三件套自动化.md
-grep -n "^## \|^### " 知识库/PDF与求职文档.md
+grep -n "^## \|^### " kb/office-automation.md
+grep -n "^## \|^### " kb/pdf-and-career-docs.md
 ```
 
 ## 组合拳

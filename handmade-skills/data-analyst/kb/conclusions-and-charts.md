@@ -79,7 +79,7 @@ df['age_band'] = pd.cut(df['age'], bins=[0,18,35,60,150],
 df['amt_quartile'] = pd.qcut(df['amt'], 4, labels=['Q1','Q2','Q3','Q4'],
                              duplicates='drop')
 
-# merge 必带 validate + 前后行数核对（接 体检三板斧.md §4）
+# merge 必带 validate + 前后行数核对（接 data-checkup.md §4）
 m = pd.merge(a, b, on='user_id', how='left', validate='one_to_one')
 assert len(m) == len(a), '行数变了，键不唯一被放大'
 

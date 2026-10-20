@@ -8,7 +8,7 @@
   python3 collect.py --seed 1000                       # 给 ≥1k 与 trending 条目建 tasks/<skill>__<owner>/（快扫层）
   参数: --max-repos 30 --max-skills-per-repo 20 --max-new 60
 依赖: gh 已登录；GitHub 走代理 127.0.0.1:7897；搜索限速已内置 sleep
-产出: library/库.json + library/<owner>__<repo>/<skill>/SKILL.md；--seed 时生成 tasks/
+产出: library/db.json + library/<owner>__<repo>/<skill>/SKILL.md；--seed 时生成 tasks/
 条目状态: 待评 / 评估中 / 已评 / 不评
 """
 import argparse, base64, json, os, re, subprocess, sys, time
@@ -17,7 +17,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 PROJ = Path("~/Desktop/Skills&Model-Benchmark").expanduser()
-DB = PROJ / "library" / "库.json"
+DB = PROJ / "library" / "db.json"
 TDIR = PROJ / "tasks"
 PROXY = {"https_proxy": "http://127.0.0.1:7897", "http_proxy": "http://127.0.0.1:7897"}
 # 高星线查询词（2026-10-09 用户定标 ≥5k + 扩范围：3→8 路）
@@ -211,7 +211,7 @@ def single_instance():
         try:
             old = int(lock.read_text().strip())
             os.kill(old, 0)
-            sys.exit(f"另一个 collect.py 在跑 pid={old}（防并发写 库.json 互相覆盖），稍后再试")
+            sys.exit(f"另一个 collect.py 在跑 pid={old}（防并发写 db.json 互相覆盖），稍后再试")
         except ValueError:
             pass
         except ProcessLookupError:

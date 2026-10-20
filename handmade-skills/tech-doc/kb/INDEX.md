@@ -6,10 +6,10 @@ tech-doc 的知识库索引。SKILL.md 路由到篇，本表路由到节。**只
 
 | 文件 | 覆盖 | 一句话 |
 |------|------|--------|
-| README五问.md | README 与一切说明书型文档 | 五问框架、逐问正反例、结构模板、排版规则、时间精度、体检清单 |
-| API与架构文档.md | API 文档、架构文档、ADR、changelog | API 模板与幂等标注、架构四件套、ADR 四段式、changelog 六分类、防腐三件套 |
+| readme-five-questions.md | README 与一切说明书型文档 | 五问框架、逐问正反例、结构模板、排版规则、时间精度、体检清单 |
+| api-and-architecture.md | API 文档、架构文档、ADR、changelog | API 模板与幂等标注、架构四件套、ADR 四段式、changelog 六分类、防腐三件套 |
 
-## README五问.md 节索引
+## readme-five-questions.md 节索引
 
 | 节 | 何时开 |
 |----|--------|
@@ -21,7 +21,7 @@ tech-doc 的知识库索引。SKILL.md 路由到篇，本表路由到节。**只
 | 体检清单 | 改旧 README，逐项打勾 |
 | 降维用法 | 写技术报告、交付说明书 |
 
-## API与架构文档.md 节索引
+## api-and-architecture.md 节索引
 
 | 节 | 何时开 |
 |----|--------|

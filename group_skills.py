@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""自动功能分组（N×N×A 的 A 轴）→ 库.json 功能组字段 + 分组报告。
+"""自动功能分组（N×N×A 的 A 轴）→ db.json 功能组字段 + 分组报告。
 规则：先按同仓库系列（天然同功能变体），再按名称/描述关键词补跨仓库同类。
 基准约定：组内 star 最高者为基准（cross 时列表第一个）。幂等可重跑。"""
 import json, re
 from pathlib import Path
 
 PROJ = Path(__file__).resolve().parent
-DB = PROJ / "library/库.json"
+DB = PROJ / "library/db.json"
 
 # 跨仓库功能关键词（匹配 skill 名，小写）
 KW = [

@@ -1,0 +1,37 @@
+# 明细目录：按形态查行
+
+> 用法：先说清当前在干什么，再按表打开对应文件的对应节；只开命中的节，禁通读全库。
+
+## 文件清单
+
+| 文件 | 管什么 | 什么时候开 |
+|---|---|---|
+| review-handbook.md | 评审优先级、意见分级、问题模式、comment、专项清单、分歧升级 | 任何「评审/review」类任务 |
+| testing-and-refactoring.md | 测试金字塔、判定标准、边界值、mock、重构手法、接缝、技术债 | 任何「写测试/TDD/重构/还债」类任务 |
+
+## 按形态查行
+
+| 你正在做的事 | 打开 | 章节 |
+|---|---|---|
+| 评审一个 PR/diff，不知从哪看起 | review-handbook.md | §1 优先级序 |
+| 拿不准意见算「必须改」还是「建议」 | review-handbook.md | §2 分级口径 |
+| 评审结束要出产物 | review-handbook.md | §3 意见表格式 |
+| 逐类找问题（空指针/边界/竞态…） | review-handbook.md | §4 模式问句表 |
+| 写单条评审 comment | review-handbook.md | §5 四段模板 |
+| 被评审的代码量大/并发/异步 | review-handbook.md | §6 专项清单 |
+| 代码慢要定位瓶颈 | review-handbook.md | §7 性能定位顺序 |
+| 评审和作者来回扯不清 | review-handbook.md | §8 三轮升级路径 |
+| 新功能要配测试，不知放哪层 | testing-and-refactoring.md | §1 测试金字塔 |
+| 判断已有测试写得好不好 | testing-and-refactoring.md | §2 判定表 |
+| 给函数挑测试输入 | testing-and-refactoring.md | §3 边界值选择法 |
+| 依赖该不该 mock 争执 | testing-and-refactoring.md | §4 mock 分寸表 |
+| 代码乱要重构，选手法 | testing-and-refactoring.md | §5 手法速查 |
+| 遗留代码没测试不敢动 | testing-and-refactoring.md | §6 接缝法 |
+| 记录/清理技术债 | testing-and-refactoring.md | §7 债务模板 |
+
+## 速查口诀
+
+- 评审：优先级 → 分级 → 问句 → 出表；风格不进表。
+- 测试：选层 → 守判定 → 挑边界 → 控 mock；先红后绿。
+- 重构：有测试兜底 → 小步 → 一提交一手法。
+- 性能：先测量（SKILL.md 纪律 4），评审大数据量代码加 评审手册 §6。

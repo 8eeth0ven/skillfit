@@ -17,7 +17,7 @@ while true; do
   sleep 5; rm -f runs/.bench.lock
   SKILLS=$(python3 - <<'EOF'
 import json, re
-db = json.load(open('library/库.json'))
+db = json.load(open('library/db.json'))
 def sname(e):
     return re.sub(r'[^\w\-]', '-', e['skill']+'__'+e['repo'].split('/')[0])[:60]  # 与 collect.seed_tasks 同款清洗
 print(','.join(sname(e) for e in db['条目'] if e['状态']=='待评(已建题)'))
@@ -32,7 +32,7 @@ EOF
     python3 $B site
     python3 - <<'EOF'
 import json, csv
-db = json.load(open('library/库.json'))
+db = json.load(open('library/db.json'))
 ok_models = {}
 try:
     for r in csv.DictReader(open('runs/台账.csv')):
@@ -48,7 +48,7 @@ for e in db['条目']:
     sname = _sname(e)
     if e['状态'] == '待评(已建题)' and len(ok_models.get(sname, ())) >= 4:  # kimi 暂停期 4 模型口径
         e['状态'] = '已评'; n += 1
-json.dump(db, open('library/库.json', 'w'), ensure_ascii=False, indent=1)
+json.dump(db, open('library/db.json', 'w'), ensure_ascii=False, indent=1)
 print(f'已评回写 {n} 个技能')
 EOF
   else

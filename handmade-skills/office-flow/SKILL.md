@@ -11,13 +11,13 @@ description: 办公与文档处理自动化：Office 三件套（Word/Excel/PPT�
 
 | 场景 | 动作 | 开哪节 |
 |---|---|---|
-| 要读/写/批量改 docx·xlsx·pptx | 查工具矩阵对号入座 | 知识库/三件套自动化.md §1 |
-| Excel 公式读出来是空的/日期变数字 | dtype/公式值陷阱 | 知识库/三件套自动化.md §2 |
-| PDF 提取文字/表格 | 先判文本层有无再选工具 | 知识库/PDF与求职文档.md §1 |
-| PDF 合并/拆分/加水印/生成 | pypdf / reportlab 路线 | 知识库/PDF与求职文档.md §2 |
-| 扫描件要文字 | OCR 路线与降级预期 | 知识库/PDF与求职文档.md §3 |
-| A 格式转 B 格式 | 查无损/有损矩阵 | 知识库/三件套自动化.md §4 |
-| 做简历 | 信息采集→一页化→量化改写→ATS 检查 | 知识库/PDF与求职文档.md §4 |
+| 要读/写/批量改 docx·xlsx·pptx | 查工具矩阵对号入座 | kb/office-automation.md §1 |
+| Excel 公式读出来是空的/日期变数字 | dtype/公式值陷阱 | kb/office-automation.md §2 |
+| PDF 提取文字/表格 | 先判文本层有无再选工具 | kb/pdf-and-career-docs.md §1 |
+| PDF 合并/拆分/加水印/生成 | pypdf / reportlab 路线 | kb/pdf-and-career-docs.md §2 |
+| 扫描件要文字 | OCR 路线与降级预期 | kb/pdf-and-career-docs.md §3 |
+| A 格式转 B 格式 | 查无损/有损矩阵 | kb/office-automation.md §4 |
+| 做简历 | 信息采集→一页化→量化改写→ATS 检查 | kb/pdf-and-career-docs.md §4 |
 
 ## 执行纪律
 
@@ -40,6 +40,6 @@ description: 办公与文档处理自动化：Office 三件套（Word/Excel/PPT�
 
 ## 目录
 
-- 知识库/明细目录.md — 总索引
-- 知识库/三件套自动化.md — 工具矩阵 / docx / xlsx / pptx / 转换矩阵
-- 知识库/PDF与求职文档.md — PDF 分层处理 / 生成三路 / OCR / 简历与 ATS
+- kb/INDEX.md — 总索引
+- kb/office-automation.md — 工具矩阵 / docx / xlsx / pptx / 转换矩阵
+- kb/pdf-and-career-docs.md — PDF 分层处理 / 生成三路 / OCR / 简历与 ATS

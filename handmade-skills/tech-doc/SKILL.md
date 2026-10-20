@@ -23,17 +23,17 @@ description: 工程文档写作：README、API 文档、架构文档、changelog
 
 | 场景 | 动作 | 开哪节 |
 |------|------|--------|
-| 从零写 README | 先过五问定骨架再动笔 | `知识库/README五问.md` 全篇 |
-| 改旧 README（没人看/重复提问多） | 五问逐问体检，缺哪问补哪问 | `知识库/README五问.md` §体检清单 |
-| 写 API 文档 | endpoint 总表起步，逐接口套模板 | `知识库/API与架构文档.md` §API 文档模板 |
-| 写架构文档 | 组件图→数据流→依赖→故障域，四件缺一不可 | `知识库/API与架构文档.md` §架构文档模板 |
-| 记一次选型/技术决策 | ADR 四段式，一次决策一篇 | `知识库/API与架构文档.md` §ADR |
-| 写 changelog | 六分类 + 语义化版本 + 中文惯用 | `知识库/API与架构文档.md` §changelog 规范 |
-| 写技术报告/交付说明书 | 五问降维成三问 | `知识库/README五问.md` §降维用法 |
-| 文档过时/断链/与代码脱节 | 防腐三件套：同 PR、过时标记、断链检查 | `知识库/API与架构文档.md` §文档腐化防护 |
-| 排版争议（层级/表格/emoji/时间精度） | 排版规则表 + 时间精度表裁决 | `知识库/README五问.md` §排版规则表、§时间精度场景表 |
+| 从零写 README | 先过五问定骨架再动笔 | `kb/readme-five-questions.md` 全篇 |
+| 改旧 README（没人看/重复提问多） | 五问逐问体检，缺哪问补哪问 | `kb/readme-five-questions.md` §体检清单 |
+| 写 API 文档 | endpoint 总表起步，逐接口套模板 | `kb/api-and-architecture.md` §API 文档模板 |
+| 写架构文档 | 组件图→数据流→依赖→故障域，四件缺一不可 | `kb/api-and-architecture.md` §架构文档模板 |
+| 记一次选型/技术决策 | ADR 四段式，一次决策一篇 | `kb/api-and-architecture.md` §ADR |
+| 写 changelog | 六分类 + 语义化版本 + 中文惯用 | `kb/api-and-architecture.md` §changelog 规范 |
+| 写技术报告/交付说明书 | 五问降维成三问 | `kb/readme-five-questions.md` §降维用法 |
+| 文档过时/断链/与代码脱节 | 防腐三件套：同 PR、过时标记、断链检查 | `kb/api-and-architecture.md` §文档腐化防护 |
+| 排版争议（层级/表格/emoji/时间精度） | 排版规则表 + 时间精度表裁决 | `kb/readme-five-questions.md` §排版规则表、§时间精度场景表 |
 
-知识库路径相对本文件：`知识库/<篇名>`；篇内节定位先查 `知识库/明细目录.md`。
+知识库路径相对本文件：`kb/<篇名>`；篇内节定位先查 `kb/INDEX.md`。
 
 ## 执行纪律（动笔前过一遍，交稿前再过一遍）
 

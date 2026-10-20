@@ -93,7 +93,7 @@ df.groupby(['city', 'product']).size().value_counts()
 | 完全重复行 | `df.duplicated().sum() > 0` | 直接 `df = df.drop_duplicates()` |
 | 业务重复（同实体多条） | 主键不唯一但行内容不同 | 不是脏数据，先问业务（多版本？多状态？），禁直接删 |
 
-**merge 前后各查一次行数**：左表 n1 + 右表 n2 → 合并后行数涨了就是键不唯一导致笛卡尔放大（详见 结论与图表.md §4 validate）。
+**merge 前后各查一次行数**：左表 n1 + 右表 n2 → 合并后行数涨了就是键不唯一导致笛卡尔放大（详见 conclusions-and-charts.md §4 validate）。
 
 **聚合自查输出**（每次大聚合后跑，30 秒防翻倍）：
 

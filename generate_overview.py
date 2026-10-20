@@ -5,8 +5,8 @@ import json, re
 from pathlib import Path
 
 PROJ = Path(__file__).resolve().parent
-db = json.loads((PROJ / "library/库.json").read_text())
-gloss = json.loads((PROJ / "library/技能释义.json").read_text())
+db = json.loads((PROJ / "library/db.json").read_text())
+gloss = json.loads((PROJ / "library/skill_glossary.json").read_text())
 def sname(e): return re.sub(r"[^\w\-]", "-", e["skill"] + "__" + e["repo"].split("/")[0])[:60]
 agg = {}
 for f in (PROJ / "reports").glob("*-聚合.json"):

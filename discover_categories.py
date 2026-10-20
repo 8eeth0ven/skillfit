@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 # 大类发现：1252 技能 → 语义大类图谱（技能级归并，穿透"仓库系列"组）
-# 素材：库.json（skill/repo/描述/功能组）+ 技能释义.json（中文一句话）
+# 素材：db.json（skill/repo/描述/功能组）+ skill_glossary.json（中文一句话）
 # 口径：功能形态优先于领域（"金融数据分析"归 数据，不归 商业金融）
-# 产出：reports/技能大类图谱.md + library/大类映射.json
+# 产出：reports/技能大类图谱.md + library/category_map.json
 import json, collections, pathlib, re
 
 PROJ = pathlib.Path("~/Desktop/Skills&Model-Benchmark").expanduser()
-db = json.loads((PROJ / "library/库.json").read_text())
-gl = json.loads((PROJ / "library/技能释义.json").read_text())
+db = json.loads((PROJ / "library/db.json").read_text())
+gl = json.loads((PROJ / "library/skill_glossary.json").read_text())
 
 # 大类体系：特异性优先（先匹配的先赢；顺序即优先级）
 CATS = [
@@ -83,6 +83,6 @@ if unmatched:
     lines += [f"## 待归类（{len(unmatched)}，补规则素材）", "", " / ".join(unmatched[:40]) + (" …" if len(unmatched) > 40 else "")]
 (PROJ / "reports").mkdir(exist_ok=True)
 (PROJ / "reports/技能大类图谱.md").write_text("\n".join(lines))
-(PROJ / "library/大类映射.json").write_text(json.dumps(mapping, ensure_ascii=False, indent=1))
+(PROJ / "library/category_map.json").write_text(json.dumps(mapping, ensure_ascii=False, indent=1))
 print(f"13大类+待归类 | 覆盖 {len(mapping)-len(unmatched)}/{len(mapping)} | 待归类 {len(unmatched)}")
 for cat, n in cnt2.most_common(): print(f"  {n:4d}  {cat}")

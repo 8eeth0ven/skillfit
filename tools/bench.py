@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """skill-bench 批跑器 v3（通道A：codebuddy CLI + OpenAI 兼容 API 双通道）
-v3 吸收的开源机制（来源见 知识库/交叉评分.md §判官配置规则 与对话记录）:
+v3 吸收的开源机制（来源见 kb/交叉评分.md §判官配置规则 与对话记录）:
   断言层(anthropics/skills, microsoft/skills) / 触发正负例(OpenAI eval-skills) /
   M4 等长对照(SkillsBench 自认未做的坑) / Hake 归一化增益(SkillsBench) /
   --trials 多试验+中位(Arena) / 家族去重票(PoLL+Apple correlated errors) / 反冗长条款(verbosity bias 文献)
-rubric/权重/SkillScore 的文档版在 ../知识库/ —— 改脚本必同步改文档，反之亦然。
+rubric/权重/SkillScore 的文档版在 ../kb/ —— 改脚本必同步改文档，反之亦然。
 
 用法（项目根 ~/Desktop/Skills&Model-Benchmark 下）:
   python3 .../bench.py doctor --models glm-5.3,deepseek-v4-pro
@@ -653,7 +653,7 @@ def cmd_agg(a):
         for p in producers:  # 对角线填自评均值（标"自"，行均/列均已排除）
             sv = self_acc.get((p, "M2"))
             if sv: mat[p][p] = round(statistics.mean(sv), 2)
-        clues = []  # 复盘线索（自迭代输入）：逐条处置后记入 知识库/迭代经验.md
+        clues = []  # 复盘线索（自迭代输入）：逐条处置后记入 kb/迭代经验.md
         if review["判定不一致"]:
             clues.append(f"判定与分值脱节 {review['判定不一致']} 处 → rubric 已加判定口径，复现则查判官")
         if review["断言全挂"]:
@@ -718,7 +718,7 @@ def cmd_agg(a):
             rep.append(f"| {s} | {fam(s)} | {b:+.2f} | {tag} |")
         for m, v in sorted(self_bias.items()):
             rep.append(f"| {m}（自评） | {fam(m)} | {statistics.mean(v):+.2f} | 自偏测量，不入总分 |")
-        rep += ["", "## 复盘线索（自迭代输入；逐条处置后记入 知识库/迭代经验.md）"]
+        rep += ["", "## 复盘线索（自迭代输入；逐条处置后记入 kb/迭代经验.md）"]
         rep += [f"- {c}" for c in clues] or ["- （本批无异常线索）"]
         rep += ["", "## 明细", "| 代号 | 模型 | 任务 | 模式 | " + " | ".join(DIMS) + " | 总分 |",
                 "|---|---|---|---|" + "---|" * (len(DIMS) + 1)]
@@ -1288,7 +1288,7 @@ def cmd_site(a):
             rows[r["任务"]] = r
         G["任务对比"] = list(rows.values())
     # 3D 立方体：大类(Z层) × 生产者(X) × 判官(Y)，格值 = 大类内技能判分均值
-    cm = PROJ / "library" / "大类映射.json"
+    cm = PROJ / "library" / "category_map.json"
     cat_map = json.loads(cm.read_text()) if cm.exists() else {}
     # 组→大类（组内技能投票）
     for G in data["cross"]:
@@ -1317,7 +1317,7 @@ def cmd_site(a):
         s = agg["skill"]
         cells = sorted({p.parent.name for p in (RDIR / s).glob("*/T*-M2.md")})
         agg["已产格"] = "、".join(cells) or "（待产）"
-        gl = PROJ / "library" / "技能释义.json"
+        gl = PROJ / "library" / "skill_glossary.json"
         if gl.exists():
             gloss = json.loads(gl.read_text())
             agg["功能"] = gloss.get(s, "")
@@ -1455,7 +1455,7 @@ def cmd_site(a):
     (web / "data.json").write_text(json.dumps(data, ensure_ascii=False))
     # 模型×分类画像（用户 2026-10-11 需求：什么模型在什么分类突出）
     try:
-        dbj = json.loads((PROJ / "library/库.json").read_text())
+        dbj = json.loads((PROJ / "library/db.json").read_text())
         grp = {re.sub(r"[^\w\-]", "-", e["skill"] + "__" + e["repo"].split("/")[0])[:60]:
                (e.get("功能组") or "其他") for e in dbj["条目"]}
         from collections import defaultdict

@@ -11,13 +11,13 @@ description: 白盒源码安全审计：从入口到利用链到报告的全流�
 
 | 场景 | 先做什么 | 开哪节 |
 |---|---|---|
-| 刚拿到代码库 | 定栈定框架定入口，§1 三分钟画地图 | 知识库/审计流程与报告.md |
-| Java / Spring 系 | 按 SQL/SpEL/反序列化/XXE 逐类过 sink | 知识库/sink速查-Java.md |
-| PHP / Laravel / ThinkPHP / WP | 先查注入与反序列化 POP 链起点 | 知识库/sink速查-PHP.md |
-| Python / Django / Flask / FastAPI | SSTI 与 pickle/yaml 双重点 | 知识库/sink速查-Python.md |
-| Go / Node.js | text/template 与原型污染双重点 | 知识库/sink速查-Go-Node.md |
-| 找到疑似 sink | 回溯污点源，确认可达性与过滤强度 | 知识库/审计流程与报告.md §3 |
-| 要出报告 | 两张表格式 + 分级口径 | 知识库/审计流程与报告.md §5 |
+| 刚拿到代码库 | 定栈定框架定入口，§1 三分钟画地图 | kb/audit-workflow.md |
+| Java / Spring 系 | 按 SQL/SpEL/反序列化/XXE 逐类过 sink | kb/sinks-java.md |
+| PHP / Laravel / ThinkPHP / WP | 先查注入与反序列化 POP 链起点 | kb/sinks-php.md |
+| Python / Django / Flask / FastAPI | SSTI 与 pickle/yaml 双重点 | kb/sinks-python.md |
+| Go / Node.js | text/template 与原型污染双重点 | kb/sinks-go-node.md |
+| 找到疑似 sink | 回溯污点源，确认可达性与过滤强度 | kb/audit-workflow.md §3 |
+| 要出报告 | 两张表格式 + 分级口径 | kb/audit-workflow.md §5 |
 | 只想先跑自动化 | 每张 sink 表末节有 semgrep/codeql 查询思路 | 对应速查表 §自动化辅助 |
 
 ## 执行纪律
@@ -41,9 +41,9 @@ description: 白盒源码安全审计：从入口到利用链到报告的全流�
 
 ## 目录
 
-- 知识库/明细目录.md — 总索引：每文件管什么、何时开
-- 知识库/审计流程与报告.md — 六步流程 + 污点链判定 + 报告两张表
-- 知识库/sink速查-Java.md — Spring/Mybatis/Fastjson/Shiro 全家
-- 知识库/sink速查-PHP.md — 原生函数 + Laravel/ThinkPHP/WordPress
-- 知识库/sink速查-Python.md — Django/Flask/FastAPI + pickle/yaml
-- 知识库/sink速查-Go-Node.md — gin/gorm + express/原型污染
+- kb/INDEX.md — 总索引：每文件管什么、何时开
+- kb/audit-workflow.md — 六步流程 + 污点链判定 + 报告两张表
+- kb/sinks-java.md — Spring/Mybatis/Fastjson/Shiro 全家
+- kb/sinks-php.md — 原生函数 + Laravel/ThinkPHP/WordPress
+- kb/sinks-python.md — Django/Flask/FastAPI + pickle/yaml
+- kb/sinks-go-node.md — gin/gorm + express/原型污染
