@@ -1,16 +1,16 @@
 # 🔐 密钥与身份映射（绝不入库）
-密钥.env
-评分/
+secrets.env
+scoring/
 
-# 📦 运行时大数据（本地保留；网站/data.json 已含蒸馏结果）
-结果/
+# 📦 运行时大数据（本地保留；site/data.json 已含蒸馏结果）
+runs/
 隔离-*/
 已用-勿重跑/
-任务集/
-报告/
-# 本地库/*/   # 已放开：技能文档随仓库同步（SKILLS.md 导航）
-本地库/.collect.lock
-网站/skills/
+tasks/
+reports/
+# library/*/   # 已放开：技能文档随仓库同步（SKILLS.md 导航）
+library/.collect.lock
+site/skills/
 
 # 一次性战时脚本（历史处置用，非项目组成）
 并行跑.sh
@@ -34,8 +34,8 @@ __pycache__/
 *.pyc
 
 # 公众号推文素材（本地预览用，不入库）
-网站/推文预览.html
-网站/推文图/
+site/推文预览.html
+site/推文图/
 推文图/
 公众号推文-*.md
 公众号推文-*.html

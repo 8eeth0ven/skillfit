@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""每日收集 GitHub 高 star agent skills → 本地库/（本地数据库）+ 可选自动建快扫任务集
+"""每日收集 GitHub 高 star agent skills → library/（本地数据库）+ 可选自动建快扫任务集
 用法:
   python3 collect.py --min-stars 1000                 # 高星线：≥1k（用户定标）
   python3 collect.py --trending                        # 趋势线：近 60 天新建、星速快（stars≥200）
   python3 collect.py --update --min-stars 1000 --trending   # 日常：刷新 stars + 捞新增（两线都跑）
-  python3 collect.py --seed 1000                       # 给 ≥1k 与 trending 条目建 任务集/<skill>__<owner>/（快扫层）
+  python3 collect.py --seed 1000                       # 给 ≥1k 与 trending 条目建 tasks/<skill>__<owner>/（快扫层）
   参数: --max-repos 30 --max-skills-per-repo 20 --max-new 60
 依赖: gh 已登录；GitHub 走代理 127.0.0.1:7897；搜索限速已内置 sleep
-产出: 本地库/库.json + 本地库/<owner>__<repo>/<skill>/SKILL.md；--seed 时生成 任务集/
+产出: library/库.json + library/<owner>__<repo>/<skill>/SKILL.md；--seed 时生成 tasks/
 条目状态: 待评 / 评估中 / 已评 / 不评
 """
 import argparse, base64, json, os, re, subprocess, sys, time
@@ -17,8 +17,8 @@ from pathlib import Path
 from urllib.parse import quote
 
 PROJ = Path("~/Desktop/Skills&Model-Benchmark").expanduser()
-DB = PROJ / "本地库" / "库.json"
-TDIR = PROJ / "任务集"
+DB = PROJ / "library" / "库.json"
+TDIR = PROJ / "tasks"
 PROXY = {"https_proxy": "http://127.0.0.1:7897", "http_proxy": "http://127.0.0.1:7897"}
 # 高星线查询词（2026-10-09 用户定标 ≥5k + 扩范围：3→8 路）
 QUERIES_HI = ["topic:claude-skills", "topic:agent-skills", "topic:claude-code",
@@ -163,7 +163,7 @@ def fetch_skills(repo, max_per):
         if not c or c.get("encoding") != "base64" or int(c.get("size", 0)) > 200_000:
             continue
         name = Path(p).parent.name or repo.split("/")[-1]
-        dst = PROJ / "本地库" / repo.replace("/", "__") / name
+        dst = PROJ / "library" / repo.replace("/", "__") / name
         dst.mkdir(parents=True, exist_ok=True)
         (dst / "SKILL.md").write_bytes(base64.b64decode(c["content"]))
         out.append({"skill": name, "路径": str((dst / "SKILL.md").relative_to(PROJ)), "repo内路径": p})
@@ -181,7 +181,7 @@ def save_db(db):
 
 
 def seed_tasks(db, threshold):
-    """≥threshold 星 或 trending 的条目 → 建 任务集/<skill>__<owner>/（已存在则跳过）"""
+    """≥threshold 星 或 trending 的条目 → 建 tasks/<skill>__<owner>/（已存在则跳过）"""
     made = []
     for e in db["条目"]:
         if not (e["stars"] >= threshold or e.get("trending")):
@@ -206,7 +206,7 @@ def seed_tasks(db, threshold):
 
 
 def single_instance():
-    lock = PROJ / "本地库" / ".collect.lock"
+    lock = PROJ / "library" / ".collect.lock"
     if lock.exists():
         try:
             old = int(lock.read_text().strip())
@@ -277,7 +277,7 @@ def main():
         log(f"快扫任务集已建 {len(made)} 个：{', '.join(made[:10])}{'…' if len(made) > 10 else ''}")
     save_db(db)
     top = sorted(db["条目"], key=lambda e: -e["stars"])[:8]
-    log(f"本地库：总 {len(db['条目'])} 条，本次新增 {new_cnt}；star 榜首：")
+    log(f"library：总 {len(db['条目'])} 条，本次新增 {new_cnt}；star 榜首：")
     for e in top:
         print(f"  ★{e['stars']:<6} {e['repo']} / {e['skill']}  [{e['状态']}]{' 🔥' if e.get('trending') else ''}")
 

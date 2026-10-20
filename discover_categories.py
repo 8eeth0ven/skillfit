@@ -2,12 +2,12 @@
 # 大类发现：1252 技能 → 语义大类图谱（技能级归并，穿透"仓库系列"组）
 # 素材：库.json（skill/repo/描述/功能组）+ 技能释义.json（中文一句话）
 # 口径：功能形态优先于领域（"金融数据分析"归 数据，不归 商业金融）
-# 产出：报告/技能大类图谱.md + 本地库/大类映射.json
+# 产出：reports/技能大类图谱.md + library/大类映射.json
 import json, collections, pathlib, re
 
 PROJ = pathlib.Path("~/Desktop/Skills&Model-Benchmark").expanduser()
-db = json.loads((PROJ / "本地库/库.json").read_text())
-gl = json.loads((PROJ / "本地库/技能释义.json").read_text())
+db = json.loads((PROJ / "library/库.json").read_text())
+gl = json.loads((PROJ / "library/技能释义.json").read_text())
 
 # 大类体系：特异性优先（先匹配的先赢；顺序即优先级）
 CATS = [
@@ -50,7 +50,7 @@ for e in db["条目"]:
 # 统计
 cnt = collections.Counter(mapping.values())
 for k in unmatched: mapping[k] = "待归类"
-# 短名别名（供网站/管线按 skill 短名查询）
+# 短名别名（供site/管线按 skill 短名查询）
 cnt2 = collections.Counter(mapping.values())
 
 # 每大类代表技能（按释义取前5）
@@ -68,7 +68,7 @@ for e in db["条目"]:
     grp[mapping.get(f"{sk}__{owner}", "待归类")][e.get("功能组","")] += 1
 
 lines = ["# 技能大类图谱（1169 个唯一技能 → 13 大类）", "",
-         "> 生成：大类发现.py（技能级语义归并，穿透仓库系列组）；口径：功能形态优先于领域。", ""]
+         "> 生成：discover_categories.py（技能级语义归并，穿透仓库系列组）；口径：功能形态优先于领域。", ""]
 lines.append("| 大类 | 技能数 | 占比 | 收编的主要功能组 |")
 lines.append("|---|---|---|---|")
 for cat, n in cnt2.most_common():
@@ -81,8 +81,8 @@ for cat, n in cnt2.most_common():
     lines.append("")
 if unmatched:
     lines += [f"## 待归类（{len(unmatched)}，补规则素材）", "", " / ".join(unmatched[:40]) + (" …" if len(unmatched) > 40 else "")]
-(PROJ / "报告").mkdir(exist_ok=True)
-(PROJ / "报告/技能大类图谱.md").write_text("\n".join(lines))
-(PROJ / "本地库/大类映射.json").write_text(json.dumps(mapping, ensure_ascii=False, indent=1))
+(PROJ / "reports").mkdir(exist_ok=True)
+(PROJ / "reports/技能大类图谱.md").write_text("\n".join(lines))
+(PROJ / "library/大类映射.json").write_text(json.dumps(mapping, ensure_ascii=False, indent=1))
 print(f"13大类+待归类 | 覆盖 {len(mapping)-len(unmatched)}/{len(mapping)} | 待归类 {len(unmatched)}")
 for cat, n in cnt2.most_common(): print(f"  {n:4d}  {cat}")

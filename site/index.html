@@ -1,0 +1,395 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta http-equiv="refresh" content="120"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkillFit · 技能×模型契合度榜单</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#111827;--sub:#6b7280;--line:#e5e7eb;--acc:#2563eb;--acc2:#eef2ff;--ok:#059669;--okbg:#ecfdf5;--bad:#dc2626;--k:#eef2ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 -apple-system,"PingFang SC","Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:0;z-index:9;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hbar{max-width:1180px;margin:0 auto;padding:10px 20px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:17px;font-weight:800}.brand i{color:var(--acc);font-style:normal}
+.chip{background:var(--acc2);color:var(--acc);border-radius:999px;padding:2px 12px;font-size:12px;font-weight:600}
+.chip.g{background:var(--okbg);color:var(--ok)}
+.sp{flex:1}
+.tabs{max-width:1180px;margin:0 auto;padding:8px 20px 0;display:flex;gap:6px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 16px;font-size:13px;font-weight:600;color:var(--sub);cursor:pointer}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:6px 20px 80px}
+.page{display:none}.page.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:12px 0;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+h2.pt{font-size:15px;font-weight:700;margin:22px 0 4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
+.mcard{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;display:flex;flex-direction:column;align-items:flex-start}
+.mcard b{display:block;font-size:14px;margin-bottom:6px}
+.mcard .tgs{margin-top:auto;padding-top:6px}
+.mcard span{display:inline-block;background:var(--k);border-radius:8px;padding:1px 8px;margin:2px 3px 2px 0;font-size:12px;color:#3730a3}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--sub);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+tr:hover td{background:#fafbff}
+.tblwrap{overflow-x:auto}
+.tblscroll{max-height:72vh;overflow:auto}
+.tblscroll tr:first-child th{position:sticky;top:0;background:#fff;z-index:2;box-shadow:0 1px 0 var(--line)}
+.crlayout{display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:start}
+.crnav{position:sticky;top:12px;max-height:calc(100vh - 30px);overflow-y:auto;font-size:12.5px;padding-right:4px}
+.crnav .catlnk{display:block;margin:10px 0 3px;font-weight:700;color:var(--ink);font-size:12px;text-decoration:none;padding:2.5px 8px;border-radius:6px;cursor:pointer}
+.crnav .catlnk:first-child{margin-top:0}
+.crnav .catlnk:hover{background:#eef2f7}
+.crnav .crgrp{display:none;margin:2px 0 6px}
+.crnav .catlnk.open{background:#e8eefb}
+.crnav .catlnk.open+.crgrp{display:block}
+.crnav a{display:block;color:var(--sub);text-decoration:none;padding:2.5px 8px;border-radius:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.crnav a:hover{background:#eef2f7;color:var(--ink)}
+.crnav a.on{background:var(--acc);color:#fff}
+@media(max-width:860px){.crlayout{grid-template-columns:1fr}.crnav{position:static;max-height:220px;border:1px solid var(--line);border-radius:10px;padding:8px}}
+.crmain{min-width:0}
+.best td{background:var(--okbg);font-weight:700}
+.num{font-weight:700;text-align:right}
+th.num{text-align:right}
+.win{background:var(--okbg);color:var(--ok);font-weight:700;border-radius:6px;padding:2px 8px;display:inline-block}
+.neg{color:var(--bad);font-weight:600}.pos{color:var(--ok);font-weight:600}
+.search{width:100%;max-width:420px;border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:13px;margin:12px 0;outline:none}
+.search:focus{border-color:var(--acc)}
+details.sk{border:1px solid var(--line);border-radius:12px;background:#fff;margin:8px 0}
+details.sk>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:11px 16px}
+details.sk>summary::-webkit-details-marker{display:none}
+details.sk>summary:hover{background:#fafbff;border-radius:12px}
+.skname{font-weight:700;font-size:14px}
+.skname a{color:var(--ink);text-decoration:none}
+.gloss{color:var(--sub);font-size:12.5px}
+.badge{background:var(--acc);color:#fff;border-radius:999px;padding:1px 10px;font-size:12px;font-weight:600}
+.ss{margin-left:auto;color:var(--sub);font-size:12px}
+.cap{font-size:12px;color:var(--sub);margin:14px 0 4px;font-weight:600}
+.ticker{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.tk{border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:12px;color:var(--sub)}
+.tk b{color:var(--ink)}
+details.pendd summary{cursor:pointer;color:var(--sub);font-size:13px}
+.pend{font-size:12px;color:var(--sub);line-height:2}
+.foot{text-align:center;color:var(--sub);font-size:12px;margin-top:40px}
+</style></head><body>
+<header><div class="hbar">
+<span class="brand">SkillFit</span>
+<span class="chip g" id="c1"></span><span class="chip" id="c2"></span><span class="chip" id="c4"></span><span class="chip" id="c3"></span>
+<span class="sp"></span><span style="font-size:12px;color:var(--sub)">measured, not guessed</span>
+</div>
+<div class="tabs">
+<div class="tab on" data-t="ov">总览</div>
+<div class="tab" data-t="sk">技能榜</div>
+<div class="tab" data-t="cr">同类对比</div>
+<div class="tab" data-t="c3">3D 矩阵</div>
+<div class="tab" data-t="lv">实时动态</div>
+</div></header>
+<div class="wrap">
+<div class="page on" id="pg-ov"></div>
+<div class="page" id="pg-sk"></div>
+<div class="page" id="pg-cr"></div>
+<div class="page" id="pg-c3"><div class="card" style="font-size:13px;color:var(--sub);display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span style="max-width:640px">3D 评分矩阵（N×N×A）：N×N = 生产者×判官的交叉判分面，A = 分层轴。<b>越绿越强、越红越弱</b>，拖拽旋转 · 滚轮缩放 · W/S 前进后退 · A/D 平移（近处方块自动淡化）· 悬停看格 · 层距可展开对照。数据缺口过大的模型行列自动隐藏。</span>
+<select id="c3cat" style="border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:13px;background:#fff;outline:none"><option value="">全部总览（A=大类）</option></select></div>
+<div class="card" style="padding:10px 14px">
+<div id="c3box" style="height:600px;border-radius:10px;overflow:hidden;position:relative;background:#fafbfc"></div>
+<div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--sub);margin-top:8px;flex-wrap:wrap">
+<span>判分均值</span><span style="width:150px;height:10px;border-radius:5px;background:linear-gradient(90deg,hsl(0,85%,42%),hsl(14,85%,46%),hsl(28,85%,50%),hsl(45,85%,54%),hsl(75,85%,58%),hsl(118,85%,62%))"></span><span id="c3rng"></span><span class="sp"></span><span>拖拽旋转 · 滚轮缩放 · 悬停看格</span>
+</div></div></div>
+<div class="page" id="pg-lv"></div>
+<div class="foot">SkillFit · 技能×模型契合度基准 · 数据 5 分钟更新 / 页面 2 分钟重载（标签与搜索状态自动保留）</div>
+</div>
+<script>fetch('data.json').then(r=>r.json()).then(D=>{
+const bg=v=>v==null?'':'background:hsl('+Math.round(v/5*120)+',64%,88%)';
+const ent=Object.entries(D.skills||{});
+const sc=e=>e[1].ss_v2||0;  // v2 百分位
+const scored=ent.filter(e=>e[1].leaderboard&&e[1].leaderboard.length).sort((a,b)=>sc(b)-sc(a));
+const pending=ent.filter(e=>!(e[1].leaderboard&&e[1].leaderboard.length));
+document.getElementById('c1').textContent='已出分 '+scored.length;
+document.getElementById('c2').textContent='待评分 '+pending.length;
+const judged=scored.reduce((a,e)=>a+Object.values(e[1].judge_matrix_M2||{}).reduce((b,row)=>b+Object.keys(row||{}).length,0),0);
+document.getElementById('c4').textContent='交叉判分 '+(judged>=10000?(judged/10000).toFixed(1)+' 万':judged);
+if(D.live)document.getElementById('c3').textContent='快照 '+D.live.generated.slice(0,16);
+/* 数据体检卡：五模型完成格 + 最佳搭配分布 */
+const bestCnt={};scored.forEach(([s,A])=>{if(A.best){const m=A.best.split('@')[0];bestCnt[m]=(bestCnt[m]||0)+1}});
+const progArr=(D.live&&D.live.progress)?D.live.progress:[];
+const maxOk=Math.max(1,...progArr.map(p=>p['ok']||0));
+const HEALTH=`<h2 class="pt">数据体检</h2><div class="card"><div class="cap">五模型完成格（每格 = 技能×模型 的一个产物单元）</div><div style="display:flex;flex-direction:column;gap:6px;padding:6px 16px 12px">${progArr.map(p=>`<div style="display:flex;align-items:center;gap:8px;font-size:13px"><span style="width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${p['模型']}">${p['模型']}</span><div style="flex:1;height:10px;background:#edf0f4;border-radius:5px;overflow:hidden"><div style="width:${Math.round((p['ok']||0)/maxOk*100)}%;height:100%;background:var(--acc)"></div></div><b style="font-size:12px;min-width:46px;text-align:right">${p['ok']}</b></div>`).join('')}</div><div class="cap">最佳搭配分布（各模型在全库夺魁次数）</div><div style="display:flex;flex-wrap:wrap;gap:8px;padding:6px 16px 14px">${Object.entries(bestCnt).sort((a,b)=>b[1]-a[1]).map(([m,c])=>`<span class="badge">${m} × ${c}</span>`).join('')}</div></div>`;
+/* ── Tab 1 总览 ── */
+const HOWTO=`<div class="card"><details><summary style="cursor:pointer;font-weight:700">分数怎么算（点开看口径）</summary>
+<div style="font-size:13px;color:var(--ink);line-height:1.9">
+<b>SkillScore（0-100）</b> = M2 均分/5 × 60 ＋ max(0, 20−8σ) ＋ 触发准确率 × 20<br>
+即：实力 60 分（带技能做题的判官均分）＋ 稳定性 20 分（跨任务波动 σ 越小越高）＋ 触发质量 20 分（该被触发时触发、不该时克制）。<br>
+<b>四模式</b>：M1 裸跑基线 ｜ M2 加载技能文档 ｜ M3 触发模拟 ｜ M4 等长无关材料对照——增益 = M2−M1，纯内容增益 = M2−M4（剔除"上下文变长"的假增益）。<br>
+<b>名次怎么排（v2）</b>：默认按<b>百分位</b>排。判官下手轻重不一样（deepseek 手最松，space-bunny 最严），原始分先按各判官的均值和波动做 z 校正，拉到同一把尺子上，再算全库名次。旧 SkillScore（90 分并排 884 个）保留在榜内表作绝对分参考。<br>
+<b>判分</b>：每个模型既是选手又是评委（N×N 互评）：产物匿名哈希代号 → 四维打分（正确性/完整性/技能遵循/表达，0-5）→ 同家族评委只计 1 票 → 取中位数。方阵中<b>行均≈真实水平，列均=评委严格度，蓝框对角线=自评</b>（仅测自偏，不计入总分）。
+</div></details></div>`;
+document.getElementById('pg-ov').innerHTML=HOWTO
++(D['画像_模型强项']?`<h2 class="pt">模型强项速览</h2><div class="grid">${Object.entries(D['画像_模型强项']).map(([m,ts])=>`<div class="mcard"><b>${m}</b><div class="tgs">${ts.map(t=>`<span>${t}</span>`).join('')}</div></div>`).join('')}</div>`:'')
++(D['画像']?`<h2 class="pt">模型 × 分类画像 <span style="font-weight:400;color:var(--sub);font-size:12px">（平均 SkillScore，绿色=该项最高）</span></h2><div class="card tblwrap tblscroll"><table><tr><th>分类</th><th class="num">样本</th>${Object.keys(D['画像_模型强项']).map(m=>`<th class="num">${m}</th>`).join('')}</tr>${D['画像'].map(r=>{const ms=Object.keys(D['画像_模型强项']);const mx=Math.max(...ms.map(m=>r[m]??-1));return `<tr><td style="font-weight:600">${r['分类']}</td><td class="num">${r['样本']}</td>${ms.map(m=>`<td class="num">${r[m]===mx?`<span class="win">${r[m]}</span>`:r[m]??'-'}</td>`).join('')}</tr>`}).join('')}</table></div>`:'');
+/* ── Tab 2 技能榜（折叠卡+搜索）── */
+document.getElementById('pg-sk').innerHTML=`<input class="search" id="q" placeholder="搜索技能名 / 功能 / 最佳模型…">
+<div style="font-size:12px;color:var(--sub);margin:-4px 0 10px;line-height:1.9">绿色行 = 该技能的最佳配对模型 ｜ 增益表：M2−M1 总增益 / hake = 吃掉多少剩余提升空间 / M2−M4 = 剔除长度安慰剂的纯内容增益（红=负增益，skill 拖后腿）｜ 方阵：行=生产者水平，列=判官严格度，蓝框=自评</div>`+
+scored.map(([s,A])=>`
+<details class="sk" data-k="${(s+' '+(A['功能']||'')+' '+(A.best||'')).toLowerCase()}">
+<summary>${A.best?`<span class="badge">${A.best.split('@')[0]}</span>`:''}<span class="skname"><a href="#${s}" onclick="event.stopPropagation()">${s}</a></span>${A['功能']?`<span class="gloss">${A['功能']}</span>`:''}<span class="ss">第 ${A.rank_v2??'-'} 名 · 百分位 ${sc([s,A])}</span></summary>
+<div style="padding:2px 16px 14px">
+<div class="cap">SkillScore 榜</div><div class="tblwrap"><table>
+<tr><th>模型</th><th>家族</th><th class="num">SkillScore</th><th class="num">M2 均分</th><th class="num">M1 均分</th><th class="num">触发准确率</th></tr>
+${A.leaderboard.map(r=>`<tr class="${r['模型']===A.best?'best':''}"><td>${r['模型']}</td><td>${r['家族']}</td><td class="num">${r.SkillScore}</td><td class="num">${A.m2_mean[r['模型']]??'-'}</td><td class="num">${A.m1_mean[r['模型']]??'-'}</td><td class="num">${A.trigger_accuracy[r['模型']]||'-'}</td></tr>`).join('')}
+</table></div>
+${Object.keys(A.gains).length?`<div class="cap">增益（M2−M1 总 ｜ hake 剩余空间 ｜ M2−M4 纯内容）</div><div class="tblwrap"><table><tr><th>模型</th><th>任务</th><th class="num">M2−M1</th><th class="num">hake</th><th class="num">M2−M4</th></tr>${Object.entries(A.gains).map(([k,g])=>`<tr><td>${k.split('|')[0]}</td><td>${k.split('|')[1]}</td><td class="num ${(g['M2-M1']??0)<0?'neg':'pos'}">${g['M2-M1']??'-'}</td><td class="num">${g['hake']??'-'}</td><td class="num ${(g['M2-M4']??0)<0?'neg':'pos'}">${g['M2-M4']??'-'}</td></tr>`).join('')}</table></div>`:''}
+${(()=>{const JM=A.judge_matrix_M2_adj||A.judge_matrix_M2;return Object.keys(JM).length?`<div class="cap">N×N 交叉方阵 · 判官严格度已校正（行=生产者 · 列=判官 · 蓝框=自评）</div><div class="tblwrap"><table><tr><th>生产者＼判官</th>${[...new Set(Object.values(JM).flatMap(Object.keys))].map(j=>`<th class="num">${j}</th>`).join('')}</tr>${Object.entries(JM).map(([p,row])=>`<tr><td style="font-weight:600">${p}</td>${[...new Set(Object.values(JM).flatMap(Object.keys))].map(j=>`<td class="num" style="${bg(row[j])};${j===p?'outline:1px solid var(--acc);outline-offset:-1px':''}">${row[j]!==undefined?row[j]:'—'}</td>`).join('')}</tr>`).join('')}</table></div>`:''})()}
+</div></details>`).join('')
++(pending.length?`<div class="card"><details class="pendd"><summary>${pending.length} 个技能评分中，出分后自动上移</summary><p class="pend">${pending.map(([s])=>s).join(' · ')}</p></details></div>`:'');
+/* ── Tab 3 同类对比（侧边栏大类导航 + 纵向转置表）── */
+const crossArr=(D.cross||[]).slice().sort((a,b)=>(b['大类']||'~').localeCompare(a['大类']||'~')||b.skills.length-a.skills.length);
+const crTopBtn=`<button id="crtop" title="回到最上面的大类" style="display:none;position:sticky;top:0;z-index:7;width:100%;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 0;font-size:12px;font-weight:600;color:var(--ink);cursor:pointer;margin-bottom:4px">回到顶部 ↑</button>`;
+const crossNav=`<nav class="crnav" id="crnav">${crTopBtn}${(()=>{const by={};crossArr.forEach((G,i)=>{const c=G['大类']||'其他';(by[c]=by[c]||[]).push(i)});
+return Object.keys(by).sort((a,b)=>by[b].length-by[a].length).map(c=>`<a class="catlnk" href="#crg${by[c][0]}" data-cat="1">${c} · ${by[c].length}</a><div class="crgrp">`+by[c].map(i=>`<a href="#crg${i}" data-i="${i}" title="${crossArr[i]['组']}">${crossArr[i]['组']}</a>`).join('')+`</div>`).join('')})()}</nav>`;
+const crossBody=crossArr.map((G,i)=>{
+const tasks=[...new Set(G.任务对比.map(r=>r['任务']))];
+const avg=m=>{const vs=G.任务对比.map(r=>r[m]).filter(v=>v!=null);return vs.length?(vs.reduce((a,b)=>a+b,0)/vs.length).toFixed(2):'-'};
+return `<div class="card" id="crg${i}"><div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px"><b style="font-size:15px">${G['组']}</b><span class="gloss">${G['大类']?G['大类']+' · ':''}基准：${G.基准}（分数最高）· ${G.skills.length} 个成员</span></div>
+<div class="tblwrap"><table>
+<tr><th style="min-width:220px">技能</th><th class="num">平均</th><th class="num">Δ vs 基准</th><th>最佳配对</th>${tasks.map(t=>`<th class="num">${t}</th>`).join('')}</tr>
+${G.skills.map(m=>{const base=(m===G.基准);const dv=base?[]:(G.任务对比.map(r=>r['Δ('+m+'-基准)']).filter(v=>v!=null));
+const davg=dv.length?(dv.reduce((a,b)=>a+b,0)/dv.length).toFixed(2):'—';
+return `<tr class="${base?'best':''}"><td style="font-weight:600;white-space:normal;word-break:break-all">${m}</td><td class="num">${avg(m)}</td><td class="num ${base?'':(parseFloat(davg)<0?'neg':(parseFloat(davg)>0?'pos':''))}" style="${(!base&&parseFloat(davg)===0)?'color:var(--sub)':''}">${base?'基准':(davg>0?'+':'')+davg}</td><td style="font-size:12px;color:var(--sub)">${G.最佳搭配[m]?(G.最佳搭配[m].split('@')[0]):'-'}</td>${tasks.map(t=>{const r=G.任务对比.find(x=>x['任务']===t);return `<td class="num">${r&&r[m]!=null?r[m]:'-'}</td>`}).join('')}</tr>`}).join('')}
+</table></div></div>`}).join('');
+document.getElementById('pg-cr').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">同类技能对比（N×N×A）：左侧按<b>大类</b>分组导航，点击跳转；每个功能分组内分数最高者为基准，Δ = 各任务 M2 总分与基准之差。共 ${crossArr.length} 组。</div>
+<div class="crlayout">${crossNav}<div class="crmain">${crossBody}</div></div>`;
+/* 侧边栏：大类默认折叠；点击=展开并跳首组（再次点=收起不跳）；滚动高亮自动展开所在大类 */
+document.querySelectorAll('#crnav a.catlnk').forEach(a=>a.addEventListener('click',e=>{
+  const opening=!a.classList.contains('open');
+  if(!opening)e.preventDefault();   // 收起时不再跳转
+  a.classList.toggle('open',opening);
+}));
+document.addEventListener('click',e=>{if(e.target.id==='crtop'){const nav=document.getElementById('crnav');if(nav)nav.scrollTop=0;window.scrollTo({top:0,behavior:'smooth'});nav.querySelector('#crtop').style.display='none'}});
+const crHi=id=>{document.querySelectorAll('#crnav a').forEach(a=>a.classList.toggle('on','crg'+a.dataset.i===id));  // 仅高亮，不自动展开（展开只由用户点击控制）
+  const nav=document.getElementById('crnav');const lnk=nav&&nav.querySelector('a.on');
+  if(nav&&lnk&&lnk.offsetParent){  // 最小侵入滚入：高亮已在可视区不动；越界才补最小滚动量（贴底/贴顶），顶部大类尽量保留
+    const top=lnk.offsetTop,vh=nav.clientHeight;
+    if(top<nav.scrollTop+10)nav.scrollTop=Math.max(0,top-10);
+    else if(top>nav.scrollTop+vh-30)nav.scrollTop=top-vh+30}
+  const tb=document.getElementById('crtop');if(tb)tb.style.display=(nav&&nav.scrollTop>60)?'flex':'none';};
+const crObs=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting)crHi(en.target.id)})},{rootMargin:'0px 0px -60% 0px',threshold:0});
+crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el)crObs.observe(el)});
+window.addEventListener('scroll',()=>{let cur=null;crossArr.forEach((_,i)=>{const el=document.getElementById('crg'+i);if(el&&el.getBoundingClientRect().top<140)cur=el.id});if(cur)crHi(cur)},{passive:true});
+crHi('crg0');
+/* ── Tab 4 实时 ── */
+const rv=(D.live&&D.live.recent)?D.live.recent:[];
+let rateNote='';
+if(rv.length>=2){const tt=s=>{const[x,y,z]=String(s).split(':').map(Number);return x*3600+y*60+z};let d=tt(rv[0]['时间'])-tt(rv[rv.length-1]['时间']);if(d<0)d+=86400;if(d>0){const r=rv.length/(d/3600);rateNote=` · 最近 ${Math.round(d/60)} 分钟完成 ${rv.length} 格 ≈ ${r>=1?r.toFixed(0):r.toFixed(1)} 格/小时`}}
+document.getElementById('pg-lv').innerHTML=`<div class="card" style="font-size:13px;color:var(--sub)">此页是流水线心跳：<b>格</b> = 一个（技能 × 模型）的产物单元，先由 5 个模型家族各自生产，再匿名互评计分；下表为最近落盘的判分记录。数据快照：${D.live?D.live.generated:''}${rateNote}</div>`+HEALTH
++(D.live?`<div class="card"><div class="ticker">${D.live.progress.map(p=>`<span class="tk"><b>${p['模型']}</b> ${p['ok']} 格</span>`).join('')}</div><div class="tblwrap"><table><tr><th>时间</th><th>最近完成</th><th>模型</th><th>状态</th></tr>${D.live.recent.map(r=>`<tr><td>${r['时间']}</td><td>${r['技能']}</td><td>${r['模型']}</td><td>${r['状态']}</td></tr>`).join('')}</table></div></div>`:'');
+/* Tab 切换 + 状态记忆 */
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));t.classList.add('on');document.getElementById('pg-'+t.dataset.t).classList.add('on');try{sessionStorage.setItem('sftab',t.dataset.t)}catch(e){}});
+const saved=(()=>{try{return sessionStorage.getItem('sftab')}catch(e){return null}})();
+if(saved&&document.getElementById('pg-'+saved)){document.querySelector('.tab[data-t="'+saved+'"]').click()}
+/* 搜索过滤 */
+const q=document.getElementById('q');
+if(q){const val=(()=>{try{return sessionStorage.getItem('sfq')||''}catch(e){return''}})();q.value=val;
+q.oninput=()=>{const v=q.value.trim().toLowerCase();try{sessionStorage.setItem('sfq',q.value)}catch(e){}
+document.querySelectorAll('details.sk').forEach(d=>{d.style.display=(!v||d.dataset.k.includes(v))?'':'none'})};
+q.oninput();}}
+);</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+/* 3D 矩阵 v2：A 轴可切（全部=大类总览 / 某大类=Top20 技能层）；按需渲染省 GPU */
+let c3booted=false;
+document.addEventListener('click',e=>{const t=e.target.closest('.tab');if(t&&t.dataset.t==='c3'&&!c3booted){c3booted=true;bootC3()}},true);
+async function bootC3(){
+const box=document.getElementById('c3box');
+let D,THREE,OrbitControls;
+try{
+D=await (await fetch('data.json')).json();
+THREE=await import('three');
+({OrbitControls}=await import('three/addons/controls/OrbitControls.js'));
+}catch(err){box.innerHTML='<div style="padding:40px;text-align:center;color:var(--sub);font-size:13px">3D 组件加载失败（需要联网访问 jsdelivr CDN）：<br><code>'+err.message+'</code></div>';return}
+if(!D.cube||!D.cube.cats.length){box.innerHTML='<div style="padding:40px;text-align:center;color:var(--sub)">暂无立方体数据</div>';return}
+const {models}=D.cube;const NM=models.length;
+const GAP=1.28;
+const W=box.clientWidth||900,H=box.clientHeight||600;
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(38,W/H,0.1,300);
+const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
+renderer.setSize(W,H);renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+box.appendChild(renderer.domElement);
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;controls.dampingFactor=0.09;controls.enableZoom=true;controls.target.set(0,0,0);
+let homePos=null;
+const zoomBtn=(txt,fn)=>{const b=document.createElement('button');b.textContent=txt;
+b.style.cssText='width:30px;height:30px;border:1px solid var(--line);background:#fff;border-radius:8px;font-size:15px;font-weight:700;color:var(--ink);cursor:pointer;box-shadow:0 1px 2px rgba(16,24,40,.08)';
+b.onclick=fn;box.appendChild(b);return b};
+const zb=document.createElement('div');
+zb.style.cssText='position:absolute;right:12px;bottom:12px;display:flex;gap:6px;z-index:6';
+const bIn=zoomBtn('+',()=>{camera.position.lerp(controls.target,0.16);updateFade();needsRender=true});
+const bOut=zoomBtn('−',()=>{camera.position.lerp(controls.target,-0.22);updateFade();needsRender=true});
+const bRst=zoomBtn('⟲',()=>{if(homePos){camera.position.copy(homePos);controls.target.set(0,0,0);needsRender=true}});
+bRst.style.width='auto';bRst.style.padding='0 10px';bRst.textContent='重置';
+const bGap=zoomBtn('收起层距',()=>{gapOpen=!gapOpen;bGap.textContent=gapOpen?'收起层距':'展开层距';
+  const gap=gapOpen?baseGap*3.0:baseGap;
+  build(cur.z,cur.cells,gap);needsRender=true});
+bGap.style.width='auto';bGap.style.padding='0 10px';
+zb.append(bOut,bIn,bGap,bRst);box.appendChild(zb);
+let gapOpen=true,baseGap=2.6;
+scene.background=new THREE.Color('#eef1f6');
+scene.add(new THREE.AmbientLight(0xffffff,0.6));
+const dl=new THREE.DirectionalLight(0xffffff,0.95);dl.position.set(8,14,10);scene.add(dl);
+const dl2=new THREE.DirectionalLight(0xffffff,0.38);dl2.position.set(-10,8,-12);scene.add(dl2);
+const geo=new THREE.BoxGeometry(1,1,1);
+const edgeTex=(()=>{const cv=document.createElement('canvas');cv.width=cv.height=128;const c=cv.getContext('2d');
+c.fillStyle='#ffffff';c.fillRect(0,0,128,128);
+c.lineWidth=9;c.strokeStyle='rgba(38,48,74,.9)';c.strokeRect(0,0,128,128);
+const t=new THREE.CanvasTexture(cv);t.anisotropy=4;return t})();
+const mat=new THREE.MeshLambertMaterial({map:edgeTex});
+const dummy=new THREE.Object3D();
+let gridsMat=null,mesh=null,labelSprites=[],plates=[],grids=[],cur=null,needsRender=true,centers=[],baseCols=[],baseScales=[];
+const FADE_BG=new THREE.Color('#eef1f6'),_fc=new THREE.Color(),_dv=new THREE.Vector3(),_dm=new THREE.Object3D();
+function updateFade(){
+  if(!mesh||!centers.length)return;
+  for(let idx=0;idx<centers.length;idx++){
+    const d=_dv.copy(centers[idx]).sub(camera.position).length();
+    const t=Math.max(0,Math.min(1,(d-7.0)/4.0));   // 7.0 即开始让路，>11 恢复
+    const sc=baseScales[idx]*(0.01+0.99*t);          // 近处缩至 1%，100% 不可见
+    _dm.position.copy(centers[idx]);_dm.scale.set(sc,sc,sc);_dm.updateMatrix();
+    mesh.setMatrixAt(idx,_dm.matrix);
+    _fc.copy(FADE_BG).lerp(baseCols[idx],t);         // 颜色完全归背景（100% 透明）
+    mesh.setColorAt(idx,_fc)}
+  mesh.instanceMatrix.needsUpdate=true;mesh.instanceColor.needsUpdate=true;
+  for(const sp of labelSprites){  // 分类/技能/模型名文字近距同步淡化（最高 90% 透明）
+    const d2=sp.position.distanceTo(camera.position);
+    const t2=Math.max(0,Math.min(1,(d2-7.0)/4.0));
+    sp.material.opacity=t2}}
+const label=(txt,px=44,boxed=false)=>{const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
+  /* 长名拆两行（>11字符在最近的'-'处断），防横排堆叠 */
+  let lines=[txt];
+  if(txt.length>11){const mid=Math.ceil(txt.length/2);const cut=(txt.lastIndexOf('-',mid)>3)?txt.lastIndexOf('-',mid):mid;lines=[txt.slice(0,cut),txt.slice(cut+(txt[cut]==='-'?1:0))]}
+  ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';const w=Math.max(...lines.map(t=>ctx.measureText(t).width));
+  cv.width=Math.ceil(w+24);cv.height=lines.length*(px+6)+16;const c2=cv.getContext('2d');
+if(boxed){c2.fillStyle='rgba(255,255,255,.88)';const r=10;c2.beginPath();
+c2.roundRect(1,1,cv.width-2,cv.height-2,r);c2.fill();
+c2.strokeStyle='rgba(90,105,140,.5)';c2.lineWidth=2;c2.stroke()}
+c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42,60,.92)';c2.textBaseline='middle';
+  lines.forEach((t,li)=>c2.fillText(t,12,(li+0.5)*(px+6)+8));
+const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:new THREE.CanvasTexture(cv),transparent:true}));
+sp.scale.set(cv.width/128,cv.height/128,1);return sp};
+const rowPlate=(txt,px=32)=>{
+  const cv=document.createElement('canvas');const ctx=cv.getContext('2d');
+  ctx.font='600 '+px+'px system-ui,PingFang SC,sans-serif';
+  const w=Math.ceil(ctx.measureText(txt).width)+22;cv.width=w;cv.height=px+14;
+  const c2=cv.getContext('2d');
+  c2.fillStyle='rgba(255,255,255,.9)';c2.beginPath();c2.roundRect(1,1,w-2,cv.height-2,7);c2.fill();
+  c2.strokeStyle='rgba(90,105,140,.45)';c2.lineWidth=2;c2.stroke();
+  c2.font='600 '+px+'px system-ui,PingFang SC,sans-serif';c2.fillStyle='rgba(35,42,60,.95)';c2.textBaseline='middle';
+  c2.fillText(txt,11,cv.height/2);
+  const me=new THREE.Mesh(new THREE.PlaneGeometry(w/150,cv.height/150),
+    new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(cv),transparent:true,side:THREE.DoubleSide}));
+  me.rotation.y=Math.PI/2;return me};
+function build(zLabels,cells,layerGap){
+  if(mesh){scene.remove(mesh);mesh.dispose()}
+  labelSprites.forEach(sp=>{scene.remove(sp);if(sp.material.map)sp.material.map.dispose();sp.material.dispose()});labelSprites=[];
+  plates.forEach(pl=>{if(pl.geo){pl.geo.dispose();pl.mat.dispose()}else{scene.remove(pl)}});plates=[];
+  grids.forEach(g=>{scene.remove(g);g.geometry.dispose()});grids=[];
+  if(gridsMat){gridsMat.dispose();gridsMat=null}
+  const NC=zLabels.length;
+  const vals=cells.flat(2).filter(c=>c).map(c=>c.v).sort((a,b)=>a-b);
+  const q=f=>vals[Math.min(vals.length-1,Math.max(0,Math.round(f*(vals.length-1))))];
+  const lo=q(0.05),hi=q(0.95);   // P5-P95 分位截断：主体区间撑满红→绿，极端值夹边
+  document.getElementById('c3rng').textContent=(vals[0]===lo?'':'≤')+hi.toFixed(2)+' 强 ←→ 弱 ≤'+ (vals[vals.length-1]===hi?'':lo.toFixed(2));
+  document.getElementById('c3rng').textContent='弱 '+vals[0].toFixed(2)+' — 强 '+vals[vals.length-1].toFixed(2)+'（色标 P5–P95）';
+  const colOf=v=>{const t=Math.max(0,Math.min(1,(v-lo)/(hi-lo||1)));const c=new THREE.Color();
+    c.setHSL(0.33*t,0.85,0.42+0.2*t);return c};  // 饱和 0.85 + 亮度随分数走高：暗红→亮绿双通道
+  mesh=new THREE.InstancedMesh(geo,mat,NC*NM*NM);
+  let ptr=0;
+  for(let k=0;k<NC;k++)for(let i=0;i<NM;i++)for(let j=0;j<NM;j++){
+    const c=cells[k][i][j];
+    dummy.position.set((i-(NM-1)/2)*GAP,(j-(NM-1)/2)*GAP,(k-(NC-1)/2)*layerGap);
+    if(c){dummy.scale.set(1,1,1);mesh.setColorAt(ptr,colOf(c.v))}
+    else{dummy.scale.set(0.16,0.16,0.16);mesh.setColorAt(ptr,new THREE.Color('#d7dce3'))}
+    dummy.updateMatrix();mesh.setMatrixAt(ptr,dummy.matrix);ptr++}
+  mesh.instanceMatrix.needsUpdate=true;scene.add(mesh);
+  /* 记录格子中心与基色，供近距淡化 */
+  centers=[];baseCols=[];baseScales=[];
+  const bgColor=new THREE.Color('#eef1f6');const tmpC=new THREE.Color();
+  for(let k=0;k<NC;k++)for(let i=0;i<NM;i++)for(let j=0;j<NM;j++){
+    centers.push(new THREE.Vector3((i-(NM-1)/2)*GAP,(j-(NM-1)/2)*GAP,(k-(NC-1)/2)*layerGap));
+    mesh.getColorAt(k*NM*NM+i*NM+j,tmpC);baseCols.push(tmpC.clone());
+    baseScales.push(cells[k][i][j]?1:0.16)}
+  /* 每层透明 N×N 网格线：格子归位对照（哪格=哪两个模型） */
+  gridsMat=new THREE.LineBasicMaterial({color:0x9aa7c2,transparent:true,opacity:0.55});
+  zLabels.forEach((_,k)=>{
+    const pts=[];const half=(NM*GAP+0.55)/2;
+    for(let i=0;i<=NM;i++){const t=-half+i*(2*half/NM);
+      pts.push(t,-half,0,t,half,0, -half,t,0,half,t,0)}  // XY 平面网格线段
+    const gg=new THREE.BufferGeometry();
+    gg.setAttribute('position',new THREE.Float32BufferAttribute(pts,3));
+    const grid=new THREE.LineSegments(gg,gridsMat);
+    grid.position.set(0,-(NM-1)/2*GAP-0.71,(k-(NC-1)/2)*layerGap);
+    scene.add(grid);grids.push(grid);
+    /* 本层自带行/列表头：底缘=生产者列名，左缘=判官行名（小号，逐层对照不用看外围） */
+    const zc=(k-(NC-1)/2)*layerGap;
+    models.forEach((m,i)=>{
+      const h1=rowPlate(m);
+      h1.rotation.set(-Math.PI/4,0,0);   // 桌牌式后仰45°：俯视平视都可读
+      h1.position.set((i-(NM-1)/2)*GAP,-(NM-1)/2*GAP-1.3,zc);
+      scene.add(h1);labelSprites.push(h1);
+      /* 行名平铺在底板左端（面朝上，俯角永远可读，不依赖水平朝向） */
+      const h2=rowPlate(m);
+      h2.rotation.set(-Math.PI/4,0,0);   // 与层名同款：水平横排文字，斜立45°
+      h2.position.set(-(NM-1)/2*GAP-1.7,(i-(NM-1)/2)*GAP,zc);
+      scene.add(h2);labelSprites.push(h2)})});
+  const short=t=>{t=String(t).split('__')[0];return t.length>26?t.slice(0,25)+'…':t};
+  zLabels.forEach((c,k)=>{const sp=label(short(c),58,true);sp.userData={full:c};
+    sp.position.set(0,0,(k-(NC-1)/2)*layerGap+0.85);scene.add(sp);labelSprites.push(sp)});  // 层名在 N×N 面的正面（朝初始相机侧），不藏格子后
+  /* 外围大坐标已删：每层自带行/列表头（h1/h2），不再重复 */
+  camera.position.set(NM*2.4,NM*1.7,NC*layerGap*1.0);controls.target.set(0,0,0);controls.update();homePos=camera.position.clone();
+  needsRender=true;
+}
+const sel=document.getElementById('c3cat');
+Object.keys(D.cube.byCat||{}).sort().forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c+'（Top '+D.cube.byCat[c].skills.length+' 技能）';sel.appendChild(o)});
+sel.onchange=()=>{const v=sel.value;
+  if(!v){cur={z:D.cube.cats,cells:D.cube.cells};baseGap=2.6}
+  else{const B=D.cube.byCat[v];cur={z:B.skills,cells:B.cells};baseGap=2.2}
+  build(cur.z,cur.cells,gapOpen?baseGap*3.0:baseGap)};
+cur={z:D.cube.cats,cells:D.cube.cells};
+build(D.cube.cats,D.cube.cells,2.6*3.0);
+const tip=document.createElement('div');
+tip.style.cssText='position:absolute;pointer-events:none;background:#1f2740;color:#fff;font-size:12px;line-height:1.7;padding:6px 10px;border-radius:8px;opacity:0;transition:opacity .12s;z-index:5;white-space:nowrap';
+box.appendChild(tip);
+const ray=new THREE.Raycaster();const mouse=new THREE.Vector2();
+renderer.domElement.addEventListener('pointermove',e=>{
+  const r=renderer.domElement.getBoundingClientRect();
+  mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
+  ray.setFromCamera(mouse,camera);
+  const hit=mesh?ray.intersectObject(mesh)[0]:null;
+  if(hit&&hit.instanceId!=null&&cur){
+    const NC=cur.z.length;
+    const k=Math.floor(hit.instanceId/(NM*NM)),i=Math.floor(hit.instanceId%(NM*NM)/NM),j=hit.instanceId%NM;
+    const c=cur.cells[k][i][j];
+    tip.innerHTML='<b>'+cur.z[k]+'</b><br>生产者 '+models[i]+'<br>判官 '+models[j]+(c?'<br>判分 <b>'+c.v+'</b>'+(c.n?'（'+c.n+' 格均值）':''):'<br>（无判分）');
+    tip.style.opacity=1;tip.style.left=Math.min(e.clientX-r.left+14,r.width-200)+'px';tip.style.top=(e.clientY-r.top+10)+'px';
+    renderer.domElement.style.cursor='pointer';
+  }else{tip.style.opacity=0;renderer.domElement.style.cursor='grab'}
+  needsRender=true});
+renderer.domElement.addEventListener('pointerleave',()=>{tip.style.opacity=0});
+addEventListener('resize',()=>{const w2=box.clientWidth,h2=box.clientHeight;camera.aspect=w2/h2;camera.updateProjectionMatrix();renderer.setSize(w2,h2);needsRender=true});
+controls.addEventListener('change',()=>{updateFade();needsRender=true});
+/* 键盘平移：W/S 沿视线前后、A/D 左右，可"走进"立方体；近处格子自动淡化 */
+const keys=new Set();
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();
+  if(!['w','a','s','d'].includes(k))return;
+  const pg=document.getElementById('pg-c3');if(!pg||!pg.classList.contains('on'))return;
+  keys.add(k);needsRender=true});
+addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
+const FWD=new THREE.Vector3(),RIGHT=new THREE.Vector3();
+function moveCam(dt){
+  if(!keys.size)return;
+  const step=dt*26;
+  camera.getWorldDirection(FWD);
+  RIGHT.crossVectors(FWD,camera.up).normalize();
+  if(keys.has('w')){camera.position.addScaledVector(FWD,step);controls.target.addScaledVector(FWD,step)}
+  if(keys.has('s')){camera.position.addScaledVector(FWD,-step);controls.target.addScaledVector(FWD,-step)}
+  if(keys.has('a')){camera.position.addScaledVector(RIGHT,-step);controls.target.addScaledVector(RIGHT,-step)}
+  if(keys.has('d')){camera.position.addScaledVector(RIGHT,step);controls.target.addScaledVector(RIGHT,step)}
+  updateFade();needsRender=true}
+let lastT=performance.now();
+(function loop(now){requestAnimationFrame(loop);const dt=Math.min(0.05,(now-lastT)/1000);lastT=now;
+  controls.update();moveCam(dt);
+  if(needsRender){renderer.render(scene,camera);needsRender=false}})(lastT);
+}
+</script>

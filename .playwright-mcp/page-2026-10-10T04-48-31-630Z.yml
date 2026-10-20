@@ -1,0 +1,143 @@
+- navigation [ref=e2]:
+  - link "academy-guide__anthropics" [ref=e3] [cursor=pointer]:
+    - /url: "#academy-guide__anthropics"
+  - link "agent-cost-report__thedotmack" [ref=e4] [cursor=pointer]:
+    - /url: "#agent-cost-report__thedotmack"
+  - link "algorithmic-art__anthropics" [ref=e5] [cursor=pointer]:
+    - /url: "#algorithmic-art__anthropics"
+  - link "api-and-interface-design__addyosmani" [ref=e6] [cursor=pointer]:
+    - /url: "#api-and-interface-design__addyosmani"
+  - link "aster-atelier__nexu-io" [ref=e7] [cursor=pointer]:
+    - /url: "#aster-atelier__nexu-io"
+  - link "audio-jingle__nexu-io" [ref=e8] [cursor=pointer]:
+    - /url: "#audio-jingle__nexu-io"
+  - link "blog-post__nexu-io" [ref=e9] [cursor=pointer]:
+    - /url: "#blog-post__nexu-io"
+  - link "brand-guidelines__anthropics" [ref=e10] [cursor=pointer]:
+    - /url: "#brand-guidelines__anthropics"
+  - link "browser-testing-with-devtools__addyosmani" [ref=e11] [cursor=pointer]:
+    - /url: "#browser-testing-with-devtools__addyosmani"
+  - link "canvas-design__anthropics" [ref=e12] [cursor=pointer]:
+    - /url: "#canvas-design__anthropics"
+  - link "ci-cd-and-automation__addyosmani" [ref=e13] [cursor=pointer]:
+    - /url: "#ci-cd-and-automation__addyosmani"
+  - link "claude-api__anthropics" [ref=e14] [cursor=pointer]:
+    - /url: "#claude-api__anthropics"
+  - link "clinical-case-report__nexu-io" [ref=e15] [cursor=pointer]:
+    - /url: "#clinical-case-report__nexu-io"
+  - link "code-review-and-quality__addyosmani" [ref=e16] [cursor=pointer]:
+    - /url: "#code-review-and-quality__addyosmani"
+  - link "code-simplification__addyosmani" [ref=e17] [cursor=pointer]:
+    - /url: "#code-simplification__addyosmani"
+  - link "constraint-driven-development__addyosmani" [ref=e18] [cursor=pointer]:
+    - /url: "#constraint-driven-development__addyosmani"
+  - link "contact-widget__nexu-io" [ref=e19] [cursor=pointer]:
+    - /url: "#contact-widget__nexu-io"
+  - link "context-engineering__addyosmani" [ref=e20] [cursor=pointer]:
+    - /url: "#context-engineering__addyosmani"
+  - link "critique__nexu-io" [ref=e21] [cursor=pointer]:
+    - /url: "#critique__nexu-io"
+  - link "dashboard__nexu-io" [ref=e22] [cursor=pointer]:
+    - /url: "#dashboard__nexu-io"
+  - link "dating-web__nexu-io" [ref=e23] [cursor=pointer]:
+    - /url: "#dating-web__nexu-io"
+  - link "dcf-valuation__nexu-io" [ref=e24] [cursor=pointer]:
+    - /url: "#dcf-valuation__nexu-io"
+  - link "debugging-and-error-recovery__addyosmani" [ref=e25] [cursor=pointer]:
+    - /url: "#debugging-and-error-recovery__addyosmani"
+  - link "deprecation-and-migration__addyosmani" [ref=e26] [cursor=pointer]:
+    - /url: "#deprecation-and-migration__addyosmani"
+  - link "digital-eguide__nexu-io" [ref=e27] [cursor=pointer]:
+    - /url: "#digital-eguide__nexu-io"
+  - link "discernment-nudge__anthropics" [ref=e28] [cursor=pointer]:
+    - /url: "#discernment-nudge__anthropics"
+  - link "doc-coauthoring__anthropics" [ref=e29] [cursor=pointer]:
+    - /url: "#doc-coauthoring__anthropics"
+  - link "docs-page__nexu-io" [ref=e30] [cursor=pointer]:
+    - /url: "#docs-page__nexu-io"
+  - link "documentation-and-adrs__addyosmani" [ref=e31] [cursor=pointer]:
+    - /url: "#documentation-and-adrs__addyosmani"
+  - link "docx__anthropics" [ref=e32] [cursor=pointer]:
+    - /url: "#docx__anthropics"
+  - link "doubt-driven-development__addyosmani" [ref=e33] [cursor=pointer]:
+    - /url: "#doubt-driven-development__addyosmani"
+  - link "email-marketing__nexu-io" [ref=e34] [cursor=pointer]:
+    - /url: "#email-marketing__nexu-io"
+  - link "eng-runbook__nexu-io" [ref=e35] [cursor=pointer]:
+    - /url: "#eng-runbook__nexu-io"
+  - link "finance-report__nexu-io" [ref=e36] [cursor=pointer]:
+    - /url: "#finance-report__nexu-io"
+  - link "flowai-live-dashboard-template__nexu-io" [ref=e37] [cursor=pointer]:
+    - /url: "#flowai-live-dashboard-template__nexu-io"
+  - link "frontend-design__anthropics" [ref=e38] [cursor=pointer]:
+    - /url: "#frontend-design__anthropics"
+  - link "frontend-ui-engineering__addyosmani" [ref=e39] [cursor=pointer]:
+    - /url: "#frontend-ui-engineering__addyosmani"
+  - link "gamified-app__nexu-io" [ref=e40] [cursor=pointer]:
+    - /url: "#gamified-app__nexu-io"
+  - link "git-workflow-and-versioning__addyosmani" [ref=e41] [cursor=pointer]:
+    - /url: "#git-workflow-and-versioning__addyosmani"
+  - link "github-dashboard__nexu-io" [ref=e42] [cursor=pointer]:
+    - /url: "#github-dashboard__nexu-io"
+  - link "guizang-ppt__nexu-io" [ref=e43] [cursor=pointer]:
+    - /url: "#guizang-ppt__nexu-io"
+  - link "host-observer__thedotmack" [ref=e44] [cursor=pointer]:
+    - /url: "#host-observer__thedotmack"
+  - link "humanizer" [ref=e45] [cursor=pointer]:
+    - /url: "#humanizer"
+  - link "idea-refine__addyosmani" [ref=e46] [cursor=pointer]:
+    - /url: "#idea-refine__addyosmani"
+  - link "incremental-implementation__addyosmani" [ref=e47] [cursor=pointer]:
+    - /url: "#incremental-implementation__addyosmani"
+  - link "install__thedotmack" [ref=e48] [cursor=pointer]:
+    - /url: "#install__thedotmack"
+  - link "internal-comms__anthropics" [ref=e49] [cursor=pointer]:
+    - /url: "#internal-comms__anthropics"
+  - link "interview-me__addyosmani" [ref=e50] [cursor=pointer]:
+    - /url: "#interview-me__addyosmani"
+  - link "mcp-builder__anthropics" [ref=e51] [cursor=pointer]:
+    - /url: "#mcp-builder__anthropics"
+  - link "mem-search__thedotmack" [ref=e52] [cursor=pointer]:
+    - /url: "#mem-search__thedotmack"
+  - link "observability-and-instrumentation__addyosmani" [ref=e53] [cursor=pointer]:
+    - /url: "#observability-and-instrumentation__addyosmani"
+  - link "od-contribute__nexu-io" [ref=e54] [cursor=pointer]:
+    - /url: "#od-contribute__nexu-io"
+  - link "pdf__anthropics" [ref=e55] [cursor=pointer]:
+    - /url: "#pdf__anthropics"
+  - link "performance-optimization__addyosmani" [ref=e56] [cursor=pointer]:
+    - /url: "#performance-optimization__addyosmani"
+  - link "planning-and-task-breakdown__addyosmani" [ref=e57] [cursor=pointer]:
+    - /url: "#planning-and-task-breakdown__addyosmani"
+  - link "ponytail-audit__DietrichGebert" [ref=e58] [cursor=pointer]:
+    - /url: "#ponytail-audit__DietrichGebert"
+  - link "ponytail-debt__DietrichGebert" [ref=e59] [cursor=pointer]:
+    - /url: "#ponytail-debt__DietrichGebert"
+  - link "ponytail-gain__DietrichGebert" [ref=e60] [cursor=pointer]:
+    - /url: "#ponytail-gain__DietrichGebert"
+  - link "ponytail-help__DietrichGebert" [ref=e61] [cursor=pointer]:
+    - /url: "#ponytail-help__DietrichGebert"
+  - link "ponytail-review__DietrichGebert" [ref=e62] [cursor=pointer]:
+    - /url: "#ponytail-review__DietrichGebert"
+  - link "ponytail__DietrichGebert" [ref=e63] [cursor=pointer]:
+    - /url: "#ponytail__DietrichGebert"
+  - link "pptx__anthropics" [ref=e64] [cursor=pointer]:
+    - /url: "#pptx__anthropics"
+  - link "sample-plugin__nexu-io" [ref=e65] [cursor=pointer]:
+    - /url: "#sample-plugin__nexu-io"
+  - link "security-and-hardening__addyosmani" [ref=e66] [cursor=pointer]:
+    - /url: "#security-and-hardening__addyosmani"
+  - link "skill-creator__anthropics" [ref=e67] [cursor=pointer]:
+    - /url: "#skill-creator__anthropics"
+  - link "slack-gif-creator__anthropics" [ref=e68] [cursor=pointer]:
+    - /url: "#slack-gif-creator__anthropics"
+  - link "template__anthropics" [ref=e69] [cursor=pointer]:
+    - /url: "#template__anthropics"
+  - link "theme-factory__anthropics" [ref=e70] [cursor=pointer]:
+    - /url: "#theme-factory__anthropics"
+  - link "web-artifacts-builder__anthropics" [ref=e71] [cursor=pointer]:
+    - /url: "#web-artifacts-builder__anthropics"
+  - link "webapp-testing__anthropics" [ref=e72] [cursor=pointer]:
+    - /url: "#webapp-testing__anthropics"
+  - link "xlsx__anthropics" [ref=e73] [cursor=pointer]:
+    - /url: "#xlsx__anthropics"

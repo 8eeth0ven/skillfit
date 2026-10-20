@@ -1,15 +1,15 @@
 #!/bin/zsh
 # 网页实时刷新（面板可见）：启动立即刷一轮，之后每5分钟；页面每2分钟自重载
 cd "$(dirname "$0")" || exit 1
-exec > >(tee -a 结果/run-网页刷新.log) 2>&1
-LOCK=结果/.webrefresh.lock
+exec > >(tee -a runs/run-网页刷新.log) 2>&1
+LOCK=runs/.webrefresh.lock
 if [ -f "$LOCK" ] && kill -0 $(cat "$LOCK" 2>/dev/null) 2>/dev/null; then
   echo "[$(date '+%F %T')] 已有实例 pid=$(cat $LOCK)，退出"; exit 0
 fi
 echo $$ > "$LOCK"; trap 'rm -f "$LOCK"' EXIT
-source 密钥.env
+source secrets.env
 B=~/.zcode/skills/skill-bench/tools/bench.py
-MARK=结果/.webmark
+MARK=runs/.webmark
 [ -f "$MARK" ] || touch "$MARK"
 echo "[$(date '+%F %T')] 网页刷新循环启动 pid=$$（立即首轮，之后5分钟一轮）"
 while true; do

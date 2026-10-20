@@ -118,7 +118,7 @@ git clone https://github.com/yourname/skillbench.git
 cd skillbench
 
 # 1) 配置模型通道（codebuddy CLI 需已登录；API key 走环境变量）
-cp 密钥.env.example 密钥.env   # 填入你的 BigModel key（anthropic 兼容端点，免费通道）
+cp secrets.env.example secrets.env   # 填入你的 BigModel key（anthropic 兼容端点，免费通道）
 
 # 2) 健康检查
 python3 tools/bench.py doctor --models glm-5.3-flash,deepseek-v4.1-flash
@@ -131,7 +131,7 @@ python3 tools/bench.py agg   --skills <技能清单>
 python3 tools/bench.py site
 
 # 4) 本地看榜
-cd 网站 && python3 -m http.server 8000   # http://localhost:8000
+cd site && python3 -m http.server 8000   # http://localhost:8000
 ```
 
 ---
@@ -146,17 +146,17 @@ skillfit/
 │   ├── 分组.py            # 功能分组（N×N×A 的 A 轴）
 │   ├── 释义.py            # LLM 批量生成技能中文释义
 │   └── 总览生成.py         # 按功能组分章的可读目录
-├── 网站/
+├── site/
 │   ├── index.html        # 标签页榜单（总览 / 技能榜 / 同类对比 / 实时动态）
 │   └── data.json         # 全量蒸馏数据（1169 技能 + 画像 + 三维对比，快照 2026-10-11）
-├── 示例任务集/humanizer/   # 任务与验收点范例（断言层 + 触发正负例 + 四模式）
-├── 本地库/*.json          # 技能数据库（star / 分组 / 中文释义）
-├── 抓取循环.sh / 测试循环.sh / 网页刷新.sh   # 三条常驻流水线
-├── 密钥.env.example       # API key 模板（真实密钥永不入库）
+├── 示例tasks/humanizer/   # 任务与验收点范例（断言层 + 触发正负例 + 四模式）
+├── library/*.json          # 技能数据库（star / 分组 / 中文释义）
+├── crawl_loop.sh / test_loop.sh / web_refresh.sh   # 三条常驻流水线
+├── secrets.env.example       # API key 模板（真实密钥永不入库）
 └── LICENSE                # MIT
 ```
 
-> 产物矩阵、判分明细与采集原文属运行时数据（体积大、含身份映射，且涉第三方原文再分发），**不入库**——`网站/data.json` 已含全部蒸馏结果，跑管线会在本地完整重建。
+> 产物矩阵、判分明细与采集原文属运行时数据（体积大、含身份映射，且涉第三方原文再分发），**不入库**——`site/data.json` 已含全部蒸馏结果，跑管线会在本地完整重建。
 
 ---
 

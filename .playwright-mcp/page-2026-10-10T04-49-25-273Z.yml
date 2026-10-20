@@ -1,0 +1,4267 @@
+- generic [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - link "academy-guide__anthropics" [ref=f1e3] [cursor=pointer]:
+      - /url: "#academy-guide__anthropics"
+    - link "agent-cost-report__thedotmack" [ref=f1e4] [cursor=pointer]:
+      - /url: "#agent-cost-report__thedotmack"
+    - link "algorithmic-art__anthropics" [ref=f1e5] [cursor=pointer]:
+      - /url: "#algorithmic-art__anthropics"
+    - link "api-and-interface-design__addyosmani" [ref=f1e6] [cursor=pointer]:
+      - /url: "#api-and-interface-design__addyosmani"
+    - link "aster-atelier__nexu-io" [ref=f1e7] [cursor=pointer]:
+      - /url: "#aster-atelier__nexu-io"
+    - link "audio-jingle__nexu-io" [ref=f1e8] [cursor=pointer]:
+      - /url: "#audio-jingle__nexu-io"
+    - link "blog-post__nexu-io" [ref=f1e9] [cursor=pointer]:
+      - /url: "#blog-post__nexu-io"
+    - link "brand-guidelines__anthropics" [ref=f1e10] [cursor=pointer]:
+      - /url: "#brand-guidelines__anthropics"
+    - link "browser-testing-with-devtools__addyosmani" [ref=f1e11] [cursor=pointer]:
+      - /url: "#browser-testing-with-devtools__addyosmani"
+    - link "canvas-design__anthropics" [ref=f1e12] [cursor=pointer]:
+      - /url: "#canvas-design__anthropics"
+    - link "ci-cd-and-automation__addyosmani" [ref=f1e13] [cursor=pointer]:
+      - /url: "#ci-cd-and-automation__addyosmani"
+    - link "claude-api__anthropics" [ref=f1e14] [cursor=pointer]:
+      - /url: "#claude-api__anthropics"
+    - link "clinical-case-report__nexu-io" [ref=f1e15] [cursor=pointer]:
+      - /url: "#clinical-case-report__nexu-io"
+    - link "code-review-and-quality__addyosmani" [ref=f1e16] [cursor=pointer]:
+      - /url: "#code-review-and-quality__addyosmani"
+    - link "code-simplification__addyosmani" [ref=f1e17] [cursor=pointer]:
+      - /url: "#code-simplification__addyosmani"
+    - link "constraint-driven-development__addyosmani" [ref=f1e18] [cursor=pointer]:
+      - /url: "#constraint-driven-development__addyosmani"
+    - link "contact-widget__nexu-io" [ref=f1e19] [cursor=pointer]:
+      - /url: "#contact-widget__nexu-io"
+    - link "context-engineering__addyosmani" [ref=f1e20] [cursor=pointer]:
+      - /url: "#context-engineering__addyosmani"
+    - link "critique__nexu-io" [ref=f1e21] [cursor=pointer]:
+      - /url: "#critique__nexu-io"
+    - link "dashboard__nexu-io" [ref=f1e22] [cursor=pointer]:
+      - /url: "#dashboard__nexu-io"
+    - link "dating-web__nexu-io" [ref=f1e23] [cursor=pointer]:
+      - /url: "#dating-web__nexu-io"
+    - link "dcf-valuation__nexu-io" [ref=f1e24] [cursor=pointer]:
+      - /url: "#dcf-valuation__nexu-io"
+    - link "debugging-and-error-recovery__addyosmani" [ref=f1e25] [cursor=pointer]:
+      - /url: "#debugging-and-error-recovery__addyosmani"
+    - link "deprecation-and-migration__addyosmani" [ref=f1e26] [cursor=pointer]:
+      - /url: "#deprecation-and-migration__addyosmani"
+    - link "digital-eguide__nexu-io" [ref=f1e27] [cursor=pointer]:
+      - /url: "#digital-eguide__nexu-io"
+    - link "discernment-nudge__anthropics" [ref=f1e28] [cursor=pointer]:
+      - /url: "#discernment-nudge__anthropics"
+    - link "doc-coauthoring__anthropics" [ref=f1e29] [cursor=pointer]:
+      - /url: "#doc-coauthoring__anthropics"
+    - link "docs-page__nexu-io" [ref=f1e30] [cursor=pointer]:
+      - /url: "#docs-page__nexu-io"
+    - link "documentation-and-adrs__addyosmani" [ref=f1e31] [cursor=pointer]:
+      - /url: "#documentation-and-adrs__addyosmani"
+    - link "docx__anthropics" [ref=f1e32] [cursor=pointer]:
+      - /url: "#docx__anthropics"
+    - link "doubt-driven-development__addyosmani" [ref=f1e33] [cursor=pointer]:
+      - /url: "#doubt-driven-development__addyosmani"
+    - link "email-marketing__nexu-io" [ref=f1e34] [cursor=pointer]:
+      - /url: "#email-marketing__nexu-io"
+    - link "eng-runbook__nexu-io" [ref=f1e35] [cursor=pointer]:
+      - /url: "#eng-runbook__nexu-io"
+    - link "finance-report__nexu-io" [ref=f1e36] [cursor=pointer]:
+      - /url: "#finance-report__nexu-io"
+    - link "flowai-live-dashboard-template__nexu-io" [ref=f1e37] [cursor=pointer]:
+      - /url: "#flowai-live-dashboard-template__nexu-io"
+    - link "frontend-design__anthropics" [ref=f1e38] [cursor=pointer]:
+      - /url: "#frontend-design__anthropics"
+    - link "frontend-ui-engineering__addyosmani" [ref=f1e39] [cursor=pointer]:
+      - /url: "#frontend-ui-engineering__addyosmani"
+    - link "gamified-app__nexu-io" [ref=f1e40] [cursor=pointer]:
+      - /url: "#gamified-app__nexu-io"
+    - link "git-workflow-and-versioning__addyosmani" [ref=f1e41] [cursor=pointer]:
+      - /url: "#git-workflow-and-versioning__addyosmani"
+    - link "github-dashboard__nexu-io" [ref=f1e42] [cursor=pointer]:
+      - /url: "#github-dashboard__nexu-io"
+    - link "guizang-ppt__nexu-io" [ref=f1e43] [cursor=pointer]:
+      - /url: "#guizang-ppt__nexu-io"
+    - link "host-observer__thedotmack" [ref=f1e44] [cursor=pointer]:
+      - /url: "#host-observer__thedotmack"
+    - link "humanizer" [ref=f1e45] [cursor=pointer]:
+      - /url: "#humanizer"
+    - link "idea-refine__addyosmani" [ref=f1e46] [cursor=pointer]:
+      - /url: "#idea-refine__addyosmani"
+    - link "incremental-implementation__addyosmani" [ref=f1e47] [cursor=pointer]:
+      - /url: "#incremental-implementation__addyosmani"
+    - link "install__thedotmack" [ref=f1e48] [cursor=pointer]:
+      - /url: "#install__thedotmack"
+    - link "internal-comms__anthropics" [ref=f1e49] [cursor=pointer]:
+      - /url: "#internal-comms__anthropics"
+    - link "interview-me__addyosmani" [ref=f1e50] [cursor=pointer]:
+      - /url: "#interview-me__addyosmani"
+    - link "mcp-builder__anthropics" [ref=f1e51] [cursor=pointer]:
+      - /url: "#mcp-builder__anthropics"
+    - link "mem-search__thedotmack" [ref=f1e52] [cursor=pointer]:
+      - /url: "#mem-search__thedotmack"
+    - link "observability-and-instrumentation__addyosmani" [ref=f1e53] [cursor=pointer]:
+      - /url: "#observability-and-instrumentation__addyosmani"
+    - link "od-contribute__nexu-io" [ref=f1e54] [cursor=pointer]:
+      - /url: "#od-contribute__nexu-io"
+    - link "pdf__anthropics" [ref=f1e55] [cursor=pointer]:
+      - /url: "#pdf__anthropics"
+    - link "performance-optimization__addyosmani" [ref=f1e56] [cursor=pointer]:
+      - /url: "#performance-optimization__addyosmani"
+    - link "planning-and-task-breakdown__addyosmani" [ref=f1e57] [cursor=pointer]:
+      - /url: "#planning-and-task-breakdown__addyosmani"
+    - link "ponytail-audit__DietrichGebert" [ref=f1e58] [cursor=pointer]:
+      - /url: "#ponytail-audit__DietrichGebert"
+    - link "ponytail-debt__DietrichGebert" [ref=f1e59] [cursor=pointer]:
+      - /url: "#ponytail-debt__DietrichGebert"
+    - link "ponytail-gain__DietrichGebert" [ref=f1e60] [cursor=pointer]:
+      - /url: "#ponytail-gain__DietrichGebert"
+    - link "ponytail-help__DietrichGebert" [ref=f1e61] [cursor=pointer]:
+      - /url: "#ponytail-help__DietrichGebert"
+    - link "ponytail-review__DietrichGebert" [ref=f1e62] [cursor=pointer]:
+      - /url: "#ponytail-review__DietrichGebert"
+    - link "ponytail__DietrichGebert" [ref=f1e63] [cursor=pointer]:
+      - /url: "#ponytail__DietrichGebert"
+    - link "pptx__anthropics" [ref=f1e64] [cursor=pointer]:
+      - /url: "#pptx__anthropics"
+    - link "sample-plugin__nexu-io" [ref=f1e65] [cursor=pointer]:
+      - /url: "#sample-plugin__nexu-io"
+    - link "security-and-hardening__addyosmani" [ref=f1e66] [cursor=pointer]:
+      - /url: "#security-and-hardening__addyosmani"
+    - link "skill-creator__anthropics" [ref=f1e67] [cursor=pointer]:
+      - /url: "#skill-creator__anthropics"
+    - link "slack-gif-creator__anthropics" [ref=f1e68] [cursor=pointer]:
+      - /url: "#slack-gif-creator__anthropics"
+    - link "template__anthropics" [ref=f1e69] [cursor=pointer]:
+      - /url: "#template__anthropics"
+    - link "theme-factory__anthropics" [ref=f1e70] [cursor=pointer]:
+      - /url: "#theme-factory__anthropics"
+    - link "web-artifacts-builder__anthropics" [ref=f1e71] [cursor=pointer]:
+      - /url: "#web-artifacts-builder__anthropics"
+    - link "webapp-testing__anthropics" [ref=f1e72] [cursor=pointer]:
+      - /url: "#webapp-testing__anthropics"
+    - link "xlsx__anthropics" [ref=f1e73] [cursor=pointer]:
+      - /url: "#xlsx__anthropics"
+  - generic [ref=f1e74]:
+    - heading "academy-guide__anthropics 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e75]
+    - text: SkillScore 榜
+    - table [ref=f1e76]:
+      - rowgroup [ref=f1e77]:
+        - row [ref=f1e78]:
+          - columnheader "模型" [ref=f1e79]
+          - columnheader "家族" [ref=f1e80]
+          - columnheader "SkillScore" [ref=f1e81]
+          - columnheader "M2均分" [ref=f1e82]
+          - columnheader "M1均分" [ref=f1e83]
+          - columnheader "触发准确率" [ref=f1e84]
+        - row [ref=f1e85]:
+          - cell "hy4-preview-f" [ref=f1e86]
+          - cell "Hy" [ref=f1e87]
+          - cell "82.8" [ref=f1e88]
+          - cell "4.4" [ref=f1e89]
+          - cell "-" [ref=f1e90]
+          - cell "-" [ref=f1e91]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e92]:
+      - rowgroup [ref=f1e93]:
+        - row [ref=f1e94]:
+          - columnheader "模型" [ref=f1e95]
+          - columnheader "任务" [ref=f1e96]
+          - columnheader "M2−M1" [ref=f1e97]
+          - columnheader "hake" [ref=f1e98]
+          - columnheader "M2−M4" [ref=f1e99]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e100]:
+      - rowgroup [ref=f1e101]:
+        - row [ref=f1e102]:
+          - columnheader "生产者＼判官" [ref=f1e103]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e104]
+          - columnheader "kimi-k2.7" [ref=f1e105]
+          - columnheader "space-bunny" [ref=f1e106]
+          - columnheader "说明" [ref=f1e107]
+        - row [ref=f1e108]:
+          - cell "hy4-preview-f" [ref=f1e109]
+          - cell "4.6" [ref=f1e110]
+          - cell "4.4" [ref=f1e111]
+          - cell "3.35" [ref=f1e112]
+          - cell [ref=f1e113]
+    - heading "agent-cost-report__thedotmack 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e114]
+    - text: SkillScore 榜
+    - table [ref=f1e115]:
+      - rowgroup [ref=f1e116]:
+        - row [ref=f1e117]:
+          - columnheader "模型" [ref=f1e118]
+          - columnheader "家族" [ref=f1e119]
+          - columnheader "SkillScore" [ref=f1e120]
+          - columnheader "M2均分" [ref=f1e121]
+          - columnheader "M1均分" [ref=f1e122]
+          - columnheader "触发准确率" [ref=f1e123]
+        - row [ref=f1e124]:
+          - cell "deepseek-v4.1-flash" [ref=f1e125]
+          - cell "DeepSeek" [ref=f1e126]
+          - cell "69.6" [ref=f1e127]
+          - cell "3.3" [ref=f1e128]
+          - cell "-" [ref=f1e129]
+          - cell "-" [ref=f1e130]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e131]:
+      - rowgroup [ref=f1e132]:
+        - row [ref=f1e133]:
+          - columnheader "模型" [ref=f1e134]
+          - columnheader "任务" [ref=f1e135]
+          - columnheader "M2−M1" [ref=f1e136]
+          - columnheader "hake" [ref=f1e137]
+          - columnheader "M2−M4" [ref=f1e138]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e139]:
+      - rowgroup [ref=f1e140]:
+        - row [ref=f1e141]:
+          - columnheader "生产者＼判官" [ref=f1e142]
+          - columnheader "hy4-preview-f" [ref=f1e143]
+          - columnheader "kimi-k2.7" [ref=f1e144]
+          - columnheader "space-bunny" [ref=f1e145]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e146]
+          - columnheader "说明" [ref=f1e147]
+        - row [ref=f1e148]:
+          - cell "deepseek-v4.1-flash" [ref=f1e149]
+          - cell "3" [ref=f1e150]
+          - cell "3.3" [ref=f1e151]
+          - cell "5" [ref=f1e152]
+          - cell "5" [ref=f1e153]
+          - cell "对角线=自评" [ref=f1e154]
+    - heading "algorithmic-art__anthropics 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e155]
+    - text: SkillScore 榜
+    - table [ref=f1e156]:
+      - rowgroup [ref=f1e157]:
+        - row [ref=f1e158]:
+          - columnheader "模型" [ref=f1e159]
+          - columnheader "家族" [ref=f1e160]
+          - columnheader "SkillScore" [ref=f1e161]
+          - columnheader "M2均分" [ref=f1e162]
+          - columnheader "M1均分" [ref=f1e163]
+          - columnheader "触发准确率" [ref=f1e164]
+        - row [ref=f1e165]:
+          - cell "hy4-preview-f" [ref=f1e166]
+          - cell "Hy" [ref=f1e167]
+          - cell "90" [ref=f1e168]
+          - cell "5" [ref=f1e169]
+          - cell "-" [ref=f1e170]
+          - cell "-" [ref=f1e171]
+        - row [ref=f1e172]:
+          - cell "space-bunny" [ref=f1e173]
+          - cell "SpaceBunny" [ref=f1e174]
+          - cell "79.8" [ref=f1e175]
+          - cell "4.15" [ref=f1e176]
+          - cell "-" [ref=f1e177]
+          - cell "-" [ref=f1e178]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e179]:
+      - rowgroup [ref=f1e180]:
+        - row [ref=f1e181]:
+          - columnheader "模型" [ref=f1e182]
+          - columnheader "任务" [ref=f1e183]
+          - columnheader "M2−M1" [ref=f1e184]
+          - columnheader "hake" [ref=f1e185]
+          - columnheader "M2−M4" [ref=f1e186]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e187]:
+      - rowgroup [ref=f1e188]:
+        - row [ref=f1e189]:
+          - columnheader "生产者＼判官" [ref=f1e190]
+          - columnheader "kimi-k2.7" [ref=f1e191]
+          - columnheader "space-bunny" [ref=f1e192]
+          - columnheader "hy4-preview-f" [ref=f1e193]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e194]
+          - columnheader "说明" [ref=f1e195]
+        - row [ref=f1e196]:
+          - cell "hy4-preview-f" [ref=f1e197]
+          - cell "5" [ref=f1e198]
+          - cell "5" [ref=f1e199]
+          - cell "4.6" [ref=f1e200]
+          - cell "—" [ref=f1e201]
+          - cell "对角线=自评" [ref=f1e202]
+        - row [ref=f1e203]:
+          - cell "space-bunny" [ref=f1e204]
+          - cell "3.55" [ref=f1e205]
+          - cell "3.55" [ref=f1e206]
+          - cell "4.15" [ref=f1e207]
+          - cell "4.15" [ref=f1e208]
+          - cell "对角线=自评" [ref=f1e209]
+    - heading "api-and-interface-design__addyosmani 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e210]
+    - text: SkillScore 榜
+    - table [ref=f1e211]:
+      - rowgroup [ref=f1e212]:
+        - row [ref=f1e213]:
+          - columnheader "模型" [ref=f1e214]
+          - columnheader "家族" [ref=f1e215]
+          - columnheader "SkillScore" [ref=f1e216]
+          - columnheader "M2均分" [ref=f1e217]
+          - columnheader "M1均分" [ref=f1e218]
+          - columnheader "触发准确率" [ref=f1e219]
+        - row [ref=f1e220]:
+          - cell "space-bunny" [ref=f1e221]
+          - cell "SpaceBunny" [ref=f1e222]
+          - cell "72" [ref=f1e223]
+          - cell "3.5" [ref=f1e224]
+          - cell "-" [ref=f1e225]
+          - cell "-" [ref=f1e226]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e227]:
+      - rowgroup [ref=f1e228]:
+        - row [ref=f1e229]:
+          - columnheader "模型" [ref=f1e230]
+          - columnheader "任务" [ref=f1e231]
+          - columnheader "M2−M1" [ref=f1e232]
+          - columnheader "hake" [ref=f1e233]
+          - columnheader "M2−M4" [ref=f1e234]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e235]:
+      - rowgroup [ref=f1e236]:
+        - row [ref=f1e237]:
+          - columnheader "生产者＼判官" [ref=f1e238]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e239]
+          - columnheader "hy4-preview-f" [ref=f1e240]
+          - columnheader "kimi-k2.7" [ref=f1e241]
+          - columnheader "space-bunny" [ref=f1e242]
+          - columnheader "说明" [ref=f1e243]
+        - row [ref=f1e244]:
+          - cell "space-bunny" [ref=f1e245]
+          - cell "4.6" [ref=f1e246]
+          - cell "3.5" [ref=f1e247]
+          - cell "3.4" [ref=f1e248]
+          - cell "5" [ref=f1e249]
+          - cell "对角线=自评" [ref=f1e250]
+    - heading "aster-atelier__nexu-io 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e251]
+    - text: SkillScore 榜
+    - table [ref=f1e252]:
+      - rowgroup [ref=f1e253]:
+        - row [ref=f1e254]:
+          - columnheader "模型" [ref=f1e255]
+          - columnheader "家族" [ref=f1e256]
+          - columnheader "SkillScore" [ref=f1e257]
+          - columnheader "M2均分" [ref=f1e258]
+          - columnheader "M1均分" [ref=f1e259]
+          - columnheader "触发准确率" [ref=f1e260]
+        - row [ref=f1e261]:
+          - cell "hy4-preview-f" [ref=f1e262]
+          - cell "Hy" [ref=f1e263]
+          - cell "90" [ref=f1e264]
+          - cell "5" [ref=f1e265]
+          - cell "-" [ref=f1e266]
+          - cell "-" [ref=f1e267]
+        - row [ref=f1e268]:
+          - cell "glm-5.3-flash@api" [ref=f1e269]
+          - cell "GLM" [ref=f1e270]
+          - cell "90" [ref=f1e271]
+          - cell "5" [ref=f1e272]
+          - cell "-" [ref=f1e273]
+          - cell "-" [ref=f1e274]
+        - row [ref=f1e275]:
+          - cell "space-bunny" [ref=f1e276]
+          - cell "SpaceBunny" [ref=f1e277]
+          - cell "87.6" [ref=f1e278]
+          - cell "4.8" [ref=f1e279]
+          - cell "-" [ref=f1e280]
+          - cell "-" [ref=f1e281]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e282]:
+      - rowgroup [ref=f1e283]:
+        - row [ref=f1e284]:
+          - columnheader "模型" [ref=f1e285]
+          - columnheader "任务" [ref=f1e286]
+          - columnheader "M2−M1" [ref=f1e287]
+          - columnheader "hake" [ref=f1e288]
+          - columnheader "M2−M4" [ref=f1e289]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e290]:
+      - rowgroup [ref=f1e291]:
+        - row [ref=f1e292]:
+          - columnheader "生产者＼判官" [ref=f1e293]
+          - columnheader "hy4-preview-f" [ref=f1e294]
+          - columnheader "kimi-k2.7" [ref=f1e295]
+          - columnheader "space-bunny" [ref=f1e296]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e297]
+          - columnheader "说明" [ref=f1e298]
+        - row [ref=f1e299]:
+          - cell "glm-5.3-flash@api" [ref=f1e300]
+          - cell "5" [ref=f1e301]
+          - cell "5" [ref=f1e302]
+          - cell "5" [ref=f1e303]
+          - cell "—" [ref=f1e304]
+          - cell [ref=f1e305]
+        - row [ref=f1e306]:
+          - cell "hy4-preview-f" [ref=f1e307]
+          - cell "4.4" [ref=f1e308]
+          - cell "5" [ref=f1e309]
+          - cell "4.4" [ref=f1e310]
+          - cell "5" [ref=f1e311]
+          - cell "对角线=自评" [ref=f1e312]
+        - row [ref=f1e313]:
+          - cell "space-bunny" [ref=f1e314]
+          - cell "4.8" [ref=f1e315]
+          - cell "5" [ref=f1e316]
+          - cell "5" [ref=f1e317]
+          - cell "4.4" [ref=f1e318]
+          - cell "对角线=自评" [ref=f1e319]
+    - heading "audio-jingle__nexu-io 最佳模型：glm-5.3-flash@api · 断言层 0/0 · 更新 2026-10-10 02:10:13" [level=2] [ref=f1e320]
+    - text: SkillScore 榜
+    - table [ref=f1e321]:
+      - rowgroup [ref=f1e322]:
+        - row [ref=f1e323]:
+          - columnheader "模型" [ref=f1e324]
+          - columnheader "家族" [ref=f1e325]
+          - columnheader "SkillScore" [ref=f1e326]
+          - columnheader "M2均分" [ref=f1e327]
+          - columnheader "M1均分" [ref=f1e328]
+          - columnheader "触发准确率" [ref=f1e329]
+        - row [ref=f1e330]:
+          - cell "glm-5.3-flash@api" [ref=f1e331]
+          - cell "GLM" [ref=f1e332]
+          - cell "90" [ref=f1e333]
+          - cell "5" [ref=f1e334]
+          - cell "-" [ref=f1e335]
+          - cell "-" [ref=f1e336]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e337]:
+      - rowgroup [ref=f1e338]:
+        - row [ref=f1e339]:
+          - columnheader "模型" [ref=f1e340]
+          - columnheader "任务" [ref=f1e341]
+          - columnheader "M2−M1" [ref=f1e342]
+          - columnheader "hake" [ref=f1e343]
+          - columnheader "M2−M4" [ref=f1e344]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e345]:
+      - rowgroup [ref=f1e346]:
+        - row [ref=f1e347]:
+          - columnheader "生产者＼判官" [ref=f1e348]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e349]
+          - columnheader "kimi-k2.7" [ref=f1e350]
+          - columnheader "space-bunny" [ref=f1e351]
+          - columnheader "glm-5.3-flash@api" [ref=f1e352]
+          - columnheader "说明" [ref=f1e353]
+        - row [ref=f1e354]:
+          - cell "glm-5.3-flash@api" [ref=f1e355]
+          - cell "5" [ref=f1e356]
+          - cell "5" [ref=f1e357]
+          - cell "4.6" [ref=f1e358]
+          - cell "5" [ref=f1e359]
+          - cell "对角线=自评" [ref=f1e360]
+    - heading "blog-post__nexu-io 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e361]
+    - text: SkillScore 榜
+    - table [ref=f1e362]:
+      - rowgroup [ref=f1e363]:
+        - row [ref=f1e364]:
+          - columnheader "模型" [ref=f1e365]
+          - columnheader "家族" [ref=f1e366]
+          - columnheader "SkillScore" [ref=f1e367]
+          - columnheader "M2均分" [ref=f1e368]
+          - columnheader "M1均分" [ref=f1e369]
+          - columnheader "触发准确率" [ref=f1e370]
+        - row [ref=f1e371]:
+          - cell "kimi-k2.7" [ref=f1e372]
+          - cell "Kimi" [ref=f1e373]
+          - cell "90" [ref=f1e374]
+          - cell "5" [ref=f1e375]
+          - cell "-" [ref=f1e376]
+          - cell "-" [ref=f1e377]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e378]:
+      - rowgroup [ref=f1e379]:
+        - row [ref=f1e380]:
+          - columnheader "模型" [ref=f1e381]
+          - columnheader "任务" [ref=f1e382]
+          - columnheader "M2−M1" [ref=f1e383]
+          - columnheader "hake" [ref=f1e384]
+          - columnheader "M2−M4" [ref=f1e385]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e386]:
+      - rowgroup [ref=f1e387]:
+        - row [ref=f1e388]:
+          - columnheader "生产者＼判官" [ref=f1e389]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e390]
+          - columnheader "hy4-preview-f" [ref=f1e391]
+          - columnheader "space-bunny" [ref=f1e392]
+          - columnheader "kimi-k2.7" [ref=f1e393]
+          - columnheader "说明" [ref=f1e394]
+        - row [ref=f1e395]:
+          - cell "kimi-k2.7" [ref=f1e396]
+          - cell "5" [ref=f1e397]
+          - cell "5" [ref=f1e398]
+          - cell "5" [ref=f1e399]
+          - cell "5" [ref=f1e400]
+          - cell "对角线=自评" [ref=f1e401]
+    - heading "brand-guidelines__anthropics 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e402]
+    - text: SkillScore 榜
+    - table [ref=f1e403]:
+      - rowgroup [ref=f1e404]:
+        - row [ref=f1e405]:
+          - columnheader "模型" [ref=f1e406]
+          - columnheader "家族" [ref=f1e407]
+          - columnheader "SkillScore" [ref=f1e408]
+          - columnheader "M2均分" [ref=f1e409]
+          - columnheader "M1均分" [ref=f1e410]
+          - columnheader "触发准确率" [ref=f1e411]
+        - row [ref=f1e412]:
+          - cell "space-bunny" [ref=f1e413]
+          - cell "SpaceBunny" [ref=f1e414]
+          - cell "90" [ref=f1e415]
+          - cell "5" [ref=f1e416]
+          - cell "-" [ref=f1e417]
+          - cell "-" [ref=f1e418]
+        - row [ref=f1e419]:
+          - cell "deepseek-v4.1-flash" [ref=f1e420]
+          - cell "DeepSeek" [ref=f1e421]
+          - cell "87.6" [ref=f1e422]
+          - cell "4.8" [ref=f1e423]
+          - cell "-" [ref=f1e424]
+          - cell "-" [ref=f1e425]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e426]:
+      - rowgroup [ref=f1e427]:
+        - row [ref=f1e428]:
+          - columnheader "模型" [ref=f1e429]
+          - columnheader "任务" [ref=f1e430]
+          - columnheader "M2−M1" [ref=f1e431]
+          - columnheader "hake" [ref=f1e432]
+          - columnheader "M2−M4" [ref=f1e433]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e434]:
+      - rowgroup [ref=f1e435]:
+        - row [ref=f1e436]:
+          - columnheader "生产者＼判官" [ref=f1e437]
+          - columnheader "hy4-preview-f" [ref=f1e438]
+          - columnheader "kimi-k2.7" [ref=f1e439]
+          - columnheader "space-bunny" [ref=f1e440]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e441]
+          - columnheader "说明" [ref=f1e442]
+        - row [ref=f1e443]:
+          - cell "deepseek-v4.1-flash" [ref=f1e444]
+          - cell "4.8" [ref=f1e445]
+          - cell "5" [ref=f1e446]
+          - cell "4.6" [ref=f1e447]
+          - cell "5" [ref=f1e448]
+          - cell "对角线=自评" [ref=f1e449]
+        - row [ref=f1e450]:
+          - cell "space-bunny" [ref=f1e451]
+          - cell "4.8" [ref=f1e452]
+          - cell "5" [ref=f1e453]
+          - cell "5" [ref=f1e454]
+          - cell "5" [ref=f1e455]
+          - cell "对角线=自评" [ref=f1e456]
+    - heading "browser-testing-with-devtools__addyosmani 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e457]
+    - text: SkillScore 榜
+    - table [ref=f1e458]:
+      - rowgroup [ref=f1e459]:
+        - row [ref=f1e460]:
+          - columnheader "模型" [ref=f1e461]
+          - columnheader "家族" [ref=f1e462]
+          - columnheader "SkillScore" [ref=f1e463]
+          - columnheader "M2均分" [ref=f1e464]
+          - columnheader "M1均分" [ref=f1e465]
+          - columnheader "触发准确率" [ref=f1e466]
+        - row [ref=f1e467]:
+          - cell "deepseek-v4.1-flash" [ref=f1e468]
+          - cell "DeepSeek" [ref=f1e469]
+          - cell "90" [ref=f1e470]
+          - cell "5" [ref=f1e471]
+          - cell "-" [ref=f1e472]
+          - cell "-" [ref=f1e473]
+        - row [ref=f1e474]:
+          - cell "kimi-k2.7" [ref=f1e475]
+          - cell "Kimi" [ref=f1e476]
+          - cell "90" [ref=f1e477]
+          - cell "5" [ref=f1e478]
+          - cell "-" [ref=f1e479]
+          - cell "-" [ref=f1e480]
+        - row [ref=f1e481]:
+          - cell "glm-5.3-flash@api" [ref=f1e482]
+          - cell "GLM" [ref=f1e483]
+          - cell "85.2" [ref=f1e484]
+          - cell "4.6" [ref=f1e485]
+          - cell "-" [ref=f1e486]
+          - cell "-" [ref=f1e487]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e488]:
+      - rowgroup [ref=f1e489]:
+        - row [ref=f1e490]:
+          - columnheader "模型" [ref=f1e491]
+          - columnheader "任务" [ref=f1e492]
+          - columnheader "M2−M1" [ref=f1e493]
+          - columnheader "hake" [ref=f1e494]
+          - columnheader "M2−M4" [ref=f1e495]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e496]:
+      - rowgroup [ref=f1e497]:
+        - row [ref=f1e498]:
+          - columnheader "生产者＼判官" [ref=f1e499]
+          - columnheader "hy4-preview-f" [ref=f1e500]
+          - columnheader "kimi-k2.7" [ref=f1e501]
+          - columnheader "space-bunny" [ref=f1e502]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e503]
+          - columnheader "说明" [ref=f1e504]
+        - row [ref=f1e505]:
+          - cell "deepseek-v4.1-flash" [ref=f1e506]
+          - cell "5" [ref=f1e507]
+          - cell "4.15" [ref=f1e508]
+          - cell "5" [ref=f1e509]
+          - cell "5" [ref=f1e510]
+          - cell "对角线=自评" [ref=f1e511]
+        - row [ref=f1e512]:
+          - cell "glm-5.3-flash@api" [ref=f1e513]
+          - cell "4.6" [ref=f1e514]
+          - cell "—" [ref=f1e515]
+          - cell "3" [ref=f1e516]
+          - cell "4.6" [ref=f1e517]
+          - cell [ref=f1e518]
+        - row [ref=f1e519]:
+          - cell "kimi-k2.7" [ref=f1e520]
+          - cell "4.4" [ref=f1e521]
+          - cell "4" [ref=f1e522]
+          - cell "5" [ref=f1e523]
+          - cell "5" [ref=f1e524]
+          - cell "对角线=自评" [ref=f1e525]
+    - heading "canvas-design__anthropics 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e526]
+    - text: SkillScore 榜
+    - table [ref=f1e527]:
+      - rowgroup [ref=f1e528]:
+        - row [ref=f1e529]:
+          - columnheader "模型" [ref=f1e530]
+          - columnheader "家族" [ref=f1e531]
+          - columnheader "SkillScore" [ref=f1e532]
+          - columnheader "M2均分" [ref=f1e533]
+          - columnheader "M1均分" [ref=f1e534]
+          - columnheader "触发准确率" [ref=f1e535]
+        - row [ref=f1e536]:
+          - cell "space-bunny" [ref=f1e537]
+          - cell "SpaceBunny" [ref=f1e538]
+          - cell "87.6" [ref=f1e539]
+          - cell "4.8" [ref=f1e540]
+          - cell "-" [ref=f1e541]
+          - cell "-" [ref=f1e542]
+        - row [ref=f1e543]:
+          - cell "deepseek-v4.1-flash" [ref=f1e544]
+          - cell "DeepSeek" [ref=f1e545]
+          - cell "80.4" [ref=f1e546]
+          - cell "4.2" [ref=f1e547]
+          - cell "-" [ref=f1e548]
+          - cell "-" [ref=f1e549]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e550]:
+      - rowgroup [ref=f1e551]:
+        - row [ref=f1e552]:
+          - columnheader "模型" [ref=f1e553]
+          - columnheader "任务" [ref=f1e554]
+          - columnheader "M2−M1" [ref=f1e555]
+          - columnheader "hake" [ref=f1e556]
+          - columnheader "M2−M4" [ref=f1e557]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e558]:
+      - rowgroup [ref=f1e559]:
+        - row [ref=f1e560]:
+          - columnheader "生产者＼判官" [ref=f1e561]
+          - columnheader "hy4-preview-f" [ref=f1e562]
+          - columnheader "kimi-k2.7" [ref=f1e563]
+          - columnheader "space-bunny" [ref=f1e564]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e565]
+          - columnheader "说明" [ref=f1e566]
+        - row [ref=f1e567]:
+          - cell "deepseek-v4.1-flash" [ref=f1e568]
+          - cell "4.2" [ref=f1e569]
+          - cell "5" [ref=f1e570]
+          - cell "3.35" [ref=f1e571]
+          - cell "4.4" [ref=f1e572]
+          - cell "对角线=自评" [ref=f1e573]
+        - row [ref=f1e574]:
+          - cell "space-bunny" [ref=f1e575]
+          - cell "5" [ref=f1e576]
+          - cell "4.8" [ref=f1e577]
+          - cell "3.55" [ref=f1e578]
+          - cell "4.4" [ref=f1e579]
+          - cell "对角线=自评" [ref=f1e580]
+    - heading "ci-cd-and-automation__addyosmani 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e581]
+    - text: SkillScore 榜
+    - table [ref=f1e582]:
+      - rowgroup [ref=f1e583]:
+        - row [ref=f1e584]:
+          - columnheader "模型" [ref=f1e585]
+          - columnheader "家族" [ref=f1e586]
+          - columnheader "SkillScore" [ref=f1e587]
+          - columnheader "M2均分" [ref=f1e588]
+          - columnheader "M1均分" [ref=f1e589]
+          - columnheader "触发准确率" [ref=f1e590]
+        - row [ref=f1e591]:
+          - cell "space-bunny" [ref=f1e592]
+          - cell "SpaceBunny" [ref=f1e593]
+          - cell "90" [ref=f1e594]
+          - cell "5" [ref=f1e595]
+          - cell "-" [ref=f1e596]
+          - cell "-" [ref=f1e597]
+        - row [ref=f1e598]:
+          - cell "deepseek-v4.1-flash" [ref=f1e599]
+          - cell "DeepSeek" [ref=f1e600]
+          - cell "90" [ref=f1e601]
+          - cell "5" [ref=f1e602]
+          - cell "-" [ref=f1e603]
+          - cell "-" [ref=f1e604]
+        - row [ref=f1e605]:
+          - cell "kimi-k2.7" [ref=f1e606]
+          - cell "Kimi" [ref=f1e607]
+          - cell "82.8" [ref=f1e608]
+          - cell "4.4" [ref=f1e609]
+          - cell "-" [ref=f1e610]
+          - cell "-" [ref=f1e611]
+        - row [ref=f1e612]:
+          - cell "glm-5.3-flash@api" [ref=f1e613]
+          - cell "GLM" [ref=f1e614]
+          - cell "80" [ref=f1e615]
+          - cell "4.17" [ref=f1e616]
+          - cell "-" [ref=f1e617]
+          - cell "-" [ref=f1e618]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e619]:
+      - rowgroup [ref=f1e620]:
+        - row [ref=f1e621]:
+          - columnheader "模型" [ref=f1e622]
+          - columnheader "任务" [ref=f1e623]
+          - columnheader "M2−M1" [ref=f1e624]
+          - columnheader "hake" [ref=f1e625]
+          - columnheader "M2−M4" [ref=f1e626]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e627]:
+      - rowgroup [ref=f1e628]:
+        - row [ref=f1e629]:
+          - columnheader "生产者＼判官" [ref=f1e630]
+          - columnheader "hy4-preview-f" [ref=f1e631]
+          - columnheader "kimi-k2.7" [ref=f1e632]
+          - columnheader "space-bunny" [ref=f1e633]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e634]
+          - columnheader "说明" [ref=f1e635]
+        - row [ref=f1e636]:
+          - cell "deepseek-v4.1-flash" [ref=f1e637]
+          - cell "3" [ref=f1e638]
+          - cell "5" [ref=f1e639]
+          - cell "5" [ref=f1e640]
+          - cell "4.6" [ref=f1e641]
+          - cell "对角线=自评" [ref=f1e642]
+        - row [ref=f1e643]:
+          - cell "glm-5.3-flash@api" [ref=f1e644]
+          - cell "4.6" [ref=f1e645]
+          - cell "3.75" [ref=f1e646]
+          - cell "3.35" [ref=f1e647]
+          - cell "5" [ref=f1e648]
+          - cell [ref=f1e649]
+        - row [ref=f1e650]:
+          - cell "kimi-k2.7" [ref=f1e651]
+          - cell "3.55" [ref=f1e652]
+          - cell "4.6" [ref=f1e653]
+          - cell "4.6" [ref=f1e654]
+          - cell "4.4" [ref=f1e655]
+          - cell "对角线=自评" [ref=f1e656]
+        - row [ref=f1e657]:
+          - cell "space-bunny" [ref=f1e658]
+          - cell "4.15" [ref=f1e659]
+          - cell "5" [ref=f1e660]
+          - cell "4.4" [ref=f1e661]
+          - cell "5" [ref=f1e662]
+          - cell "对角线=自评" [ref=f1e663]
+    - heading "claude-api__anthropics 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e664]
+    - text: SkillScore 榜
+    - table [ref=f1e665]:
+      - rowgroup [ref=f1e666]:
+        - row [ref=f1e667]:
+          - columnheader "模型" [ref=f1e668]
+          - columnheader "家族" [ref=f1e669]
+          - columnheader "SkillScore" [ref=f1e670]
+          - columnheader "M2均分" [ref=f1e671]
+          - columnheader "M1均分" [ref=f1e672]
+          - columnheader "触发准确率" [ref=f1e673]
+        - row [ref=f1e674]:
+          - cell "deepseek-v4.1-flash" [ref=f1e675]
+          - cell "DeepSeek" [ref=f1e676]
+          - cell "70.8" [ref=f1e677]
+          - cell "3.4" [ref=f1e678]
+          - cell "-" [ref=f1e679]
+          - cell "-" [ref=f1e680]
+        - row [ref=f1e681]:
+          - cell "hy4-preview-f" [ref=f1e682]
+          - cell "Hy" [ref=f1e683]
+          - cell "67.8" [ref=f1e684]
+          - cell "3.15" [ref=f1e685]
+          - cell "-" [ref=f1e686]
+          - cell "-" [ref=f1e687]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e688]:
+      - rowgroup [ref=f1e689]:
+        - row [ref=f1e690]:
+          - columnheader "模型" [ref=f1e691]
+          - columnheader "任务" [ref=f1e692]
+          - columnheader "M2−M1" [ref=f1e693]
+          - columnheader "hake" [ref=f1e694]
+          - columnheader "M2−M4" [ref=f1e695]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e696]:
+      - rowgroup [ref=f1e697]:
+        - row [ref=f1e698]:
+          - columnheader "生产者＼判官" [ref=f1e699]
+          - columnheader "hy4-preview-f" [ref=f1e700]
+          - columnheader "kimi-k2.7" [ref=f1e701]
+          - columnheader "space-bunny" [ref=f1e702]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e703]
+          - columnheader "说明" [ref=f1e704]
+        - row [ref=f1e705]:
+          - cell "deepseek-v4.1-flash" [ref=f1e706]
+          - cell "3.2" [ref=f1e707]
+          - cell "3.4" [ref=f1e708]
+          - cell "3.4" [ref=f1e709]
+          - cell "4.6" [ref=f1e710]
+          - cell "对角线=自评" [ref=f1e711]
+        - row [ref=f1e712]:
+          - cell "hy4-preview-f" [ref=f1e713]
+          - cell "4.6" [ref=f1e714]
+          - cell "3.15" [ref=f1e715]
+          - cell "3" [ref=f1e716]
+          - cell "4.4" [ref=f1e717]
+          - cell "对角线=自评" [ref=f1e718]
+    - heading "clinical-case-report__nexu-io 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e719]
+    - text: SkillScore 榜
+    - table [ref=f1e720]:
+      - rowgroup [ref=f1e721]:
+        - row [ref=f1e722]:
+          - columnheader "模型" [ref=f1e723]
+          - columnheader "家族" [ref=f1e724]
+          - columnheader "SkillScore" [ref=f1e725]
+          - columnheader "M2均分" [ref=f1e726]
+          - columnheader "M1均分" [ref=f1e727]
+          - columnheader "触发准确率" [ref=f1e728]
+        - row [ref=f1e729]:
+          - cell "kimi-k2.7" [ref=f1e730]
+          - cell "Kimi" [ref=f1e731]
+          - cell "82.8" [ref=f1e732]
+          - cell "4.4" [ref=f1e733]
+          - cell "-" [ref=f1e734]
+          - cell "-" [ref=f1e735]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e736]:
+      - rowgroup [ref=f1e737]:
+        - row [ref=f1e738]:
+          - columnheader "模型" [ref=f1e739]
+          - columnheader "任务" [ref=f1e740]
+          - columnheader "M2−M1" [ref=f1e741]
+          - columnheader "hake" [ref=f1e742]
+          - columnheader "M2−M4" [ref=f1e743]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e744]:
+      - rowgroup [ref=f1e745]:
+        - row [ref=f1e746]:
+          - columnheader "生产者＼判官" [ref=f1e747]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e748]
+          - columnheader "hy4-preview-f" [ref=f1e749]
+          - columnheader "space-bunny" [ref=f1e750]
+          - columnheader "kimi-k2.7" [ref=f1e751]
+          - columnheader "说明" [ref=f1e752]
+        - row [ref=f1e753]:
+          - cell "kimi-k2.7" [ref=f1e754]
+          - cell "4.6" [ref=f1e755]
+          - cell "4.4" [ref=f1e756]
+          - cell "3.4" [ref=f1e757]
+          - cell "3.35" [ref=f1e758]
+          - cell "对角线=自评" [ref=f1e759]
+    - heading "code-review-and-quality__addyosmani 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e760]
+    - text: SkillScore 榜
+    - table [ref=f1e761]:
+      - rowgroup [ref=f1e762]:
+        - row [ref=f1e763]:
+          - columnheader "模型" [ref=f1e764]
+          - columnheader "家族" [ref=f1e765]
+          - columnheader "SkillScore" [ref=f1e766]
+          - columnheader "M2均分" [ref=f1e767]
+          - columnheader "M1均分" [ref=f1e768]
+          - columnheader "触发准确率" [ref=f1e769]
+        - row [ref=f1e770]:
+          - cell "deepseek-v4.1-flash" [ref=f1e771]
+          - cell "DeepSeek" [ref=f1e772]
+          - cell "70.8" [ref=f1e773]
+          - cell "3.4" [ref=f1e774]
+          - cell "-" [ref=f1e775]
+          - cell "-" [ref=f1e776]
+        - row [ref=f1e777]:
+          - cell "glm-5.3-flash@api" [ref=f1e778]
+          - cell "GLM" [ref=f1e779]
+          - cell "63.6" [ref=f1e780]
+          - cell "2.8" [ref=f1e781]
+          - cell "-" [ref=f1e782]
+          - cell "-" [ref=f1e783]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e784]:
+      - rowgroup [ref=f1e785]:
+        - row [ref=f1e786]:
+          - columnheader "模型" [ref=f1e787]
+          - columnheader "任务" [ref=f1e788]
+          - columnheader "M2−M1" [ref=f1e789]
+          - columnheader "hake" [ref=f1e790]
+          - columnheader "M2−M4" [ref=f1e791]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e792]:
+      - rowgroup [ref=f1e793]:
+        - row [ref=f1e794]:
+          - columnheader "生产者＼判官" [ref=f1e795]
+          - columnheader "hy4-preview-f" [ref=f1e796]
+          - columnheader "kimi-k2.7" [ref=f1e797]
+          - columnheader "space-bunny" [ref=f1e798]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e799]
+          - columnheader "说明" [ref=f1e800]
+        - row [ref=f1e801]:
+          - cell "deepseek-v4.1-flash" [ref=f1e802]
+          - cell "5" [ref=f1e803]
+          - cell "3.4" [ref=f1e804]
+          - cell "3" [ref=f1e805]
+          - cell "4.15" [ref=f1e806]
+          - cell "对角线=自评" [ref=f1e807]
+        - row [ref=f1e808]:
+          - cell "glm-5.3-flash@api" [ref=f1e809]
+          - cell "2.8" [ref=f1e810]
+          - cell "1.95" [ref=f1e811]
+          - cell "2.8" [ref=f1e812]
+          - cell "4.4" [ref=f1e813]
+          - cell [ref=f1e814]
+    - heading "code-simplification__addyosmani 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e815]
+    - text: SkillScore 榜
+    - table [ref=f1e816]:
+      - rowgroup [ref=f1e817]:
+        - row [ref=f1e818]:
+          - columnheader "模型" [ref=f1e819]
+          - columnheader "家族" [ref=f1e820]
+          - columnheader "SkillScore" [ref=f1e821]
+          - columnheader "M2均分" [ref=f1e822]
+          - columnheader "M1均分" [ref=f1e823]
+          - columnheader "触发准确率" [ref=f1e824]
+        - row [ref=f1e825]:
+          - cell "space-bunny" [ref=f1e826]
+          - cell "SpaceBunny" [ref=f1e827]
+          - cell "90" [ref=f1e828]
+          - cell "5" [ref=f1e829]
+          - cell "-" [ref=f1e830]
+          - cell "-" [ref=f1e831]
+        - row [ref=f1e832]:
+          - cell "glm-5.3-flash@api" [ref=f1e833]
+          - cell "GLM" [ref=f1e834]
+          - cell "87.6" [ref=f1e835]
+          - cell "4.8" [ref=f1e836]
+          - cell "-" [ref=f1e837]
+          - cell "-" [ref=f1e838]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e839]:
+      - rowgroup [ref=f1e840]:
+        - row [ref=f1e841]:
+          - columnheader "模型" [ref=f1e842]
+          - columnheader "任务" [ref=f1e843]
+          - columnheader "M2−M1" [ref=f1e844]
+          - columnheader "hake" [ref=f1e845]
+          - columnheader "M2−M4" [ref=f1e846]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e847]:
+      - rowgroup [ref=f1e848]:
+        - row [ref=f1e849]:
+          - columnheader "生产者＼判官" [ref=f1e850]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e851]
+          - columnheader "hy4-preview-f" [ref=f1e852]
+          - columnheader "kimi-k2.7" [ref=f1e853]
+          - columnheader "space-bunny" [ref=f1e854]
+          - columnheader "说明" [ref=f1e855]
+        - row [ref=f1e856]:
+          - cell "glm-5.3-flash@api" [ref=f1e857]
+          - cell "5" [ref=f1e858]
+          - cell "4.6" [ref=f1e859]
+          - cell "5" [ref=f1e860]
+          - cell "3.2" [ref=f1e861]
+          - cell [ref=f1e862]
+        - row [ref=f1e863]:
+          - cell "space-bunny" [ref=f1e864]
+          - cell "5" [ref=f1e865]
+          - cell "5" [ref=f1e866]
+          - cell "5" [ref=f1e867]
+          - cell "3" [ref=f1e868]
+          - cell "对角线=自评" [ref=f1e869]
+    - heading "constraint-driven-development__addyosmani 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e870]
+    - text: SkillScore 榜
+    - table [ref=f1e871]:
+      - rowgroup [ref=f1e872]:
+        - row [ref=f1e873]:
+          - columnheader "模型" [ref=f1e874]
+          - columnheader "家族" [ref=f1e875]
+          - columnheader "SkillScore" [ref=f1e876]
+          - columnheader "M2均分" [ref=f1e877]
+          - columnheader "M1均分" [ref=f1e878]
+          - columnheader "触发准确率" [ref=f1e879]
+        - row [ref=f1e880]:
+          - cell "deepseek-v4.1-flash" [ref=f1e881]
+          - cell "DeepSeek" [ref=f1e882]
+          - cell "90" [ref=f1e883]
+          - cell "5" [ref=f1e884]
+          - cell "-" [ref=f1e885]
+          - cell "-" [ref=f1e886]
+        - row [ref=f1e887]:
+          - cell "space-bunny" [ref=f1e888]
+          - cell "SpaceBunny" [ref=f1e889]
+          - cell "90" [ref=f1e890]
+          - cell "5" [ref=f1e891]
+          - cell "-" [ref=f1e892]
+          - cell "-" [ref=f1e893]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e894]:
+      - rowgroup [ref=f1e895]:
+        - row [ref=f1e896]:
+          - columnheader "模型" [ref=f1e897]
+          - columnheader "任务" [ref=f1e898]
+          - columnheader "M2−M1" [ref=f1e899]
+          - columnheader "hake" [ref=f1e900]
+          - columnheader "M2−M4" [ref=f1e901]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e902]:
+      - rowgroup [ref=f1e903]:
+        - row [ref=f1e904]:
+          - columnheader "生产者＼判官" [ref=f1e905]
+          - columnheader "hy4-preview-f" [ref=f1e906]
+          - columnheader "kimi-k2.7" [ref=f1e907]
+          - columnheader "space-bunny" [ref=f1e908]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e909]
+          - columnheader "说明" [ref=f1e910]
+        - row [ref=f1e911]:
+          - cell "deepseek-v4.1-flash" [ref=f1e912]
+          - cell "5" [ref=f1e913]
+          - cell "4.6" [ref=f1e914]
+          - cell "5" [ref=f1e915]
+          - cell "5" [ref=f1e916]
+          - cell "对角线=自评" [ref=f1e917]
+        - row [ref=f1e918]:
+          - cell "space-bunny" [ref=f1e919]
+          - cell "5" [ref=f1e920]
+          - cell "5" [ref=f1e921]
+          - cell "5" [ref=f1e922]
+          - cell "5" [ref=f1e923]
+          - cell "对角线=自评" [ref=f1e924]
+    - heading "contact-widget__nexu-io 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e925]
+    - text: SkillScore 榜
+    - table [ref=f1e926]:
+      - rowgroup [ref=f1e927]:
+        - row [ref=f1e928]:
+          - columnheader "模型" [ref=f1e929]
+          - columnheader "家族" [ref=f1e930]
+          - columnheader "SkillScore" [ref=f1e931]
+          - columnheader "M2均分" [ref=f1e932]
+          - columnheader "M1均分" [ref=f1e933]
+          - columnheader "触发准确率" [ref=f1e934]
+        - row [ref=f1e935]:
+          - cell "deepseek-v4.1-flash" [ref=f1e936]
+          - cell "DeepSeek" [ref=f1e937]
+          - cell "90" [ref=f1e938]
+          - cell "5" [ref=f1e939]
+          - cell "-" [ref=f1e940]
+          - cell "-" [ref=f1e941]
+        - row [ref=f1e942]:
+          - cell "kimi-k2.7" [ref=f1e943]
+          - cell "Kimi" [ref=f1e944]
+          - cell "90" [ref=f1e945]
+          - cell "5" [ref=f1e946]
+          - cell "-" [ref=f1e947]
+          - cell "-" [ref=f1e948]
+        - row [ref=f1e949]:
+          - cell "space-bunny" [ref=f1e950]
+          - cell "SpaceBunny" [ref=f1e951]
+          - cell "87.6" [ref=f1e952]
+          - cell "4.8" [ref=f1e953]
+          - cell "-" [ref=f1e954]
+          - cell "-" [ref=f1e955]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e956]:
+      - rowgroup [ref=f1e957]:
+        - row [ref=f1e958]:
+          - columnheader "模型" [ref=f1e959]
+          - columnheader "任务" [ref=f1e960]
+          - columnheader "M2−M1" [ref=f1e961]
+          - columnheader "hake" [ref=f1e962]
+          - columnheader "M2−M4" [ref=f1e963]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e964]:
+      - rowgroup [ref=f1e965]:
+        - row [ref=f1e966]:
+          - columnheader "生产者＼判官" [ref=f1e967]
+          - columnheader "hy4-preview-f" [ref=f1e968]
+          - columnheader "kimi-k2.7" [ref=f1e969]
+          - columnheader "space-bunny" [ref=f1e970]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e971]
+          - columnheader "说明" [ref=f1e972]
+        - row [ref=f1e973]:
+          - cell "deepseek-v4.1-flash" [ref=f1e974]
+          - cell "5" [ref=f1e975]
+          - cell "5" [ref=f1e976]
+          - cell "4.6" [ref=f1e977]
+          - cell "5" [ref=f1e978]
+          - cell "对角线=自评" [ref=f1e979]
+        - row [ref=f1e980]:
+          - cell "kimi-k2.7" [ref=f1e981]
+          - cell "5" [ref=f1e982]
+          - cell "5" [ref=f1e983]
+          - cell "5" [ref=f1e984]
+          - cell "5" [ref=f1e985]
+          - cell "对角线=自评" [ref=f1e986]
+        - row [ref=f1e987]:
+          - cell "space-bunny" [ref=f1e988]
+          - cell "4.8" [ref=f1e989]
+          - cell "4.75" [ref=f1e990]
+          - cell "5" [ref=f1e991]
+          - cell "5" [ref=f1e992]
+          - cell "对角线=自评" [ref=f1e993]
+    - heading "context-engineering__addyosmani 最佳模型：- · 断言层 0/0 · 更新 2026-10-10 02:10:13" [level=2] [ref=f1e994]
+    - text: SkillScore 榜
+    - table [ref=f1e995]:
+      - rowgroup [ref=f1e996]:
+        - row [ref=f1e997]:
+          - columnheader "模型" [ref=f1e998]
+          - columnheader "家族" [ref=f1e999]
+          - columnheader "SkillScore" [ref=f1e1000]
+          - columnheader "M2均分" [ref=f1e1001]
+          - columnheader "M1均分" [ref=f1e1002]
+          - columnheader "触发准确率" [ref=f1e1003]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1004]:
+      - rowgroup [ref=f1e1005]:
+        - row [ref=f1e1006]:
+          - columnheader "模型" [ref=f1e1007]
+          - columnheader "任务" [ref=f1e1008]
+          - columnheader "M2−M1" [ref=f1e1009]
+          - columnheader "hake" [ref=f1e1010]
+          - columnheader "M2−M4" [ref=f1e1011]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1012]:
+      - rowgroup [ref=f1e1013]:
+        - row [ref=f1e1014]:
+          - columnheader "生产者＼判官" [ref=f1e1015]
+          - columnheader "说明" [ref=f1e1016]
+    - heading "critique__nexu-io 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 02:10:13" [level=2] [ref=f1e1017]
+    - text: SkillScore 榜
+    - table [ref=f1e1018]:
+      - rowgroup [ref=f1e1019]:
+        - row [ref=f1e1020]:
+          - columnheader "模型" [ref=f1e1021]
+          - columnheader "家族" [ref=f1e1022]
+          - columnheader "SkillScore" [ref=f1e1023]
+          - columnheader "M2均分" [ref=f1e1024]
+          - columnheader "M1均分" [ref=f1e1025]
+          - columnheader "触发准确率" [ref=f1e1026]
+        - row [ref=f1e1027]:
+          - cell "kimi-k2.7" [ref=f1e1028]
+          - cell "Kimi" [ref=f1e1029]
+          - cell "73.2" [ref=f1e1030]
+          - cell "3.6" [ref=f1e1031]
+          - cell "-" [ref=f1e1032]
+          - cell "-" [ref=f1e1033]
+        - row [ref=f1e1034]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1035]
+          - cell "DeepSeek" [ref=f1e1036]
+          - cell "72.6" [ref=f1e1037]
+          - cell "3.55" [ref=f1e1038]
+          - cell "-" [ref=f1e1039]
+          - cell "-" [ref=f1e1040]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1041]:
+      - rowgroup [ref=f1e1042]:
+        - row [ref=f1e1043]:
+          - columnheader "模型" [ref=f1e1044]
+          - columnheader "任务" [ref=f1e1045]
+          - columnheader "M2−M1" [ref=f1e1046]
+          - columnheader "hake" [ref=f1e1047]
+          - columnheader "M2−M4" [ref=f1e1048]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1049]:
+      - rowgroup [ref=f1e1050]:
+        - row [ref=f1e1051]:
+          - columnheader "生产者＼判官" [ref=f1e1052]
+          - columnheader "glm-5.3-flash@api" [ref=f1e1053]
+          - columnheader "kimi-k2.7" [ref=f1e1054]
+          - columnheader "space-bunny" [ref=f1e1055]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1056]
+          - columnheader "说明" [ref=f1e1057]
+        - row [ref=f1e1058]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1059]
+          - cell "5" [ref=f1e1060]
+          - cell "3.55" [ref=f1e1061]
+          - cell "3.55" [ref=f1e1062]
+          - cell "4.4" [ref=f1e1063]
+          - cell "对角线=自评" [ref=f1e1064]
+        - row [ref=f1e1065]:
+          - cell "kimi-k2.7" [ref=f1e1066]
+          - cell "4.6" [ref=f1e1067]
+          - cell "2.9" [ref=f1e1068]
+          - cell "3" [ref=f1e1069]
+          - cell "3.6" [ref=f1e1070]
+          - cell "对角线=自评" [ref=f1e1071]
+    - heading "dashboard__nexu-io 最佳模型：glm-5.3-flash@api · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1072]
+    - text: SkillScore 榜
+    - table [ref=f1e1073]:
+      - rowgroup [ref=f1e1074]:
+        - row [ref=f1e1075]:
+          - columnheader "模型" [ref=f1e1076]
+          - columnheader "家族" [ref=f1e1077]
+          - columnheader "SkillScore" [ref=f1e1078]
+          - columnheader "M2均分" [ref=f1e1079]
+          - columnheader "M1均分" [ref=f1e1080]
+          - columnheader "触发准确率" [ref=f1e1081]
+        - row [ref=f1e1082]:
+          - cell "glm-5.3-flash@api" [ref=f1e1083]
+          - cell "GLM" [ref=f1e1084]
+          - cell "88.8" [ref=f1e1085]
+          - cell "4.9" [ref=f1e1086]
+          - cell "-" [ref=f1e1087]
+          - cell "-" [ref=f1e1088]
+        - row [ref=f1e1089]:
+          - cell "hy4-preview-f" [ref=f1e1090]
+          - cell "Hy" [ref=f1e1091]
+          - cell "82.8" [ref=f1e1092]
+          - cell "4.4" [ref=f1e1093]
+          - cell "-" [ref=f1e1094]
+          - cell "-" [ref=f1e1095]
+        - row [ref=f1e1096]:
+          - cell "kimi-k2.7" [ref=f1e1097]
+          - cell "Kimi" [ref=f1e1098]
+          - cell "80.4" [ref=f1e1099]
+          - cell "4.2" [ref=f1e1100]
+          - cell "-" [ref=f1e1101]
+          - cell "-" [ref=f1e1102]
+        - row [ref=f1e1103]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1104]
+          - cell "DeepSeek" [ref=f1e1105]
+          - cell "79.8" [ref=f1e1106]
+          - cell "4.15" [ref=f1e1107]
+          - cell "-" [ref=f1e1108]
+          - cell "-" [ref=f1e1109]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1110]:
+      - rowgroup [ref=f1e1111]:
+        - row [ref=f1e1112]:
+          - columnheader "模型" [ref=f1e1113]
+          - columnheader "任务" [ref=f1e1114]
+          - columnheader "M2−M1" [ref=f1e1115]
+          - columnheader "hake" [ref=f1e1116]
+          - columnheader "M2−M4" [ref=f1e1117]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1118]:
+      - rowgroup [ref=f1e1119]:
+        - row [ref=f1e1120]:
+          - columnheader "生产者＼判官" [ref=f1e1121]
+          - columnheader "hy4-preview-f" [ref=f1e1122]
+          - columnheader "kimi-k2.7" [ref=f1e1123]
+          - columnheader "space-bunny" [ref=f1e1124]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1125]
+          - columnheader "说明" [ref=f1e1126]
+        - row [ref=f1e1127]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1128]
+          - cell "4.55" [ref=f1e1129]
+          - cell "4.15" [ref=f1e1130]
+          - cell "3.15" [ref=f1e1131]
+          - cell "4.75" [ref=f1e1132]
+          - cell "对角线=自评" [ref=f1e1133]
+        - row [ref=f1e1134]:
+          - cell "glm-5.3-flash@api" [ref=f1e1135]
+          - cell "5" [ref=f1e1136]
+          - cell "3.8" [ref=f1e1137]
+          - cell "5" [ref=f1e1138]
+          - cell "4.8" [ref=f1e1139]
+          - cell [ref=f1e1140]
+        - row [ref=f1e1141]:
+          - cell "hy4-preview-f" [ref=f1e1142]
+          - cell "4.6" [ref=f1e1143]
+          - cell "4.4" [ref=f1e1144]
+          - cell "3.4" [ref=f1e1145]
+          - cell "5" [ref=f1e1146]
+          - cell "对角线=自评" [ref=f1e1147]
+        - row [ref=f1e1148]:
+          - cell "kimi-k2.7" [ref=f1e1149]
+          - cell "4.2" [ref=f1e1150]
+          - cell "4" [ref=f1e1151]
+          - cell "3" [ref=f1e1152]
+          - cell "4.4" [ref=f1e1153]
+          - cell "对角线=自评" [ref=f1e1154]
+    - heading "dating-web__nexu-io 最佳模型：glm-5.3-flash@api · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1155]
+    - text: SkillScore 榜
+    - table [ref=f1e1156]:
+      - rowgroup [ref=f1e1157]:
+        - row [ref=f1e1158]:
+          - columnheader "模型" [ref=f1e1159]
+          - columnheader "家族" [ref=f1e1160]
+          - columnheader "SkillScore" [ref=f1e1161]
+          - columnheader "M2均分" [ref=f1e1162]
+          - columnheader "M1均分" [ref=f1e1163]
+          - columnheader "触发准确率" [ref=f1e1164]
+        - row [ref=f1e1165]:
+          - cell "glm-5.3-flash@api" [ref=f1e1166]
+          - cell "GLM" [ref=f1e1167]
+          - cell "88.8" [ref=f1e1168]
+          - cell "4.9" [ref=f1e1169]
+          - cell "-" [ref=f1e1170]
+          - cell "-" [ref=f1e1171]
+        - row [ref=f1e1172]:
+          - cell "kimi-k2.7" [ref=f1e1173]
+          - cell "Kimi" [ref=f1e1174]
+          - cell "82.8" [ref=f1e1175]
+          - cell "4.4" [ref=f1e1176]
+          - cell "-" [ref=f1e1177]
+          - cell "-" [ref=f1e1178]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1179]:
+      - rowgroup [ref=f1e1180]:
+        - row [ref=f1e1181]:
+          - columnheader "模型" [ref=f1e1182]
+          - columnheader "任务" [ref=f1e1183]
+          - columnheader "M2−M1" [ref=f1e1184]
+          - columnheader "hake" [ref=f1e1185]
+          - columnheader "M2−M4" [ref=f1e1186]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1187]:
+      - rowgroup [ref=f1e1188]:
+        - row [ref=f1e1189]:
+          - columnheader "生产者＼判官" [ref=f1e1190]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1191]
+          - columnheader "hy4-preview-f" [ref=f1e1192]
+          - columnheader "kimi-k2.7" [ref=f1e1193]
+          - columnheader "space-bunny" [ref=f1e1194]
+          - columnheader "说明" [ref=f1e1195]
+        - row [ref=f1e1196]:
+          - cell "glm-5.3-flash@api" [ref=f1e1197]
+          - cell "4.8" [ref=f1e1198]
+          - cell "4.6" [ref=f1e1199]
+          - cell "5" [ref=f1e1200]
+          - cell "5" [ref=f1e1201]
+          - cell [ref=f1e1202]
+        - row [ref=f1e1203]:
+          - cell "kimi-k2.7" [ref=f1e1204]
+          - cell "4.4" [ref=f1e1205]
+          - cell "4.4" [ref=f1e1206]
+          - cell "5" [ref=f1e1207]
+          - cell "4.4" [ref=f1e1208]
+          - cell "对角线=自评" [ref=f1e1209]
+    - heading "dcf-valuation__nexu-io 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 02:10:13" [level=2] [ref=f1e1210]
+    - text: SkillScore 榜
+    - table [ref=f1e1211]:
+      - rowgroup [ref=f1e1212]:
+        - row [ref=f1e1213]:
+          - columnheader "模型" [ref=f1e1214]
+          - columnheader "家族" [ref=f1e1215]
+          - columnheader "SkillScore" [ref=f1e1216]
+          - columnheader "M2均分" [ref=f1e1217]
+          - columnheader "M1均分" [ref=f1e1218]
+          - columnheader "触发准确率" [ref=f1e1219]
+        - row [ref=f1e1220]:
+          - cell "kimi-k2.7" [ref=f1e1221]
+          - cell "Kimi" [ref=f1e1222]
+          - cell "82.8" [ref=f1e1223]
+          - cell "4.4" [ref=f1e1224]
+          - cell "-" [ref=f1e1225]
+          - cell "-" [ref=f1e1226]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1227]:
+      - rowgroup [ref=f1e1228]:
+        - row [ref=f1e1229]:
+          - columnheader "模型" [ref=f1e1230]
+          - columnheader "任务" [ref=f1e1231]
+          - columnheader "M2−M1" [ref=f1e1232]
+          - columnheader "hake" [ref=f1e1233]
+          - columnheader "M2−M4" [ref=f1e1234]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1235]:
+      - rowgroup [ref=f1e1236]:
+        - row [ref=f1e1237]:
+          - columnheader "生产者＼判官" [ref=f1e1238]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1239]
+          - columnheader "glm-5.3-flash@api" [ref=f1e1240]
+          - columnheader "space-bunny" [ref=f1e1241]
+          - columnheader "kimi-k2.7" [ref=f1e1242]
+          - columnheader "说明" [ref=f1e1243]
+        - row [ref=f1e1244]:
+          - cell "kimi-k2.7" [ref=f1e1245]
+          - cell "4.6" [ref=f1e1246]
+          - cell "4.4" [ref=f1e1247]
+          - cell "4.15" [ref=f1e1248]
+          - cell "4" [ref=f1e1249]
+          - cell "对角线=自评" [ref=f1e1250]
+    - heading "debugging-and-error-recovery__addyosmani 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1251]
+    - text: SkillScore 榜
+    - table [ref=f1e1252]:
+      - rowgroup [ref=f1e1253]:
+        - row [ref=f1e1254]:
+          - columnheader "模型" [ref=f1e1255]
+          - columnheader "家族" [ref=f1e1256]
+          - columnheader "SkillScore" [ref=f1e1257]
+          - columnheader "M2均分" [ref=f1e1258]
+          - columnheader "M1均分" [ref=f1e1259]
+          - columnheader "触发准确率" [ref=f1e1260]
+        - row [ref=f1e1261]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1262]
+          - cell "DeepSeek" [ref=f1e1263]
+          - cell "90" [ref=f1e1264]
+          - cell "5" [ref=f1e1265]
+          - cell "-" [ref=f1e1266]
+          - cell "-" [ref=f1e1267]
+        - row [ref=f1e1268]:
+          - cell "kimi-k2.7" [ref=f1e1269]
+          - cell "Kimi" [ref=f1e1270]
+          - cell "90" [ref=f1e1271]
+          - cell "5" [ref=f1e1272]
+          - cell "-" [ref=f1e1273]
+          - cell "-" [ref=f1e1274]
+        - row [ref=f1e1275]:
+          - cell "hy4-preview-f" [ref=f1e1276]
+          - cell "Hy" [ref=f1e1277]
+          - cell "85.2" [ref=f1e1278]
+          - cell "4.6" [ref=f1e1279]
+          - cell "-" [ref=f1e1280]
+          - cell "-" [ref=f1e1281]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1282]:
+      - rowgroup [ref=f1e1283]:
+        - row [ref=f1e1284]:
+          - columnheader "模型" [ref=f1e1285]
+          - columnheader "任务" [ref=f1e1286]
+          - columnheader "M2−M1" [ref=f1e1287]
+          - columnheader "hake" [ref=f1e1288]
+          - columnheader "M2−M4" [ref=f1e1289]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1290]:
+      - rowgroup [ref=f1e1291]:
+        - row [ref=f1e1292]:
+          - columnheader "生产者＼判官" [ref=f1e1293]
+          - columnheader "hy4-preview-f" [ref=f1e1294]
+          - columnheader "kimi-k2.7" [ref=f1e1295]
+          - columnheader "space-bunny" [ref=f1e1296]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1297]
+          - columnheader "说明" [ref=f1e1298]
+        - row [ref=f1e1299]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1300]
+          - cell "2.9" [ref=f1e1301]
+          - cell "5" [ref=f1e1302]
+          - cell "5" [ref=f1e1303]
+          - cell "5" [ref=f1e1304]
+          - cell "对角线=自评" [ref=f1e1305]
+        - row [ref=f1e1306]:
+          - cell "hy4-preview-f" [ref=f1e1307]
+          - cell "2.95" [ref=f1e1308]
+          - cell "4.6" [ref=f1e1309]
+          - cell "4.45" [ref=f1e1310]
+          - cell "5" [ref=f1e1311]
+          - cell "对角线=自评" [ref=f1e1312]
+        - row [ref=f1e1313]:
+          - cell "kimi-k2.7" [ref=f1e1314]
+          - cell "5" [ref=f1e1315]
+          - cell "5" [ref=f1e1316]
+          - cell "5" [ref=f1e1317]
+          - cell "5" [ref=f1e1318]
+          - cell "对角线=自评" [ref=f1e1319]
+    - heading "deprecation-and-migration__addyosmani 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1320]
+    - text: SkillScore 榜
+    - table [ref=f1e1321]:
+      - rowgroup [ref=f1e1322]:
+        - row [ref=f1e1323]:
+          - columnheader "模型" [ref=f1e1324]
+          - columnheader "家族" [ref=f1e1325]
+          - columnheader "SkillScore" [ref=f1e1326]
+          - columnheader "M2均分" [ref=f1e1327]
+          - columnheader "M1均分" [ref=f1e1328]
+          - columnheader "触发准确率" [ref=f1e1329]
+        - row [ref=f1e1330]:
+          - cell "kimi-k2.7" [ref=f1e1331]
+          - cell "Kimi" [ref=f1e1332]
+          - cell "80.4" [ref=f1e1333]
+          - cell "4.2" [ref=f1e1334]
+          - cell "-" [ref=f1e1335]
+          - cell "-" [ref=f1e1336]
+        - row [ref=f1e1337]:
+          - cell "hy4-preview-f" [ref=f1e1338]
+          - cell "Hy" [ref=f1e1339]
+          - cell "72.6" [ref=f1e1340]
+          - cell "3.55" [ref=f1e1341]
+          - cell "-" [ref=f1e1342]
+          - cell "-" [ref=f1e1343]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1344]:
+      - rowgroup [ref=f1e1345]:
+        - row [ref=f1e1346]:
+          - columnheader "模型" [ref=f1e1347]
+          - columnheader "任务" [ref=f1e1348]
+          - columnheader "M2−M1" [ref=f1e1349]
+          - columnheader "hake" [ref=f1e1350]
+          - columnheader "M2−M4" [ref=f1e1351]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1352]:
+      - rowgroup [ref=f1e1353]:
+        - row [ref=f1e1354]:
+          - columnheader "生产者＼判官" [ref=f1e1355]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1356]
+          - columnheader "kimi-k2.7" [ref=f1e1357]
+          - columnheader "space-bunny" [ref=f1e1358]
+          - columnheader "hy4-preview-f" [ref=f1e1359]
+          - columnheader "说明" [ref=f1e1360]
+        - row [ref=f1e1361]:
+          - cell "hy4-preview-f" [ref=f1e1362]
+          - cell "5" [ref=f1e1363]
+          - cell "3.55" [ref=f1e1364]
+          - cell "3.55" [ref=f1e1365]
+          - cell "4.2" [ref=f1e1366]
+          - cell "对角线=自评" [ref=f1e1367]
+        - row [ref=f1e1368]:
+          - cell "kimi-k2.7" [ref=f1e1369]
+          - cell "5" [ref=f1e1370]
+          - cell "3.55" [ref=f1e1371]
+          - cell "4.2" [ref=f1e1372]
+          - cell "4.15" [ref=f1e1373]
+          - cell "对角线=自评" [ref=f1e1374]
+    - heading "digital-eguide__nexu-io 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1375]
+    - text: SkillScore 榜
+    - table [ref=f1e1376]:
+      - rowgroup [ref=f1e1377]:
+        - row [ref=f1e1378]:
+          - columnheader "模型" [ref=f1e1379]
+          - columnheader "家族" [ref=f1e1380]
+          - columnheader "SkillScore" [ref=f1e1381]
+          - columnheader "M2均分" [ref=f1e1382]
+          - columnheader "M1均分" [ref=f1e1383]
+          - columnheader "触发准确率" [ref=f1e1384]
+        - row [ref=f1e1385]:
+          - cell "space-bunny" [ref=f1e1386]
+          - cell "SpaceBunny" [ref=f1e1387]
+          - cell "90" [ref=f1e1388]
+          - cell "5" [ref=f1e1389]
+          - cell "-" [ref=f1e1390]
+          - cell "-" [ref=f1e1391]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1392]:
+      - rowgroup [ref=f1e1393]:
+        - row [ref=f1e1394]:
+          - columnheader "模型" [ref=f1e1395]
+          - columnheader "任务" [ref=f1e1396]
+          - columnheader "M2−M1" [ref=f1e1397]
+          - columnheader "hake" [ref=f1e1398]
+          - columnheader "M2−M4" [ref=f1e1399]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1400]:
+      - rowgroup [ref=f1e1401]:
+        - row [ref=f1e1402]:
+          - columnheader "生产者＼判官" [ref=f1e1403]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1404]
+          - columnheader "hy4-preview-f" [ref=f1e1405]
+          - columnheader "kimi-k2.7" [ref=f1e1406]
+          - columnheader "space-bunny" [ref=f1e1407]
+          - columnheader "说明" [ref=f1e1408]
+        - row [ref=f1e1409]:
+          - cell "space-bunny" [ref=f1e1410]
+          - cell "5" [ref=f1e1411]
+          - cell "5" [ref=f1e1412]
+          - cell "4.4" [ref=f1e1413]
+          - cell "4.4" [ref=f1e1414]
+          - cell "对角线=自评" [ref=f1e1415]
+    - heading "discernment-nudge__anthropics 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1416]
+    - text: SkillScore 榜
+    - table [ref=f1e1417]:
+      - rowgroup [ref=f1e1418]:
+        - row [ref=f1e1419]:
+          - columnheader "模型" [ref=f1e1420]
+          - columnheader "家族" [ref=f1e1421]
+          - columnheader "SkillScore" [ref=f1e1422]
+          - columnheader "M2均分" [ref=f1e1423]
+          - columnheader "M1均分" [ref=f1e1424]
+          - columnheader "触发准确率" [ref=f1e1425]
+        - row [ref=f1e1426]:
+          - cell "kimi-k2.7" [ref=f1e1427]
+          - cell "Kimi" [ref=f1e1428]
+          - cell "90" [ref=f1e1429]
+          - cell "5" [ref=f1e1430]
+          - cell "-" [ref=f1e1431]
+          - cell "-" [ref=f1e1432]
+        - row [ref=f1e1433]:
+          - cell "space-bunny" [ref=f1e1434]
+          - cell "SpaceBunny" [ref=f1e1435]
+          - cell "90" [ref=f1e1436]
+          - cell "5" [ref=f1e1437]
+          - cell "-" [ref=f1e1438]
+          - cell "-" [ref=f1e1439]
+        - row [ref=f1e1440]:
+          - cell "glm-5.3-flash@api" [ref=f1e1441]
+          - cell "GLM" [ref=f1e1442]
+          - cell "87.6" [ref=f1e1443]
+          - cell "4.8" [ref=f1e1444]
+          - cell "-" [ref=f1e1445]
+          - cell "-" [ref=f1e1446]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1447]:
+      - rowgroup [ref=f1e1448]:
+        - row [ref=f1e1449]:
+          - columnheader "模型" [ref=f1e1450]
+          - columnheader "任务" [ref=f1e1451]
+          - columnheader "M2−M1" [ref=f1e1452]
+          - columnheader "hake" [ref=f1e1453]
+          - columnheader "M2−M4" [ref=f1e1454]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1455]:
+      - rowgroup [ref=f1e1456]:
+        - row [ref=f1e1457]:
+          - columnheader "生产者＼判官" [ref=f1e1458]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1459]
+          - columnheader "hy4-preview-f" [ref=f1e1460]
+          - columnheader "kimi-k2.7" [ref=f1e1461]
+          - columnheader "space-bunny" [ref=f1e1462]
+          - columnheader "说明" [ref=f1e1463]
+        - row [ref=f1e1464]:
+          - cell "glm-5.3-flash@api" [ref=f1e1465]
+          - cell "5" [ref=f1e1466]
+          - cell "5" [ref=f1e1467]
+          - cell "4.6" [ref=f1e1468]
+          - cell "3.2" [ref=f1e1469]
+          - cell [ref=f1e1470]
+        - row [ref=f1e1471]:
+          - cell "kimi-k2.7" [ref=f1e1472]
+          - cell "5" [ref=f1e1473]
+          - cell "4.4" [ref=f1e1474]
+          - cell "3.15" [ref=f1e1475]
+          - cell "5" [ref=f1e1476]
+          - cell "对角线=自评" [ref=f1e1477]
+        - row [ref=f1e1478]:
+          - cell "space-bunny" [ref=f1e1479]
+          - cell "5" [ref=f1e1480]
+          - cell "4.75" [ref=f1e1481]
+          - cell "5" [ref=f1e1482]
+          - cell "5" [ref=f1e1483]
+          - cell "对角线=自评" [ref=f1e1484]
+    - heading "doc-coauthoring__anthropics 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1485]
+    - text: SkillScore 榜
+    - table [ref=f1e1486]:
+      - rowgroup [ref=f1e1487]:
+        - row [ref=f1e1488]:
+          - columnheader "模型" [ref=f1e1489]
+          - columnheader "家族" [ref=f1e1490]
+          - columnheader "SkillScore" [ref=f1e1491]
+          - columnheader "M2均分" [ref=f1e1492]
+          - columnheader "M1均分" [ref=f1e1493]
+          - columnheader "触发准确率" [ref=f1e1494]
+        - row [ref=f1e1495]:
+          - cell "hy4-preview-f" [ref=f1e1496]
+          - cell "Hy" [ref=f1e1497]
+          - cell "90" [ref=f1e1498]
+          - cell "5" [ref=f1e1499]
+          - cell "-" [ref=f1e1500]
+          - cell "-" [ref=f1e1501]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1502]:
+      - rowgroup [ref=f1e1503]:
+        - row [ref=f1e1504]:
+          - columnheader "模型" [ref=f1e1505]
+          - columnheader "任务" [ref=f1e1506]
+          - columnheader "M2−M1" [ref=f1e1507]
+          - columnheader "hake" [ref=f1e1508]
+          - columnheader "M2−M4" [ref=f1e1509]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1510]:
+      - rowgroup [ref=f1e1511]:
+        - row [ref=f1e1512]:
+          - columnheader "生产者＼判官" [ref=f1e1513]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1514]
+          - columnheader "kimi-k2.7" [ref=f1e1515]
+          - columnheader "space-bunny" [ref=f1e1516]
+          - columnheader "hy4-preview-f" [ref=f1e1517]
+          - columnheader "说明" [ref=f1e1518]
+        - row [ref=f1e1519]:
+          - cell "hy4-preview-f" [ref=f1e1520]
+          - cell "5" [ref=f1e1521]
+          - cell "3.4" [ref=f1e1522]
+          - cell "5" [ref=f1e1523]
+          - cell "5" [ref=f1e1524]
+          - cell "对角线=自评" [ref=f1e1525]
+    - heading "docs-page__nexu-io 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1526]
+    - text: SkillScore 榜
+    - table [ref=f1e1527]:
+      - rowgroup [ref=f1e1528]:
+        - row [ref=f1e1529]:
+          - columnheader "模型" [ref=f1e1530]
+          - columnheader "家族" [ref=f1e1531]
+          - columnheader "SkillScore" [ref=f1e1532]
+          - columnheader "M2均分" [ref=f1e1533]
+          - columnheader "M1均分" [ref=f1e1534]
+          - columnheader "触发准确率" [ref=f1e1535]
+        - row [ref=f1e1536]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1537]
+          - cell "DeepSeek" [ref=f1e1538]
+          - cell "75.6" [ref=f1e1539]
+          - cell "3.8" [ref=f1e1540]
+          - cell "-" [ref=f1e1541]
+          - cell "-" [ref=f1e1542]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1543]:
+      - rowgroup [ref=f1e1544]:
+        - row [ref=f1e1545]:
+          - columnheader "模型" [ref=f1e1546]
+          - columnheader "任务" [ref=f1e1547]
+          - columnheader "M2−M1" [ref=f1e1548]
+          - columnheader "hake" [ref=f1e1549]
+          - columnheader "M2−M4" [ref=f1e1550]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1551]:
+      - rowgroup [ref=f1e1552]:
+        - row [ref=f1e1553]:
+          - columnheader "生产者＼判官" [ref=f1e1554]
+          - columnheader "hy4-preview-f" [ref=f1e1555]
+          - columnheader "kimi-k2.7" [ref=f1e1556]
+          - columnheader "space-bunny" [ref=f1e1557]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1558]
+          - columnheader "说明" [ref=f1e1559]
+        - row [ref=f1e1560]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1561]
+          - cell "3.8" [ref=f1e1562]
+          - cell "3.8" [ref=f1e1563]
+          - cell "2.65" [ref=f1e1564]
+          - cell "4.8" [ref=f1e1565]
+          - cell "对角线=自评" [ref=f1e1566]
+    - heading "documentation-and-adrs__addyosmani 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1567]
+    - text: SkillScore 榜
+    - table [ref=f1e1568]:
+      - rowgroup [ref=f1e1569]:
+        - row [ref=f1e1570]:
+          - columnheader "模型" [ref=f1e1571]
+          - columnheader "家族" [ref=f1e1572]
+          - columnheader "SkillScore" [ref=f1e1573]
+          - columnheader "M2均分" [ref=f1e1574]
+          - columnheader "M1均分" [ref=f1e1575]
+          - columnheader "触发准确率" [ref=f1e1576]
+        - row [ref=f1e1577]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1578]
+          - cell "DeepSeek" [ref=f1e1579]
+          - cell "90" [ref=f1e1580]
+          - cell "5" [ref=f1e1581]
+          - cell "-" [ref=f1e1582]
+          - cell "-" [ref=f1e1583]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1584]:
+      - rowgroup [ref=f1e1585]:
+        - row [ref=f1e1586]:
+          - columnheader "模型" [ref=f1e1587]
+          - columnheader "任务" [ref=f1e1588]
+          - columnheader "M2−M1" [ref=f1e1589]
+          - columnheader "hake" [ref=f1e1590]
+          - columnheader "M2−M4" [ref=f1e1591]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1592]:
+      - rowgroup [ref=f1e1593]:
+        - row [ref=f1e1594]:
+          - columnheader "生产者＼判官" [ref=f1e1595]
+          - columnheader "hy4-preview-f" [ref=f1e1596]
+          - columnheader "kimi-k2.7" [ref=f1e1597]
+          - columnheader "space-bunny" [ref=f1e1598]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1599]
+          - columnheader "说明" [ref=f1e1600]
+        - row [ref=f1e1601]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1602]
+          - cell "5" [ref=f1e1603]
+          - cell "5" [ref=f1e1604]
+          - cell "5" [ref=f1e1605]
+          - cell "5" [ref=f1e1606]
+          - cell "对角线=自评" [ref=f1e1607]
+    - heading "docx__anthropics 最佳模型：glm-5.3-flash@api · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1608]
+    - text: SkillScore 榜
+    - table [ref=f1e1609]:
+      - rowgroup [ref=f1e1610]:
+        - row [ref=f1e1611]:
+          - columnheader "模型" [ref=f1e1612]
+          - columnheader "家族" [ref=f1e1613]
+          - columnheader "SkillScore" [ref=f1e1614]
+          - columnheader "M2均分" [ref=f1e1615]
+          - columnheader "M1均分" [ref=f1e1616]
+          - columnheader "触发准确率" [ref=f1e1617]
+        - row [ref=f1e1618]:
+          - cell "glm-5.3-flash@api" [ref=f1e1619]
+          - cell "GLM" [ref=f1e1620]
+          - cell "79" [ref=f1e1621]
+          - cell "4.08" [ref=f1e1622]
+          - cell "-" [ref=f1e1623]
+          - cell "-" [ref=f1e1624]
+        - row [ref=f1e1625]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1626]
+          - cell "DeepSeek" [ref=f1e1627]
+          - cell "70.2" [ref=f1e1628]
+          - cell "3.35" [ref=f1e1629]
+          - cell "-" [ref=f1e1630]
+          - cell "-" [ref=f1e1631]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1632]:
+      - rowgroup [ref=f1e1633]:
+        - row [ref=f1e1634]:
+          - columnheader "模型" [ref=f1e1635]
+          - columnheader "任务" [ref=f1e1636]
+          - columnheader "M2−M1" [ref=f1e1637]
+          - columnheader "hake" [ref=f1e1638]
+          - columnheader "M2−M4" [ref=f1e1639]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1640]:
+      - rowgroup [ref=f1e1641]:
+        - row [ref=f1e1642]:
+          - columnheader "生产者＼判官" [ref=f1e1643]
+          - columnheader "hy4-preview-f" [ref=f1e1644]
+          - columnheader "kimi-k2.7" [ref=f1e1645]
+          - columnheader "space-bunny" [ref=f1e1646]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1647]
+          - columnheader "说明" [ref=f1e1648]
+        - row [ref=f1e1649]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1650]
+          - cell "5" [ref=f1e1651]
+          - cell "3.35" [ref=f1e1652]
+          - cell "3" [ref=f1e1653]
+          - cell "5" [ref=f1e1654]
+          - cell "对角线=自评" [ref=f1e1655]
+        - row [ref=f1e1656]:
+          - cell "glm-5.3-flash@api" [ref=f1e1657]
+          - cell "4.2" [ref=f1e1658]
+          - cell "3.95" [ref=f1e1659]
+          - cell "3.4" [ref=f1e1660]
+          - cell "5" [ref=f1e1661]
+          - cell [ref=f1e1662]
+    - heading "doubt-driven-development__addyosmani 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1663]
+    - text: SkillScore 榜
+    - table [ref=f1e1664]:
+      - rowgroup [ref=f1e1665]:
+        - row [ref=f1e1666]:
+          - columnheader "模型" [ref=f1e1667]
+          - columnheader "家族" [ref=f1e1668]
+          - columnheader "SkillScore" [ref=f1e1669]
+          - columnheader "M2均分" [ref=f1e1670]
+          - columnheader "M1均分" [ref=f1e1671]
+          - columnheader "触发准确率" [ref=f1e1672]
+        - row [ref=f1e1673]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1674]
+          - cell "DeepSeek" [ref=f1e1675]
+          - cell "82.8" [ref=f1e1676]
+          - cell "4.4" [ref=f1e1677]
+          - cell "-" [ref=f1e1678]
+          - cell "-" [ref=f1e1679]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1680]:
+      - rowgroup [ref=f1e1681]:
+        - row [ref=f1e1682]:
+          - columnheader "模型" [ref=f1e1683]
+          - columnheader "任务" [ref=f1e1684]
+          - columnheader "M2−M1" [ref=f1e1685]
+          - columnheader "hake" [ref=f1e1686]
+          - columnheader "M2−M4" [ref=f1e1687]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1688]:
+      - rowgroup [ref=f1e1689]:
+        - row [ref=f1e1690]:
+          - columnheader "生产者＼判官" [ref=f1e1691]
+          - columnheader "hy4-preview-f" [ref=f1e1692]
+          - columnheader "kimi-k2.7" [ref=f1e1693]
+          - columnheader "space-bunny" [ref=f1e1694]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1695]
+          - columnheader "说明" [ref=f1e1696]
+        - row [ref=f1e1697]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1698]
+          - cell "4.4" [ref=f1e1699]
+          - cell "4.6" [ref=f1e1700]
+          - cell "4.4" [ref=f1e1701]
+          - cell "4.6" [ref=f1e1702]
+          - cell "对角线=自评" [ref=f1e1703]
+    - heading "email-marketing__nexu-io 最佳模型：glm-5.3-flash@api · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1704]
+    - text: SkillScore 榜
+    - table [ref=f1e1705]:
+      - rowgroup [ref=f1e1706]:
+        - row [ref=f1e1707]:
+          - columnheader "模型" [ref=f1e1708]
+          - columnheader "家族" [ref=f1e1709]
+          - columnheader "SkillScore" [ref=f1e1710]
+          - columnheader "M2均分" [ref=f1e1711]
+          - columnheader "M1均分" [ref=f1e1712]
+          - columnheader "触发准确率" [ref=f1e1713]
+        - row [ref=f1e1714]:
+          - cell "glm-5.3-flash@api" [ref=f1e1715]
+          - cell "GLM" [ref=f1e1716]
+          - cell "86.4" [ref=f1e1717]
+          - cell "4.7" [ref=f1e1718]
+          - cell "-" [ref=f1e1719]
+          - cell "-" [ref=f1e1720]
+        - row [ref=f1e1721]:
+          - cell "hy4-preview-f" [ref=f1e1722]
+          - cell "Hy" [ref=f1e1723]
+          - cell "85.2" [ref=f1e1724]
+          - cell "4.6" [ref=f1e1725]
+          - cell "-" [ref=f1e1726]
+          - cell "-" [ref=f1e1727]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1728]:
+      - rowgroup [ref=f1e1729]:
+        - row [ref=f1e1730]:
+          - columnheader "模型" [ref=f1e1731]
+          - columnheader "任务" [ref=f1e1732]
+          - columnheader "M2−M1" [ref=f1e1733]
+          - columnheader "hake" [ref=f1e1734]
+          - columnheader "M2−M4" [ref=f1e1735]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1736]:
+      - rowgroup [ref=f1e1737]:
+        - row [ref=f1e1738]:
+          - columnheader "生产者＼判官" [ref=f1e1739]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1740]
+          - columnheader "hy4-preview-f" [ref=f1e1741]
+          - columnheader "kimi-k2.7" [ref=f1e1742]
+          - columnheader "space-bunny" [ref=f1e1743]
+          - columnheader "说明" [ref=f1e1744]
+        - row [ref=f1e1745]:
+          - cell "glm-5.3-flash@api" [ref=f1e1746]
+          - cell "5" [ref=f1e1747]
+          - cell "4.6" [ref=f1e1748]
+          - cell "4.8" [ref=f1e1749]
+          - cell "4.6" [ref=f1e1750]
+          - cell [ref=f1e1751]
+        - row [ref=f1e1752]:
+          - cell "hy4-preview-f" [ref=f1e1753]
+          - cell "5" [ref=f1e1754]
+          - cell "5" [ref=f1e1755]
+          - cell "4.6" [ref=f1e1756]
+          - cell "3.65" [ref=f1e1757]
+          - cell "对角线=自评" [ref=f1e1758]
+    - heading "eng-runbook__nexu-io 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1759]
+    - text: SkillScore 榜
+    - table [ref=f1e1760]:
+      - rowgroup [ref=f1e1761]:
+        - row [ref=f1e1762]:
+          - columnheader "模型" [ref=f1e1763]
+          - columnheader "家族" [ref=f1e1764]
+          - columnheader "SkillScore" [ref=f1e1765]
+          - columnheader "M2均分" [ref=f1e1766]
+          - columnheader "M1均分" [ref=f1e1767]
+          - columnheader "触发准确率" [ref=f1e1768]
+        - row [ref=f1e1769]:
+          - cell "kimi-k2.7" [ref=f1e1770]
+          - cell "Kimi" [ref=f1e1771]
+          - cell "90" [ref=f1e1772]
+          - cell "5" [ref=f1e1773]
+          - cell "-" [ref=f1e1774]
+          - cell "-" [ref=f1e1775]
+        - row [ref=f1e1776]:
+          - cell "glm-5.3-flash@api" [ref=f1e1777]
+          - cell "GLM" [ref=f1e1778]
+          - cell "86.4" [ref=f1e1779]
+          - cell "4.7" [ref=f1e1780]
+          - cell "-" [ref=f1e1781]
+          - cell "-" [ref=f1e1782]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1783]:
+      - rowgroup [ref=f1e1784]:
+        - row [ref=f1e1785]:
+          - columnheader "模型" [ref=f1e1786]
+          - columnheader "任务" [ref=f1e1787]
+          - columnheader "M2−M1" [ref=f1e1788]
+          - columnheader "hake" [ref=f1e1789]
+          - columnheader "M2−M4" [ref=f1e1790]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1791]:
+      - rowgroup [ref=f1e1792]:
+        - row [ref=f1e1793]:
+          - columnheader "生产者＼判官" [ref=f1e1794]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1795]
+          - columnheader "hy4-preview-f" [ref=f1e1796]
+          - columnheader "kimi-k2.7" [ref=f1e1797]
+          - columnheader "space-bunny" [ref=f1e1798]
+          - columnheader "说明" [ref=f1e1799]
+        - row [ref=f1e1800]:
+          - cell "glm-5.3-flash@api" [ref=f1e1801]
+          - cell "4.6" [ref=f1e1802]
+          - cell "5" [ref=f1e1803]
+          - cell "4.8" [ref=f1e1804]
+          - cell "3.2" [ref=f1e1805]
+          - cell [ref=f1e1806]
+        - row [ref=f1e1807]:
+          - cell "kimi-k2.7" [ref=f1e1808]
+          - cell "5" [ref=f1e1809]
+          - cell "5" [ref=f1e1810]
+          - cell "4.4" [ref=f1e1811]
+          - cell "3.2" [ref=f1e1812]
+          - cell "对角线=自评" [ref=f1e1813]
+    - heading "finance-report__nexu-io 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 02:10:13" [level=2] [ref=f1e1814]
+    - text: SkillScore 榜
+    - table [ref=f1e1815]:
+      - rowgroup [ref=f1e1816]:
+        - row [ref=f1e1817]:
+          - columnheader "模型" [ref=f1e1818]
+          - columnheader "家族" [ref=f1e1819]
+          - columnheader "SkillScore" [ref=f1e1820]
+          - columnheader "M2均分" [ref=f1e1821]
+          - columnheader "M1均分" [ref=f1e1822]
+          - columnheader "触发准确率" [ref=f1e1823]
+        - row [ref=f1e1824]:
+          - cell "kimi-k2.7" [ref=f1e1825]
+          - cell "Kimi" [ref=f1e1826]
+          - cell "82.8" [ref=f1e1827]
+          - cell "4.4" [ref=f1e1828]
+          - cell "-" [ref=f1e1829]
+          - cell "-" [ref=f1e1830]
+        - row [ref=f1e1831]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1832]
+          - cell "DeepSeek" [ref=f1e1833]
+          - cell "82.8" [ref=f1e1834]
+          - cell "4.4" [ref=f1e1835]
+          - cell "-" [ref=f1e1836]
+          - cell "-" [ref=f1e1837]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1838]:
+      - rowgroup [ref=f1e1839]:
+        - row [ref=f1e1840]:
+          - columnheader "模型" [ref=f1e1841]
+          - columnheader "任务" [ref=f1e1842]
+          - columnheader "M2−M1" [ref=f1e1843]
+          - columnheader "hake" [ref=f1e1844]
+          - columnheader "M2−M4" [ref=f1e1845]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1846]:
+      - rowgroup [ref=f1e1847]:
+        - row [ref=f1e1848]:
+          - columnheader "生产者＼判官" [ref=f1e1849]
+          - columnheader "glm-5.3-flash@api" [ref=f1e1850]
+          - columnheader "kimi-k2.7" [ref=f1e1851]
+          - columnheader "space-bunny" [ref=f1e1852]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1853]
+          - columnheader "说明" [ref=f1e1854]
+        - row [ref=f1e1855]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1856]
+          - cell "4.6" [ref=f1e1857]
+          - cell "4.4" [ref=f1e1858]
+          - cell "4" [ref=f1e1859]
+          - cell "5" [ref=f1e1860]
+          - cell "对角线=自评" [ref=f1e1861]
+        - row [ref=f1e1862]:
+          - cell "kimi-k2.7" [ref=f1e1863]
+          - cell "4.4" [ref=f1e1864]
+          - cell "4.2" [ref=f1e1865]
+          - cell "3.55" [ref=f1e1866]
+          - cell "4.6" [ref=f1e1867]
+          - cell "对角线=自评" [ref=f1e1868]
+    - heading "flowai-live-dashboard-template__nexu-io 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1869]
+    - text: SkillScore 榜
+    - table [ref=f1e1870]:
+      - rowgroup [ref=f1e1871]:
+        - row [ref=f1e1872]:
+          - columnheader "模型" [ref=f1e1873]
+          - columnheader "家族" [ref=f1e1874]
+          - columnheader "SkillScore" [ref=f1e1875]
+          - columnheader "M2均分" [ref=f1e1876]
+          - columnheader "M1均分" [ref=f1e1877]
+          - columnheader "触发准确率" [ref=f1e1878]
+        - row [ref=f1e1879]:
+          - cell "kimi-k2.7" [ref=f1e1880]
+          - cell "Kimi" [ref=f1e1881]
+          - cell "80.4" [ref=f1e1882]
+          - cell "4.2" [ref=f1e1883]
+          - cell "-" [ref=f1e1884]
+          - cell "-" [ref=f1e1885]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1886]:
+      - rowgroup [ref=f1e1887]:
+        - row [ref=f1e1888]:
+          - columnheader "模型" [ref=f1e1889]
+          - columnheader "任务" [ref=f1e1890]
+          - columnheader "M2−M1" [ref=f1e1891]
+          - columnheader "hake" [ref=f1e1892]
+          - columnheader "M2−M4" [ref=f1e1893]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1894]:
+      - rowgroup [ref=f1e1895]:
+        - row [ref=f1e1896]:
+          - columnheader "生产者＼判官" [ref=f1e1897]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1898]
+          - columnheader "hy4-preview-f" [ref=f1e1899]
+          - columnheader "space-bunny" [ref=f1e1900]
+          - columnheader "kimi-k2.7" [ref=f1e1901]
+          - columnheader "说明" [ref=f1e1902]
+        - row [ref=f1e1903]:
+          - cell "kimi-k2.7" [ref=f1e1904]
+          - cell "4.2" [ref=f1e1905]
+          - cell "4.4" [ref=f1e1906]
+          - cell "2.8" [ref=f1e1907]
+          - cell "4.8" [ref=f1e1908]
+          - cell "对角线=自评" [ref=f1e1909]
+    - heading "frontend-design__anthropics 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1910]
+    - text: SkillScore 榜
+    - table [ref=f1e1911]:
+      - rowgroup [ref=f1e1912]:
+        - row [ref=f1e1913]:
+          - columnheader "模型" [ref=f1e1914]
+          - columnheader "家族" [ref=f1e1915]
+          - columnheader "SkillScore" [ref=f1e1916]
+          - columnheader "M2均分" [ref=f1e1917]
+          - columnheader "M1均分" [ref=f1e1918]
+          - columnheader "触发准确率" [ref=f1e1919]
+        - row [ref=f1e1920]:
+          - cell "hy4-preview-f" [ref=f1e1921]
+          - cell "Hy" [ref=f1e1922]
+          - cell "90" [ref=f1e1923]
+          - cell "5" [ref=f1e1924]
+          - cell "-" [ref=f1e1925]
+          - cell "-" [ref=f1e1926]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1927]:
+      - rowgroup [ref=f1e1928]:
+        - row [ref=f1e1929]:
+          - columnheader "模型" [ref=f1e1930]
+          - columnheader "任务" [ref=f1e1931]
+          - columnheader "M2−M1" [ref=f1e1932]
+          - columnheader "hake" [ref=f1e1933]
+          - columnheader "M2−M4" [ref=f1e1934]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1935]:
+      - rowgroup [ref=f1e1936]:
+        - row [ref=f1e1937]:
+          - columnheader "生产者＼判官" [ref=f1e1938]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1939]
+          - columnheader "kimi-k2.7" [ref=f1e1940]
+          - columnheader "space-bunny" [ref=f1e1941]
+          - columnheader "hy4-preview-f" [ref=f1e1942]
+          - columnheader "说明" [ref=f1e1943]
+        - row [ref=f1e1944]:
+          - cell "hy4-preview-f" [ref=f1e1945]
+          - cell "5" [ref=f1e1946]
+          - cell "5" [ref=f1e1947]
+          - cell "4.4" [ref=f1e1948]
+          - cell "5" [ref=f1e1949]
+          - cell "对角线=自评" [ref=f1e1950]
+    - heading "frontend-ui-engineering__addyosmani 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e1951]
+    - text: SkillScore 榜
+    - table [ref=f1e1952]:
+      - rowgroup [ref=f1e1953]:
+        - row [ref=f1e1954]:
+          - columnheader "模型" [ref=f1e1955]
+          - columnheader "家族" [ref=f1e1956]
+          - columnheader "SkillScore" [ref=f1e1957]
+          - columnheader "M2均分" [ref=f1e1958]
+          - columnheader "M1均分" [ref=f1e1959]
+          - columnheader "触发准确率" [ref=f1e1960]
+        - row [ref=f1e1961]:
+          - cell "hy4-preview-f" [ref=f1e1962]
+          - cell "Hy" [ref=f1e1963]
+          - cell "85.2" [ref=f1e1964]
+          - cell "4.6" [ref=f1e1965]
+          - cell "-" [ref=f1e1966]
+          - cell "-" [ref=f1e1967]
+        - row [ref=f1e1968]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1969]
+          - cell "DeepSeek" [ref=f1e1970]
+          - cell "66" [ref=f1e1971]
+          - cell "3" [ref=f1e1972]
+          - cell "-" [ref=f1e1973]
+          - cell "-" [ref=f1e1974]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e1975]:
+      - rowgroup [ref=f1e1976]:
+        - row [ref=f1e1977]:
+          - columnheader "模型" [ref=f1e1978]
+          - columnheader "任务" [ref=f1e1979]
+          - columnheader "M2−M1" [ref=f1e1980]
+          - columnheader "hake" [ref=f1e1981]
+          - columnheader "M2−M4" [ref=f1e1982]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e1983]:
+      - rowgroup [ref=f1e1984]:
+        - row [ref=f1e1985]:
+          - columnheader "生产者＼判官" [ref=f1e1986]
+          - columnheader "hy4-preview-f" [ref=f1e1987]
+          - columnheader "kimi-k2.7" [ref=f1e1988]
+          - columnheader "space-bunny" [ref=f1e1989]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e1990]
+          - columnheader "说明" [ref=f1e1991]
+        - row [ref=f1e1992]:
+          - cell "deepseek-v4.1-flash" [ref=f1e1993]
+          - cell "4.4" [ref=f1e1994]
+          - cell "3" [ref=f1e1995]
+          - cell "3" [ref=f1e1996]
+          - cell "4.6" [ref=f1e1997]
+          - cell "对角线=自评" [ref=f1e1998]
+        - row [ref=f1e1999]:
+          - cell "hy4-preview-f" [ref=f1e2000]
+          - cell "4.15" [ref=f1e2001]
+          - cell "4.75" [ref=f1e2002]
+          - cell "4.4" [ref=f1e2003]
+          - cell "4.6" [ref=f1e2004]
+          - cell "对角线=自评" [ref=f1e2005]
+    - heading "gamified-app__nexu-io 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 02:10:13" [level=2] [ref=f1e2006]
+    - text: SkillScore 榜
+    - table [ref=f1e2007]:
+      - rowgroup [ref=f1e2008]:
+        - row [ref=f1e2009]:
+          - columnheader "模型" [ref=f1e2010]
+          - columnheader "家族" [ref=f1e2011]
+          - columnheader "SkillScore" [ref=f1e2012]
+          - columnheader "M2均分" [ref=f1e2013]
+          - columnheader "M1均分" [ref=f1e2014]
+          - columnheader "触发准确率" [ref=f1e2015]
+        - row [ref=f1e2016]:
+          - cell "kimi-k2.7" [ref=f1e2017]
+          - cell "Kimi" [ref=f1e2018]
+          - cell "82.8" [ref=f1e2019]
+          - cell "4.4" [ref=f1e2020]
+          - cell "-" [ref=f1e2021]
+          - cell "-" [ref=f1e2022]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2023]:
+      - rowgroup [ref=f1e2024]:
+        - row [ref=f1e2025]:
+          - columnheader "模型" [ref=f1e2026]
+          - columnheader "任务" [ref=f1e2027]
+          - columnheader "M2−M1" [ref=f1e2028]
+          - columnheader "hake" [ref=f1e2029]
+          - columnheader "M2−M4" [ref=f1e2030]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2031]:
+      - rowgroup [ref=f1e2032]:
+        - row [ref=f1e2033]:
+          - columnheader "生产者＼判官" [ref=f1e2034]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2035]
+          - columnheader "glm-5.3-flash@api" [ref=f1e2036]
+          - columnheader "space-bunny" [ref=f1e2037]
+          - columnheader "kimi-k2.7" [ref=f1e2038]
+          - columnheader "说明" [ref=f1e2039]
+        - row [ref=f1e2040]:
+          - cell "kimi-k2.7" [ref=f1e2041]
+          - cell "4.6" [ref=f1e2042]
+          - cell "4.4" [ref=f1e2043]
+          - cell "4" [ref=f1e2044]
+          - cell "4.4" [ref=f1e2045]
+          - cell "对角线=自评" [ref=f1e2046]
+    - heading "git-workflow-and-versioning__addyosmani 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2047]
+    - text: SkillScore 榜
+    - table [ref=f1e2048]:
+      - rowgroup [ref=f1e2049]:
+        - row [ref=f1e2050]:
+          - columnheader "模型" [ref=f1e2051]
+          - columnheader "家族" [ref=f1e2052]
+          - columnheader "SkillScore" [ref=f1e2053]
+          - columnheader "M2均分" [ref=f1e2054]
+          - columnheader "M1均分" [ref=f1e2055]
+          - columnheader "触发准确率" [ref=f1e2056]
+        - row [ref=f1e2057]:
+          - cell "kimi-k2.7" [ref=f1e2058]
+          - cell "Kimi" [ref=f1e2059]
+          - cell "72" [ref=f1e2060]
+          - cell "3.5" [ref=f1e2061]
+          - cell "-" [ref=f1e2062]
+          - cell "-" [ref=f1e2063]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2064]:
+      - rowgroup [ref=f1e2065]:
+        - row [ref=f1e2066]:
+          - columnheader "模型" [ref=f1e2067]
+          - columnheader "任务" [ref=f1e2068]
+          - columnheader "M2−M1" [ref=f1e2069]
+          - columnheader "hake" [ref=f1e2070]
+          - columnheader "M2−M4" [ref=f1e2071]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2072]:
+      - rowgroup [ref=f1e2073]:
+        - row [ref=f1e2074]:
+          - columnheader "生产者＼判官" [ref=f1e2075]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2076]
+          - columnheader "hy4-preview-f" [ref=f1e2077]
+          - columnheader "space-bunny" [ref=f1e2078]
+          - columnheader "kimi-k2.7" [ref=f1e2079]
+          - columnheader "说明" [ref=f1e2080]
+        - row [ref=f1e2081]:
+          - cell "kimi-k2.7" [ref=f1e2082]
+          - cell "5" [ref=f1e2083]
+          - cell "3.5" [ref=f1e2084]
+          - cell "3.5" [ref=f1e2085]
+          - cell "4.6" [ref=f1e2086]
+          - cell "对角线=自评" [ref=f1e2087]
+    - heading "github-dashboard__nexu-io 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2088]
+    - text: SkillScore 榜
+    - table [ref=f1e2089]:
+      - rowgroup [ref=f1e2090]:
+        - row [ref=f1e2091]:
+          - columnheader "模型" [ref=f1e2092]
+          - columnheader "家族" [ref=f1e2093]
+          - columnheader "SkillScore" [ref=f1e2094]
+          - columnheader "M2均分" [ref=f1e2095]
+          - columnheader "M1均分" [ref=f1e2096]
+          - columnheader "触发准确率" [ref=f1e2097]
+        - row [ref=f1e2098]:
+          - cell "hy4-preview-f" [ref=f1e2099]
+          - cell "Hy" [ref=f1e2100]
+          - cell "90" [ref=f1e2101]
+          - cell "5" [ref=f1e2102]
+          - cell "-" [ref=f1e2103]
+          - cell "-" [ref=f1e2104]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2105]:
+      - rowgroup [ref=f1e2106]:
+        - row [ref=f1e2107]:
+          - columnheader "模型" [ref=f1e2108]
+          - columnheader "任务" [ref=f1e2109]
+          - columnheader "M2−M1" [ref=f1e2110]
+          - columnheader "hake" [ref=f1e2111]
+          - columnheader "M2−M4" [ref=f1e2112]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2113]:
+      - rowgroup [ref=f1e2114]:
+        - row [ref=f1e2115]:
+          - columnheader "生产者＼判官" [ref=f1e2116]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2117]
+          - columnheader "kimi-k2.7" [ref=f1e2118]
+          - columnheader "space-bunny" [ref=f1e2119]
+          - columnheader "hy4-preview-f" [ref=f1e2120]
+          - columnheader "说明" [ref=f1e2121]
+        - row [ref=f1e2122]:
+          - cell "hy4-preview-f" [ref=f1e2123]
+          - cell "5" [ref=f1e2124]
+          - cell "5" [ref=f1e2125]
+          - cell "5" [ref=f1e2126]
+          - cell "5" [ref=f1e2127]
+          - cell "对角线=自评" [ref=f1e2128]
+    - heading "guizang-ppt__nexu-io 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2129]
+    - text: SkillScore 榜
+    - table [ref=f1e2130]:
+      - rowgroup [ref=f1e2131]:
+        - row [ref=f1e2132]:
+          - columnheader "模型" [ref=f1e2133]
+          - columnheader "家族" [ref=f1e2134]
+          - columnheader "SkillScore" [ref=f1e2135]
+          - columnheader "M2均分" [ref=f1e2136]
+          - columnheader "M1均分" [ref=f1e2137]
+          - columnheader "触发准确率" [ref=f1e2138]
+        - row [ref=f1e2139]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2140]
+          - cell "DeepSeek" [ref=f1e2141]
+          - cell "80.4" [ref=f1e2142]
+          - cell "4.2" [ref=f1e2143]
+          - cell "-" [ref=f1e2144]
+          - cell "-" [ref=f1e2145]
+        - row [ref=f1e2146]:
+          - cell "space-bunny" [ref=f1e2147]
+          - cell "SpaceBunny" [ref=f1e2148]
+          - cell "66" [ref=f1e2149]
+          - cell "3" [ref=f1e2150]
+          - cell "-" [ref=f1e2151]
+          - cell "-" [ref=f1e2152]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2153]:
+      - rowgroup [ref=f1e2154]:
+        - row [ref=f1e2155]:
+          - columnheader "模型" [ref=f1e2156]
+          - columnheader "任务" [ref=f1e2157]
+          - columnheader "M2−M1" [ref=f1e2158]
+          - columnheader "hake" [ref=f1e2159]
+          - columnheader "M2−M4" [ref=f1e2160]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2161]:
+      - rowgroup [ref=f1e2162]:
+        - row [ref=f1e2163]:
+          - columnheader "生产者＼判官" [ref=f1e2164]
+          - columnheader "hy4-preview-f" [ref=f1e2165]
+          - columnheader "kimi-k2.7" [ref=f1e2166]
+          - columnheader "space-bunny" [ref=f1e2167]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2168]
+          - columnheader "说明" [ref=f1e2169]
+        - row [ref=f1e2170]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2171]
+          - cell "4.4" [ref=f1e2172]
+          - cell "4.2" [ref=f1e2173]
+          - cell "2.65" [ref=f1e2174]
+          - cell "4.4" [ref=f1e2175]
+          - cell "对角线=自评" [ref=f1e2176]
+        - row [ref=f1e2177]:
+          - cell "space-bunny" [ref=f1e2178]
+          - cell "3" [ref=f1e2179]
+          - cell "2.5" [ref=f1e2180]
+          - cell "2.3" [ref=f1e2181]
+          - cell "4.4" [ref=f1e2182]
+          - cell "对角线=自评" [ref=f1e2183]
+    - heading "host-observer__thedotmack 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2184]
+    - text: SkillScore 榜
+    - table [ref=f1e2185]:
+      - rowgroup [ref=f1e2186]:
+        - row [ref=f1e2187]:
+          - columnheader "模型" [ref=f1e2188]
+          - columnheader "家族" [ref=f1e2189]
+          - columnheader "SkillScore" [ref=f1e2190]
+          - columnheader "M2均分" [ref=f1e2191]
+          - columnheader "M1均分" [ref=f1e2192]
+          - columnheader "触发准确率" [ref=f1e2193]
+        - row [ref=f1e2194]:
+          - cell "space-bunny" [ref=f1e2195]
+          - cell "SpaceBunny" [ref=f1e2196]
+          - cell "90" [ref=f1e2197]
+          - cell "5" [ref=f1e2198]
+          - cell "-" [ref=f1e2199]
+          - cell "-" [ref=f1e2200]
+        - row [ref=f1e2201]:
+          - cell "kimi-k2.7" [ref=f1e2202]
+          - cell "Kimi" [ref=f1e2203]
+          - cell "80.4" [ref=f1e2204]
+          - cell "4.2" [ref=f1e2205]
+          - cell "-" [ref=f1e2206]
+          - cell "-" [ref=f1e2207]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2208]:
+      - rowgroup [ref=f1e2209]:
+        - row [ref=f1e2210]:
+          - columnheader "模型" [ref=f1e2211]
+          - columnheader "任务" [ref=f1e2212]
+          - columnheader "M2−M1" [ref=f1e2213]
+          - columnheader "hake" [ref=f1e2214]
+          - columnheader "M2−M4" [ref=f1e2215]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2216]:
+      - rowgroup [ref=f1e2217]:
+        - row [ref=f1e2218]:
+          - columnheader "生产者＼判官" [ref=f1e2219]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2220]
+          - columnheader "hy4-preview-f" [ref=f1e2221]
+          - columnheader "space-bunny" [ref=f1e2222]
+          - columnheader "kimi-k2.7" [ref=f1e2223]
+          - columnheader "说明" [ref=f1e2224]
+        - row [ref=f1e2225]:
+          - cell "kimi-k2.7" [ref=f1e2226]
+          - cell "5" [ref=f1e2227]
+          - cell "4.2" [ref=f1e2228]
+          - cell "3.95" [ref=f1e2229]
+          - cell "5" [ref=f1e2230]
+          - cell "对角线=自评" [ref=f1e2231]
+        - row [ref=f1e2232]:
+          - cell "space-bunny" [ref=f1e2233]
+          - cell "5" [ref=f1e2234]
+          - cell "5" [ref=f1e2235]
+          - cell "5" [ref=f1e2236]
+          - cell "5" [ref=f1e2237]
+          - cell "对角线=自评" [ref=f1e2238]
+    - heading "humanizer 最佳模型：kimi-k2.7 · 断言层 183/240 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2239]
+    - text: SkillScore 榜
+    - table [ref=f1e2240]:
+      - rowgroup [ref=f1e2241]:
+        - row [ref=f1e2242]:
+          - columnheader "模型" [ref=f1e2243]
+          - columnheader "家族" [ref=f1e2244]
+          - columnheader "SkillScore" [ref=f1e2245]
+          - columnheader "M2均分" [ref=f1e2246]
+          - columnheader "M1均分" [ref=f1e2247]
+          - columnheader "触发准确率" [ref=f1e2248]
+        - row [ref=f1e2249]:
+          - cell "kimi-k2.7" [ref=f1e2250]
+          - cell "Kimi" [ref=f1e2251]
+          - cell "80.5" [ref=f1e2252]
+          - cell "4.6" [ref=f1e2253]
+          - cell "2.66" [ref=f1e2254]
+          - cell "2/4" [ref=f1e2255]
+        - row [ref=f1e2256]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2257]
+          - cell "DeepSeek" [ref=f1e2258]
+          - cell "71.6" [ref=f1e2259]
+          - cell "3.77" [ref=f1e2260]
+          - cell "3.65" [ref=f1e2261]
+          - cell "3/4" [ref=f1e2262]
+        - row [ref=f1e2263]:
+          - cell "space-bunny" [ref=f1e2264]
+          - cell "SpaceBunny" [ref=f1e2265]
+          - cell "69.9" [ref=f1e2266]
+          - cell "4.19" [ref=f1e2267]
+          - cell "3.66" [ref=f1e2268]
+          - cell "2/4" [ref=f1e2269]
+        - row [ref=f1e2270]:
+          - cell "glm-5.3-flash" [ref=f1e2271]
+          - cell "GLM" [ref=f1e2272]
+          - cell "68.8" [ref=f1e2273]
+          - cell "3.51" [ref=f1e2274]
+          - cell "3.52" [ref=f1e2275]
+          - cell "3/4" [ref=f1e2276]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2277]:
+      - rowgroup [ref=f1e2278]:
+        - row [ref=f1e2279]:
+          - columnheader "模型" [ref=f1e2280]
+          - columnheader "任务" [ref=f1e2281]
+          - columnheader "M2−M1" [ref=f1e2282]
+          - columnheader "hake" [ref=f1e2283]
+          - columnheader "M2−M4" [ref=f1e2284]
+        - row [ref=f1e2285]:
+          - cell "space-bunny" [ref=f1e2286]
+          - cell "T03-案例描写" [ref=f1e2287]
+          - cell "0.75" [ref=f1e2288]
+          - cell "1" [ref=f1e2289]
+          - cell "1.12" [ref=f1e2290]
+        - row [ref=f1e2291]:
+          - cell "kimi-k2.7" [ref=f1e2292]
+          - cell "T04-触发负例" [ref=f1e2293]
+          - cell "0" [ref=f1e2294]
+          - cell "-" [ref=f1e2295]
+          - cell "0" [ref=f1e2296]
+        - row [ref=f1e2297]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2298]
+          - cell "T01-用词层" [ref=f1e2299]
+          - cell "-0.8" [ref=f1e2300]
+          - cell "-" [ref=f1e2301]
+          - cell "0.82" [ref=f1e2302]
+        - row [ref=f1e2303]:
+          - cell "glm-5.3-flash" [ref=f1e2304]
+          - cell "T04-触发负例" [ref=f1e2305]
+          - cell "0" [ref=f1e2306]
+          - cell "-" [ref=f1e2307]
+          - cell "0" [ref=f1e2308]
+        - row [ref=f1e2309]:
+          - cell "kimi-k2.7" [ref=f1e2310]
+          - cell "T03-案例描写" [ref=f1e2311]
+          - cell "2.7" [ref=f1e2312]
+          - cell "1" [ref=f1e2313]
+          - cell "1.62" [ref=f1e2314]
+        - row [ref=f1e2315]:
+          - cell "space-bunny" [ref=f1e2316]
+          - cell "T01-用词层" [ref=f1e2317]
+          - cell "2.9" [ref=f1e2318]
+          - cell "0.935" [ref=f1e2319]
+          - cell "3.42" [ref=f1e2320]
+        - row [ref=f1e2321]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2322]
+          - cell "T02-叙事铺陈" [ref=f1e2323]
+          - cell "2.95" [ref=f1e2324]
+          - cell "0.868" [ref=f1e2325]
+          - cell "2.18" [ref=f1e2326]
+        - row [ref=f1e2327]:
+          - cell "glm-5.3-flash" [ref=f1e2328]
+          - cell "T03-案例描写" [ref=f1e2329]
+          - cell "-0.8" [ref=f1e2330]
+          - cell "-" [ref=f1e2331]
+          - cell "-0.02" [ref=f1e2332]
+        - row [ref=f1e2333]:
+          - cell "glm-5.3-flash" [ref=f1e2334]
+          - cell "T02-叙事铺陈" [ref=f1e2335]
+          - cell "0.65" [ref=f1e2336]
+          - cell "0.382" [ref=f1e2337]
+          - cell "1.07" [ref=f1e2338]
+        - row [ref=f1e2339]:
+          - cell "space-bunny" [ref=f1e2340]
+          - cell "T02-叙事铺陈" [ref=f1e2341]
+          - cell "-1.55" [ref=f1e2342]
+          - cell "-" [ref=f1e2343]
+          - cell "-0.93" [ref=f1e2344]
+        - row [ref=f1e2345]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2346]
+          - cell "T03-案例描写" [ref=f1e2347]
+          - cell "0" [ref=f1e2348]
+          - cell "-" [ref=f1e2349]
+          - cell "2.62" [ref=f1e2350]
+        - row [ref=f1e2351]:
+          - cell "glm-5.3-flash" [ref=f1e2352]
+          - cell "T01-用词层" [ref=f1e2353]
+          - cell "0.1" [ref=f1e2354]
+          - cell "0.043" [ref=f1e2355]
+          - cell "-1.94" [ref=f1e2356]
+        - row [ref=f1e2357]:
+          - cell "kimi-k2.7" [ref=f1e2358]
+          - cell "T01-用词层" [ref=f1e2359]
+          - cell "2.75" [ref=f1e2360]
+          - cell "0.932" [ref=f1e2361]
+          - cell "2.61" [ref=f1e2362]
+        - row [ref=f1e2363]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2364]
+          - cell "T04-触发负例" [ref=f1e2365]
+          - cell "-1.65" [ref=f1e2366]
+          - cell "-" [ref=f1e2367]
+          - cell "-1.65" [ref=f1e2368]
+        - row [ref=f1e2369]:
+          - cell "space-bunny" [ref=f1e2370]
+          - cell "T04-触发负例" [ref=f1e2371]
+          - cell "0" [ref=f1e2372]
+          - cell "-" [ref=f1e2373]
+          - cell "0" [ref=f1e2374]
+        - row [ref=f1e2375]:
+          - cell "kimi-k2.7" [ref=f1e2376]
+          - cell "T02-叙事铺陈" [ref=f1e2377]
+          - cell "2.3" [ref=f1e2378]
+          - cell "0.622" [ref=f1e2379]
+          - cell "1.72" [ref=f1e2380]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2381]:
+      - rowgroup [ref=f1e2382]:
+        - row [ref=f1e2383]:
+          - columnheader "生产者＼判官" [ref=f1e2384]
+          - columnheader "glm-5.3-flash" [ref=f1e2385]
+          - columnheader "kimi-k2.7" [ref=f1e2386]
+          - columnheader "space-bunny" [ref=f1e2387]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2388]
+          - columnheader "说明" [ref=f1e2389]
+        - row [ref=f1e2390]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2391]
+          - cell "3.76" [ref=f1e2392]
+          - cell "3.92" [ref=f1e2393]
+          - cell "3.67" [ref=f1e2394]
+          - cell "3.89" [ref=f1e2395]
+          - cell "对角线=自评" [ref=f1e2396]
+        - row [ref=f1e2397]:
+          - cell "glm-5.3-flash" [ref=f1e2398]
+          - cell "3.39" [ref=f1e2399]
+          - cell "3.44" [ref=f1e2400]
+          - cell "3.11" [ref=f1e2401]
+          - cell "3.48" [ref=f1e2402]
+          - cell "对角线=自评" [ref=f1e2403]
+        - row [ref=f1e2404]:
+          - cell "kimi-k2.7" [ref=f1e2405]
+          - cell "4.65" [ref=f1e2406]
+          - cell "4.78" [ref=f1e2407]
+          - cell "4.86" [ref=f1e2408]
+          - cell "4.47" [ref=f1e2409]
+          - cell "对角线=自评" [ref=f1e2410]
+        - row [ref=f1e2411]:
+          - cell "space-bunny" [ref=f1e2412]
+          - cell "4.17" [ref=f1e2413]
+          - cell "4.22" [ref=f1e2414]
+          - cell "4.35" [ref=f1e2415]
+          - cell "4.08" [ref=f1e2416]
+          - cell "对角线=自评" [ref=f1e2417]
+    - heading "idea-refine__addyosmani 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2418]
+    - text: SkillScore 榜
+    - table [ref=f1e2419]:
+      - rowgroup [ref=f1e2420]:
+        - row [ref=f1e2421]:
+          - columnheader "模型" [ref=f1e2422]
+          - columnheader "家族" [ref=f1e2423]
+          - columnheader "SkillScore" [ref=f1e2424]
+          - columnheader "M2均分" [ref=f1e2425]
+          - columnheader "M1均分" [ref=f1e2426]
+          - columnheader "触发准确率" [ref=f1e2427]
+        - row [ref=f1e2428]:
+          - cell "kimi-k2.7" [ref=f1e2429]
+          - cell "Kimi" [ref=f1e2430]
+          - cell "90" [ref=f1e2431]
+          - cell "5" [ref=f1e2432]
+          - cell "-" [ref=f1e2433]
+          - cell "-" [ref=f1e2434]
+        - row [ref=f1e2435]:
+          - cell "space-bunny" [ref=f1e2436]
+          - cell "SpaceBunny" [ref=f1e2437]
+          - cell "90" [ref=f1e2438]
+          - cell "5" [ref=f1e2439]
+          - cell "-" [ref=f1e2440]
+          - cell "-" [ref=f1e2441]
+        - row [ref=f1e2442]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2443]
+          - cell "DeepSeek" [ref=f1e2444]
+          - cell "90" [ref=f1e2445]
+          - cell "5" [ref=f1e2446]
+          - cell "-" [ref=f1e2447]
+          - cell "-" [ref=f1e2448]
+        - row [ref=f1e2449]:
+          - cell "hy4-preview-f" [ref=f1e2450]
+          - cell "Hy" [ref=f1e2451]
+          - cell "88.2" [ref=f1e2452]
+          - cell "4.85" [ref=f1e2453]
+          - cell "-" [ref=f1e2454]
+          - cell "-" [ref=f1e2455]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2456]:
+      - rowgroup [ref=f1e2457]:
+        - row [ref=f1e2458]:
+          - columnheader "模型" [ref=f1e2459]
+          - columnheader "任务" [ref=f1e2460]
+          - columnheader "M2−M1" [ref=f1e2461]
+          - columnheader "hake" [ref=f1e2462]
+          - columnheader "M2−M4" [ref=f1e2463]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2464]:
+      - rowgroup [ref=f1e2465]:
+        - row [ref=f1e2466]:
+          - columnheader "生产者＼判官" [ref=f1e2467]
+          - columnheader "hy4-preview-f" [ref=f1e2468]
+          - columnheader "kimi-k2.7" [ref=f1e2469]
+          - columnheader "space-bunny" [ref=f1e2470]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2471]
+          - columnheader "说明" [ref=f1e2472]
+        - row [ref=f1e2473]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2474]
+          - cell "4.8" [ref=f1e2475]
+          - cell "5" [ref=f1e2476]
+          - cell "5" [ref=f1e2477]
+          - cell "4.8" [ref=f1e2478]
+          - cell "对角线=自评" [ref=f1e2479]
+        - row [ref=f1e2480]:
+          - cell "hy4-preview-f" [ref=f1e2481]
+          - cell "4.45" [ref=f1e2482]
+          - cell "5" [ref=f1e2483]
+          - cell "3.7" [ref=f1e2484]
+          - cell "4.85" [ref=f1e2485]
+          - cell "对角线=自评" [ref=f1e2486]
+        - row [ref=f1e2487]:
+          - cell "kimi-k2.7" [ref=f1e2488]
+          - cell "5" [ref=f1e2489]
+          - cell "5" [ref=f1e2490]
+          - cell "4.8" [ref=f1e2491]
+          - cell "5" [ref=f1e2492]
+          - cell "对角线=自评" [ref=f1e2493]
+        - row [ref=f1e2494]:
+          - cell "space-bunny" [ref=f1e2495]
+          - cell "5" [ref=f1e2496]
+          - cell "5" [ref=f1e2497]
+          - cell "4.15" [ref=f1e2498]
+          - cell "5" [ref=f1e2499]
+          - cell "对角线=自评" [ref=f1e2500]
+    - heading "incremental-implementation__addyosmani 最佳模型：glm-5.3-flash@api · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2501]
+    - text: SkillScore 榜
+    - table [ref=f1e2502]:
+      - rowgroup [ref=f1e2503]:
+        - row [ref=f1e2504]:
+          - columnheader "模型" [ref=f1e2505]
+          - columnheader "家族" [ref=f1e2506]
+          - columnheader "SkillScore" [ref=f1e2507]
+          - columnheader "M2均分" [ref=f1e2508]
+          - columnheader "M1均分" [ref=f1e2509]
+          - columnheader "触发准确率" [ref=f1e2510]
+        - row [ref=f1e2511]:
+          - cell "glm-5.3-flash@api" [ref=f1e2512]
+          - cell "GLM" [ref=f1e2513]
+          - cell "82.8" [ref=f1e2514]
+          - cell "4.4" [ref=f1e2515]
+          - cell "-" [ref=f1e2516]
+          - cell "-" [ref=f1e2517]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2518]:
+      - rowgroup [ref=f1e2519]:
+        - row [ref=f1e2520]:
+          - columnheader "模型" [ref=f1e2521]
+          - columnheader "任务" [ref=f1e2522]
+          - columnheader "M2−M1" [ref=f1e2523]
+          - columnheader "hake" [ref=f1e2524]
+          - columnheader "M2−M4" [ref=f1e2525]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2526]:
+      - rowgroup [ref=f1e2527]:
+        - row [ref=f1e2528]:
+          - columnheader "生产者＼判官" [ref=f1e2529]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2530]
+          - columnheader "hy4-preview-f" [ref=f1e2531]
+          - columnheader "kimi-k2.7" [ref=f1e2532]
+          - columnheader "space-bunny" [ref=f1e2533]
+          - columnheader "说明" [ref=f1e2534]
+        - row [ref=f1e2535]:
+          - cell "glm-5.3-flash@api" [ref=f1e2536]
+          - cell "5" [ref=f1e2537]
+          - cell "4.6" [ref=f1e2538]
+          - cell "4.2" [ref=f1e2539]
+          - cell "3.35" [ref=f1e2540]
+          - cell [ref=f1e2541]
+    - heading "install__thedotmack 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2542]
+    - text: SkillScore 榜
+    - table [ref=f1e2543]:
+      - rowgroup [ref=f1e2544]:
+        - row [ref=f1e2545]:
+          - columnheader "模型" [ref=f1e2546]
+          - columnheader "家族" [ref=f1e2547]
+          - columnheader "SkillScore" [ref=f1e2548]
+          - columnheader "M2均分" [ref=f1e2549]
+          - columnheader "M1均分" [ref=f1e2550]
+          - columnheader "触发准确率" [ref=f1e2551]
+        - row [ref=f1e2552]:
+          - cell "hy4-preview-f" [ref=f1e2553]
+          - cell "Hy" [ref=f1e2554]
+          - cell "90" [ref=f1e2555]
+          - cell "5" [ref=f1e2556]
+          - cell "-" [ref=f1e2557]
+          - cell "-" [ref=f1e2558]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2559]:
+      - rowgroup [ref=f1e2560]:
+        - row [ref=f1e2561]:
+          - columnheader "模型" [ref=f1e2562]
+          - columnheader "任务" [ref=f1e2563]
+          - columnheader "M2−M1" [ref=f1e2564]
+          - columnheader "hake" [ref=f1e2565]
+          - columnheader "M2−M4" [ref=f1e2566]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2567]:
+      - rowgroup [ref=f1e2568]:
+        - row [ref=f1e2569]:
+          - columnheader "生产者＼判官" [ref=f1e2570]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2571]
+          - columnheader "kimi-k2.7" [ref=f1e2572]
+          - columnheader "space-bunny" [ref=f1e2573]
+          - columnheader "hy4-preview-f" [ref=f1e2574]
+          - columnheader "说明" [ref=f1e2575]
+        - row [ref=f1e2576]:
+          - cell "hy4-preview-f" [ref=f1e2577]
+          - cell "5" [ref=f1e2578]
+          - cell "5" [ref=f1e2579]
+          - cell "5" [ref=f1e2580]
+          - cell "5" [ref=f1e2581]
+          - cell "对角线=自评" [ref=f1e2582]
+    - heading "internal-comms__anthropics 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2583]
+    - text: SkillScore 榜
+    - table [ref=f1e2584]:
+      - rowgroup [ref=f1e2585]:
+        - row [ref=f1e2586]:
+          - columnheader "模型" [ref=f1e2587]
+          - columnheader "家族" [ref=f1e2588]
+          - columnheader "SkillScore" [ref=f1e2589]
+          - columnheader "M2均分" [ref=f1e2590]
+          - columnheader "M1均分" [ref=f1e2591]
+          - columnheader "触发准确率" [ref=f1e2592]
+        - row [ref=f1e2593]:
+          - cell "kimi-k2.7" [ref=f1e2594]
+          - cell "Kimi" [ref=f1e2595]
+          - cell "90" [ref=f1e2596]
+          - cell "5" [ref=f1e2597]
+          - cell "-" [ref=f1e2598]
+          - cell "-" [ref=f1e2599]
+        - row [ref=f1e2600]:
+          - cell "hy4-preview-f" [ref=f1e2601]
+          - cell "Hy" [ref=f1e2602]
+          - cell "82.8" [ref=f1e2603]
+          - cell "4.4" [ref=f1e2604]
+          - cell "-" [ref=f1e2605]
+          - cell "-" [ref=f1e2606]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2607]:
+      - rowgroup [ref=f1e2608]:
+        - row [ref=f1e2609]:
+          - columnheader "模型" [ref=f1e2610]
+          - columnheader "任务" [ref=f1e2611]
+          - columnheader "M2−M1" [ref=f1e2612]
+          - columnheader "hake" [ref=f1e2613]
+          - columnheader "M2−M4" [ref=f1e2614]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2615]:
+      - rowgroup [ref=f1e2616]:
+        - row [ref=f1e2617]:
+          - columnheader "生产者＼判官" [ref=f1e2618]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2619]
+          - columnheader "kimi-k2.7" [ref=f1e2620]
+          - columnheader "space-bunny" [ref=f1e2621]
+          - columnheader "hy4-preview-f" [ref=f1e2622]
+          - columnheader "说明" [ref=f1e2623]
+        - row [ref=f1e2624]:
+          - cell "hy4-preview-f" [ref=f1e2625]
+          - cell "4.4" [ref=f1e2626]
+          - cell "5" [ref=f1e2627]
+          - cell "3" [ref=f1e2628]
+          - cell "4.8" [ref=f1e2629]
+          - cell "对角线=自评" [ref=f1e2630]
+        - row [ref=f1e2631]:
+          - cell "kimi-k2.7" [ref=f1e2632]
+          - cell "5" [ref=f1e2633]
+          - cell "5" [ref=f1e2634]
+          - cell "5" [ref=f1e2635]
+          - cell "5" [ref=f1e2636]
+          - cell "对角线=自评" [ref=f1e2637]
+    - heading "interview-me__addyosmani 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 02:10:13" [level=2] [ref=f1e2638]
+    - text: SkillScore 榜
+    - table [ref=f1e2639]:
+      - rowgroup [ref=f1e2640]:
+        - row [ref=f1e2641]:
+          - columnheader "模型" [ref=f1e2642]
+          - columnheader "家族" [ref=f1e2643]
+          - columnheader "SkillScore" [ref=f1e2644]
+          - columnheader "M2均分" [ref=f1e2645]
+          - columnheader "M1均分" [ref=f1e2646]
+          - columnheader "触发准确率" [ref=f1e2647]
+        - row [ref=f1e2648]:
+          - cell "space-bunny" [ref=f1e2649]
+          - cell "SpaceBunny" [ref=f1e2650]
+          - cell "90" [ref=f1e2651]
+          - cell "5" [ref=f1e2652]
+          - cell "-" [ref=f1e2653]
+          - cell "-" [ref=f1e2654]
+        - row [ref=f1e2655]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2656]
+          - cell "DeepSeek" [ref=f1e2657]
+          - cell "82.8" [ref=f1e2658]
+          - cell "4.4" [ref=f1e2659]
+          - cell "-" [ref=f1e2660]
+          - cell "-" [ref=f1e2661]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2662]:
+      - rowgroup [ref=f1e2663]:
+        - row [ref=f1e2664]:
+          - columnheader "模型" [ref=f1e2665]
+          - columnheader "任务" [ref=f1e2666]
+          - columnheader "M2−M1" [ref=f1e2667]
+          - columnheader "hake" [ref=f1e2668]
+          - columnheader "M2−M4" [ref=f1e2669]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2670]:
+      - rowgroup [ref=f1e2671]:
+        - row [ref=f1e2672]:
+          - columnheader "生产者＼判官" [ref=f1e2673]
+          - columnheader "glm-5.3-flash@api" [ref=f1e2674]
+          - columnheader "kimi-k2.7" [ref=f1e2675]
+          - columnheader "space-bunny" [ref=f1e2676]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2677]
+          - columnheader "说明" [ref=f1e2678]
+        - row [ref=f1e2679]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2680]
+          - cell "5" [ref=f1e2681]
+          - cell "3.6" [ref=f1e2682]
+          - cell "4.4" [ref=f1e2683]
+          - cell "5" [ref=f1e2684]
+          - cell "对角线=自评" [ref=f1e2685]
+        - row [ref=f1e2686]:
+          - cell "space-bunny" [ref=f1e2687]
+          - cell "5" [ref=f1e2688]
+          - cell "5" [ref=f1e2689]
+          - cell "5" [ref=f1e2690]
+          - cell "5" [ref=f1e2691]
+          - cell "对角线=自评" [ref=f1e2692]
+    - heading "mcp-builder__anthropics 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2693]
+    - text: SkillScore 榜
+    - table [ref=f1e2694]:
+      - rowgroup [ref=f1e2695]:
+        - row [ref=f1e2696]:
+          - columnheader "模型" [ref=f1e2697]
+          - columnheader "家族" [ref=f1e2698]
+          - columnheader "SkillScore" [ref=f1e2699]
+          - columnheader "M2均分" [ref=f1e2700]
+          - columnheader "M1均分" [ref=f1e2701]
+          - columnheader "触发准确率" [ref=f1e2702]
+        - row [ref=f1e2703]:
+          - cell "space-bunny" [ref=f1e2704]
+          - cell "SpaceBunny" [ref=f1e2705]
+          - cell "90" [ref=f1e2706]
+          - cell "5" [ref=f1e2707]
+          - cell "-" [ref=f1e2708]
+          - cell "-" [ref=f1e2709]
+        - row [ref=f1e2710]:
+          - cell "kimi-k2.7" [ref=f1e2711]
+          - cell "Kimi" [ref=f1e2712]
+          - cell "82.8" [ref=f1e2713]
+          - cell "4.4" [ref=f1e2714]
+          - cell "-" [ref=f1e2715]
+          - cell "-" [ref=f1e2716]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2717]:
+      - rowgroup [ref=f1e2718]:
+        - row [ref=f1e2719]:
+          - columnheader "模型" [ref=f1e2720]
+          - columnheader "任务" [ref=f1e2721]
+          - columnheader "M2−M1" [ref=f1e2722]
+          - columnheader "hake" [ref=f1e2723]
+          - columnheader "M2−M4" [ref=f1e2724]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2725]:
+      - rowgroup [ref=f1e2726]:
+        - row [ref=f1e2727]:
+          - columnheader "生产者＼判官" [ref=f1e2728]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2729]
+          - columnheader "hy4-preview-f" [ref=f1e2730]
+          - columnheader "space-bunny" [ref=f1e2731]
+          - columnheader "kimi-k2.7" [ref=f1e2732]
+          - columnheader "说明" [ref=f1e2733]
+        - row [ref=f1e2734]:
+          - cell "kimi-k2.7" [ref=f1e2735]
+          - cell "4.4" [ref=f1e2736]
+          - cell "4.4" [ref=f1e2737]
+          - cell "3.55" [ref=f1e2738]
+          - cell "3.5" [ref=f1e2739]
+          - cell "对角线=自评" [ref=f1e2740]
+        - row [ref=f1e2741]:
+          - cell "space-bunny" [ref=f1e2742]
+          - cell "5" [ref=f1e2743]
+          - cell "4.4" [ref=f1e2744]
+          - cell "4.6" [ref=f1e2745]
+          - cell "5" [ref=f1e2746]
+          - cell "对角线=自评" [ref=f1e2747]
+    - heading "mem-search__thedotmack 最佳模型：glm-5.3-flash@api · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2748]
+    - text: SkillScore 榜
+    - table [ref=f1e2749]:
+      - rowgroup [ref=f1e2750]:
+        - row [ref=f1e2751]:
+          - columnheader "模型" [ref=f1e2752]
+          - columnheader "家族" [ref=f1e2753]
+          - columnheader "SkillScore" [ref=f1e2754]
+          - columnheader "M2均分" [ref=f1e2755]
+          - columnheader "M1均分" [ref=f1e2756]
+          - columnheader "触发准确率" [ref=f1e2757]
+        - row [ref=f1e2758]:
+          - cell "glm-5.3-flash@api" [ref=f1e2759]
+          - cell "GLM" [ref=f1e2760]
+          - cell "90" [ref=f1e2761]
+          - cell "5" [ref=f1e2762]
+          - cell "-" [ref=f1e2763]
+          - cell "-" [ref=f1e2764]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2765]:
+      - rowgroup [ref=f1e2766]:
+        - row [ref=f1e2767]:
+          - columnheader "模型" [ref=f1e2768]
+          - columnheader "任务" [ref=f1e2769]
+          - columnheader "M2−M1" [ref=f1e2770]
+          - columnheader "hake" [ref=f1e2771]
+          - columnheader "M2−M4" [ref=f1e2772]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2773]:
+      - rowgroup [ref=f1e2774]:
+        - row [ref=f1e2775]:
+          - columnheader "生产者＼判官" [ref=f1e2776]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2777]
+          - columnheader "hy4-preview-f" [ref=f1e2778]
+          - columnheader "kimi-k2.7" [ref=f1e2779]
+          - columnheader "space-bunny" [ref=f1e2780]
+          - columnheader "说明" [ref=f1e2781]
+        - row [ref=f1e2782]:
+          - cell "glm-5.3-flash@api" [ref=f1e2783]
+          - cell "5" [ref=f1e2784]
+          - cell "5" [ref=f1e2785]
+          - cell "5" [ref=f1e2786]
+          - cell "5" [ref=f1e2787]
+          - cell [ref=f1e2788]
+    - heading "observability-and-instrumentation__addyosmani 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2789]
+    - text: SkillScore 榜
+    - table [ref=f1e2790]:
+      - rowgroup [ref=f1e2791]:
+        - row [ref=f1e2792]:
+          - columnheader "模型" [ref=f1e2793]
+          - columnheader "家族" [ref=f1e2794]
+          - columnheader "SkillScore" [ref=f1e2795]
+          - columnheader "M2均分" [ref=f1e2796]
+          - columnheader "M1均分" [ref=f1e2797]
+          - columnheader "触发准确率" [ref=f1e2798]
+        - row [ref=f1e2799]:
+          - cell "kimi-k2.7" [ref=f1e2800]
+          - cell "Kimi" [ref=f1e2801]
+          - cell "85.2" [ref=f1e2802]
+          - cell "4.6" [ref=f1e2803]
+          - cell "-" [ref=f1e2804]
+          - cell "-" [ref=f1e2805]
+        - row [ref=f1e2806]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2807]
+          - cell "DeepSeek" [ref=f1e2808]
+          - cell "73.2" [ref=f1e2809]
+          - cell "3.6" [ref=f1e2810]
+          - cell "-" [ref=f1e2811]
+          - cell "-" [ref=f1e2812]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2813]:
+      - rowgroup [ref=f1e2814]:
+        - row [ref=f1e2815]:
+          - columnheader "模型" [ref=f1e2816]
+          - columnheader "任务" [ref=f1e2817]
+          - columnheader "M2−M1" [ref=f1e2818]
+          - columnheader "hake" [ref=f1e2819]
+          - columnheader "M2−M4" [ref=f1e2820]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2821]:
+      - rowgroup [ref=f1e2822]:
+        - row [ref=f1e2823]:
+          - columnheader "生产者＼判官" [ref=f1e2824]
+          - columnheader "hy4-preview-f" [ref=f1e2825]
+          - columnheader "kimi-k2.7" [ref=f1e2826]
+          - columnheader "space-bunny" [ref=f1e2827]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2828]
+          - columnheader "说明" [ref=f1e2829]
+        - row [ref=f1e2830]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2831]
+          - cell "5" [ref=f1e2832]
+          - cell "3.15" [ref=f1e2833]
+          - cell "3.6" [ref=f1e2834]
+          - cell "5" [ref=f1e2835]
+          - cell "对角线=自评" [ref=f1e2836]
+        - row [ref=f1e2837]:
+          - cell "kimi-k2.7" [ref=f1e2838]
+          - cell "5" [ref=f1e2839]
+          - cell "3.35" [ref=f1e2840]
+          - cell "4.15" [ref=f1e2841]
+          - cell "4.6" [ref=f1e2842]
+          - cell "对角线=自评" [ref=f1e2843]
+    - heading "od-contribute__nexu-io 最佳模型：glm-5.3-flash@api · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2844]
+    - text: SkillScore 榜
+    - table [ref=f1e2845]:
+      - rowgroup [ref=f1e2846]:
+        - row [ref=f1e2847]:
+          - columnheader "模型" [ref=f1e2848]
+          - columnheader "家族" [ref=f1e2849]
+          - columnheader "SkillScore" [ref=f1e2850]
+          - columnheader "M2均分" [ref=f1e2851]
+          - columnheader "M1均分" [ref=f1e2852]
+          - columnheader "触发准确率" [ref=f1e2853]
+        - row [ref=f1e2854]:
+          - cell "glm-5.3-flash@api" [ref=f1e2855]
+          - cell "GLM" [ref=f1e2856]
+          - cell "85.2" [ref=f1e2857]
+          - cell "4.6" [ref=f1e2858]
+          - cell "-" [ref=f1e2859]
+          - cell "-" [ref=f1e2860]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2861]:
+      - rowgroup [ref=f1e2862]:
+        - row [ref=f1e2863]:
+          - columnheader "模型" [ref=f1e2864]
+          - columnheader "任务" [ref=f1e2865]
+          - columnheader "M2−M1" [ref=f1e2866]
+          - columnheader "hake" [ref=f1e2867]
+          - columnheader "M2−M4" [ref=f1e2868]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2869]:
+      - rowgroup [ref=f1e2870]:
+        - row [ref=f1e2871]:
+          - columnheader "生产者＼判官" [ref=f1e2872]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2873]
+          - columnheader "hy4-preview-f" [ref=f1e2874]
+          - columnheader "space-bunny" [ref=f1e2875]
+          - columnheader "说明" [ref=f1e2876]
+        - row [ref=f1e2877]:
+          - cell "glm-5.3-flash@api" [ref=f1e2878]
+          - cell "4.6" [ref=f1e2879]
+          - cell "4.4" [ref=f1e2880]
+          - cell "4.6" [ref=f1e2881]
+          - cell [ref=f1e2882]
+    - heading "pdf__anthropics 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2883]
+    - text: SkillScore 榜
+    - table [ref=f1e2884]:
+      - rowgroup [ref=f1e2885]:
+        - row [ref=f1e2886]:
+          - columnheader "模型" [ref=f1e2887]
+          - columnheader "家族" [ref=f1e2888]
+          - columnheader "SkillScore" [ref=f1e2889]
+          - columnheader "M2均分" [ref=f1e2890]
+          - columnheader "M1均分" [ref=f1e2891]
+          - columnheader "触发准确率" [ref=f1e2892]
+        - row [ref=f1e2893]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2894]
+          - cell "DeepSeek" [ref=f1e2895]
+          - cell "85.2" [ref=f1e2896]
+          - cell "4.6" [ref=f1e2897]
+          - cell "-" [ref=f1e2898]
+          - cell "-" [ref=f1e2899]
+        - row [ref=f1e2900]:
+          - cell "kimi-k2.7" [ref=f1e2901]
+          - cell "Kimi" [ref=f1e2902]
+          - cell "75" [ref=f1e2903]
+          - cell "3.75" [ref=f1e2904]
+          - cell "-" [ref=f1e2905]
+          - cell "-" [ref=f1e2906]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2907]:
+      - rowgroup [ref=f1e2908]:
+        - row [ref=f1e2909]:
+          - columnheader "模型" [ref=f1e2910]
+          - columnheader "任务" [ref=f1e2911]
+          - columnheader "M2−M1" [ref=f1e2912]
+          - columnheader "hake" [ref=f1e2913]
+          - columnheader "M2−M4" [ref=f1e2914]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2915]:
+      - rowgroup [ref=f1e2916]:
+        - row [ref=f1e2917]:
+          - columnheader "生产者＼判官" [ref=f1e2918]
+          - columnheader "hy4-preview-f" [ref=f1e2919]
+          - columnheader "kimi-k2.7" [ref=f1e2920]
+          - columnheader "space-bunny" [ref=f1e2921]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2922]
+          - columnheader "说明" [ref=f1e2923]
+        - row [ref=f1e2924]:
+          - cell "deepseek-v4.1-flash" [ref=f1e2925]
+          - cell "4.6" [ref=f1e2926]
+          - cell "5" [ref=f1e2927]
+          - cell "3.4" [ref=f1e2928]
+          - cell "5" [ref=f1e2929]
+          - cell "对角线=自评" [ref=f1e2930]
+        - row [ref=f1e2931]:
+          - cell "kimi-k2.7" [ref=f1e2932]
+          - cell "3.75" [ref=f1e2933]
+          - cell "3.15" [ref=f1e2934]
+          - cell "3.55" [ref=f1e2935]
+          - cell "4.4" [ref=f1e2936]
+          - cell "对角线=自评" [ref=f1e2937]
+    - heading "performance-optimization__addyosmani 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2938]
+    - text: SkillScore 榜
+    - table [ref=f1e2939]:
+      - rowgroup [ref=f1e2940]:
+        - row [ref=f1e2941]:
+          - columnheader "模型" [ref=f1e2942]
+          - columnheader "家族" [ref=f1e2943]
+          - columnheader "SkillScore" [ref=f1e2944]
+          - columnheader "M2均分" [ref=f1e2945]
+          - columnheader "M1均分" [ref=f1e2946]
+          - columnheader "触发准确率" [ref=f1e2947]
+        - row [ref=f1e2948]:
+          - cell "kimi-k2.7" [ref=f1e2949]
+          - cell "Kimi" [ref=f1e2950]
+          - cell "87.6" [ref=f1e2951]
+          - cell "4.8" [ref=f1e2952]
+          - cell "-" [ref=f1e2953]
+          - cell "-" [ref=f1e2954]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e2955]:
+      - rowgroup [ref=f1e2956]:
+        - row [ref=f1e2957]:
+          - columnheader "模型" [ref=f1e2958]
+          - columnheader "任务" [ref=f1e2959]
+          - columnheader "M2−M1" [ref=f1e2960]
+          - columnheader "hake" [ref=f1e2961]
+          - columnheader "M2−M4" [ref=f1e2962]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e2963]:
+      - rowgroup [ref=f1e2964]:
+        - row [ref=f1e2965]:
+          - columnheader "生产者＼判官" [ref=f1e2966]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e2967]
+          - columnheader "hy4-preview-f" [ref=f1e2968]
+          - columnheader "space-bunny" [ref=f1e2969]
+          - columnheader "kimi-k2.7" [ref=f1e2970]
+          - columnheader "说明" [ref=f1e2971]
+        - row [ref=f1e2972]:
+          - cell "kimi-k2.7" [ref=f1e2973]
+          - cell "5" [ref=f1e2974]
+          - cell "3.75" [ref=f1e2975]
+          - cell "4.8" [ref=f1e2976]
+          - cell "5" [ref=f1e2977]
+          - cell "对角线=自评" [ref=f1e2978]
+    - heading "planning-and-task-breakdown__addyosmani 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e2979]
+    - text: SkillScore 榜
+    - table [ref=f1e2980]:
+      - rowgroup [ref=f1e2981]:
+        - row [ref=f1e2982]:
+          - columnheader "模型" [ref=f1e2983]
+          - columnheader "家族" [ref=f1e2984]
+          - columnheader "SkillScore" [ref=f1e2985]
+          - columnheader "M2均分" [ref=f1e2986]
+          - columnheader "M1均分" [ref=f1e2987]
+          - columnheader "触发准确率" [ref=f1e2988]
+        - row [ref=f1e2989]:
+          - cell "kimi-k2.7" [ref=f1e2990]
+          - cell "Kimi" [ref=f1e2991]
+          - cell "90" [ref=f1e2992]
+          - cell "5" [ref=f1e2993]
+          - cell "-" [ref=f1e2994]
+          - cell "-" [ref=f1e2995]
+        - row [ref=f1e2996]:
+          - cell "space-bunny" [ref=f1e2997]
+          - cell "SpaceBunny" [ref=f1e2998]
+          - cell "85.2" [ref=f1e2999]
+          - cell "4.6" [ref=f1e3000]
+          - cell "-" [ref=f1e3001]
+          - cell "-" [ref=f1e3002]
+        - row [ref=f1e3003]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3004]
+          - cell "DeepSeek" [ref=f1e3005]
+          - cell "85.2" [ref=f1e3006]
+          - cell "4.6" [ref=f1e3007]
+          - cell "-" [ref=f1e3008]
+          - cell "-" [ref=f1e3009]
+        - row [ref=f1e3010]:
+          - cell "hy4-preview-f" [ref=f1e3011]
+          - cell "Hy" [ref=f1e3012]
+          - cell "85.2" [ref=f1e3013]
+          - cell "4.6" [ref=f1e3014]
+          - cell "-" [ref=f1e3015]
+          - cell "-" [ref=f1e3016]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3017]:
+      - rowgroup [ref=f1e3018]:
+        - row [ref=f1e3019]:
+          - columnheader "模型" [ref=f1e3020]
+          - columnheader "任务" [ref=f1e3021]
+          - columnheader "M2−M1" [ref=f1e3022]
+          - columnheader "hake" [ref=f1e3023]
+          - columnheader "M2−M4" [ref=f1e3024]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3025]:
+      - rowgroup [ref=f1e3026]:
+        - row [ref=f1e3027]:
+          - columnheader "生产者＼判官" [ref=f1e3028]
+          - columnheader "hy4-preview-f" [ref=f1e3029]
+          - columnheader "kimi-k2.7" [ref=f1e3030]
+          - columnheader "space-bunny" [ref=f1e3031]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3032]
+          - columnheader "说明" [ref=f1e3033]
+        - row [ref=f1e3034]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3035]
+          - cell "4.6" [ref=f1e3036]
+          - cell "5" [ref=f1e3037]
+          - cell "4.6" [ref=f1e3038]
+          - cell "5" [ref=f1e3039]
+          - cell "对角线=自评" [ref=f1e3040]
+        - row [ref=f1e3041]:
+          - cell "hy4-preview-f" [ref=f1e3042]
+          - cell "4.4" [ref=f1e3043]
+          - cell "4.75" [ref=f1e3044]
+          - cell "3.55" [ref=f1e3045]
+          - cell "4.6" [ref=f1e3046]
+          - cell "对角线=自评" [ref=f1e3047]
+        - row [ref=f1e3048]:
+          - cell "kimi-k2.7" [ref=f1e3049]
+          - cell "4.8" [ref=f1e3050]
+          - cell "5" [ref=f1e3051]
+          - cell "5" [ref=f1e3052]
+          - cell "5" [ref=f1e3053]
+          - cell "对角线=自评" [ref=f1e3054]
+        - row [ref=f1e3055]:
+          - cell "space-bunny" [ref=f1e3056]
+          - cell "4.2" [ref=f1e3057]
+          - cell "4.6" [ref=f1e3058]
+          - cell "5" [ref=f1e3059]
+          - cell "5" [ref=f1e3060]
+          - cell "对角线=自评" [ref=f1e3061]
+    - heading "ponytail-audit__DietrichGebert 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3062]
+    - text: SkillScore 榜
+    - table [ref=f1e3063]:
+      - rowgroup [ref=f1e3064]:
+        - row [ref=f1e3065]:
+          - columnheader "模型" [ref=f1e3066]
+          - columnheader "家族" [ref=f1e3067]
+          - columnheader "SkillScore" [ref=f1e3068]
+          - columnheader "M2均分" [ref=f1e3069]
+          - columnheader "M1均分" [ref=f1e3070]
+          - columnheader "触发准确率" [ref=f1e3071]
+        - row [ref=f1e3072]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3073]
+          - cell "DeepSeek" [ref=f1e3074]
+          - cell "90" [ref=f1e3075]
+          - cell "5" [ref=f1e3076]
+          - cell "-" [ref=f1e3077]
+          - cell "-" [ref=f1e3078]
+        - row [ref=f1e3079]:
+          - cell "glm-5.3-flash@api" [ref=f1e3080]
+          - cell "GLM" [ref=f1e3081]
+          - cell "87.6" [ref=f1e3082]
+          - cell "4.8" [ref=f1e3083]
+          - cell "-" [ref=f1e3084]
+          - cell "-" [ref=f1e3085]
+        - row [ref=f1e3086]:
+          - cell "space-bunny" [ref=f1e3087]
+          - cell "SpaceBunny" [ref=f1e3088]
+          - cell "84.6" [ref=f1e3089]
+          - cell "4.55" [ref=f1e3090]
+          - cell "-" [ref=f1e3091]
+          - cell "-" [ref=f1e3092]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3093]:
+      - rowgroup [ref=f1e3094]:
+        - row [ref=f1e3095]:
+          - columnheader "模型" [ref=f1e3096]
+          - columnheader "任务" [ref=f1e3097]
+          - columnheader "M2−M1" [ref=f1e3098]
+          - columnheader "hake" [ref=f1e3099]
+          - columnheader "M2−M4" [ref=f1e3100]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3101]:
+      - rowgroup [ref=f1e3102]:
+        - row [ref=f1e3103]:
+          - columnheader "生产者＼判官" [ref=f1e3104]
+          - columnheader "hy4-preview-f" [ref=f1e3105]
+          - columnheader "kimi-k2.7" [ref=f1e3106]
+          - columnheader "space-bunny" [ref=f1e3107]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3108]
+          - columnheader "说明" [ref=f1e3109]
+        - row [ref=f1e3110]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3111]
+          - cell "5" [ref=f1e3112]
+          - cell "5" [ref=f1e3113]
+          - cell "5" [ref=f1e3114]
+          - cell "5" [ref=f1e3115]
+          - cell "对角线=自评" [ref=f1e3116]
+        - row [ref=f1e3117]:
+          - cell "glm-5.3-flash@api" [ref=f1e3118]
+          - cell "5" [ref=f1e3119]
+          - cell "4.15" [ref=f1e3120]
+          - cell "4.6" [ref=f1e3121]
+          - cell "5" [ref=f1e3122]
+          - cell [ref=f1e3123]
+        - row [ref=f1e3124]:
+          - cell "space-bunny" [ref=f1e3125]
+          - cell "4.2" [ref=f1e3126]
+          - cell "4.55" [ref=f1e3127]
+          - cell "5" [ref=f1e3128]
+          - cell "5" [ref=f1e3129]
+          - cell "对角线=自评" [ref=f1e3130]
+    - heading "ponytail-debt__DietrichGebert 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3131]
+    - text: SkillScore 榜
+    - table [ref=f1e3132]:
+      - rowgroup [ref=f1e3133]:
+        - row [ref=f1e3134]:
+          - columnheader "模型" [ref=f1e3135]
+          - columnheader "家族" [ref=f1e3136]
+          - columnheader "SkillScore" [ref=f1e3137]
+          - columnheader "M2均分" [ref=f1e3138]
+          - columnheader "M1均分" [ref=f1e3139]
+          - columnheader "触发准确率" [ref=f1e3140]
+        - row [ref=f1e3141]:
+          - cell "space-bunny" [ref=f1e3142]
+          - cell "SpaceBunny" [ref=f1e3143]
+          - cell "90" [ref=f1e3144]
+          - cell "5" [ref=f1e3145]
+          - cell "-" [ref=f1e3146]
+          - cell "-" [ref=f1e3147]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3148]:
+      - rowgroup [ref=f1e3149]:
+        - row [ref=f1e3150]:
+          - columnheader "模型" [ref=f1e3151]
+          - columnheader "任务" [ref=f1e3152]
+          - columnheader "M2−M1" [ref=f1e3153]
+          - columnheader "hake" [ref=f1e3154]
+          - columnheader "M2−M4" [ref=f1e3155]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3156]:
+      - rowgroup [ref=f1e3157]:
+        - row [ref=f1e3158]:
+          - columnheader "生产者＼判官" [ref=f1e3159]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3160]
+          - columnheader "hy4-preview-f" [ref=f1e3161]
+          - columnheader "kimi-k2.7" [ref=f1e3162]
+          - columnheader "space-bunny" [ref=f1e3163]
+          - columnheader "说明" [ref=f1e3164]
+        - row [ref=f1e3165]:
+          - cell "space-bunny" [ref=f1e3166]
+          - cell "5" [ref=f1e3167]
+          - cell "5" [ref=f1e3168]
+          - cell "5" [ref=f1e3169]
+          - cell "5" [ref=f1e3170]
+          - cell "对角线=自评" [ref=f1e3171]
+    - heading "ponytail-gain__DietrichGebert 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3172]
+    - text: SkillScore 榜
+    - table [ref=f1e3173]:
+      - rowgroup [ref=f1e3174]:
+        - row [ref=f1e3175]:
+          - columnheader "模型" [ref=f1e3176]
+          - columnheader "家族" [ref=f1e3177]
+          - columnheader "SkillScore" [ref=f1e3178]
+          - columnheader "M2均分" [ref=f1e3179]
+          - columnheader "M1均分" [ref=f1e3180]
+          - columnheader "触发准确率" [ref=f1e3181]
+        - row [ref=f1e3182]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3183]
+          - cell "DeepSeek" [ref=f1e3184]
+          - cell "90" [ref=f1e3185]
+          - cell "5" [ref=f1e3186]
+          - cell "-" [ref=f1e3187]
+          - cell "-" [ref=f1e3188]
+        - row [ref=f1e3189]:
+          - cell "kimi-k2.7" [ref=f1e3190]
+          - cell "Kimi" [ref=f1e3191]
+          - cell "90" [ref=f1e3192]
+          - cell "5" [ref=f1e3193]
+          - cell "-" [ref=f1e3194]
+          - cell "-" [ref=f1e3195]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3196]:
+      - rowgroup [ref=f1e3197]:
+        - row [ref=f1e3198]:
+          - columnheader "模型" [ref=f1e3199]
+          - columnheader "任务" [ref=f1e3200]
+          - columnheader "M2−M1" [ref=f1e3201]
+          - columnheader "hake" [ref=f1e3202]
+          - columnheader "M2−M4" [ref=f1e3203]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3204]:
+      - rowgroup [ref=f1e3205]:
+        - row [ref=f1e3206]:
+          - columnheader "生产者＼判官" [ref=f1e3207]
+          - columnheader "hy4-preview-f" [ref=f1e3208]
+          - columnheader "kimi-k2.7" [ref=f1e3209]
+          - columnheader "space-bunny" [ref=f1e3210]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3211]
+          - columnheader "说明" [ref=f1e3212]
+        - row [ref=f1e3213]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3214]
+          - cell "5" [ref=f1e3215]
+          - cell "5" [ref=f1e3216]
+          - cell "5" [ref=f1e3217]
+          - cell "5" [ref=f1e3218]
+          - cell "对角线=自评" [ref=f1e3219]
+        - row [ref=f1e3220]:
+          - cell "kimi-k2.7" [ref=f1e3221]
+          - cell "5" [ref=f1e3222]
+          - cell "5" [ref=f1e3223]
+          - cell "5" [ref=f1e3224]
+          - cell "5" [ref=f1e3225]
+          - cell "对角线=自评" [ref=f1e3226]
+    - heading "ponytail-help__DietrichGebert 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3227]
+    - text: SkillScore 榜
+    - table [ref=f1e3228]:
+      - rowgroup [ref=f1e3229]:
+        - row [ref=f1e3230]:
+          - columnheader "模型" [ref=f1e3231]
+          - columnheader "家族" [ref=f1e3232]
+          - columnheader "SkillScore" [ref=f1e3233]
+          - columnheader "M2均分" [ref=f1e3234]
+          - columnheader "M1均分" [ref=f1e3235]
+          - columnheader "触发准确率" [ref=f1e3236]
+        - row [ref=f1e3237]:
+          - cell "kimi-k2.7" [ref=f1e3238]
+          - cell "Kimi" [ref=f1e3239]
+          - cell "90" [ref=f1e3240]
+          - cell "5" [ref=f1e3241]
+          - cell "-" [ref=f1e3242]
+          - cell "-" [ref=f1e3243]
+        - row [ref=f1e3244]:
+          - cell "glm-5.3-flash@api" [ref=f1e3245]
+          - cell "GLM" [ref=f1e3246]
+          - cell "90" [ref=f1e3247]
+          - cell "5" [ref=f1e3248]
+          - cell "-" [ref=f1e3249]
+          - cell "-" [ref=f1e3250]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3251]:
+      - rowgroup [ref=f1e3252]:
+        - row [ref=f1e3253]:
+          - columnheader "模型" [ref=f1e3254]
+          - columnheader "任务" [ref=f1e3255]
+          - columnheader "M2−M1" [ref=f1e3256]
+          - columnheader "hake" [ref=f1e3257]
+          - columnheader "M2−M4" [ref=f1e3258]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3259]:
+      - rowgroup [ref=f1e3260]:
+        - row [ref=f1e3261]:
+          - columnheader "生产者＼判官" [ref=f1e3262]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3263]
+          - columnheader "hy4-preview-f" [ref=f1e3264]
+          - columnheader "kimi-k2.7" [ref=f1e3265]
+          - columnheader "space-bunny" [ref=f1e3266]
+          - columnheader "说明" [ref=f1e3267]
+        - row [ref=f1e3268]:
+          - cell "glm-5.3-flash@api" [ref=f1e3269]
+          - cell "5" [ref=f1e3270]
+          - cell "5" [ref=f1e3271]
+          - cell "5" [ref=f1e3272]
+          - cell "3.2" [ref=f1e3273]
+          - cell [ref=f1e3274]
+        - row [ref=f1e3275]:
+          - cell "kimi-k2.7" [ref=f1e3276]
+          - cell "5" [ref=f1e3277]
+          - cell "4.8" [ref=f1e3278]
+          - cell "5" [ref=f1e3279]
+          - cell "5" [ref=f1e3280]
+          - cell "对角线=自评" [ref=f1e3281]
+    - heading "ponytail-review__DietrichGebert 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3282]
+    - text: SkillScore 榜
+    - table [ref=f1e3283]:
+      - rowgroup [ref=f1e3284]:
+        - row [ref=f1e3285]:
+          - columnheader "模型" [ref=f1e3286]
+          - columnheader "家族" [ref=f1e3287]
+          - columnheader "SkillScore" [ref=f1e3288]
+          - columnheader "M2均分" [ref=f1e3289]
+          - columnheader "M1均分" [ref=f1e3290]
+          - columnheader "触发准确率" [ref=f1e3291]
+        - row [ref=f1e3292]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3293]
+          - cell "DeepSeek" [ref=f1e3294]
+          - cell "90" [ref=f1e3295]
+          - cell "5" [ref=f1e3296]
+          - cell "-" [ref=f1e3297]
+          - cell "-" [ref=f1e3298]
+        - row [ref=f1e3299]:
+          - cell "kimi-k2.7" [ref=f1e3300]
+          - cell "Kimi" [ref=f1e3301]
+          - cell "85.2" [ref=f1e3302]
+          - cell "4.6" [ref=f1e3303]
+          - cell "-" [ref=f1e3304]
+          - cell "-" [ref=f1e3305]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3306]:
+      - rowgroup [ref=f1e3307]:
+        - row [ref=f1e3308]:
+          - columnheader "模型" [ref=f1e3309]
+          - columnheader "任务" [ref=f1e3310]
+          - columnheader "M2−M1" [ref=f1e3311]
+          - columnheader "hake" [ref=f1e3312]
+          - columnheader "M2−M4" [ref=f1e3313]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3314]:
+      - rowgroup [ref=f1e3315]:
+        - row [ref=f1e3316]:
+          - columnheader "生产者＼判官" [ref=f1e3317]
+          - columnheader "hy4-preview-f" [ref=f1e3318]
+          - columnheader "kimi-k2.7" [ref=f1e3319]
+          - columnheader "space-bunny" [ref=f1e3320]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3321]
+          - columnheader "说明" [ref=f1e3322]
+        - row [ref=f1e3323]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3324]
+          - cell "5" [ref=f1e3325]
+          - cell "5" [ref=f1e3326]
+          - cell "5" [ref=f1e3327]
+          - cell "5" [ref=f1e3328]
+          - cell "对角线=自评" [ref=f1e3329]
+        - row [ref=f1e3330]:
+          - cell "kimi-k2.7" [ref=f1e3331]
+          - cell "—" [ref=f1e3332]
+          - cell "5" [ref=f1e3333]
+          - cell "4.4" [ref=f1e3334]
+          - cell "4.8" [ref=f1e3335]
+          - cell "对角线=自评" [ref=f1e3336]
+    - heading "ponytail__DietrichGebert 最佳模型：glm-5.3-flash@api · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3337]
+    - text: SkillScore 榜
+    - table [ref=f1e3338]:
+      - rowgroup [ref=f1e3339]:
+        - row [ref=f1e3340]:
+          - columnheader "模型" [ref=f1e3341]
+          - columnheader "家族" [ref=f1e3342]
+          - columnheader "SkillScore" [ref=f1e3343]
+          - columnheader "M2均分" [ref=f1e3344]
+          - columnheader "M1均分" [ref=f1e3345]
+          - columnheader "触发准确率" [ref=f1e3346]
+        - row [ref=f1e3347]:
+          - cell "glm-5.3-flash@api" [ref=f1e3348]
+          - cell "GLM" [ref=f1e3349]
+          - cell "90" [ref=f1e3350]
+          - cell "5" [ref=f1e3351]
+          - cell "-" [ref=f1e3352]
+          - cell "-" [ref=f1e3353]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3354]:
+      - rowgroup [ref=f1e3355]:
+        - row [ref=f1e3356]:
+          - columnheader "模型" [ref=f1e3357]
+          - columnheader "任务" [ref=f1e3358]
+          - columnheader "M2−M1" [ref=f1e3359]
+          - columnheader "hake" [ref=f1e3360]
+          - columnheader "M2−M4" [ref=f1e3361]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3362]:
+      - rowgroup [ref=f1e3363]:
+        - row [ref=f1e3364]:
+          - columnheader "生产者＼判官" [ref=f1e3365]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3366]
+          - columnheader "hy4-preview-f" [ref=f1e3367]
+          - columnheader "kimi-k2.7" [ref=f1e3368]
+          - columnheader "space-bunny" [ref=f1e3369]
+          - columnheader "说明" [ref=f1e3370]
+        - row [ref=f1e3371]:
+          - cell "glm-5.3-flash@api" [ref=f1e3372]
+          - cell "5" [ref=f1e3373]
+          - cell "5" [ref=f1e3374]
+          - cell "5" [ref=f1e3375]
+          - cell "5" [ref=f1e3376]
+          - cell [ref=f1e3377]
+    - heading "pptx__anthropics 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3378]
+    - text: SkillScore 榜
+    - table [ref=f1e3379]:
+      - rowgroup [ref=f1e3380]:
+        - row [ref=f1e3381]:
+          - columnheader "模型" [ref=f1e3382]
+          - columnheader "家族" [ref=f1e3383]
+          - columnheader "SkillScore" [ref=f1e3384]
+          - columnheader "M2均分" [ref=f1e3385]
+          - columnheader "M1均分" [ref=f1e3386]
+          - columnheader "触发准确率" [ref=f1e3387]
+        - row [ref=f1e3388]:
+          - cell "space-bunny" [ref=f1e3389]
+          - cell "SpaceBunny" [ref=f1e3390]
+          - cell "90" [ref=f1e3391]
+          - cell "5" [ref=f1e3392]
+          - cell "-" [ref=f1e3393]
+          - cell "-" [ref=f1e3394]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3395]:
+      - rowgroup [ref=f1e3396]:
+        - row [ref=f1e3397]:
+          - columnheader "模型" [ref=f1e3398]
+          - columnheader "任务" [ref=f1e3399]
+          - columnheader "M2−M1" [ref=f1e3400]
+          - columnheader "hake" [ref=f1e3401]
+          - columnheader "M2−M4" [ref=f1e3402]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3403]:
+      - rowgroup [ref=f1e3404]:
+        - row [ref=f1e3405]:
+          - columnheader "生产者＼判官" [ref=f1e3406]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3407]
+          - columnheader "hy4-preview-f" [ref=f1e3408]
+          - columnheader "kimi-k2.7" [ref=f1e3409]
+          - columnheader "space-bunny" [ref=f1e3410]
+          - columnheader "说明" [ref=f1e3411]
+        - row [ref=f1e3412]:
+          - cell "space-bunny" [ref=f1e3413]
+          - cell "4.8" [ref=f1e3414]
+          - cell "5" [ref=f1e3415]
+          - cell "5" [ref=f1e3416]
+          - cell "3.55" [ref=f1e3417]
+          - cell "对角线=自评" [ref=f1e3418]
+    - heading "sample-plugin__nexu-io 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 02:10:13" [level=2] [ref=f1e3419]
+    - text: SkillScore 榜
+    - table [ref=f1e3420]:
+      - rowgroup [ref=f1e3421]:
+        - row [ref=f1e3422]:
+          - columnheader "模型" [ref=f1e3423]
+          - columnheader "家族" [ref=f1e3424]
+          - columnheader "SkillScore" [ref=f1e3425]
+          - columnheader "M2均分" [ref=f1e3426]
+          - columnheader "M1均分" [ref=f1e3427]
+          - columnheader "触发准确率" [ref=f1e3428]
+        - row [ref=f1e3429]:
+          - cell "space-bunny" [ref=f1e3430]
+          - cell "SpaceBunny" [ref=f1e3431]
+          - cell "85.2" [ref=f1e3432]
+          - cell "4.6" [ref=f1e3433]
+          - cell "-" [ref=f1e3434]
+          - cell "-" [ref=f1e3435]
+        - row [ref=f1e3436]:
+          - cell "glm-5.3-flash@api" [ref=f1e3437]
+          - cell "GLM" [ref=f1e3438]
+          - cell "82.8" [ref=f1e3439]
+          - cell "4.4" [ref=f1e3440]
+          - cell "-" [ref=f1e3441]
+          - cell "-" [ref=f1e3442]
+        - row [ref=f1e3443]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3444]
+          - cell "DeepSeek" [ref=f1e3445]
+          - cell "77.4" [ref=f1e3446]
+          - cell "3.95" [ref=f1e3447]
+          - cell "-" [ref=f1e3448]
+          - cell "-" [ref=f1e3449]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3450]:
+      - rowgroup [ref=f1e3451]:
+        - row [ref=f1e3452]:
+          - columnheader "模型" [ref=f1e3453]
+          - columnheader "任务" [ref=f1e3454]
+          - columnheader "M2−M1" [ref=f1e3455]
+          - columnheader "hake" [ref=f1e3456]
+          - columnheader "M2−M4" [ref=f1e3457]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3458]:
+      - rowgroup [ref=f1e3459]:
+        - row [ref=f1e3460]:
+          - columnheader "生产者＼判官" [ref=f1e3461]
+          - columnheader "glm-5.3-flash@api" [ref=f1e3462]
+          - columnheader "kimi-k2.7" [ref=f1e3463]
+          - columnheader "space-bunny" [ref=f1e3464]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3465]
+          - columnheader "说明" [ref=f1e3466]
+        - row [ref=f1e3467]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3468]
+          - cell "4.4" [ref=f1e3469]
+          - cell "3.95" [ref=f1e3470]
+          - cell "1.95" [ref=f1e3471]
+          - cell "5" [ref=f1e3472]
+          - cell "对角线=自评" [ref=f1e3473]
+        - row [ref=f1e3474]:
+          - cell "glm-5.3-flash@api" [ref=f1e3475]
+          - cell "5" [ref=f1e3476]
+          - cell "4.4" [ref=f1e3477]
+          - cell "3" [ref=f1e3478]
+          - cell "5" [ref=f1e3479]
+          - cell "对角线=自评" [ref=f1e3480]
+        - row [ref=f1e3481]:
+          - cell "space-bunny" [ref=f1e3482]
+          - cell "4.6" [ref=f1e3483]
+          - cell "4.35" [ref=f1e3484]
+          - cell "4.8" [ref=f1e3485]
+          - cell "4.8" [ref=f1e3486]
+          - cell "对角线=自评" [ref=f1e3487]
+    - heading "security-and-hardening__addyosmani 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3488]
+    - text: SkillScore 榜
+    - table [ref=f1e3489]:
+      - rowgroup [ref=f1e3490]:
+        - row [ref=f1e3491]:
+          - columnheader "模型" [ref=f1e3492]
+          - columnheader "家族" [ref=f1e3493]
+          - columnheader "SkillScore" [ref=f1e3494]
+          - columnheader "M2均分" [ref=f1e3495]
+          - columnheader "M1均分" [ref=f1e3496]
+          - columnheader "触发准确率" [ref=f1e3497]
+        - row [ref=f1e3498]:
+          - cell "hy4-preview-f" [ref=f1e3499]
+          - cell "Hy" [ref=f1e3500]
+          - cell "90" [ref=f1e3501]
+          - cell "5" [ref=f1e3502]
+          - cell "-" [ref=f1e3503]
+          - cell "-" [ref=f1e3504]
+        - row [ref=f1e3505]:
+          - cell "glm-5.3-flash@api" [ref=f1e3506]
+          - cell "GLM" [ref=f1e3507]
+          - cell "90" [ref=f1e3508]
+          - cell "5" [ref=f1e3509]
+          - cell "-" [ref=f1e3510]
+          - cell "-" [ref=f1e3511]
+        - row [ref=f1e3512]:
+          - cell "space-bunny" [ref=f1e3513]
+          - cell "SpaceBunny" [ref=f1e3514]
+          - cell "75.6" [ref=f1e3515]
+          - cell "3.8" [ref=f1e3516]
+          - cell "-" [ref=f1e3517]
+          - cell "-" [ref=f1e3518]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3519]:
+      - rowgroup [ref=f1e3520]:
+        - row [ref=f1e3521]:
+          - columnheader "模型" [ref=f1e3522]
+          - columnheader "任务" [ref=f1e3523]
+          - columnheader "M2−M1" [ref=f1e3524]
+          - columnheader "hake" [ref=f1e3525]
+          - columnheader "M2−M4" [ref=f1e3526]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3527]:
+      - rowgroup [ref=f1e3528]:
+        - row [ref=f1e3529]:
+          - columnheader "生产者＼判官" [ref=f1e3530]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3531]
+          - columnheader "hy4-preview-f" [ref=f1e3532]
+          - columnheader "kimi-k2.7" [ref=f1e3533]
+          - columnheader "space-bunny" [ref=f1e3534]
+          - columnheader "说明" [ref=f1e3535]
+        - row [ref=f1e3536]:
+          - cell "glm-5.3-flash@api" [ref=f1e3537]
+          - cell "5" [ref=f1e3538]
+          - cell "5" [ref=f1e3539]
+          - cell "3.4" [ref=f1e3540]
+          - cell "5" [ref=f1e3541]
+          - cell [ref=f1e3542]
+        - row [ref=f1e3543]:
+          - cell "hy4-preview-f" [ref=f1e3544]
+          - cell "5" [ref=f1e3545]
+          - cell "5" [ref=f1e3546]
+          - cell "3.55" [ref=f1e3547]
+          - cell "5" [ref=f1e3548]
+          - cell "对角线=自评" [ref=f1e3549]
+        - row [ref=f1e3550]:
+          - cell "space-bunny" [ref=f1e3551]
+          - cell "4.8" [ref=f1e3552]
+          - cell "3.8" [ref=f1e3553]
+          - cell "3.1" [ref=f1e3554]
+          - cell "5" [ref=f1e3555]
+          - cell "对角线=自评" [ref=f1e3556]
+    - heading "skill-creator__anthropics 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3557]
+    - text: SkillScore 榜
+    - table [ref=f1e3558]:
+      - rowgroup [ref=f1e3559]:
+        - row [ref=f1e3560]:
+          - columnheader "模型" [ref=f1e3561]
+          - columnheader "家族" [ref=f1e3562]
+          - columnheader "SkillScore" [ref=f1e3563]
+          - columnheader "M2均分" [ref=f1e3564]
+          - columnheader "M1均分" [ref=f1e3565]
+          - columnheader "触发准确率" [ref=f1e3566]
+        - row [ref=f1e3567]:
+          - cell "space-bunny" [ref=f1e3568]
+          - cell "SpaceBunny" [ref=f1e3569]
+          - cell "90" [ref=f1e3570]
+          - cell "5" [ref=f1e3571]
+          - cell "-" [ref=f1e3572]
+          - cell "-" [ref=f1e3573]
+        - row [ref=f1e3574]:
+          - cell "hy4-preview-f" [ref=f1e3575]
+          - cell "Hy" [ref=f1e3576]
+          - cell "90" [ref=f1e3577]
+          - cell "5" [ref=f1e3578]
+          - cell "-" [ref=f1e3579]
+          - cell "-" [ref=f1e3580]
+        - row [ref=f1e3581]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3582]
+          - cell "DeepSeek" [ref=f1e3583]
+          - cell "68.4" [ref=f1e3584]
+          - cell "3.2" [ref=f1e3585]
+          - cell "-" [ref=f1e3586]
+          - cell "-" [ref=f1e3587]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3588]:
+      - rowgroup [ref=f1e3589]:
+        - row [ref=f1e3590]:
+          - columnheader "模型" [ref=f1e3591]
+          - columnheader "任务" [ref=f1e3592]
+          - columnheader "M2−M1" [ref=f1e3593]
+          - columnheader "hake" [ref=f1e3594]
+          - columnheader "M2−M4" [ref=f1e3595]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3596]:
+      - rowgroup [ref=f1e3597]:
+        - row [ref=f1e3598]:
+          - columnheader "生产者＼判官" [ref=f1e3599]
+          - columnheader "hy4-preview-f" [ref=f1e3600]
+          - columnheader "kimi-k2.7" [ref=f1e3601]
+          - columnheader "space-bunny" [ref=f1e3602]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3603]
+          - columnheader "说明" [ref=f1e3604]
+        - row [ref=f1e3605]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3606]
+          - cell "2.8" [ref=f1e3607]
+          - cell "3.2" [ref=f1e3608]
+          - cell "3.3" [ref=f1e3609]
+          - cell "4.4" [ref=f1e3610]
+          - cell "对角线=自评" [ref=f1e3611]
+        - row [ref=f1e3612]:
+          - cell "hy4-preview-f" [ref=f1e3613]
+          - cell "3.55" [ref=f1e3614]
+          - cell "2.75" [ref=f1e3615]
+          - cell "5" [ref=f1e3616]
+          - cell "5" [ref=f1e3617]
+          - cell "对角线=自评" [ref=f1e3618]
+        - row [ref=f1e3619]:
+          - cell "space-bunny" [ref=f1e3620]
+          - cell "4.55" [ref=f1e3621]
+          - cell "5" [ref=f1e3622]
+          - cell "3.4" [ref=f1e3623]
+          - cell "5" [ref=f1e3624]
+          - cell "对角线=自评" [ref=f1e3625]
+    - heading "slack-gif-creator__anthropics 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3626]
+    - text: SkillScore 榜
+    - table [ref=f1e3627]:
+      - rowgroup [ref=f1e3628]:
+        - row [ref=f1e3629]:
+          - columnheader "模型" [ref=f1e3630]
+          - columnheader "家族" [ref=f1e3631]
+          - columnheader "SkillScore" [ref=f1e3632]
+          - columnheader "M2均分" [ref=f1e3633]
+          - columnheader "M1均分" [ref=f1e3634]
+          - columnheader "触发准确率" [ref=f1e3635]
+        - row [ref=f1e3636]:
+          - cell "kimi-k2.7" [ref=f1e3637]
+          - cell "Kimi" [ref=f1e3638]
+          - cell "90" [ref=f1e3639]
+          - cell "5" [ref=f1e3640]
+          - cell "-" [ref=f1e3641]
+          - cell "-" [ref=f1e3642]
+        - row [ref=f1e3643]:
+          - cell "glm-5.3-flash@api" [ref=f1e3644]
+          - cell "GLM" [ref=f1e3645]
+          - cell "71.8" [ref=f1e3646]
+          - cell "3.48" [ref=f1e3647]
+          - cell "-" [ref=f1e3648]
+          - cell "-" [ref=f1e3649]
+        - row [ref=f1e3650]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3651]
+          - cell "DeepSeek" [ref=f1e3652]
+          - cell "68.4" [ref=f1e3653]
+          - cell "3.2" [ref=f1e3654]
+          - cell "-" [ref=f1e3655]
+          - cell "-" [ref=f1e3656]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3657]:
+      - rowgroup [ref=f1e3658]:
+        - row [ref=f1e3659]:
+          - columnheader "模型" [ref=f1e3660]
+          - columnheader "任务" [ref=f1e3661]
+          - columnheader "M2−M1" [ref=f1e3662]
+          - columnheader "hake" [ref=f1e3663]
+          - columnheader "M2−M4" [ref=f1e3664]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3665]:
+      - rowgroup [ref=f1e3666]:
+        - row [ref=f1e3667]:
+          - columnheader "生产者＼判官" [ref=f1e3668]
+          - columnheader "hy4-preview-f" [ref=f1e3669]
+          - columnheader "kimi-k2.7" [ref=f1e3670]
+          - columnheader "space-bunny" [ref=f1e3671]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3672]
+          - columnheader "说明" [ref=f1e3673]
+        - row [ref=f1e3674]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3675]
+          - cell "2.9" [ref=f1e3676]
+          - cell "4.2" [ref=f1e3677]
+          - cell "3.2" [ref=f1e3678]
+          - cell "4.6" [ref=f1e3679]
+          - cell "对角线=自评" [ref=f1e3680]
+        - row [ref=f1e3681]:
+          - cell "glm-5.3-flash@api" [ref=f1e3682]
+          - cell "3.35" [ref=f1e3683]
+          - cell "3.95" [ref=f1e3684]
+          - cell "3.2" [ref=f1e3685]
+          - cell "3.6" [ref=f1e3686]
+          - cell [ref=f1e3687]
+        - row [ref=f1e3688]:
+          - cell "kimi-k2.7" [ref=f1e3689]
+          - cell "4.6" [ref=f1e3690]
+          - cell "5" [ref=f1e3691]
+          - cell "5" [ref=f1e3692]
+          - cell "5" [ref=f1e3693]
+          - cell "对角线=自评" [ref=f1e3694]
+    - heading "template__anthropics 最佳模型：hy4-preview-f · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3695]
+    - text: SkillScore 榜
+    - table [ref=f1e3696]:
+      - rowgroup [ref=f1e3697]:
+        - row [ref=f1e3698]:
+          - columnheader "模型" [ref=f1e3699]
+          - columnheader "家族" [ref=f1e3700]
+          - columnheader "SkillScore" [ref=f1e3701]
+          - columnheader "M2均分" [ref=f1e3702]
+          - columnheader "M1均分" [ref=f1e3703]
+          - columnheader "触发准确率" [ref=f1e3704]
+        - row [ref=f1e3705]:
+          - cell "hy4-preview-f" [ref=f1e3706]
+          - cell "Hy" [ref=f1e3707]
+          - cell "90" [ref=f1e3708]
+          - cell "5" [ref=f1e3709]
+          - cell "-" [ref=f1e3710]
+          - cell "-" [ref=f1e3711]
+        - row [ref=f1e3712]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3713]
+          - cell "DeepSeek" [ref=f1e3714]
+          - cell "90" [ref=f1e3715]
+          - cell "5" [ref=f1e3716]
+          - cell "-" [ref=f1e3717]
+          - cell "-" [ref=f1e3718]
+        - row [ref=f1e3719]:
+          - cell "kimi-k2.7" [ref=f1e3720]
+          - cell "Kimi" [ref=f1e3721]
+          - cell "70.6" [ref=f1e3722]
+          - cell "3.38" [ref=f1e3723]
+          - cell "-" [ref=f1e3724]
+          - cell "-" [ref=f1e3725]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3726]:
+      - rowgroup [ref=f1e3727]:
+        - row [ref=f1e3728]:
+          - columnheader "模型" [ref=f1e3729]
+          - columnheader "任务" [ref=f1e3730]
+          - columnheader "M2−M1" [ref=f1e3731]
+          - columnheader "hake" [ref=f1e3732]
+          - columnheader "M2−M4" [ref=f1e3733]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3734]:
+      - rowgroup [ref=f1e3735]:
+        - row [ref=f1e3736]:
+          - columnheader "生产者＼判官" [ref=f1e3737]
+          - columnheader "hy4-preview-f" [ref=f1e3738]
+          - columnheader "kimi-k2.7" [ref=f1e3739]
+          - columnheader "space-bunny" [ref=f1e3740]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3741]
+          - columnheader "说明" [ref=f1e3742]
+        - row [ref=f1e3743]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3744]
+          - cell "5" [ref=f1e3745]
+          - cell "5" [ref=f1e3746]
+          - cell "3" [ref=f1e3747]
+          - cell "5" [ref=f1e3748]
+          - cell "对角线=自评" [ref=f1e3749]
+        - row [ref=f1e3750]:
+          - cell "hy4-preview-f" [ref=f1e3751]
+          - cell "5" [ref=f1e3752]
+          - cell "5" [ref=f1e3753]
+          - cell "3" [ref=f1e3754]
+          - cell "5" [ref=f1e3755]
+          - cell "对角线=自评" [ref=f1e3756]
+        - row [ref=f1e3757]:
+          - cell "kimi-k2.7" [ref=f1e3758]
+          - cell "5" [ref=f1e3759]
+          - cell "5" [ref=f1e3760]
+          - cell "1.85" [ref=f1e3761]
+          - cell "3.38" [ref=f1e3762]
+          - cell "对角线=自评" [ref=f1e3763]
+    - heading "theme-factory__anthropics 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3764]
+    - text: SkillScore 榜
+    - table [ref=f1e3765]:
+      - rowgroup [ref=f1e3766]:
+        - row [ref=f1e3767]:
+          - columnheader "模型" [ref=f1e3768]
+          - columnheader "家族" [ref=f1e3769]
+          - columnheader "SkillScore" [ref=f1e3770]
+          - columnheader "M2均分" [ref=f1e3771]
+          - columnheader "M1均分" [ref=f1e3772]
+          - columnheader "触发准确率" [ref=f1e3773]
+        - row [ref=f1e3774]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3775]
+          - cell "DeepSeek" [ref=f1e3776]
+          - cell "90" [ref=f1e3777]
+          - cell "5" [ref=f1e3778]
+          - cell "-" [ref=f1e3779]
+          - cell "-" [ref=f1e3780]
+        - row [ref=f1e3781]:
+          - cell "space-bunny" [ref=f1e3782]
+          - cell "SpaceBunny" [ref=f1e3783]
+          - cell "90" [ref=f1e3784]
+          - cell "5" [ref=f1e3785]
+          - cell "-" [ref=f1e3786]
+          - cell "-" [ref=f1e3787]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3788]:
+      - rowgroup [ref=f1e3789]:
+        - row [ref=f1e3790]:
+          - columnheader "模型" [ref=f1e3791]
+          - columnheader "任务" [ref=f1e3792]
+          - columnheader "M2−M1" [ref=f1e3793]
+          - columnheader "hake" [ref=f1e3794]
+          - columnheader "M2−M4" [ref=f1e3795]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3796]:
+      - rowgroup [ref=f1e3797]:
+        - row [ref=f1e3798]:
+          - columnheader "生产者＼判官" [ref=f1e3799]
+          - columnheader "hy4-preview-f" [ref=f1e3800]
+          - columnheader "kimi-k2.7" [ref=f1e3801]
+          - columnheader "space-bunny" [ref=f1e3802]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3803]
+          - columnheader "说明" [ref=f1e3804]
+        - row [ref=f1e3805]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3806]
+          - cell "5" [ref=f1e3807]
+          - cell "5" [ref=f1e3808]
+          - cell "5" [ref=f1e3809]
+          - cell "—" [ref=f1e3810]
+          - cell [ref=f1e3811]
+        - row [ref=f1e3812]:
+          - cell "space-bunny" [ref=f1e3813]
+          - cell "5" [ref=f1e3814]
+          - cell "5" [ref=f1e3815]
+          - cell "4.6" [ref=f1e3816]
+          - cell "4.8" [ref=f1e3817]
+          - cell "对角线=自评" [ref=f1e3818]
+    - heading "web-artifacts-builder__anthropics 最佳模型：space-bunny · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3819]
+    - text: SkillScore 榜
+    - table [ref=f1e3820]:
+      - rowgroup [ref=f1e3821]:
+        - row [ref=f1e3822]:
+          - columnheader "模型" [ref=f1e3823]
+          - columnheader "家族" [ref=f1e3824]
+          - columnheader "SkillScore" [ref=f1e3825]
+          - columnheader "M2均分" [ref=f1e3826]
+          - columnheader "M1均分" [ref=f1e3827]
+          - columnheader "触发准确率" [ref=f1e3828]
+        - row [ref=f1e3829]:
+          - cell "space-bunny" [ref=f1e3830]
+          - cell "SpaceBunny" [ref=f1e3831]
+          - cell "90" [ref=f1e3832]
+          - cell "5" [ref=f1e3833]
+          - cell "-" [ref=f1e3834]
+          - cell "-" [ref=f1e3835]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3836]:
+      - rowgroup [ref=f1e3837]:
+        - row [ref=f1e3838]:
+          - columnheader "模型" [ref=f1e3839]
+          - columnheader "任务" [ref=f1e3840]
+          - columnheader "M2−M1" [ref=f1e3841]
+          - columnheader "hake" [ref=f1e3842]
+          - columnheader "M2−M4" [ref=f1e3843]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3844]:
+      - rowgroup [ref=f1e3845]:
+        - row [ref=f1e3846]:
+          - columnheader "生产者＼判官" [ref=f1e3847]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3848]
+          - columnheader "hy4-preview-f" [ref=f1e3849]
+          - columnheader "kimi-k2.7" [ref=f1e3850]
+          - columnheader "space-bunny" [ref=f1e3851]
+          - columnheader "说明" [ref=f1e3852]
+        - row [ref=f1e3853]:
+          - cell "space-bunny" [ref=f1e3854]
+          - cell "5" [ref=f1e3855]
+          - cell "5" [ref=f1e3856]
+          - cell "5" [ref=f1e3857]
+          - cell "4.4" [ref=f1e3858]
+          - cell "对角线=自评" [ref=f1e3859]
+    - heading "webapp-testing__anthropics 最佳模型：deepseek-v4.1-flash · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3860]
+    - text: SkillScore 榜
+    - table [ref=f1e3861]:
+      - rowgroup [ref=f1e3862]:
+        - row [ref=f1e3863]:
+          - columnheader "模型" [ref=f1e3864]
+          - columnheader "家族" [ref=f1e3865]
+          - columnheader "SkillScore" [ref=f1e3866]
+          - columnheader "M2均分" [ref=f1e3867]
+          - columnheader "M1均分" [ref=f1e3868]
+          - columnheader "触发准确率" [ref=f1e3869]
+        - row [ref=f1e3870]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3871]
+          - cell "DeepSeek" [ref=f1e3872]
+          - cell "90" [ref=f1e3873]
+          - cell "5" [ref=f1e3874]
+          - cell "-" [ref=f1e3875]
+          - cell "-" [ref=f1e3876]
+        - row [ref=f1e3877]:
+          - cell "space-bunny" [ref=f1e3878]
+          - cell "SpaceBunny" [ref=f1e3879]
+          - cell "87.6" [ref=f1e3880]
+          - cell "4.8" [ref=f1e3881]
+          - cell "-" [ref=f1e3882]
+          - cell "-" [ref=f1e3883]
+        - row [ref=f1e3884]:
+          - cell "hy4-preview-f" [ref=f1e3885]
+          - cell "Hy" [ref=f1e3886]
+          - cell "82.8" [ref=f1e3887]
+          - cell "4.4" [ref=f1e3888]
+          - cell "-" [ref=f1e3889]
+          - cell "-" [ref=f1e3890]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3891]:
+      - rowgroup [ref=f1e3892]:
+        - row [ref=f1e3893]:
+          - columnheader "模型" [ref=f1e3894]
+          - columnheader "任务" [ref=f1e3895]
+          - columnheader "M2−M1" [ref=f1e3896]
+          - columnheader "hake" [ref=f1e3897]
+          - columnheader "M2−M4" [ref=f1e3898]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3899]:
+      - rowgroup [ref=f1e3900]:
+        - row [ref=f1e3901]:
+          - columnheader "生产者＼判官" [ref=f1e3902]
+          - columnheader "hy4-preview-f" [ref=f1e3903]
+          - columnheader "kimi-k2.7" [ref=f1e3904]
+          - columnheader "space-bunny" [ref=f1e3905]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3906]
+          - columnheader "说明" [ref=f1e3907]
+        - row [ref=f1e3908]:
+          - cell "deepseek-v4.1-flash" [ref=f1e3909]
+          - cell "5" [ref=f1e3910]
+          - cell "5" [ref=f1e3911]
+          - cell "3.55" [ref=f1e3912]
+          - cell "5" [ref=f1e3913]
+          - cell "对角线=自评" [ref=f1e3914]
+        - row [ref=f1e3915]:
+          - cell "hy4-preview-f" [ref=f1e3916]
+          - cell "4.2" [ref=f1e3917]
+          - cell "5" [ref=f1e3918]
+          - cell "2.9" [ref=f1e3919]
+          - cell "4.4" [ref=f1e3920]
+          - cell "对角线=自评" [ref=f1e3921]
+        - row [ref=f1e3922]:
+          - cell "space-bunny" [ref=f1e3923]
+          - cell "5" [ref=f1e3924]
+          - cell "3.95" [ref=f1e3925]
+          - cell "4.75" [ref=f1e3926]
+          - cell "4.8" [ref=f1e3927]
+          - cell "对角线=自评" [ref=f1e3928]
+    - heading "xlsx__anthropics 最佳模型：kimi-k2.7 · 断言层 0/0 · 更新 2026-10-10 12:47:34" [level=2] [ref=f1e3929]
+    - text: SkillScore 榜
+    - table [ref=f1e3930]:
+      - rowgroup [ref=f1e3931]:
+        - row [ref=f1e3932]:
+          - columnheader "模型" [ref=f1e3933]
+          - columnheader "家族" [ref=f1e3934]
+          - columnheader "SkillScore" [ref=f1e3935]
+          - columnheader "M2均分" [ref=f1e3936]
+          - columnheader "M1均分" [ref=f1e3937]
+          - columnheader "触发准确率" [ref=f1e3938]
+        - row [ref=f1e3939]:
+          - cell "kimi-k2.7" [ref=f1e3940]
+          - cell "Kimi" [ref=f1e3941]
+          - cell "87" [ref=f1e3942]
+          - cell "4.75" [ref=f1e3943]
+          - cell "-" [ref=f1e3944]
+          - cell "-" [ref=f1e3945]
+        - row [ref=f1e3946]:
+          - cell "hy4-preview-f" [ref=f1e3947]
+          - cell "Hy" [ref=f1e3948]
+          - cell "82.8" [ref=f1e3949]
+          - cell "4.4" [ref=f1e3950]
+          - cell "-" [ref=f1e3951]
+          - cell "-" [ref=f1e3952]
+    - text: 增益（hake=吃掉剩余提升空间；M2−M4=剔除长度安慰剂的纯内容增益）
+    - table [ref=f1e3953]:
+      - rowgroup [ref=f1e3954]:
+        - row [ref=f1e3955]:
+          - columnheader "模型" [ref=f1e3956]
+          - columnheader "任务" [ref=f1e3957]
+          - columnheader "M2−M1" [ref=f1e3958]
+          - columnheader "hake" [ref=f1e3959]
+          - columnheader "M2−M4" [ref=f1e3960]
+    - text: N×N 交叉方阵（行=生产者，列=判官）
+    - table [ref=f1e3961]:
+      - rowgroup [ref=f1e3962]:
+        - row [ref=f1e3963]:
+          - columnheader "生产者＼判官" [ref=f1e3964]
+          - columnheader "deepseek-v4.1-flash" [ref=f1e3965]
+          - columnheader "kimi-k2.7" [ref=f1e3966]
+          - columnheader "space-bunny" [ref=f1e3967]
+          - columnheader "hy4-preview-f" [ref=f1e3968]
+          - columnheader "说明" [ref=f1e3969]
+        - row [ref=f1e3970]:
+          - cell "hy4-preview-f" [ref=f1e3971]
+          - cell "5" [ref=f1e3972]
+          - cell "3.5" [ref=f1e3973]
+          - cell "4.4" [ref=f1e3974]
+          - cell "4.8" [ref=f1e3975]
+          - cell "对角线=自评" [ref=f1e3976]
+        - row [ref=f1e3977]:
+          - cell "kimi-k2.7" [ref=f1e3978]
+          - cell "5" [ref=f1e3979]
+          - cell "4.55" [ref=f1e3980]
+          - cell "4.4" [ref=f1e3981]
+          - cell "4.75" [ref=f1e3982]
+          - cell "对角线=自评" [ref=f1e3983]

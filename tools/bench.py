@@ -10,12 +10,12 @@ rubric/权重/SkillScore 的文档版在 ../知识库/ —— 改脚本必同步
 用法（项目根 ~/Desktop/Skills&Model-Benchmark 下）:
   python3 .../bench.py doctor --models glm-5.3,deepseek-v4-pro
   python3 .../bench.py check  --skills humanizer                 # 断言层速览（不花钱）
-  nohup python3 .../bench.py run   --skills humanizer --models glm-5.3,kimi-k3-2 --modes M1,M2,M3,M4 --trials 3 -P 6 > 结果/run.log 2>&1 &
-  nohup python3 .../bench.py score --skills humanizer --scorers glm-5.3,deepseek-v4-pro,kimi-k3-2 -P 6 > 评分/run.log 2>&1 &
+  nohup python3 .../bench.py run   --skills humanizer --models glm-5.3,kimi-k3-2 --modes M1,M2,M3,M4 --trials 3 -P 6 > runs/run.log 2>&1 &
+  nohup python3 .../bench.py score --skills humanizer --scorers glm-5.3,deepseek-v4-pro,kimi-k3-2 -P 6 > scoring/run.log 2>&1 &
   python3 .../bench.py agg   --skills humanizer
   python3 .../bench.py site
 
-模型写法: CLI 直接写 id；API 写 别名@api（api路由.json + BENCH_API_KEY）。M3 仅 CLI 可跑。
+模型写法: CLI 直接写 id；API 写 别名@api（api_routes.json + BENCH_API_KEY）。M3 仅 CLI 可跑。
 台账为 v2 列（含试验列）；v1 旧台账请删除重跑（当前无存量数据）。
 """
 import argparse, csv, json, os, random, re, shutil, statistics, subprocess, sys, time
@@ -27,7 +27,7 @@ from pathlib import Path
 PROXY = {"https_proxy": "http://127.0.0.1:7897", "http_proxy": "http://127.0.0.1:7897"}
 SKILLS_DIR = Path.home() / ".zcode/skills"
 PROJ = Path("~/Desktop/Skills&Model-Benchmark").expanduser()
-TDIR, RDIR, SDIR, REPDIR = PROJ / "任务集", PROJ / "结果", PROJ / "评分", PROJ / "报告"
+TDIR, RDIR, SDIR, REPDIR = PROJ / "tasks", PROJ / "runs", PROJ / "scoring", PROJ / "reports"
 LOCK = RDIR / ".bench.lock"
 TIMEOUT, RETRY, MIN_SCORERS = 600, 2, 2
 API_TIMEOUT, API_RETRY = int(os.environ.get("BENCH_API_TIMEOUT", 300)), 5  # 直连并发不稳时可降（#16：直连16并发会挂死连接）
@@ -98,7 +98,7 @@ def ledger(path, row):
 
 
 def api_cfg():
-    f = PROJ / "api路由.json"
+    f = PROJ / "api_routes.json"
     return json.loads(f.read_text()) if f.exists() else {}
 
 
@@ -169,7 +169,7 @@ def call_api(alias, prompt, schema=None, timeout=TIMEOUT):
     base = cfg.get("base") or os.environ.get("BENCH_API_BASE", "")
     keys = api_keys(cfg)
     if not base or not keys:
-        return "", "api未配：项目根 api路由.json(base) + 密钥环境变量（BENCH_API_KEYS 可逗号分隔多key轮换）"
+        return "", "api未配：项目根 api_routes.json(base) + 密钥环境变量（BENCH_API_KEYS 可逗号分隔多key轮换）"
     name = cfg.get("models", {}).get(alias, alias)
     if schema:
         prompt += "\n只输出符合要求的 JSON，不要输出任何其他内容。"
@@ -434,7 +434,7 @@ def cmd_run(a):
     log(f"待跑 {len(cells)} 格，自适应并发上限 {a.P}（8 起步，零失败翻倍，遇错减半）")
     results = adaptive_map(run_cell, cells, a.P, "run")
     fail = sum(1 for r in results if "-> fail" in r)
-    log(f"完成。失败 {fail} 格（详见 结果/台账.csv）")
+    log(f"完成。失败 {fail} 格（详见 runs/台账.csv）")
 
 
 # ---------- 断言层 ----------
@@ -1276,7 +1276,7 @@ let lastT=performance.now();
 </script>"""
 
 def cmd_site(a):
-    web = PROJ / "网站"
+    web = PROJ / "site"
     (web / "skills").mkdir(parents=True, exist_ok=True)
     data = {"generated": ts(), "skills": {}}
     data["cross"] = [json.loads(p.read_text()) for p in sorted(REPDIR.glob("三维-*.json"))]
@@ -1288,7 +1288,7 @@ def cmd_site(a):
             rows[r["任务"]] = r
         G["任务对比"] = list(rows.values())
     # 3D 立方体：大类(Z层) × 生产者(X) × 判官(Y)，格值 = 大类内技能判分均值
-    cm = PROJ / "本地库" / "大类映射.json"
+    cm = PROJ / "library" / "大类映射.json"
     cat_map = json.loads(cm.read_text()) if cm.exists() else {}
     # 组→大类（组内技能投票）
     for G in data["cross"]:
@@ -1317,7 +1317,7 @@ def cmd_site(a):
         s = agg["skill"]
         cells = sorted({p.parent.name for p in (RDIR / s).glob("*/T*-M2.md")})
         agg["已产格"] = "、".join(cells) or "（待产）"
-        gl = PROJ / "本地库" / "技能释义.json"
+        gl = PROJ / "library" / "技能释义.json"
         if gl.exists():
             gloss = json.loads(gl.read_text())
             agg["功能"] = gloss.get(s, "")
@@ -1455,7 +1455,7 @@ def cmd_site(a):
     (web / "data.json").write_text(json.dumps(data, ensure_ascii=False))
     # 模型×分类画像（用户 2026-10-11 需求：什么模型在什么分类突出）
     try:
-        dbj = json.loads((PROJ / "本地库/库.json").read_text())
+        dbj = json.loads((PROJ / "library/库.json").read_text())
         grp = {re.sub(r"[^\w\-]", "-", e["skill"] + "__" + e["repo"].split("/")[0])[:60]:
                (e.get("功能组") or "其他") for e in dbj["条目"]}
         from collections import defaultdict
@@ -1486,7 +1486,7 @@ def cmd_site(a):
     except Exception as e:
         log(f"画像生成跳过: {e}")
     (web / "index.html").write_text(HTML)
-    log(f"网站 -> {web}/（纯静态：index.html + data.json + skills/，GitHub Pages 或任意静态托管直接扔）")
+    log(f"site -> {web}/（纯静态：index.html + data.json + skills/，GitHub Pages 或任意静态托管直接扔）")
 
 
 # ---------- doctor ----------
