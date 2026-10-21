@@ -34927,7 +34927,7 @@
    "skill": "avoid-ai-writing",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/conorbronsdon__avoid-ai-writing/avoid-ai-writing/SKILL.md",
    "repo内路径": "SKILL.md",
-   "功能组": "未分组",
+   "功能组": "avoid-ai-writing系列",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -34940,7 +34940,7 @@
    "skill": "avoid-ai-writing",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/conorbronsdon__avoid-ai-writing/avoid-ai-writing/SKILL.md",
    "repo内路径": "plugins/avoid-ai-writing/skills/avoid-ai-writing/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "avoid-ai-writing系列",
    "状态": "待评",
    "trending": false,
    "收集日": "2026-10-17"
@@ -34953,7 +34953,7 @@
    "skill": "ai-writing-detector",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/conorbronsdon__avoid-ai-writing/ai-writing-detector/SKILL.md",
    "repo内路径": "skills/ai-writing-detector/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -34966,7 +34966,7 @@
    "skill": "avoid-ai-writing-router",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/conorbronsdon__avoid-ai-writing/avoid-ai-writing-router/SKILL.md",
    "repo内路径": "skills/avoid-ai-writing-router/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -34979,7 +34979,7 @@
    "skill": "avoid-ai-writing",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/conorbronsdon__avoid-ai-writing/avoid-ai-writing/SKILL.md",
    "repo内路径": "skills/avoid-ai-writing/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "avoid-ai-writing系列",
    "状态": "待评",
    "trending": false,
    "收集日": "2026-10-17"
@@ -34992,7 +34992,7 @@
    "skill": "false-positive-reviewer",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/conorbronsdon__avoid-ai-writing/false-positive-reviewer/SKILL.md",
    "repo内路径": "skills/false-positive-reviewer/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "avoid-ai-writing系列",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -35005,7 +35005,7 @@
    "skill": "file-edit-in-place",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/conorbronsdon__avoid-ai-writing/file-edit-in-place/SKILL.md",
    "repo内路径": "skills/file-edit-in-place/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "avoid-ai-writing系列",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -35018,7 +35018,7 @@
    "skill": "preservation-verifier",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/conorbronsdon__avoid-ai-writing/preservation-verifier/SKILL.md",
    "repo内路径": "skills/preservation-verifier/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "avoid-ai-writing系列",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -35031,7 +35031,7 @@
    "skill": "voice-preserving-rewriter",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/conorbronsdon__avoid-ai-writing/voice-preserving-rewriter/SKILL.md",
    "repo内路径": "skills/voice-preserving-rewriter/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "avoid-ai-writing系列",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -35044,7 +35044,7 @@
    "skill": "verify-omb",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/milind-soni__OpenMausBot/verify-omb/SKILL.md",
    "repo内路径": ".claude/skills/verify-omb/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "OpenMausBot系列",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -35057,7 +35057,7 @@
    "skill": "windows-release",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/milind-soni__OpenMausBot/windows-release/SKILL.md",
    "repo内路径": ".claude/skills/windows-release/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "部署/运维",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -35070,7 +35070,7 @@
    "skill": "create-verification-skill",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/milind-soni__OpenMausBot/create-verification-skill/SKILL.md",
    "repo内路径": "skills/create-verification-skill/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "OpenMausBot系列",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -35083,7 +35083,7 @@
    "skill": "phone-harness",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/milind-soni__OpenMausBot/phone-harness/SKILL.md",
    "repo内路径": "skills/phone-harness/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "OpenMausBot系列",
    "状态": "待评(已建题)",
    "trending": false,
    "收集日": "2026-10-17"
@@ -35135,7 +35135,7 @@
    "skill": "captions",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/captions/SKILL.md",
    "repo内路径": "clawhub/captions/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35148,7 +35148,7 @@
    "skill": "subtitles",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/subtitles/SKILL.md",
    "repo内路径": "clawhub/subtitles/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35161,7 +35161,7 @@
    "skill": "transcript",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/transcript/SKILL.md",
    "repo内路径": "clawhub/transcript/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35174,7 +35174,7 @@
    "skill": "transcriptout",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/transcriptout/SKILL.md",
    "repo内路径": "clawhub/transcriptout/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35187,7 +35187,7 @@
    "skill": "video-transcript",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/video-transcript/SKILL.md",
    "repo内路径": "clawhub/video-transcript/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35200,7 +35200,7 @@
    "skill": "youtube-api",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/youtube-api/SKILL.md",
    "repo内路径": "clawhub/youtube-api/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35213,7 +35213,7 @@
    "skill": "youtube-channels",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/youtube-channels/SKILL.md",
    "repo内路径": "clawhub/youtube-channels/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35226,7 +35226,7 @@
    "skill": "youtube-data",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/youtube-data/SKILL.md",
    "repo内路径": "clawhub/youtube-data/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35239,7 +35239,7 @@
    "skill": "youtube-full",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/youtube-full/SKILL.md",
    "repo内路径": "clawhub/youtube-full/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35252,7 +35252,7 @@
    "skill": "youtube-playlist",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/youtube-playlist/SKILL.md",
    "repo内路径": "clawhub/youtube-playlist/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35265,7 +35265,7 @@
    "skill": "youtube-search",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/youtube-search/SKILL.md",
    "repo内路径": "clawhub/youtube-search/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "爬虫/数据获取",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35278,7 +35278,7 @@
    "skill": "yt",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/yt/SKILL.md",
    "repo内路径": "clawhub/yt/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35291,7 +35291,7 @@
    "skill": "captions",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/captions/SKILL.md",
    "repo内路径": "skills/captions/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35304,7 +35304,7 @@
    "skill": "subtitles",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/subtitles/SKILL.md",
    "repo内路径": "skills/subtitles/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35317,7 +35317,7 @@
    "skill": "transcript",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/transcript/SKILL.md",
    "repo内路径": "skills/transcript/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35330,7 +35330,7 @@
    "skill": "transcriptout",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/transcriptout/SKILL.md",
    "repo内路径": "skills/transcriptout/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35343,7 +35343,7 @@
    "skill": "video-transcript",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/video-transcript/SKILL.md",
    "repo内路径": "skills/video-transcript/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35356,7 +35356,7 @@
    "skill": "youtube-api",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/youtube-api/SKILL.md",
    "repo内路径": "skills/youtube-api/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35369,7 +35369,7 @@
    "skill": "youtube-channels",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/youtube-channels/SKILL.md",
    "repo内路径": "skills/youtube-channels/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35382,7 +35382,7 @@
    "skill": "youtube-data",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/artemchuikin__youtube-skills/youtube-data/SKILL.md",
    "repo内路径": "skills/youtube-data/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "youtube-skills系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35434,7 +35434,7 @@
    "skill": "gravitas-highstakes",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/udaysharmadev__Gravitas/gravitas-highstakes/SKILL.md",
    "repo内路径": "dist/gravitas-antigravity/skills/gravitas-highstakes/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "Gravitas系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35447,7 +35447,7 @@
    "skill": "gravitas",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/udaysharmadev__Gravitas/gravitas/SKILL.md",
    "repo内路径": "dist/gravitas-antigravity/skills/gravitas/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "Gravitas系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35460,7 +35460,7 @@
    "skill": "gravitas-perf",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/udaysharmadev__Gravitas/gravitas-perf/SKILL.md",
    "repo内路径": "plugins/gravitas-perf/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "Gravitas系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35473,7 +35473,7 @@
    "skill": "gravitas-security",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/udaysharmadev__Gravitas/gravitas-security/SKILL.md",
    "repo内路径": "plugins/gravitas-security/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "安全审计",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35486,7 +35486,7 @@
    "skill": "gravitas-highstakes",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/udaysharmadev__Gravitas/gravitas-highstakes/SKILL.md",
    "repo内路径": "skills/gravitas-highstakes/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "Gravitas系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35499,7 +35499,7 @@
    "skill": "gravitas-python",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/udaysharmadev__Gravitas/gravitas-python/SKILL.md",
    "repo内路径": "skills/gravitas-python/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "Gravitas系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35512,7 +35512,7 @@
    "skill": "gravitas-typescript",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/udaysharmadev__Gravitas/gravitas-typescript/SKILL.md",
    "repo内路径": "skills/gravitas-typescript/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "Gravitas系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35525,7 +35525,7 @@
    "skill": "gravitas",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/udaysharmadev__Gravitas/gravitas/SKILL.md",
    "repo内路径": "skills/gravitas/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "Gravitas系列",
    "状态": "待评",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35590,7 +35590,7 @@
    "skill": "context7-mcp",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/context7-mcp/SKILL.md",
    "repo内路径": "context7-mcp/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "MCP/工具构建",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35603,7 +35603,7 @@
    "skill": "extract-ds",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/extract-ds/SKILL.md",
    "repo内路径": "extract-ds/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35616,7 +35616,7 @@
    "skill": "fal-ai",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/fal-ai/SKILL.md",
    "repo内路径": "fal-ai/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35629,7 +35629,7 @@
    "skill": "grill-me",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/grill-me/SKILL.md",
    "repo内路径": "grill-me/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35642,7 +35642,7 @@
    "skill": "handoff",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/handoff/SKILL.md",
    "repo内路径": "handoff/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35655,7 +35655,7 @@
    "skill": "img-to-html",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/img-to-html/SKILL.md",
    "repo内路径": "img-to-html/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35668,7 +35668,7 @@
    "skill": "mediabunny",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/mediabunny/SKILL.md",
    "repo内路径": "mediabunny/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35681,7 +35681,7 @@
    "skill": "nano-banana-pro",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/nano-banana-pro/SKILL.md",
    "repo内路径": "nano-banana-pro/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35694,7 +35694,7 @@
    "skill": "openrouter-img",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/openrouter-img/SKILL.md",
    "repo内路径": "openrouter-img/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35707,7 +35707,7 @@
    "skill": "plan-screen",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/plan-screen/SKILL.md",
    "repo内路径": "plan-screen/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35720,7 +35720,7 @@
    "skill": "to-img",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/to-img/SKILL.md",
    "repo内路径": "to-img/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35733,7 +35733,7 @@
    "skill": "to-tickets",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/to-tickets/SKILL.md",
    "repo内路径": "to-tickets/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35746,7 +35746,7 @@
    "skill": "to-wireframe",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/rtadewald__skills/to-wireframe/SKILL.md",
    "repo内路径": "to-wireframe/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35759,7 +35759,7 @@
    "skill": "browser-acceptance-screenshot",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/browser-acceptance-screenshot/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/browser-acceptance-screenshot/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "SilentAgentHub系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35772,7 +35772,7 @@
    "skill": "code-review-closeout",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/code-review-closeout/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/code-review-closeout/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "代码评审",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35785,7 +35785,7 @@
    "skill": "decision-ledger",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/decision-ledger/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/decision-ledger/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "SilentAgentHub系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35798,7 +35798,7 @@
    "skill": "deployment-router",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/deployment-router/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/deployment-router/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "部署/运维",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35811,7 +35811,7 @@
    "skill": "doc-acceptance",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-acceptance/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-acceptance/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35824,7 +35824,7 @@
    "skill": "doc-api",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-api/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-api/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35837,7 +35837,7 @@
    "skill": "doc-architecture",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-architecture/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-architecture/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35850,7 +35850,7 @@
    "skill": "doc-change-ownership",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-change-ownership/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-change-ownership/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35863,7 +35863,7 @@
    "skill": "doc-clarification",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-clarification/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-clarification/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35876,7 +35876,7 @@
    "skill": "doc-code-review",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-code-review/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-code-review/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "代码评审",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35889,7 +35889,7 @@
    "skill": "doc-construction-framework",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-construction-framework/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-construction-framework/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35902,7 +35902,7 @@
    "skill": "doc-data-lineage",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-data-lineage/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-data-lineage/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35915,7 +35915,7 @@
    "skill": "doc-data-model",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-data-model/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-data-model/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35928,7 +35928,7 @@
    "skill": "doc-debug",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-debug/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-debug/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35941,7 +35941,7 @@
    "skill": "doc-decision",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-decision/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-decision/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35954,7 +35954,7 @@
    "skill": "doc-deployment",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-deployment/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-deployment/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35967,7 +35967,7 @@
    "skill": "doc-design",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-design/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-design/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35980,7 +35980,7 @@
    "skill": "doc-environment",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-environment/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-environment/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -35993,7 +35993,7 @@
    "skill": "doc-git-promotion",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-git-promotion/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-git-promotion/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -36006,7 +36006,7 @@
    "skill": "doc-handoff",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/SilentLake-Tech-SkillHub__SilentAgentHub/doc-handoff/SKILL.md",
    "repo内路径": "harness/V5.2.5/skills-source/doc-handoff/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-17"
@@ -36084,7 +36084,7 @@
    "skill": "blender-addon-development",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-addon-development/SKILL.md",
    "repo内路径": "skills/blender-addon-development/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36097,7 +36097,7 @@
    "skill": "blender-animation",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-animation/SKILL.md",
    "repo内路径": "skills/blender-animation/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36110,7 +36110,7 @@
    "skill": "blender-asset-qa",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-asset-qa/SKILL.md",
    "repo内路径": "skills/blender-asset-qa/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36123,7 +36123,7 @@
    "skill": "blender-character-rigging",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-character-rigging/SKILL.md",
    "repo内路径": "skills/blender-character-rigging/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36136,7 +36136,7 @@
    "skill": "blender-core",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-core/SKILL.md",
    "repo内路径": "skills/blender-core/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36149,7 +36149,7 @@
    "skill": "blender-export-pipelines",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-export-pipelines/SKILL.md",
    "repo内路径": "skills/blender-export-pipelines/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36162,7 +36162,7 @@
    "skill": "blender-facial-shapekeys",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-facial-shapekeys/SKILL.md",
    "repo内路径": "skills/blender-facial-shapekeys/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36175,7 +36175,7 @@
    "skill": "blender-game-optimization",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-game-optimization/SKILL.md",
    "repo内路径": "skills/blender-game-optimization/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36188,7 +36188,7 @@
    "skill": "blender-geometry-nodes",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-geometry-nodes/SKILL.md",
    "repo内路径": "skills/blender-geometry-nodes/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36201,7 +36201,7 @@
    "skill": "blender-hardsurface-modeling",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-hardsurface-modeling/SKILL.md",
    "repo内路径": "skills/blender-hardsurface-modeling/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36214,7 +36214,7 @@
    "skill": "blender-lighting-lookdev",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-lighting-lookdev/SKILL.md",
    "repo内路径": "skills/blender-lighting-lookdev/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36227,7 +36227,7 @@
    "skill": "blender-pbr-materials",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-pbr-materials/SKILL.md",
    "repo内路径": "skills/blender-pbr-materials/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36240,7 +36240,7 @@
    "skill": "blender-pipeline-automation",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-pipeline-automation/SKILL.md",
    "repo内路径": "skills/blender-pipeline-automation/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36253,7 +36253,7 @@
    "skill": "blender-rendering",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-rendering/SKILL.md",
    "repo内路径": "skills/blender-rendering/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36266,7 +36266,7 @@
    "skill": "blender-retopology-uv",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-retopology-uv/SKILL.md",
    "repo内路径": "skills/blender-retopology-uv/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36279,7 +36279,7 @@
    "skill": "blender-scene-setup",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-scene-setup/SKILL.md",
    "repo内路径": "skills/blender-scene-setup/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36292,7 +36292,7 @@
    "skill": "blender-sculpting",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-sculpting/SKILL.md",
    "repo内路径": "skills/blender-sculpting/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36305,7 +36305,7 @@
    "skill": "blender-simulation",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-simulation/SKILL.md",
    "repo内路径": "skills/blender-simulation/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36318,7 +36318,7 @@
    "skill": "blender-texture-baking",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-texture-baking/SKILL.md",
    "repo内路径": "skills/blender-texture-baking/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36331,7 +36331,7 @@
    "skill": "blender-time-of-day",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/EL4CTEO__blender-skills/blender-time-of-day/SKILL.md",
    "repo内路径": "skills/blender-time-of-day/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "blender-skills系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36344,7 +36344,7 @@
    "skill": "codexqa-change-analysis",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-change-analysis/SKILL.md",
    "repo内路径": "skills/codexqa-change-analysis/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "深度研究",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36357,7 +36357,7 @@
    "skill": "codexqa-code-analyzer",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-code-analyzer/SKILL.md",
    "repo内路径": "skills/codexqa-code-analyzer/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36370,7 +36370,7 @@
    "skill": "codexqa-code-reviewer",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-code-reviewer/SKILL.md",
    "repo内路径": "skills/codexqa-code-reviewer/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "代码评审",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36383,7 +36383,7 @@
    "skill": "codexqa-code-wiki",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-code-wiki/SKILL.md",
    "repo内路径": "skills/codexqa-code-wiki/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "记忆/知识管理",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36396,7 +36396,7 @@
    "skill": "codexqa-defect-analyzer",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-defect-analyzer/SKILL.md",
    "repo内路径": "skills/codexqa-defect-analyzer/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36409,7 +36409,7 @@
    "skill": "codexqa-jev-browser",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-jev-browser/SKILL.md",
    "repo内路径": "skills/codexqa-jev-browser/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36422,7 +36422,7 @@
    "skill": "codexqa-requirement-analyzer",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-requirement-analyzer/SKILL.md",
    "repo内路径": "skills/codexqa-requirement-analyzer/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36435,7 +36435,7 @@
    "skill": "codexqa-rootcause-analyzer",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-rootcause-analyzer/SKILL.md",
    "repo内路径": "skills/codexqa-rootcause-analyzer/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36448,7 +36448,7 @@
    "skill": "codexqa-skill-router",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-skill-router/SKILL.md",
    "repo内路径": "skills/codexqa-skill-router/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36461,7 +36461,7 @@
    "skill": "codexqa-testcase-generator",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-testcase-generator/SKILL.md",
    "repo内路径": "skills/codexqa-testcase-generator/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "测试/TDD",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36474,7 +36474,7 @@
    "skill": "codexqa-testdata-generator",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/codexqa-testdata-generator/SKILL.md",
    "repo内路径": "skills/codexqa-testdata-generator/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "测试/TDD",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36487,7 +36487,7 @@
    "skill": "case-data-material-planner",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/case-data-material-planner/SKILL.md",
    "repo内路径": "skills/codexqa-testdata-generator/references/case-data-material-planner/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36500,7 +36500,7 @@
    "skill": "slot-scaffolder",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/slot-scaffolder/SKILL.md",
    "repo内路径": "skills/codexqa-testdata-generator/slot-scaffolder/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36513,7 +36513,7 @@
    "skill": "catalog",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/catalog/SKILL.md",
    "repo内路径": "skills/codexqa-testdata-generator/slots/catalog/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36526,7 +36526,7 @@
    "skill": "distribution",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/openqa-cn__codexqa/distribution/SKILL.md",
    "repo内路径": "skills/codexqa-testdata-generator/slots/distribution/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "codexqa系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-19"
@@ -36578,7 +36578,7 @@
    "skill": "add-integration",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/add-integration/SKILL.md",
    "repo内路径": ".agents/skills/add-integration/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "vibestart系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36591,7 +36591,7 @@
    "skill": "codebase-design",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/codebase-design/SKILL.md",
    "repo内路径": ".agents/skills/codebase-design/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "设计/UI",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36604,7 +36604,7 @@
    "skill": "domain-modeling",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/domain-modeling/SKILL.md",
    "repo内路径": ".agents/skills/domain-modeling/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "vibestart系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36617,7 +36617,7 @@
    "skill": "explain",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/explain/SKILL.md",
    "repo内路径": ".agents/skills/explain/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "vibestart系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36630,7 +36630,7 @@
    "skill": "frontend-design",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/frontend-design/SKILL.md",
    "repo内路径": ".agents/skills/frontend-design/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "设计/UI",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36643,7 +36643,7 @@
    "skill": "improve-codebase-architecture",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/improve-codebase-architecture/SKILL.md",
    "repo内路径": ".agents/skills/improve-codebase-architecture/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "vibestart系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36656,7 +36656,7 @@
    "skill": "pr",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/pr/SKILL.md",
    "repo内路径": ".agents/skills/pr/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "vibestart系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36669,7 +36669,7 @@
    "skill": "research",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/research/SKILL.md",
    "repo内路径": ".agents/skills/research/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "爬虫/数据获取",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36682,7 +36682,7 @@
    "skill": "self-review",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/self-review/SKILL.md",
    "repo内路径": ".agents/skills/self-review/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "vibestart系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36695,7 +36695,7 @@
    "skill": "shadcn",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/shadcn/SKILL.md",
    "repo内路径": ".agents/skills/shadcn/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "vibestart系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36708,7 +36708,7 @@
    "skill": "update-deps",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/update-deps/SKILL.md",
    "repo内路径": ".agents/skills/update-deps/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "vibestart系列",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36721,7 +36721,7 @@
    "skill": "writing-for-agents",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/writing-for-agents/SKILL.md",
    "repo内路径": ".agents/skills/writing-for-agents/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "文档/写作",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
@@ -36734,7 +36734,7 @@
    "skill": "vibestart",
    "路径": "/Users/Zhuanz/Desktop/Skills&Model-Benchmark/本地库/VinkyDev__vibestart/vibestart/SKILL.md",
    "repo内路径": "skills/vibestart/SKILL.md",
-   "功能组": "未分组",
+   "功能组": "设计/UI",
    "状态": "待评(已建题)",
    "trending": true,
    "收集日": "2026-10-20"
