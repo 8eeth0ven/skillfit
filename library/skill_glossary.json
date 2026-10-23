@@ -2741,5 +2741,22 @@
  "cli-mcp__cheaper-inference": "管理命令行的MCP服务器",
  "cli-models__cheaper-inference": "查询可用模型列表及详情",
  "cli-plugins-skills__cheaper-inference": "管理命令行插件与技能扩展",
- "cli-policy-audit__cheaper-inference": "审计命令行的策略合规情况"
+ "cli-policy-audit__cheaper-inference": "审计命令行的策略合规情况",
+ "alipay-upload__dreammis": "自动上传视频到支付宝平台",
+ "baijiahao-upload__dreammis": "自动上传视频到百家号",
+ "bilibili-upload__dreammis": "自动上传视频到哔哩哔哩",
+ "dayu-upload__dreammis": "自动上传视频到大鱼号",
+ "douyin-upload__dreammis": "自动上传视频到抖音",
+ "facebook-upload__dreammis": "自动上传视频到Facebook",
+ "hupu-upload__dreammis": "自动上传视频到Instagram",
+ "instagram-upload__dreammis": "自动上传视频到快手",
+ "kuaishou-upload__dreammis": "自动上传视频到Meta平台",
+ "meta-upload__dreammis": "一键自动上传视频到多个社交媒体平台",
+ "social-auto-upload__dreammis": "自动上传视频到腾讯视频号",
+ "tencent-upload__dreammis": "自动上传视频到TikTok",
+ "tiktok-upload__dreammis": "自动上传视频到微博",
+ "weibo-upload__dreammis": "自动上传视频到小红书",
+ "xiaohongshu-upload__dreammis": "自动上传视频到雪球",
+ "xueqiu-upload__dreammis": "自动上传视频到YouTube",
+ "youtube-upload__dreammis": "自动上传视频到知乎"
 }
