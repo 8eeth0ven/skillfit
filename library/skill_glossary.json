@@ -2758,5 +2758,6 @@
  "weibo-upload__dreammis": "自动上传视频到小红书",
  "xiaohongshu-upload__dreammis": "自动上传视频到雪球",
  "xueqiu-upload__dreammis": "自动上传视频到YouTube",
- "youtube-upload__dreammis": "自动上传视频到知乎"
+ "youtube-upload__dreammis": "自动上传视频到知乎",
+ "zhihu-upload__dreammis": "自动将视频批量发布到抖音、小红书、油管等平台"
 }
