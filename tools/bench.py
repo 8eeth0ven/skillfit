@@ -27,6 +27,7 @@ from pathlib import Path
 PROXY = {"https_proxy": "http://127.0.0.1:7897", "http_proxy": "http://127.0.0.1:7897"}
 PROJ = Path(os.environ.get("BENCH_ROOT", Path(__file__).resolve().parents[1])).expanduser().resolve()
 SKILLS_DIR = Path(os.environ.get("BENCH_SKILLS_DIR", Path.home() / ".zcode/skills")).expanduser().resolve()
+FRONTEND_SOURCE = Path(__file__).resolve().parents[1] / "site"
 TDIR, RDIR, SDIR, REPDIR = PROJ / "tasks", PROJ / "runs", PROJ / "scoring", PROJ / "reports"
 LOCK = RDIR / ".bench.lock"
 TIMEOUT, RETRY, MIN_SCORERS = 600, 2, 2
@@ -935,10 +936,10 @@ def cmd_selfscore(a):
 
 def write_site_assets(destination):
     """复制仓库前端资产；与数据生成分离，刷新不会还原旧 UI。"""
-    source = Path(__file__).resolve().parents[1] / "site"
+    source = FRONTEND_SOURCE
     destination.mkdir(parents=True, exist_ok=True)
     for name in ("index.html", "app.js", "style.css"):
-        asset = source / name
+        asset = source / ("template.html" if name == "index.html" else name)
         if not asset.is_file():
             raise SystemExit(f"缺少前端资产：{asset}")
         target = destination / name

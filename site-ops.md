@@ -1,6 +1,6 @@
 # 静态站维护
 
-前端由 site/index.html、site/app.js、site/style.css 和 site/assets/ 组成，不依赖构建步骤或外部 CDN。页面读取同目录 data.json，搜索与筛选在浏览器本地执行。
+页面源文件是 site/template.html，导出入口为 site/index.html；前端还包括 site/app.js、site/style.css 和 site/assets/，不依赖构建步骤或外部 CDN。页面读取同目录 data.json，搜索与筛选在浏览器本地执行。
 
 ```bash
 python3 -m http.server 8000 --directory site

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071522">
+  <meta name="description" content="SkillFit：查看技能与模型的历史配对表现，核对对照覆盖，判断下一步该验证什么。">
+  <title>SkillFit · 模型进步了，技能还值得加载吗？</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#explore">跳到技能矩阵</a>
+  <header class="site-header"><div class="shell nav-shell">
+    <a class="wordmark" href="#top" aria-label="SkillFit 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>SkillFit<span class="brand-dot">.</span></a>
+    <nav aria-label="主导航"><a href="#explore">技能矩阵</a><a href="#compare">同类探索</a><a href="#method">评估方法</a></nav>
+    <a class="github-link" href="https://github.com/8eeth0ven/skillfit" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main id="top">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div><div class="hero-art" aria-hidden="true"><img src="assets/skillfit-hero.png" alt="" fetchpriority="high"></div>
+      <div class="hero-copy"><p class="eyebrow"><span class="signal-dot"></span>SKILLS × MODELS · EVIDENCE FIRST</p><h1 id="hero-title">SkillFit<span>.</span></h1>
+        <h2>模型进步了。<br>技能还值得加载吗？</h2><p class="hero-description">从一次高分，走向有证据的选择。<br>查看技能配对、核对对照覆盖，为保留、精简与复测找到依据。</p>
+        <div class="hero-actions"><a class="button primary" href="#explore">探索技能矩阵 <span aria-hidden="true">↗</span></a><a class="text-link" href="#method">了解如何衡量 <span aria-hidden="true">→</span></a></div>
+        <p class="hero-footnote">MEASURE <span>·</span> COMPARE <span>·</span> REVALIDATE</p>
+      </div><div class="art-caption"><span class="tiny-square mint"></span> MODEL + SKILL <span class="caption-separator">/</span> 对照，才能看见贡献</div>
+    </section>
+    <section class="snapshot shell" aria-label="数据快照"><div class="snapshot-heading"><p class="eyebrow">THE CURRENT SNAPSHOT</p><p id="snapshot-time">正在读取本地快照…</p></div>
+      <div class="stats-grid" id="stats" aria-live="polite"><div class="stat-card skeleton"><span>正在载入数据</span><strong>—</strong></div></div>
+      <p class="snapshot-note" id="snapshot-note">所有指标从当前 data.json 计算。快照生成时间与单项评测时间分别记录。</p>
+    </section>
+    <section class="shell signal-section" aria-labelledby="signal-title"><div class="section-kicker"><span>01 / READ THE SIGNAL</span><span class="fine-rule"></span></div>
+      <div class="signal-layout"><div><p class="eyebrow">A SCORE IS A STARTING POINT</p><h2 id="signal-title">高分是表现。<br><em>对照才说明增益。</em></h2><p class="section-description">同一个模型、同一组任务、同一套验收。先看基线，再看加载技能后的变化。</p></div>
+        <div class="comparison-glass">
+          <div class="lane"><div class="lane-label"><span class="mode-badge">M1</span><span>仅模型</span><small>裸跑基线</small></div><div class="lane-track"><i></i><span class="track-node">任务</span><span class="track-node">模型</span><span class="track-end">结果 A</span></div></div>
+          <div class="lane accent-lane"><div class="lane-label"><span class="mode-badge">M2</span><span>模型 + 技能</span><small>加载技能</small></div><div class="lane-track"><i></i><span class="track-node">任务</span><span class="track-node">技能</span><span class="track-end">结果 B</span></div></div>
+          <div class="comparison-foot"><span class="tiny-square amber"></span><p>示意流程，无性能数据。当前历史分数不等于可比净增益。</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="explore-section shell" id="explore" aria-labelledby="explore-title"><div class="section-kicker"><span>02 / EXPLORE THE MATRIX</span><span class="fine-rule"></span></div>
+      <div class="section-heading"><div><p class="eyebrow">SKILL × MODEL</p><h2 id="explore-title">找到配对，也看清证据。</h2></div><p class="heading-note">M2 是带技能后的绝对表现。<br>排名用于探索，不代表技能贡献。</p></div>
+      <div class="data-panel">
+        <form class="filter-bar" id="filters" role="search" aria-label="筛选技能">
+          <label class="search-field"><span class="sr-only">搜索技能名称或功能</span><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input type="search" id="search" placeholder="搜索技能名称或功能…" autocomplete="off"></label>
+          <label class="select-field"><span>模型</span><select id="model-filter"><option value="">全部模型</option></select></label>
+          <label class="select-field"><span>排序</span><select id="sort"><option value="evidence">对照覆盖优先</option><option value="score">M2 均分从高到低</option><option value="models">模型覆盖从多到少</option><option value="name">名称 A–Z</option></select></label>
+          <label class="check-field"><input type="checkbox" id="paired-only"><span>只看有 M1 / M2 / M4</span></label>
+        </form>
+        <div class="results-toolbar"><p id="result-count" role="status">正在载入技能…</p><span class="table-key"><i></i> 0–5 分 · 历史绝对评分</span></div>
+        <div id="load-error" class="empty-state" hidden><span class="empty-symbol">!</span><h3>暂时无法读取快照</h3><p id="error-message"></p><button type="button" class="button secondary" id="retry">重新读取</button></div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="技能配对列表，可横向滚动"><table class="skills-table"><thead><tr><th scope="col" class="rank-column">序号</th><th scope="col">技能 / 功能</th><th scope="col">M2 均分</th><th scope="col">模型覆盖</th><th scope="col">证据状态</th><th scope="col"><span class="sr-only">操作</span></th></tr></thead><tbody id="skills-body"><tr><td colspan="6" class="loading-cell">正在读取技能数据…</td></tr></tbody></table></div>
+        <div id="no-results" class="empty-state" hidden><span class="empty-symbol">⌕</span><h3>没有匹配的技能</h3><p>试试更短的关键词，或放宽模型与对照筛选。</p><button type="button" class="button secondary" id="reset-filters">清除筛选</button></div>
+        <div class="pagination" id="pagination"><p id="page-status"></p><button type="button" class="button secondary" id="load-more" hidden>加载更多 <span aria-hidden="true">↓</span></button></div>
+      </div><p class="under-panel-note"><span class="tiny-square amber"></span> “有对照”仅表示历史字段齐全；评分口径、版本和任务是否可比，还需进一步核验。</p>
+    </section>
+    <section class="shell compare-section" id="compare" aria-labelledby="compare-title"><div class="section-kicker"><span>03 / LOOK SIDE BY SIDE</span><span class="fine-rule"></span></div>
+      <div class="section-heading"><div><p class="eyebrow">RELATED SKILLS</p><h2 id="compare-title">同类技能，放在一起看。</h2></div><label class="group-select select-field"><span class="sr-only">选择功能组</span><select id="group-filter"><option value="">正在载入功能组…</option></select></label></div>
+      <div class="comparison-warning"><span class="tiny-square amber"></span><p>探索性分组：这些技能未必接受相同任务、模型与评分条件。这里展示历史配对表现，不计算组内净增益，也不认定优胜者。</p></div>
+      <div class="group-grid" id="group-grid"><p class="muted">读取功能组后显示。</p></div>
+    </section>
+    <section class="method-section" id="method" aria-labelledby="method-title"><div class="shell"><div class="section-kicker"><span>04 / KNOW WHAT IS MEASURED</span><span class="fine-rule"></span></div>
+      <div class="section-heading"><div><p class="eyebrow">METHOD & LIMITS</p><h2 id="method-title">每一个结论，都应有边界。</h2></div><a href="https://github.com/8eeth0ven/skillfit#readme" class="text-link" target="_blank" rel="noopener noreferrer">阅读完整方法 <span aria-hidden="true">↗</span></a></div>
+      <div class="method-grid">
+        <article class="method-card"><span class="method-number">01</span><h3>相同条件下做对照</h3><p>M1 裸跑、M2 加载技能、M4 无关材料对照。净增益需要固定模型版本、任务、工具权限与共同验收尺度。M3 单独检查触发。</p><div class="mini-tags"><span>M1 基线</span><span>M2 技能</span><span>M4 控制</span></div></article>
+        <article class="method-card"><span class="method-number">02</span><h3>把结果与过程分开</h3><p>正确性与任务完成度决定效果。技能遵循、触发与判官矩阵用于解释结果。历史 SkillScore 是复合绝对分，不能当成增益。</p><div class="mini-tags"><span>验收优先</span><span>交叉判分</span></div></article>
+        <article class="method-card"><span class="method-number">03</span><h3>模型升级，重新验证</h3><p>通用提示可能被更强模型覆盖。保留、精简或退役，需要配对证据及成本记录；没有对照或版本信息时，结论应是证据不足。</p><div class="mini-tags"><span>版本固定</span><span>持续复测</span></div></article>
+      </div>
+      <div class="coverage-panel"><div><p class="eyebrow">EVIDENCE COVERAGE</p><h3>当前数据覆盖</h3><p>按技能条目计；字段存在并不保证实验条件可比。</p></div><div id="coverage-bars" class="coverage-bars"><p class="muted">载入后计算。</p></div></div>
+      <div class="limits-note"><span aria-hidden="true">↳</span><p>当前大部分记录来自纯文本快扫。M2 禁用工具的历史结果不能代表脚本、模板或外部系统的完整执行效果；旧增益字段使用过不同评分权重，需重新核算后再解释。</p></div>
+    </div></section>
+    <section class="shell operations" aria-labelledby="operations-title"><div class="operations-header"><div><p class="eyebrow">RUN SNAPSHOT</p><h2 id="operations-title">记录发生过的事。</h2></div><span class="status-pill neutral">静态快照 · 运行态未知</span></div><div class="operations-grid"><div class="run-metadata" id="run-metadata"><p>正在读取时间信息…</p></div><div class="recent-list"><h3>历史台账节选 <span>未提供完整日期的时间仅作原始记录</span></h3><div id="recent-records"><p class="muted">载入后显示。</p></div></div></div></section>
+  </main>
+  <footer class="site-footer shell"><a class="footer-brand" href="#top">SkillFit<span>.</span></a><p>Measure. Compare. Revalidate.<br><span>让技能的价值，经得起下一次模型升级。</span></p><div><a href="data.json" download>下载当前快照 ↗</a><a href="https://github.com/8eeth0ven/skillfit" target="_blank" rel="noopener noreferrer">开源项目 ↗</a><span>MIT LICENSE</span></div></footer>
+  <dialog id="skill-dialog" aria-labelledby="detail-title"><div class="dialog-top"><p class="eyebrow">PAIRING DETAILS</p><button type="button" class="close-dialog" id="close-dialog" aria-label="关闭技能详情">×</button></div><div id="detail-content"></div></dialog>
+</body>
+</html>

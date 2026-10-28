@@ -46,6 +46,17 @@ class PortabilityTests(unittest.TestCase):
             self.assertFalse((destination / "data.json").exists())
             self.assertEqual((ROOT / "site/index.html").read_bytes(), original)
 
+    def test_refresh_restores_canonical_template_after_legacy_overwrite(self):
+        with tempfile.TemporaryDirectory() as directory:
+            site = Path(directory)
+            (site / "template.html").write_text("canonical frontend", encoding="utf-8")
+            (site / "index.html").write_text("legacy frontend", encoding="utf-8")
+            for name in ("app.js", "style.css"):
+                (site / name).write_text("asset", encoding="utf-8")
+            with patch.object(bench, "FRONTEND_SOURCE", site):
+                bench.write_site_assets(site)
+            self.assertEqual((site / "index.html").read_text(), "canonical frontend")
+
     def test_legacy_manifest_still_works(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

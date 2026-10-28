@@ -38,7 +38,7 @@ SkillFit 的机会是帮助技能作者和团队维护自己的配置：**固定
 - **重算配对观测**：本地有原始产物与评分时，按相同技能、模型、任务、trial 和共有外部判官重新计算质量差。
 - **运行文本实验**：支持 M1/M2/M4 与 CLI 的 M3 触发模拟；附自包含示例和无需请求模型的提示词预览。
 
-网站采用深墨蓝、奶白、薄荷绿和琥珀色，与封面保持一致。前端直接读取 `site/data.json`，无需构建或外部 CDN；包含分页、无结果与加载失败状态，以及可键盘操作的详情窗口。站点生成器使用外置前端资产，刷新数据不会恢复旧 UI。
+网站采用深墨蓝、奶白、薄荷绿和琥珀色，与封面保持一致。前端直接读取 `site/data.json`，无需构建或外部 CDN；包含分页、无结果与加载失败状态，以及可键盘操作的详情窗口。站点生成器使用外置前端资产，页面源文件是 `site/template.html`；刷新会恢复该模板，避免旧后台进程覆盖新 UI。
 
 <details>
 <summary>实际网页预览</summary>
@@ -158,7 +158,7 @@ skillfit/
 │   ├── value_audit.py        # 覆盖审计与统一尺度配对观测
 │   └── collect.py            # GitHub 采集，相对路径数据库
 ├── site/
-│   ├── index.html / app.js / style.css
+│   ├── index.html / template.html / app.js / style.css
 │   ├── assets/               # 封面等本地视觉资产
 │   └── data.json             # 历史展示快照
 ├── example-tasks/format-check/ # 可移植流程样例
