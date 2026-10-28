@@ -5,7 +5,7 @@
 # 产出：reports/技能大类图谱.md + library/category_map.json
 import json, collections, pathlib, re
 
-PROJ = pathlib.Path("~/Desktop/Skills&Model-Benchmark").expanduser()
+PROJ = pathlib.Path(__file__).resolve().parent
 db = json.loads((PROJ / "library/db.json").read_text())
 gl = json.loads((PROJ / "library/skill_glossary.json").read_text())
 

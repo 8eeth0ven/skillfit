@@ -1,31 +1,22 @@
-# 网站运维（项目侧资产，不属 llm-wiki / skill-bench）
+# 静态站维护
 
-定位：**skill × 模型兼容性榜单**——"这个 skill 哪个模型用效果最好"的唯一中文出处。人流 + 评测覆盖量 = 护城河。
+前端由 site/index.html、site/app.js、site/style.css 和 site/assets/ 组成，不依赖构建步骤或外部 CDN。页面读取同目录 data.json，搜索与筛选在浏览器本地执行。
 
-## 数据流水线
-
-```
-bench.py run → score → agg（报告/*-聚合.json）→ bench.py site → 网站/{index.html,data.json,skills/}
-→ 扔 GitHub Pages / Cloudflare Pages / Vercel（纯静态，零成本）
+```bash
+python3 -m http.server 8000 --directory site
 ```
 
-每次重评后重跑 `agg + site` 再 push 即可，data.json 是唯一数据源。
+公开界面区分 M2 绝对表现、历史评分与对照覆盖。存在 M1/M4 聚合字段仅表示存在对照记录；原始评分、trial 和模型版本未核验前，仍不能据此断言增益。
 
-## 护城河动作（按优先级）
+有完整本地运行数据时，可以生成新快照：
 
-1. **投稿通道**（核心）：skill 作者提交 SKILL.md + 3 个任务 → 你跑 N×N → 上榜。覆盖量随投稿滚雪球，评测库存别人抄不走
-2. **可嵌入徽章**：给作者一段 `<img src=".../badge/<skill>.svg">`（"skill-bench 认证：最佳搭配 kimi-k3-2 · SkillScore 87"），作者挂自己 README = 免费反链
-3. **固定重评节奏**：新模型发布 48h 内出横评（蹭模型发布流量）；每月全量重跑保新鲜
-4. **明暗两榜**：明榜=SkillScore；暗数据=N×N 方阵 + 判官偏差表（方法论页公开口径，建立可信度）
-5. **API/RSS**：静态 data.json 天然可被别人拉取，先占「评测数据源」心智
+```bash
+python3 tools/bench.py agg --skills YOUR_SKILL
+python3 tools/bench.py site
+```
 
-## 与现成体系的差异位（外部对比详见对话结论）
+site 命令会更新 data.json 并复制外置前端资产；不会恢复旧的内嵌网页模板。使用 BENCH_ROOT 导出到另一目录时，前端资产取自仓库，数据取自该运行根目录。没有原始评分时直接使用已有快照，不要用空目录覆盖它。
 
-- SkillsBench / agent-skills-eval 等现成框架：单判官/自评居多、英文生态、**自认未做长度匹配对照**
-- 本站差异：**N×N 跨厂商交叉盲评 + 中文 skill 生态 + 按模型推荐 skill**（不是评模型，是评「skill×模型配对」）
-- 方法论护城河（别人抄不走的口径）：**M4 等长对照拆掉长度安慰剂**（SkillsBench 论文自认的坑，我们做了）、**家族去重票**（同家族判官只计一票）、**触发正负例准确率**（不只命中率）、断言层+判官双层互证、发布榜 `--trials 3`
+部署时上传整个 site/，包括 assets、app.js、style.css 和 data.json。可使用 GitHub Pages 或其他静态托管；执行 Git push 本身不代表托管已启用。提交前排除凭据、运行数据、身份映射、本机路径和浏览器调试产物。
 
-## 红线
-
-- 映射表/未匿名数据禁上站；判官 prompt 口径全公开（可信度即品牌）
-- 受控/非受控通道、同源判官，一律在方法论页披露
+crawl_loop.sh、test_loop.sh、web_refresh.sh 是可选循环脚本。先完成单次命令验证，再按自己的模型额度和任务覆盖配置运行；这些脚本的存在不代表服务在线或已经重新评测。

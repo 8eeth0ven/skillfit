@@ -2,180 +2,192 @@
 
 # SkillFit
 
-**技能 × 模型契合度基准 —— measured, not guessed**
+**模型变强之后，哪些 Skill 还值得加载？**
 
-[![skills](https://img.shields.io/badge/skills_tested-1252-blue)](https://github.com/8eeth0ven/skillfit)
-[![models](https://img.shields.io/badge/model_families-5-orange)](https://github.com/8eeth0ven/skillfit)
-[![judgments](https://img.shields.io/badge/blind_judgments-19.4k-green)](https://github.com/8eeth0ven/skillfit)
-[![pipeline](https://img.shields.io/badge/pipeline-fully_automated_24x7-9cf)](https://github.com/8eeth0ven/skillfit)
-[![cost](https://img.shields.io/badge/run_cost-%E2%89%88_0-free_channels-brightgreen)](https://github.com/8eeth0ven/skillfit)
-[![license](https://img.shields.io/badge/license-MIT-black)](LICENSE)
+技能 × 模型的配对探索、增益审计与升级回归。
 
-现有技能榜只数 star，学术基准只评模型。**SkillFit 用真实跑任务 + 跨厂商交叉盲评，给每一个 技能 × 模型 配对出实测分。**
+[![License: MIT](https://img.shields.io/badge/license-MIT-a8e5cb)](LICENSE)
+[![Static site](https://img.shields.io/badge/site-HTML%20%2B%20JS-0b1b29)](site/)
+[![Evidence](https://img.shields.io/badge/evidence-coverage%20first-eac284)](docs/measurement-audit.md)
+
+![SkillFit 概念封面：模型与模型加技能经过同一组评估门](site/assets/skillfit-hero.png)
+
+[可行性评估](docs/feasibility-review.md) · [评分审计](docs/measurement-audit.md) · [复现说明](docs/reproducibility-review.md) · [技能目录](SKILLS.md)
 
 </div>
 
-## 它回答三个问题
+## 为什么继续做
 
-| 你想知道 | SkillFit 的回答 |
-|:---|:---|
-| 哪个 **skill 配哪个模型**最搭？ | 1169 技能 × 5 模型家族的实测配对矩阵 + 3D 立方体 |
-| 同类 **skill 里谁最强**？ | 80 组功能分类基准（N×N×A，star 最高者为 baseline） |
-| 哪个**模型在哪类任务**称王？ | 82 分类 × 5 模型强项画像 + 13 大类图谱 |
+通用写作套路、公开知识和简单规划可能被更强的模型覆盖。一个技能在旧模型上有效，不代表它值得长期加载；带技能后的高分，也可能主要来自模型本身。
 
----
+SkillFit 的机会是帮助技能作者和团队维护自己的配置：**固定任务与验收，在每个模型版本上重新检查技能的贡献，找出应保留、精简、重写或进入退役复核的候选。** 私有规则、可执行资产和验收流程仍可能有价值，但同样需要实测。
 
-## 我们实测了什么
+| 技能内容 | 被模型能力覆盖的风险 | 应该验证什么 |
+|---|---|---|
+| 通用提示、文风规则、简单规划 | 高 | 裸跑或简短直接指令能否达到相同验收结果 |
+| 公开领域知识、工具用法 | 中高 | 与官方文档检索、直接工具调用相比是否有额外收益 |
+| 多步流程、脚本、模板 | 依具体实现而定 | 真实执行成功率、恢复能力、耗时和维护成本 |
+| 私有规范、近期业务规则、系统上下文 | 知识被训练吸收的风险较低 | 加载后的遵循情况，以及其他上下文机制能否更经济地承载 |
 
-| 维度 | 数据 |
-|:---|:---|
-| 采集技能 | **1252 个**（高星 ≥5k + 趋势线 + awesome 反向展开，覆盖 anthropics / openai / github / cloudflare / vercel 等 40+ 组织） |
-| 生产矩阵 | 每技能 × **5 个模型家族**真实做任务（~6200 格产物）                                                                      |
-| 交叉盲评 | 产物匿名哈希代号 → 互为生产者与判官的 **N×N 方阵**（19,000+ 份判分，含对角线自评）                                                    |
-| 功能分组 | 94 组自动聚类 + **N×N×A 三维对比**（80 组）+ **3D 评分矩阵**（three.js 交互立方体） |
-| 模型画像 | **82 个功能分类 × 5 模型**的强项矩阵                                                                               |
-| 大类图谱 | 1169 技能 → **13 个语义大类**（数据驱动归并） |
-| 自研技能 | **11 个** llm-wiki 形式技能（5000+ 行，覆盖 10 大类） |
-| 中文释义 | 1134 条一句话功能说明（LLM 批量生成）                                                                               |
-| **数据快照** | **2026 年 10 月 11 日**（管线每日自动更新，榜单持续滚动）                                                                     |
+这是**有条件可行的方向**，尚未验证产品需求或建立商业壁垒。模型越强，评测对象越应从“谁得分高”转向“哪些额外配置仍值得存在”。具体试点与停止条件见[可行性报告](docs/feasibility-review.md)。
 
-### 一个真实发现
+## 现在能做什么
 
-> **没有最好的模型，只有最佳配对。** space-bunny 全库综合最强（499 次最佳搭配），但 **humanizer 技能上 deepseek 屠榜（95.0 vs 74）**；kimi 拿最多次单项冠军却综合第三——窄而尖 vs 全能型的差异，只有实测矩阵能看出来。
+- **探索历史配对**：按技能、模型和对照覆盖搜索筛选；查看 M2 绝对表现、原始判官方阵和缺失数据。
+- **检查证据覆盖**：公开快照可离线审计；缺少原始评分、试验号或对照时，返回 `insufficient_evidence`。
+- **重算配对观测**：本地有原始产物与评分时，按相同技能、模型、任务、trial 和共有外部判官重新计算质量差。
+- **运行文本实验**：支持 M1/M2/M4 与 CLI 的 M3 触发模拟；附自包含示例和无需请求模型的提示词预览。
 
----
-
-## 方法论（抄不走的四件事）
+网站采用深墨蓝、奶白、薄荷绿和琥珀色，与封面保持一致。前端直接读取 `site/data.json`，无需构建或外部 CDN；包含分页、无结果与加载失败状态，以及可键盘操作的详情窗口。站点生成器使用外置前端资产，刷新数据不会恢复旧 UI。
 
 <details>
+<summary>实际网页预览</summary>
 
-<summary><b>① 四模式对照——把"真增益"从"假增益"里拆出来</b></summary>
+<img src="docs/assets/site-preview.png" width="900" alt="真实运行的新网站，深蓝背景、奶白标题和双轨技能视觉">
 
-| 模式          | 内容          | 测什么                                 |
-| ----------- | ----------- | ----------------------------------- |
-| **M1** 裸跑   | 只给任务        | 模型基线                                |
-| **M2** 强制加载 | 任务 + 技能文档全文 | skill 总增益                           |
-| **M3** 触发模拟 | 全技能清单自由选择   | description 触发准确率（正例+负例）            |
-| **M4** 等长对照 | 等长无关材料      | **拆穿长度安慰剂**（SkillsBench 论文自认未做的对照组） |
-
-增益三段解构：`M4−M1` = 上下文变长的假增益 ｜ `M2−M4` = 纯内容增益 ｜ `hake = Δ/(5−M1)` = 吃掉多少剩余提升空间
+<img src="docs/assets/matrix-preview.png" width="900" alt="实际技能矩阵，包含搜索、模型筛选和证据状态">
 
 </details>
 
-<details>
+## 先读数据边界
 
-<summary><b>② N×N 交叉盲评 + 对角线自评</b></summary>
+公开基线快照（2026-10-27 导出）含 **2,652** 个技能条目，其中 **2,651** 个有 M2 均分，只有 **1** 个技能有 M1/M4 聚合记录。大多数任务要求概括并演示技能文档，属于文本快扫，不能代表完整工作流效果。网页会根据实际载入的快照重新计数；导出时间不等于重新评测时间。
 
-- 每个模型既是**生产者**也是**判官**：行均 ≈ 真实水平，列均 = 判官严格度，对角线 = 自偏（实测 space-bunny 自评 +0.32 轻度自抬）
-- **家族去重票**：同家族判官先取均值只计 1 票（PoLL / Apple 相关性研究结论的工程落地）
-- 稳定哈希代号：产物路径 → MD5，跨批次永不漂移；映射表物理隔离，判官永远不知道在评谁
+旧 `SkillScore` 主要衡量带技能后的绝对表现，缺少 M3 时还会填入默认触发分。历史 M1、M2、M4 使用过不同的评分权重，多试验聚合也存在覆盖问题。因此，旧榜单、百分位和 `gains` 字段仅保留为探索资料，**不能直接用来证明技能增益或模型替代关系**。
 
-</details>
+新审计工具统一使用正确性、完整性、表达清晰三个公共维度，并保留每个配对的试验号与共有判官。它修正可恢复的计算口径，不能补出缺失实验、固定服务端模型版本或追认旧实验的因果有效性。[完整审计与本地重算观察](docs/measurement-audit.md)
 
-<details>
+## 怎么衡量技能价值
 
-<summary><b>③ 双层产物质量门禁</b></summary>
+![SkillFit 配对评估流程：固定条件、统一尺度、报告差异与证据缺口](docs/assets/evaluation-protocol.svg)
 
-- **断言层**（判官之前）：`禁含/禁正则/必含/必正则` 零成本确定性检查，结果作为事实喂给判官
-- **泄漏门禁**（评分之前）：自动识别 CLI agent 模型的原生工具调用泄漏（`<tool_call>` 等）与超短废稿，硬化 prompt 自动重跑——曾救回被系统性冤枉的 deepseek：修复后从榜二跃居 95.0 满分第一
+| 模式 | 输入 | 用途与限制 |
+|---|---|---|
+| M1 | 任务 | 模型裸跑基线 |
+| M2 | 任务 + 技能文档 | 当前执行器为纯文本通道，禁用脚本与外部工具 |
+| M3 | 任务 + 技能清单，可用 Read | 触发正负例测试；仅 CLI，单独报告 |
+| M4 | 任务 + 参考材料 | 字符数匹配的对照，不保证 token 等长或语义完全无关 |
 
-</details>
+新工具对三模式都按同一个质量函数计算：
 
-<details>
-
-<summary><b>④ SkillScore 单一总分（0-100）</b></summary>
-
-```
-SkillScore = M2均分/5 × 60  +  max(0, 20 − 8σ)  +  触发准确率 × 20
-             └── 实力 60 分 ──┘   └── 稳定性 20 ──┘   └── 触发质量 20 ──┘
+```text
+Q = 0.55 × 正确性 + 0.30 × 完整性 + 0.15 × 表达清晰   （0–5）
+Δ21 = Q(M2) − Q(M1)    加载技能相对裸跑的观测差
+Δ24 = Q(M2) − Q(M4)    相对所选对照材料的观测差
 ```
 
-</details>
+每一对只使用共有外部判官，默认至少两个家族；家族内均值、家族间中位数，自评另列诊断。先在同任务内汇总重复试验，再对任务等权平均。重复试验不足时不制造置信区间；M4 可能引入干扰，Δ24 不能无条件称为“纯内容因果增益”。
 
----
-
-## 全自动流水线
-
-```mermaid
-flowchart LR
-    A[📡 GitHub 采集<br/>高星≥5k·8路翻页<br/>awesome反展开·趋势线] --> B[🏭 五车道生产<br/>每模型独立限速并行<br/>泄漏门禁+断言层]
-    B --> C[⚖️ 交叉盲评<br/>哈希匿名·N×N互评含自评<br/>家族去重票·判官分车道]
-    C --> D[📦 聚合<br/>SkillScore·增益三段<br/>方阵·自偏·偏差表]
-    D --> E[🌐 实时榜单<br/>模型×分类画像<br/>N×N×A三维·中文释义]
-    E -.每日增量.-> A
-```
-
-- **7×24 常驻**：抓取 / 测试 / 网页刷新三条循环 + 每日 cron 监督（卡死自动重启）
-- **自愈体系**：看门狗（OOM 30s 复活）、额度定时器（打空自动挂起/重置自动复工）、代理死亡自动切直连
-- **自迭代**：每批自动生成复盘线索 → 24 条实战经验入册（工具泄漏根因 / 端点规则突变 / OOM 极限 / key 梯次耗尽……）
-
----
+判断退役还需要预先定义实用等效范围、可靠验收、成本和时延约束。“差异不显著”不等于“模型已经替代技能”。当前工具输出配对观测与缺口，自动退役决策尚未实现。
 
 ## 快速开始
 
+需要 Python 3.10+。批跑器使用 `fcntl`，Windows 请用 WSL；静态网站和增益审计仅需 Python 标准库。
+
 ```bash
-git clone https://github.com/yourname/skillbench.git
-cd skillbench
+git clone https://github.com/8eeth0ven/skillfit.git
+cd skillfit
 
-# 1) 配置模型通道（codebuddy CLI 需已登录；API key 走环境变量）
-cp secrets.env.example secrets.env   # 填入你的 BigModel key（anthropic 兼容端点，免费通道）
-
-# 2) 健康检查
-python3 tools/bench.py doctor --models glm-5.3-flash,deepseek-v4.1-flash
-
-# 3) 一条龙：采集 → 生产 → 盲评 → 聚合 → 出站（SkillFit 全流程）
-python3 tools/collect.py --update --min-stars 5000 --trending --seed 5000
-python3 tools/bench.py run   --skills <技能清单> --models <模型清单> --modes M1,M2,M3,M4
-python3 tools/bench.py score --skills <技能清单> --scorers <判官清单>
-python3 tools/bench.py agg   --skills <技能清单>
-python3 tools/bench.py site
-
-# 4) 本地看榜
-cd site && python3 -m http.server 8000   # http://localhost:8000
+# 1. 看网站：在浏览器打开 http://localhost:8000
+python3 -m http.server 8000 --directory site
 ```
 
----
+另开终端，在仓库根目录执行离线检查，无需 CodeBuddy 或 API key：
+
+```bash
+# 2. 审计公开快照。聚合数据只检查覆盖，不相减旧总分。
+python3 tools/value_audit.py --site-data site/data.json --skills humanizer --format markdown
+
+# 3. 复制自包含示例；目标已存在时会拒绝覆盖。
+python3 tools/bench.py init-example --name format-check
+python3 tools/bench.py preview --skills format-check --modes M1,M2,M4
+
+# 4. 本地验证
+python3 -m unittest discover -s tests -v
+```
+
+示例仅用于检查实验流程是否能运行，不代表其规则已经被证明有增益。历史 `example-tasks/humanizer/` 对应的原始技能版本未分发，需自行配置清单。
+
+### 实际运行模型
+
+CLI 通道需要已登录的 CodeBuddy。模型 ID 请以当前通道为准；旧快照名称不是可用性或固定版本承诺。`doctor`、`run`、`score` 都会实际请求模型并使用额度。
+
+```bash
+# 用实际可用的标识替换示例；判官选择多个家族。
+MODEL_ID="your-model-id"
+JUDGES="judge-a,judge-b,judge-c"
+
+python3 tools/bench.py doctor --models "$MODEL_ID"
+python3 tools/bench.py run --skills format-check --models "$MODEL_ID" --modes M1,M2,M4 --trials 3 -P 2
+python3 tools/bench.py score --skills format-check --scorers "$JUDGES" -P 2
+
+# 从原始逐判官评分重算统一尺度的配对观测。
+python3 tools/value_audit.py --root . --skills format-check --format markdown
+python3 tools/bench.py check --skills format-check
+```
+
+API 通道另需 `python3 -m pip install -r requirements.txt`，通过环境变量提供密钥；可参考 `secrets.env.example` 并自行导出。适配器使用 `/v1/messages` 消息接口，模型写作 `<model-id>@api`；不支持 M3。费用与配额由所用服务决定。
+
+任务默认位于 `tasks/<skill>/`。清单支持 `skill-files.txt` 和旧名称 `技能文件.txt`，相对路径从清单所在目录解析。项目根目录默认从脚本位置推断，可用 `BENCH_ROOT` 指向独立运行目录；M3 技能目录可用 `BENCH_SKILLS_DIR` 配置。
+
+### 更新站点与采集
+
+有完整本地运行数据时，历史聚合与静态导出仍可使用：
+
+```bash
+python3 tools/bench.py agg --skills format-check
+python3 tools/bench.py site
+```
+
+`agg` 保留旧评分口径兼容历史数据，新的配对结论请读 `value_audit.py` 输出。导出会更新站点数据；没有原始数据时，直接查看现有快照。
+
+可选采集依赖已登录的 GitHub CLI：
+
+```bash
+python3 tools/collect.py --update --min-stars 5000 --trending --seed 5000
+```
+
+循环脚本属于可选运维入口，需自行配置模型与额度；不承诺持续在线。静态部署请上传整个 `site/`，详见[站点维护](site-ops.md)。
 
 ## 项目结构
 
-```
+```text
 skillfit/
 ├── tools/
-│   ├── bench.py          # 唯一执行器：doctor / check / run / score / agg / cross / selfscore / site
-│   ├── collect.py        # GitHub 双线采集（高星 ≥5k + 趋势，翻页 + awesome 反向展开）
-│   ├── 分组.py            # 功能分组（N×N×A 的 A 轴）
-│   ├── 释义.py            # LLM 批量生成技能中文释义
-│   └── 总览生成.py         # 按功能组分章的可读目录
+│   ├── bench.py              # 预览、生产、交叉评分与历史聚合
+│   ├── value_audit.py        # 覆盖审计与统一尺度配对观测
+│   └── collect.py            # GitHub 采集，相对路径数据库
 ├── site/
-│   ├── index.html        # 标签页榜单（总览 / 技能榜 / 同类对比 / 实时动态）
-│   └── data.json         # 全量蒸馏数据（1169 技能 + 画像 + 三维对比，快照 2026-10-11）
-├── 示例tasks/humanizer/   # 任务与验收点范例（断言层 + 触发正负例 + 四模式）
-├── library/*.json          # 技能数据库（star / 分组 / 中文释义）
-├── crawl_loop.sh / test_loop.sh / web_refresh.sh   # 三条常驻流水线
-├── secrets.env.example       # API key 模板（真实密钥永不入库）
-└── LICENSE                # MIT
+│   ├── index.html / app.js / style.css
+│   ├── assets/               # 封面等本地视觉资产
+│   └── data.json             # 历史展示快照
+├── example-tasks/format-check/ # 可移植流程样例
+├── docs/                     # 可行性、测量、复现与配图来源
+├── tests/                    # 对齐、缺失数据、路径与预览回归
+├── library/                  # 已采集的第三方技能与目录
+└── secrets.env.example       # 凭据模板，真实密钥不提交
 ```
 
-> 产物矩阵、判分明细与采集原文属运行时数据（体积大、含身份映射，且涉第三方原文再分发），**不入库**——`site/data.json` 已含全部蒸馏结果，跑管线会在本地完整重建。
+原始产物、判分、身份映射和运行日志保留在本地，不随公开仓库分发。公开数据库使用仓库相对路径。配图生成方式与提示词见[图片来源](docs/assets/image-prompts.md)。
 
----
+## 接下来验证什么
 
-## Roadmap
+- [x] 收回全库增益、零成本与持续在线等无充分证据的承诺。
+- [x] 增加统一尺度、保留 trial 的离线配对审计与缺失门禁。
+- [x] 修复根目录、示例清单、M4 字符长度和前端刷新覆盖问题。
+- [x] 重构网站视觉与真实数据交互，展示对照缺口。
+- [ ] 持久化任务、技能、验收器、模型版本和运行环境指纹。
+- [ ] 建立真实工具执行轨，比较技能、裸跑、简短指令与直接工具调用。
+- [ ] 采集 token、费用、时延、失败恢复与多次运行数据。
+- [ ] 用留出任务验证模型升级回归、实用等效范围和退役候选。
+- [ ] 用真实团队的配置维护需求验证产品价值，再扩展榜单规模。
 
-- [x] 快扫层：通用任务全量初筛（1252 技能）
-- [x] N×N 交叉盲评 + SkillScore + 模型×分类画像
-- [x] N×N×A 三维对比（同功能组基准 baseline）
-- [x] **3D 评分矩阵**（three.js 立方体：A 轴=大类/技能层 × N×N 判分面；拖拽旋转、WASD 平移穿越、近距格子自动全透明、红→绿色标分位增强）
-- [x] **自研 Skills 系列**（11 个 llm-wiki 形式技能，覆盖安全/数据/Agent/文档等 10 大类）+ **技能大类图谱**（1169 技能 → 13 语义大类，数据驱动归并）
-- [ ] **深评层**：top 技能专属任务集（Oracle 门禁 + 四模式全量）
-- [ ] 公网部署 + 可嵌入徽章（"SkillBench 认证：最佳搭配 XX 模型"）
-- [ ] 投稿通道：技能作者提交 → 自动进管线 → 上榜
-- [ ] 新模型 48h 横评（模型发布自动入列）
+## 参考与致谢
 
-## 致谢与差异
+[Agent Skills 标准](https://agentskills.io/home)说明技能可以包含指令、脚本和资源；[Anthropic 的工程说明](https://www.anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills)讨论按需加载和评估。[SkillsBench](https://www.skillsbench.ai/)已经提供有无技能的评估，SkillFit 应在用户自己的技能维护、版本回归和可追溯证据上验证差异化。[PoLL](https://arxiv.org/abs/2404.18796)启发多判官评估；本项目的家族分组仍是名称启发式，不能保证评审无偏。
 
-方法论吸收并超越了：[SkillsBench](https://skillsbench.ai)（补上了它论文自认缺失的等长对照）、[anthropics/skills](https://github.com/anthropics/skills)（expectations 断言）、[OpenAI eval-skills](https://developers.openai.com/blog/eval-skills)（触发正负例）、PoLL / Apple 判官相关性研究（家族去重票）。与 [skillleaderboard.com](https://www.skillleaderboard.com) 的区别：他们数 star，我们**实测出分**。
+本次也尝试了 CodeBuddy 独立审阅，调用超时，未获得评审正文；代码结论来自独立检查与实际验证，见[调用记录](docs/codebuddy-review.txt)。
 
 ## License
 
-MIT
+[MIT](LICENSE)。采集的第三方技能保留各自来源与许可约束。

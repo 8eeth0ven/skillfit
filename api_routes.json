@@ -1,6 +1,6 @@
 {
   "base": "https://open.bigmodel.cn/api/anthropic",
   "key_env": "BENCH_API_KEY",
-  "note": "anthropic 兼容端点（实证免费通道，2026-10-10 切换；旧 /api/paas/v4 会烧余额报1113）。密钥在 密钥.env（BENCH_API_KEYS，多key全局轮转），禁上传",
+  "note": "API 消息接口配置；密钥通过 BENCH_API_KEY 或 BENCH_API_KEYS 环境变量提供，勿提交真实密钥。费用和可用模型取决于所用服务。",
   "models": {}
 }

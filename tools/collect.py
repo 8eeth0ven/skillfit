@@ -16,7 +16,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.parse import quote
 
-PROJ = Path("~/Desktop/Skills&Model-Benchmark").expanduser()
+PROJ = Path(os.environ.get("BENCH_ROOT", Path(__file__).resolve().parents[1])).expanduser().resolve()
 DB = PROJ / "library" / "db.json"
 TDIR = PROJ / "tasks"
 PROXY = {"https_proxy": "http://127.0.0.1:7897", "http_proxy": "http://127.0.0.1:7897"}
@@ -171,13 +171,40 @@ def fetch_skills(repo, max_per):
     return out
 
 
+def normalize_skill_path(value):
+    """Convert known library paths to portable repo-relative paths, without IO."""
+    if not isinstance(value, str) or not value or "\0" in value:
+        raise ValueError("技能路径必须是非空文件路径")
+    text = value.replace("\\", "/")
+    parts = [part for part in text.split("/") if part and part != "."]
+    if ".." in parts:
+        raise ValueError("技能路径不能包含上级目录")
+    absolute = text.startswith("/") or re.match(r"^[A-Za-z]:/", text)
+    if absolute:
+        anchor = next((i for i, part in enumerate(parts) if part in ("library", "本地库")), None)
+    else:
+        anchor = 0 if parts and parts[0] in ("library", "本地库") else None
+    if anchor is None or anchor + 1 >= len(parts):
+        # Do not include the untrusted value in errors: it may reveal machine paths.
+        raise ValueError("技能路径必须位于 library/ 或旧 本地库/ 内")
+    return "/".join(["library", *parts[anchor + 1:]])
+
+
+def normalize_db_paths(db):
+    """Validate every entry before any public database bytes are written."""
+    return {**db, "条目": [{**entry, "路径": normalize_skill_path(entry["路径"])}
+                           for entry in db["条目"]]}
+
+
 def load_db():
-    return json.loads(DB.read_text()) if DB.exists() else {"更新": "", "条目": []}
+    db = json.loads(DB.read_text()) if DB.exists() else {"更新": "", "条目": []}
+    return normalize_db_paths(db)
 
 
 def save_db(db):
+    portable = normalize_db_paths(db)
     DB.parent.mkdir(parents=True, exist_ok=True)
-    DB.write_text(json.dumps(db, ensure_ascii=False, indent=1))
+    DB.write_text(json.dumps(portable, ensure_ascii=False, indent=1))
 
 
 def seed_tasks(db, threshold):
@@ -195,7 +222,7 @@ def seed_tasks(db, threshold):
             continue
         d.mkdir(parents=True, exist_ok=True)
         (d / "T01-快扫.md").write_text(SWEEP_TASK.format(skill=sname))
-        (d / "技能文件.txt").write_text(str(PROJ / e["路径"]) + "\n")
+        (d / "技能文件.txt").write_text(str(PROJ / normalize_skill_path(e["路径"])) + "\n")
         (d / "任务清单.md").write_text(
             f"# 任务清单：{sname}（快扫层，采集自 ★{e['stars']} {e['repo']}）\n\n"
             f"| ID | 难度 | 考点 | 状态 |\n|---|---|---|---|\n| T01 | L2 | 快扫/文档理解与执行 | ready |\n\n"
@@ -221,7 +248,6 @@ def single_instance():
 
 
 def main():
-    single_instance()
     ap = argparse.ArgumentParser()
     ap.add_argument("--update", action="store_true")
     ap.add_argument("--min-stars", type=int, default=5000, help="高星线（默认 5k，用户 2026-10-09 定标）")
@@ -232,6 +258,7 @@ def main():
     ap.add_argument("--max-skills-per-repo", type=int, default=20)
     ap.add_argument("--max-new", type=int, default=10000, help="不设上限（用户 2026-10-09 裁定：一直测）")
     a = ap.parse_args()
+    single_instance()
     db = load_db()
     known = {(e["repo"], e["skill"]): e for e in db["条目"]}
     repos = search_repos(a)

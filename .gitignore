@@ -41,3 +41,12 @@ site/推文图/
 公众号推文-*.html
 网站/data.json
 网站/index.html
+
+# 本机浏览器快照、测试缓存与凭据变体
+.playwright-mcp/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+secrets*.env
+密钥.env

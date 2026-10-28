@@ -1,3 +1,3 @@
-# M2 强制加载时拼进 prompt 的技能文档（绝对路径，一行一个）
-/Users/Zhuanz/.zcode/skills/humanizer/SKILL.md
-/Users/Zhuanz/.zcode/skills/humanizer/genres/tech-sharing.md
+# 历史任务集依赖其原始技能版本，未随示例分发。
+# 请自行填写对应技能文件路径，一行一个；支持相对本清单的路径。
+# 首次使用请运行自包含的 format-check 示例，见 README。

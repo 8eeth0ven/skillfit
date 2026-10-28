@@ -6,7 +6,7 @@ import json, os, re, sys
 from pathlib import Path
 
 PROJ = Path(__file__).resolve().parent
-sys.path.insert(0, os.path.expanduser("~/.zcode/skills/skill-bench/tools"))
+sys.path.insert(0, str(PROJ / "tools"))
 os.environ.setdefault("BENCH_API_DIRECT", "1")
 from bench import call
 
