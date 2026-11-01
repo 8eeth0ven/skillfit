@@ -1,0 +1,56 @@
+---
+name: chaojifeng-video-design
+description: 设计和制作产品演示、知识讲解（含 Rap／说唱）、资讯、图片成片、故事、功能动效、品牌短片与音乐视觉视频。支持选择或扩展视频风格、组合动效、强化前三秒、素材调度、音乐编排、参考片研究和局部修改；从导演意图到可编辑计划、制作、审片及可播放成片，也可只交方案或分镜。模型与引擎中立，按任务加载风格包和技术能力。
+---
+
+# 超级峰的视频设计方法论
+
+先决定观众要理解或感受到什么，再组织镜头、素材、文字与声音。故事属于当前题材，风格提供材质和表达语法，实现由实际可用工具完成。
+
+## 先确定范围
+
+1. 读 [已确认经验](data/memory.md)、用户输入和项目适用说明。复用已有工程、素材、进程与渲染器，核实资源归属。
+2. “做视频、宣传片、生成成片”交付可播放视频、必要编辑源和验证摘要。只要方案、分镜或单个动效时按明确范围完成。已有作品局部修改保留其他内容和稳定 ID。
+3. 从上下文补齐受众、观众变化、事实、品牌、素材、画幅、时长、声音和用途。自行决定低影响选择；事实、必要素材或费用授权真正阻断结果时再问。
+4. 明确 direct 时连续完成整片、内部检查和必要返修，不增加试片或方向确认门禁。只有用户要求 staged 才在约定节点等待。两种模式均检查事实、阅读、声音与实际导出。
+
+## 按职责加载
+
+| 要解决的问题 | 读取与动作 |
+| --- | --- |
+| 故事、镜头、声音、观众变化 | [DIRECTOR.md](DIRECTOR.md)，再按 [任务路由](references/task-routing.md) 加载相关方法 |
+| 选择、变体、借用或新增风格 | 用 [风格画廊](assets/gallery/index.html) 看画面、来源样片与并排对比；按 [风格包合同](references/style-pack-contract.md) 精确查询 ID／中文名／英文名，只读选中包的 STYLE.md 与其引用 |
+| 给音乐、主题和风格制作三维音乐视频 | 沿 music-event-performance 读取 [音乐驱动三维世界](references/music-driven-world.md)，复用分析工具与起步工程，内部检查后直接完成成片 |
+| 诗词、乐器与景物形成三维意象 | 沿音乐分支补读 [诗词音乐世界](references/poetry-music-world.md)，组织意象接力、运动时钟及人物与乐器接触 |
+| 工具、引擎、素材、实际制作 | [TECHNIQUE.md](TECHNIQUE.md)，能力探测后沿已有工程制作 |
+| 首次扩展、维护、导入与目录生成 | [MAINTAINING.md](MAINTAINING.md)，维护库与制作当前作品分别处理 |
+| 从计划走到成片 | [制作流程](references/production-workflow.md)、[计划合同](references/plan-contract.md)和[审片与修改](references/review-and-revision.md) |
+
+三种入口继续可用：recipe 选择场景配方，compose 组合局部布局和动作，free 自由设计。场景、风格、动效、表达与配方通过 [目录工具](references/commands.md) 按需查询；数量以生成目录为准。表达是指导，源码是实现参考；各自不代表某个宿主已经安装或渲染通过。
+
+```sh
+python3 SKILL_ROOT/scripts/catalog.py --kind style list --scenario knowledge-explainer
+python3 SKILL_ROOT/scripts/stylepacks.py resolve 中国水墨
+python3 SKILL_ROOT/scripts/catalog.py --kind recipe get knowledge-rap-explainer
+python3 SKILL_ROOT/scripts/validate_plan.py /project/video/plan.json
+python3 SKILL_ROOT/scripts/check_delivery.py /project/video/plan.json /project/video/delivery.json --probe --require-video
+```
+
+## 制作中持续落实
+
+- 先写观众变化、贯穿线、元素使命和声音职责，再选择特效。关键镜头明确新增信息、焦点、揭示顺序、稳定停留与下一镜接力。简单任务保持轻量。
+- 事实镜头先找真实产品、原始照片、录像、档案与数据；先查项目缓存与授权资产，只补缺口。无法成立时换镜头或收缩主张。
+- 信息流科普与宣传默认检查首帧和前三秒；概念讲解先核事实、标准与术语，再逐层揭示；Rap 先核知识与可唱歌词，再按真实音轨编排。
+- 有旁白或歌词时取得真实音频，逐句关联画面与字幕；换音轨后重新测量、编排和核对。音乐选择遵循用户指定、项目已选、配方默认的顺序；候选池与默认分开维护，不将某首曲子升为全局默认。
+- 时间使用整片绝对秒与稳定 ID；画面、声音和字幕从同一排程派生。音效较多时使用 [声音事件表](templates/audio-event-map.json)，必要时用 film_probe.py 与 audio_event_audit.py 实测。统一时钟、随机 seek 或声音同步只有实测后才能登记通过。
+- 上游风格的完整规则和可复用源已纳入包中。先确定本片意图，再读案例实现；本片品牌、事实、指定音乐、语言、画幅与交付要求优先。素材、模型或工具许可不从代码许可推断。
+- 内部来源、重建与执行记录单独保存。正文、业务提示词、可见路径、字幕、口播及导出附件直接面向受众，不自动附加制作身份标签或创作自述；保留必要事实边界和授权检查。
+- 必要要求未过先返修。结构、源码可用、实际导出、观看、听审与观众理解分别记录；候选版本不能继承旧版或上游案例的通过状态。
+
+## 修改、交付与记忆
+
+按镜头、对象或时间窗定位修改并复验依赖；改配音重新量时，改事实重核来源和图形语义，改色不无故重做声音。扩展读 [扩展合同](references/extension.md)，单片变体写项目，稳定个人风格用外置包与新 ID。
+
+交付真实视频、必要编辑源、素材引用与验证摘要，说明实际工具、未完成项和保留资源。未经要求不上传或发布。清理本次归属明确且不再需要的资源。
+
+运行记录留在项目内；仅将简短结果、明确偏好和可核验问题更新到 data/memory.md，最近 20 次，不存私密素材或长对话。修改 Skill、风格包规范和行为仍遵守宿主已授权的确认流程。来源及许可见 [sources.md](references/sources.md) 和 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
