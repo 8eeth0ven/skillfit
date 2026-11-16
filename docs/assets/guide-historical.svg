@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="240" viewBox="0 0 768 240" role="img" aria-labelledby="title desc"><title id="title">旧脚本为什么归档 · Scope of the retired utilities</title><desc id="desc">旧批次 · Superseded records / 重新采样的批次 · New trial records</desc><rect width="768" height="240" fill="#fff"/><g font-family="system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+<text x="24" y="40" fill="#171717" font-size="30.0" font-weight="650">旧脚本为什么归档</text>
+<text x="25" y="67" fill="#555" font-size="19.0" font-weight="450">Scope of the retired utilities</text>
+<rect x="24" y="90" width="331" height="126" rx="10" fill="#fafafa" stroke="#d9d9d9"/>
+<g transform="translate(42 105)" fill="none" stroke="#343434" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h22v6H2z M4 9h18v14H4z M10 13h6"/></g>
+<text x="42" y="169" fill="#171717" font-size="27.0" font-weight="600">旧批次</text>
+<text x="42" y="197" fill="#4e4e4e" font-size="21.0" font-weight="450">Superseded records</text>
+<rect x="413" y="90" width="331" height="126" rx="10" fill="#fafafa" stroke="#d9d9d9"/>
+<g transform="translate(431 105)" fill="none" stroke="#343434" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 1a12 12 0 110 24 12 12 0 010-24z M13 5v8l6 3"/></g>
+<text x="431" y="169" fill="#171717" font-size="27.0" font-weight="600">重新采样的批次</text>
+<text x="431" y="197" fill="#4e4e4e" font-size="21.0" font-weight="450">New trial records</text>
+<path d="M368 147h34m-6-6 6 6-6 6 M402 161h-34m6-6-6 6 6 6" fill="none" stroke="#767676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg>

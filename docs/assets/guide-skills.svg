@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="240" viewBox="0 0 768 240" role="img" aria-labelledby="title desc"><title id="title">从技能入口找到具体做法 · Inside a handmade skill</title><desc id="desc">选择任务 · Choose a task / 读取 SKILL.md · Read instructions / 打开对应条目 · Open a KB entry</desc><rect width="768" height="240" fill="#fff"/><g font-family="system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif">
+<text x="24" y="40" fill="#171717" font-size="30.0" font-weight="650">从技能入口找到具体做法</text>
+<text x="25" y="67" fill="#555" font-size="19.0" font-weight="450">Inside a handmade skill</text>
+<rect x="24" y="90" width="222" height="126" rx="10" fill="#fafafa" stroke="#d9d9d9"/>
+<g transform="translate(39 104)" fill="none" stroke="#343434" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h22v16H2z M8 7V3h10v4 M2 13h22 M11 12h4v4h-4z"/></g>
+<text x="38" y="167" fill="#171717" font-size="26.0" font-weight="600">选择任务</text>
+<text x="38" y="195" fill="#4e4e4e" font-size="20.0" font-weight="450">Choose a task</text>
+<path d="M250 151h15m-5-5 5 5-5 5" fill="none" stroke="#767676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="272" y="90" width="222" height="126" rx="10" fill="#fafafa" stroke="#d9d9d9"/>
+<g transform="translate(287 104)" fill="none" stroke="#343434" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2h12l5 5v17H4z M15 2v7h6 M8 14h9 M8 18h6"/></g>
+<text x="286" y="167" fill="#171717" font-size="26.0" font-weight="600">读取 SKILL.md</text>
+<text x="286" y="195" fill="#4e4e4e" font-size="19.3" font-weight="450">Read instructions</text>
+<path d="M498 151h15m-5-5 5 5-5 5" fill="none" stroke="#767676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="520" y="90" width="222" height="126" rx="10" fill="#fafafa" stroke="#d9d9d9"/>
+<g transform="translate(535 104)" fill="none" stroke="#343434" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l7-3 8 3 7-3v19l-7 3-8-3-7 3z M9 2v19 M17 5v19"/></g>
+<text x="534" y="167" fill="#171717" font-size="26.0" font-weight="600">打开对应条目</text>
+<text x="534" y="195" fill="#4e4e4e" font-size="20.0" font-weight="450">Open a KB entry</text>
+</g></svg>
