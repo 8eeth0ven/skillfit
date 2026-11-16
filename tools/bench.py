@@ -75,7 +75,8 @@ import fcntl
 
 def single_instance(tag="mono"):
     """按 tag 分锁：每模型一条生产车道可并行（各 CLI 模型独立限速，用户 2026-10-10 裁定）；score 全局独占。"""
-    lock = RDIR / f".bench.lock.{re.sub(r'[^\w]', '-', tag)[:60]}"
+    safe_tag = re.sub(r"[^\w]", "-", tag)[:60]
+    lock = RDIR / f".bench.lock.{safe_tag}"
     if lock.exists():
         try:
             old = int(lock.read_text().strip())

@@ -1898,3 +1898,19 @@ dialog::backdrop {
     transition:none!important
   }
 }
+
+/* Keep data exploration usable with touch and OS contrast settings. */
+@media(pointer:coarse) {
+ .filter-bar :is(input[type=search],select), .button, .close-dialog,
+ .site-header nav a, .github-link { min-height:44px; }
+ .close-dialog { min-width:44px; }
+ nav a, .github-link { display:inline-flex; align-items:center; }
+ .check-field { min-height:44px; padding-block:8px; }
+}
+.table-scroll:focus-visible { outline:2px solid var(--mint, #a8e5cb); outline-offset:-3px; }
+#explore { scroll-margin-top:90px; }
+@media(forced-colors:active) {
+ .button, .close-dialog, .status-pill, .method-card, .data-panel { border:1px solid CanvasText; }
+ .table-scroll:focus-visible { outline-color:Highlight; }
+ .coverage-track { border:1px solid CanvasText; }
+}
