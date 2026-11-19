@@ -1,0 +1,496 @@
+---
+name: authoring-docs
+description: Use when writing, editing, rewriting, or shortening any page on the docs site (docs/**/*.mdx), including cleanup passes on legacy pages, requests to make a page shorter, a page or entry under docs/reference/ (which has its own Next.js-style shape), and the docs page of a new integration, CI service, or migration guide (which needs the vendor's logo).
+metadata:
+  internal: true
+---
+
+# Authoring docs
+
+Readers skim. They read the headings, the first sentence of each section,
+the code blocks, and the tables, then leave. Write for that reader. Show the
+fast path first and fold everything else.
+
+Model pages: `docs/bug-bash.mdx` and `docs/quickstart.mdx`. When in doubt,
+copy their shape.
+
+## IMPORTANT: shorten every page
+
+**Run this pass on every page you write, edit, or rewrite, before you
+commit. Don't skip it for a new page or a small edit.** A first draft is
+always too long, and an edit that adds one paragraph often repeats a fact
+the page already has.
+
+On a reference page (`docs/reference/`) the pass is narrower: merge a fact
+said twice and keep each summary table to its minimum
+([Summary tables](#summary-tables)), but cut no fact. A reference page is a
+lookup, so it stays complete.
+
+When the PR is about something other than docs, such as a flag rename that
+updates three pages, apply the cuts to the sections the change touches.
+List the cuts for the rest of each page as a follow-up. A whole-page
+restructure is its own PR, one page per PR.
+
+A page is too long when it says a fact twice, or when it is much longer
+than its sidebar neighbors for no reason. Measure first. Count source lines
+and prose words, and compare the page with its siblings:
+
+````bash
+wc -l docs/integrations/*.mdx
+awk '/^```/{c=!c;next} !c' docs/integrations/smol.mdx | wc -w   # prose, roughly
+````
+
+The word count is approximate. It misses indented fences and counts
+frontmatter and JSX, so compare counts only between versions of one page.
+
+List every section with its rough line count. Then sort each cut into one
+of three kinds, and work them in this order.
+
+1. **Cut what the reader doesn't act on.**
+   - How the code works inside, such as the order a provider boots
+     machines. Keep the behavior a user sees, as one sentence where it
+     matters.
+   - An agent prompt that [Copy agent prompt](#copy-agent-prompt) says to
+     skip.
+   - Next cards the reader doesn't need next, down to the skeleton's
+     minimum of two.
+
+   Keep a guarantee the reader would otherwise doubt, even when it reads
+   like "works as it does locally". Check whether another page says it can
+   fail. `browser.mdx` says a provider without `downloads` fails, so a
+   provider page keeps the line that downloads work.
+2. **Merge what's said twice.** Each fact has one place.
+   - A lede paragraph that previews a section becomes a link to it.
+   - A "Before you start" whose items fit in two short sentences becomes a
+     `Note` in the first task. Keep the section when its items need
+     bullets, as in `docs/bug-bash.mdx`.
+   - A section that explains one option moves under the config that sets
+     it.
+   - A list and a table that describe the same fields become one table,
+     with the details in its cells.
+   - An options table row for an option with its own section links there.
+     It doesn't describe the option again.
+   - A list of limits or caveats copied from another page becomes a link
+     to the page that owns it.
+3. **Fold what only some readers need.** An optional path with its own
+   install and example goes into an `Accordion`. The visible text keeps the
+   rule every reader must follow.
+
+Write the target outline before you edit: the headings, and what each one
+holds. List moves that change other pages separately from the cuts on this
+page, and say if you recommend them.
+
+When the user asks how to shorten a page, show the plan before you edit.
+Group the items by kind. Give each item its rough savings in lines and one
+sentence of reason. End with the target outline and your recommendation.
+If an earlier pass of yours added the length, say so.
+
+Shortening adds claims. Check each new sentence:
+
+- **A caveat moves with its claim.** Cut "external state stays shared" from
+  the lede, and "every retry starts from the same state" becomes a promise
+  the code doesn't keep.
+- **A sentence that replaces three is a new claim.** Check it against
+  `src/`. "`workers` sets how many machines run" was wrong: in `'attempt'`
+  scope each worker slot runs a warm machine and a branch.
+- **A leftover fact gets a heading or gets cut.** Don't park it under the
+  nearest heading, such as cleanup under "Options". The heading list must
+  still lead to it.
+- **Every cut fact is cut on purpose.** Name each one, with its reason, in
+  the PR body.
+- **Estimates run high.** Measure after the edit, with the same commands.
+  Report the real line and word counts, before and after.
+
+## Scope
+
+- Guides: every `docs/**/*.mdx` page except `docs/reference/`. That
+  includes `docs/ci/`, `docs/integrations/`, and `docs/migrate/`.
+- Reference pages (`docs/reference/`) have their own shape: follow
+  [Reference pages](#reference-pages), not the guide skeleton. The tone
+  rules apply to both.
+- Not `skills/e2e/`. Agents read it start to finish, and the interactive
+  components don't render there.
+- `unslop` still applies to every sentence. This skill adds structure and
+  tone on top. Where they disagree, this skill wins on docs pages: keep the
+  STE sentence and paragraph limits, and write no first person.
+
+## Page skeleton
+
+```
+---
+title: <noun the reader searches for>
+description: <one sentence: what the reader can do after this page>
+---
+
+<lede: 2-4 sentences. What it is, what it does.>
+
+<optional: Video or screenshot with a one-line caption>
+
+<optional: Copy agent prompt, when an agent can do the whole task>
+
+## Before you start          (prerequisites as bullets, if any)
+
+## <task heading>            (one per task, in the order the reader does them)
+
+## <task heading>
+
+## Next
+
+<CardGroup cols={2}> 2-4 next pages, one line each </CardGroup>
+```
+
+- **Lede.** Define the thing in the first sentence. No "In this guide you
+  will", no "e2e is a powerful". If the reader stops here, they still know
+  what the page is about.
+- **Put the fast path first.** Before you write, ask what most readers of
+  this page came to do: the default setup, the common command, the answer
+  to the common question. Make that the first task section, unless an
+  earlier task is a prerequisite. Fold the rare cases or move them down:
+  edge cases, tuning, troubleshooting.
+- **Headings name a task or a question**: "Install the skill", "Start a bug
+  bash", "What the agent does". The heading list alone is a usable table
+  of contents. "Next" before the closing cards is the one exception. Don't use "Overview", "Introduction",
+  "Details", or "More information".
+- **First sentence of each section carries the point.** The rest supports
+  it.
+- **One idea per section.** If a section needs a sub-heading to hold
+  together, it's two sections. The exception is a group of tasks under one
+  path, like "Set up manually" in the quickstart: use one level of `###`
+  for its tasks, never deeper.
+- **End with next steps**: a `CardGroup` of 2-4 cards. Each card has one
+  line of description that says why to go there.
+- **Link to depth instead of repeating it**: "To read the full procedure,
+  run `npx e2e guide bug-bash`." or "See [Starting your app](/web#starting-your-app)."
+
+## Vendor logos
+
+The sidebar shows no icons. Don't set `icon:` in a page's frontmatter;
+`pnpm docs:check` fails on one.
+
+**A vendor page gets the vendor's logo on its cards.** A vendor page is
+every page under `docs/integrations/`, `docs/ci/`, and `docs/migrate/`
+except an `index.mdx`. Never use a Font Awesome icon for it, not even as a
+placeholder:
+
+- Put the logo at `docs/images/integrations/<brand>.svg`, in brand colors.
+  Use it on every `<Card>` that links to the page.
+- Every vendor page also gets a card on its section's overview:
+  `docs/integrations/index.mdx`, `docs/ci.mdx`, or `docs/migrate/index.mdx`.
+- A near-black mark needs a `filter: invert(1)` rule for dark mode in the
+  site's styles, like Expo's and TestMu AI's. Say so in the PR.
+
+Take the logo from the vendor's own site or press kit, usually the favicon
+SVG for the mark. If you can't get a logo, stop and ask the user. Don't
+ship the page without one. `scripts/check-docs-logos.ts` (in
+`pnpm docs:check`) fails on a card without a logo or a vendor page with no
+overview card.
+
+## Copy agent prompt
+
+Put a copyable prompt near the top when a coding agent can do the whole
+task from the page: setup, migration, a bug bash, wiring CI. Skip it when
+the page explains a concept, or the task is one command or one install and
+a config change.
+
+The import path is relative to the page. Use `./snippets/` for a top-level
+page and `../snippets/` for a page in `docs/ci/`, `docs/integrations/`, or
+`docs/migrate/`.
+
+```mdx
+import { SetupPrompt } from './snippets/setup-prompt-card.jsx';
+
+export const setupPrompt = `<task>. Docs: \`https://e2e.com/docs/<page>.md\`
+
+1. <one step, imperative>
+2. ...`;
+
+<SetupPrompt>
+
+<Prompt description={setupPrompt} children={setupPrompt} actions={["copy", "cursor"]} />
+
+</SetupPrompt>
+```
+
+- Link the page's `.md` URL so the agent can read the rest.
+- Numbered steps, one action each. Tell the agent when to stop and ask the
+  user, for example to choose a model or to sign in.
+- End on a check the agent can run: "run the test and fix errors until it
+  passes".
+- After the prompt, put the manual path under its own heading, such as
+  "Set up manually".
+
+## Showing less at one time
+
+Fold content that most readers don't need. Choose the component by the
+question the reader asks:
+
+| The reader... | Use | Example |
+| --- | --- | --- |
+| picks one of several paths (platform, provider, OS) | `Tabs` | Web / Mobile, Subscription / API key |
+| picks a package manager | `CodeGroup` with `npm`, `pnpm`, `bun` | every shell block that runs `npx` or `npm install`/`ci`, checked by `docs:check` |
+| follows an ordered setup | `Steps` | Quickstart "Run your first test" |
+| may want a full example or edge case | `Accordion` | "Example web config and test" |
+| may want a long procedure that isn't the point of the page | `ShowMore` | Bug bash "What the agent does" |
+| compares 3+ options with the same fields | table | plan -> login command |
+| must not miss a requirement | `Note`, at most one per section | Node.js version |
+| can lose data or leak a secret | `Warning` | unmasked video with a typed password |
+| wants to see the result | `Video` with a one-line caption | `init` recording |
+
+Rules:
+
+- The text that stays visible must make sense without the folded part.
+- Don't put the only copy of a required step inside an `Accordion` or
+  `ShowMore`.
+- Don't nest tabs in tabs. An `Accordion` inside a `Tab` is fine.
+- Give a `ShowMore` a unique `id`.
+- Indent a bullet list inside an indented component at least as far as
+  the component's tags, as the `<Tab>` blocks in `docs/mobile.mdx` do. A
+  closing tag indented as far as the text after a `- ` marker joins the
+  last list item, even across a blank line, so the component never closes
+  and the page doesn't compile as MDX. `pnpm docs:check` fails on it.
+- About one screen of visible content between two headings. If more,
+  fold it, cut it, or split the section.
+
+## Tone: 80% ASD-STE100
+
+Follow Simplified Technical English for sentences and words. Relax it where
+it would make the docs sound robotic.
+
+Keep:
+
+- **Short sentences.** Procedure: 20 words or fewer. Description: 25 words
+  or fewer.
+- **One instruction per sentence.** "Start the app. Then run the test."
+  Not "Start the app and then run the test, making sure that...".
+- **Imperative for procedures**: "Install the skill." Not "You will want to
+  install the skill."
+- **Active voice, present tense**: "e2e downloads a browser." Not "A browser
+  will be downloaded."
+- **Condition or warning first, then the instruction**: "When `CI` is set,
+  e2e ignores `reuseExisting`. Use port `0`."
+- **Short paragraphs**: 1-3 sentences.
+- **One term for one concept** across the site. A step is a step, a run is
+  a run. Don't rotate synonyms for variety.
+- **Simple words**:
+
+  | Write | Not |
+  | --- | --- |
+  | use | utilize, leverage |
+  | make sure | ensure |
+  | start, stop | initiate, terminate |
+  | show | display |
+  | examine, check | inspect, verify (for the reader's action) |
+  | about | approximately |
+  | one time | once (as a count) |
+  | to | in order to |
+  | if, when | in the event that |
+  | (cut) | simply, just, easily, seamlessly, powerful, load-bearing |
+
+Relax:
+
+- Contractions are fine: "don't", "it's", "you'll".
+- Product and API names stay as they are: `agent.act`, replay cache,
+  fixture, target, engine.
+- "You" is fine for descriptions. Procedures still use the imperative.
+- Page titles can use the term people search for, `-ing` forms included:
+  "Signing in", "Debugging".
+- "Can" for capability is fine: "The agent can start one subagent for each
+  area."
+- When an STE phrasing reads worse than the plain one, use the plain one.
+
+Before and after:
+
+```
+Before: In order to ensure that your app is able to handle multiple explorers
+        simultaneously, you'll want to either reuse an existing server or
+        configure a dynamic port.
+After:  Make sure the app can serve many explorers at the same time. Start the
+        app one time and set `reuseExisting: true`, or set port `0`.
+```
+
+```
+Before: The wizard will then proceed to write out a config file as well as an
+        example test, after which dependencies are added.
+After:  The wizard writes a config and an example test, and adds dependencies.
+```
+
+## Rewriting a legacy page
+
+A cleanup is a rewrite of the shape, not a copy edit. Keep every fact, cut
+every repetition.
+
+1. **List the facts.** Read the page and note every claim, option, default,
+   and caveat. This is the content you must keep.
+2. **Check the facts against `src/`.** Status prose drifts, as the Gotchas
+   in `AGENTS.md` say. Fix or delete claims that no longer hold, including "not
+   implemented yet" callouts.
+3. **Find the reader's tasks.** Each task becomes a heading, in the order
+   the reader does them. Facts that serve no task go to a reference page or
+   a card link, or are cut. When the tasks don't depend on each other, put
+   the fast path first.
+4. **Write the lede and headings first.** Read them alone. If they don't
+   explain the page, fix them before writing the body.
+5. **Fold.** Apply the component table. Long examples go into an
+   `Accordion`, alternatives into `Tabs`, background procedures into
+   `ShowMore`.
+6. **Apply the tone rules** sentence by sentence, then run `unslop`.
+7. **Add a copy agent prompt** if an agent can now do the whole task and
+   [Copy agent prompt](#copy-agent-prompt) doesn't say to skip it.
+8. **Keep URLs and anchors stable.** When you rename a heading, update
+   every link to its anchor. Search for `/<page>#<anchor>` across `docs/`,
+   `skills/`, `README.md`, and `packages/*/src`. Also search the page itself
+   for `](#<anchor>)` and `href="#<anchor>"`. If a page moves, add a
+   redirect in `docs/docs.json`.
+9. **Shorten.** A page in the right shape can still say things twice. Run
+   the pass in
+   [IMPORTANT: shorten every page](#important-shorten-every-page).
+10. **Compare.** The new page is shorter on screen. Every fact from step 1
+    is still on it, folded, or linked, or it was cut on purpose and the PR
+    body names it with the reason.
+
+One page per PR. The reviewer compares old and new side by side.
+
+## Reference pages
+
+Pages under `docs/reference/` follow the Next.js API reference shape
+(`nextjs.org/docs/app/api-reference`). A reader looks a member up in a table
+at the top and finds its details one click down. Model pages:
+`docs/reference/app.mdx` (one group) and `docs/reference/screen.mdx`
+(several groups).
+
+````
+---
+<frontmatter>
+---
+
+<lede: 1-3 sentences that define the thing>
+
+```ts title="tests/<name>.e2e.ts"
+<one minimal, realistic example>
+```
+
+## Reference
+
+### <Group>             (only when the page has more than one group)
+
+| Method | Returns |      (summary table, one row per entry, linked)
+
+#### <entry>            (### on a one-group page)
+
+## <Behavior, Budgets, Setup, ...>   (explanatory sections, after Reference)
+
+## Types
+## Examples
+## Related
+````
+
+### Headings
+
+- The first `##` after the lede is always `## Reference`, on every page.
+  Never Members, Methods, Entry points, or Overview there. Groups under it
+  name what they hold: Queries, Options, Hooks, Commands.
+- The site gives `##` to `####` an anchor and a line in "On this page".
+  `#####` gets neither. So entries are `###` on a one-group page and `####`
+  on a page with several groups.
+- An entry's sub-part that lands at `#####` and is linked from anywhere gets
+  `<a id="<slug>" />` on the line before it. `node scripts/check-docs-anchors.ts`
+  counts that id.
+- Explanatory sections (rules, behavior, budgets, setup, installing) come
+  after `## Reference` as `##`, then `## Types`, `## Examples`, `## Related`.
+- Heading text that anything links to keeps its exact words. Slugs drop
+  backticks and turn dots into hyphens (`agent.act` is `#agent-act`); a
+  backticked camelCase name stays one word (`renderMarkdownReport` is
+  `#rendermarkdownreport`).
+
+### Summary tables
+
+Each group opens with one table, one row per entry. Keep it to the minimum:
+
+| Kind | Columns |
+| --- | --- |
+| methods, members, functions, fixtures | `Name \| Returns` |
+| options and fields | `Option \| Type \| Default` |
+| commands, tools, hooks, matchers, reporters | `Name \| Description` |
+
+- The first column is the name, linked to its entry.
+- No Example column. The lede and every entry show one.
+- A default is a bare value, `-`, or at most four words (`0`, `1` in CI).
+  A description is at most six words.
+- No cell over about 40 characters, no sentences, no explanations in
+  parentheses. Detail goes in the entry.
+- A data table that is the only home of its facts (environment variables,
+  error codes, a capability matrix) is not a summary table. It keeps its
+  columns.
+
+### Entries
+
+- First sentence: what it is or what it does.
+- A short example. Show a default as a code comment: `// default: 5000`.
+- Accepted values as a list or a table. Errors as a `| Throws | When |` table.
+- At most one `<Note>`. `<Warning>` only for data loss or a leaked secret.
+- TypeScript declarations keep their JSDoc, in the entry or under
+  `## Types`. They are the contract.
+- No Version History section; nothing reliable feeds it.
+
+### Keep every fact
+
+- A rewrite or a trim keeps every option, default, error code, limit, and
+  caveat. When you shorten a table cell, the fact must already be in the
+  entry, or you add it there.
+- Add no claim the old page or the source (`packages/*/src`) does not make.
+  Check a default or a "Throws" condition in the source before you write it.
+
+## Translations
+
+`docs/<language>/<path>.mdx` translates `docs/<path>.mdx`: `docs/ja/` is
+Japanese, `docs/zh/` Simplified Chinese. Each language's README
+([`docs/ja/README.md`](../../../docs/ja/README.md),
+[`docs/zh/README.md`](../../../docs/zh/README.md)) has its rules, style, and
+glossary. The site gives a translated page the English page's heading, tab,
+and accordion ids by position, so a translation must keep the English
+outline, and `pnpm docs:check` (`scripts/check-docs-translations.ts`) fails
+when it does not.
+
+- Editing prose on an English page needs no translated change; the
+  translation is stale until someone updates it, and the site still serves it.
+- Adding, removing, or reordering a heading, `<Tab>`, `<Accordion>`, or `id`
+  needs the same change in every language folder. An English placeholder
+  heading is fine.
+- A new English page needs nothing: the site shows it in English under
+  `/docs/<language>/` until a translation exists.
+- A new tab or group in `docs.json` needs its label in every
+  `docs/<language>/navigation.json`.
+
+## Before you commit
+
+- [ ] On a reference page: the first `##` is `## Reference`, every summary
+      table follows [Summary tables](#summary-tables), and no linked anchor
+      was lost.
+- [ ] **IMPORTANT:** the shortening pass ran on this page (on a reference
+      page, its narrower form: duplicates merged, no fact cut). It was measured
+      against its neighbors before and after, and every new or merged
+      sentence was checked against `src/`.
+- [ ] Reading only the headings and first sentences explains the page.
+- [ ] The lede defines the thing in its first sentence.
+- [ ] The first task section is the fast path most readers came for,
+      unless an earlier task is a prerequisite. Rare cases are folded or
+      come later.
+- [ ] No section shows much more than one screen without folding.
+- [ ] Every shell block that runs `npx` or `npm install`/`ci` is a
+      `CodeGroup` of npm, pnpm, bun.
+- [ ] A bullet list inside an indented component is indented at least as
+      far as its tags ([Showing less at one time](#showing-less-at-one-time)),
+      and `pnpm docs:check` passes: it compiles every page as standard MDX.
+- [ ] Code blocks are real or clearly fragments. A full example lives in
+      `docs/examples/`, has an entry in `EXAMPLES` in
+      `scripts/check-docs-examples.ts`, and typechecks with
+      `pnpm --filter @e2e-dev/docs typecheck`.
+- [ ] Status claims checked against `src/`.
+- [ ] No `icon:` in the frontmatter.
+- [ ] A vendor page (`docs/integrations/`, `docs/ci/`, `docs/migrate/`)
+      has the vendor's logo on every card that links to it
+      ([Vendor logos](#vendor-logos)) and a card on its section's
+      overview.
+- [ ] Links and anchors resolve. Moved pages have redirects.
+- [ ] A changed outline is mirrored in `docs/ja/` and `docs/zh/` ([Translations](#translations)).
+- [ ] `pnpm docs:check` passes.
